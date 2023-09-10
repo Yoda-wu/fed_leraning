@@ -166,7 +166,7 @@ class EtreeTopologyManager(BaseTopologyManager):
         # put centroids in the last 
         # so we can easily get the centroids easily
         for i in range(len(finalCentroids)):
-            clusterList.append(finalCentroids[i])
+            clusterList[i].append(finalCentroids[i])
         is_contain_single_node = 0
         for i in clusterList:
             num_in_group = len(i)
@@ -201,8 +201,15 @@ class EtreeTopologyManager(BaseTopologyManager):
         output: node list which current client can get info from.
         """
         neighbor_in_idx_list = []
-        
-        return neighbor_in_idx_list
+        neighbor_in_id_list = []
+        for layer in range(self.layers - 1):
+            for cluster in self.clusterOfAllLayer[layer]:
+                if node_index in cluster:
+                    neighbor_in_idx_list.append(cluster[-1])
+                    centerId = self.client_id_list_in_total[cluster[len(cluster) - 1]]
+                    neighbor_in_id_list.append(centerId)
+                    break
+        return neighbor_in_idx_list, neighbor_in_id_list
 
     def get_out_neighbor_idx_list(self, node_index):
         """
@@ -210,6 +217,19 @@ class EtreeTopologyManager(BaseTopologyManager):
         utput: node list which current client can send info to.
         """
         neighbor_out_idx_list = []
-
-        return neighbor_out_idx_list
+        neighbor_out_id_list = []
+        node_layer = -1
+        cluster_idx = -1
+        for layer in range(self.layers - 1 ):
+            for i  in range(len(self.centroidsOfAllLayers[layer])) :
+                centroids = self.centroidsOfAllLayers[layer][i]
+                if centroids == node_index :
+                    node_layer = layer
+                    cluster_idx = i 
+                    break
+        if node_layer != -1  and cluster_idx != -1 :
+            neighbor_out_idx_list = self.clusterOfAllLayer[node_layer][cluster_idx]
+            for i in neighbor_out_id_list:
+                neighbor_out_id_list.append(self.client_id_list_in_total[i])
+        return neighbor_out_idx_list, neighbor_out_id_list
         
