@@ -1,5 +1,5 @@
 from collections import OrderedDict
-from typing import List, Tuple
+from typing import Dict, List, Tuple
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -12,7 +12,7 @@ from torch.utils.data import DataLoader, random_split
 from torchvision.datasets import CIFAR10
 
 import flwr as fl
-from flwr.common import Metrics
+from flwr.common import Metrics, NDArrays, Scalar
 
 DEVICE = torch.device("cpu")  # Try "cuda" to train on GPU
 print(
@@ -123,6 +123,37 @@ def test(net, testloader):
     loss /= len(testloader.dataset)
     accuracy = correct / total
     return loss, accuracy
+
+def get_parameters(net) -> List[np.ndarray]:
+    return [val.cput().numpy() for _, val in net.state_dict().items()]
+
+def set_parameters(net, parameters : List[np.ndarray]) :
+    params_dict = zip(net.state_dict().keys(), parameters)
+    state_dict = OrderedDict({k : torch.Tensor(v) for k, v in params_dict})
+    net.load_state_dict(state_dict, strict = True)
+
+
+
+class FlowerClient(fl.client.NumPyClient):
+    def __init__(self, net, trainloader, valloader):
+        self.net = net
+        self.trainloader = trainloader
+        self.valloader = valloader
+    
+    def get_parameters(self, config: Dict[str, Scalar]) -> NDArrays:
+        return get_parameters(config)
+    
+    def fit(self, parameters, config):
+        set_parameters(self.net, parameters)
+        train(self.net, self.trainloader, epochs=1)
+        return get_parameters(self.net),len(self.trainloader), {}
+    
+    def  evaluate(self, parameters: NDArrays, config: Dict[str, Scalar]) -> Tuple[float, int, Dict[str, Scalar]]:
+        set_parameters(self.net, parameters)
+        loss, accuracy = test(self.net, parameters)
+        
+        return float(loss), len(self.valloader), {"accuracy": float(accuracy)}
+    
 
 if __name__ == "__main__":
     trainloaders, valloaders, testloader = load_dataset()
