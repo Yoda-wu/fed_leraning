@@ -36,33 +36,35 @@ CLASSES = (
 NUM_CLIENTS = 10 
 BATCH_SIZE = 32
 
-def load_dataset():
+
+def load_datasets():
     # Download and transform CIFAR-10 (train and test)
     transform = transforms.Compose(
-        [transforms.ToTensor(), transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5))]
+        [transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
     )
     trainset = CIFAR10("./dataset", train=True, download=True, transform=transform)
     testset = CIFAR10("./dataset", train=False, download=True, transform=transform)
 
-    # split training set in to 10 partitions 
-    partition_size = len(trainset)
+    # Split training set into 10 partitions to simulate the individual dataset
+    partition_size = len(trainset) // NUM_CLIENTS
     lengths = [partition_size] * NUM_CLIENTS
-    dataset = random_split(trainset, lengths, torch.Generator().manual_seed(42))
+    datasets = random_split(trainset, lengths, torch.Generator().manual_seed(42))
 
-    # split each partition into train/val and create DataLoader
+    # Split each partition into train/val and create DataLoader
     trainloaders = []
     valloaders = []
-    for ds in dataset:
-        len_val = len(ds)
-        len_trian = len(ds) - len_val
-        lengths = [len_trian, len_val]
-        ds_train, ds_val = random_split(ds,lengths, torch.Generator().manual_seed(42))
+    for ds in datasets:
+        len_val = len(ds) // 10  # 10 % validation set
+        len_train = len(ds) - len_val
+        lengths = [len_train, len_val]
+        ds_train, ds_val = random_split(ds, lengths, torch.Generator().manual_seed(42))
         trainloaders.append(DataLoader(ds_train, batch_size=BATCH_SIZE, shuffle=True))
         valloaders.append(DataLoader(ds_val, batch_size=BATCH_SIZE))
+    testloader = DataLoader(testset, batch_size=BATCH_SIZE)
+    return trainloaders, valloaders, testloader
 
-        testloader = DataLoader(testset, batch_size=BATCH_SIZE)
-        return trainloaders, valloaders,testloader
-    
+
+
 
 class Net(nn.Module):
     def __init__(self) -> None:
@@ -155,21 +157,32 @@ class FlowerClient(fl.client.NumPyClient):
         return float(loss), len(self.valloader), {"accuracy": float(accuracy)}
     
 
+def client_fn(cid:str) -> FlowerClient:
+    # load model
+    net = Net().to(DEVICE)
+    # load data
+    trainloader = trainloaders[int(cid)]
+    valloader = valloaders[int(cid)]
+
+    return FlowerClient(net, trainloader,  valloader)
+
+strategy = fl.server.strategy.FedAvg(
+    fraction_fit=1.0,  # Sample 100% of available clients for training
+    fraction_evaluate=0.5,  # Sample 50% of available clients for evaluation
+    min_fit_clients=10,  # Never sample less than 10 clients for training
+    min_evaluate_clients=5,  # Never sample less than 5 clients for evaluation
+    min_available_clients=10,  # Wait until all 10 clients are available
+)
+
+
+client_resources = None
+if DEVICE.type == "cuda":
+    client_resources = {"num_gpus": 1}
+
+
+
 if __name__ == "__main__":
-    trainloaders, valloaders, testloader = load_dataset()
-    images , labels = next(iter(trainloaders[0]))
-
-    # Reshape and convert images to a NumPy array
-    # matplotlib requires images with the shape (height, width, 3)
-    images = images.permute(0, 2, 3, 1).numpy()
-    # Denormalize
-    images = images / 2 + 0.5 
-
-    # Reshape and convert images to a NumPy array
-    # matplotlib requires images with the shape (height, width, 3)
-    images = images.permute(0, 2, 3, 1).numpy()
-    # Denormalize
-    images = images / 2 + 0.5
+    trainloaders, valloaders, testloader = load_datasets()
 
     trainloader = trainloaders[0]
     valloader = valloaders[0]
@@ -182,3 +195,11 @@ if __name__ == "__main__":
 
     loss, accuracy = test(net, testloader)
     print(f"Final test set performance:\n\tloss {loss}\n\taccuracy {accuracy}")
+
+    fl.simulation.start_simulation(
+        client_fn=client_fn,
+        num_clients=NUM_CLIENTS,
+        config=fl.server.ServerConfig(num_rounds=5),
+        strategy=strategy,
+        client_resources=client_resources,
+    )
