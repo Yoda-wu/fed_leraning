@@ -1,6 +1,6 @@
 from collections import OrderedDict
 from typing import Dict, List, Optional, Tuple
-import flower.utils.util  as util
+import flower_examples.utils.util  as util
 import numpy as np
 import torch
 import torch.nn as nn
