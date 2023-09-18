@@ -179,7 +179,6 @@ client_resources = None
 if DEVICE.type == "cuda":
     client_resources = {"num_gpus": 1}
 
-fl.server.start_server
 
 if __name__ == "__main__":
     trainloaders, valloaders, testloader = load_datasets()
