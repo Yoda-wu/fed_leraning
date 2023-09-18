@@ -8,35 +8,12 @@ import torch.nn.functional as F
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader, random_split
 from torchvision.datasets import MNIST
-
+import model
 import flwr as fl
-def load_datasets(num_clients: int):
-    # Download and transform CIFAR-10 (train and test)
-    transform = transforms.Compose(
-        [transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
-    )
-    trainset = MNIST("./dataset", train=True, download=True, transform=transform)
-    testset = MNIST("./dataset", train=False, download=True, transform=transform)
+import torchvision
+import torchvision.transforms as transforms
 
-    # Split training set into `num_clients` partitions to simulate different local datasets
-    partition_size = len(trainset) // num_clients
-    lengths = [partition_size] * num_clients
-    datasets = random_split(trainset, lengths, torch.Generator().manual_seed(42))
-
-    # Split each partition into train/val and create DataLoader
-    trainloaders = []
-    valloaders = []
-    for ds in datasets:
-        len_val = len(ds) // 10  # 10 % validation set
-        len_train = len(ds) - len_val
-        lengths = [len_train, len_val]
-        ds_train, ds_val = random_split(ds, lengths, torch.Generator().manual_seed(42))
-        trainloaders.append(DataLoader(ds_train, batch_size=32, shuffle=True))
-        valloaders.append(DataLoader(ds_val, batch_size=32))
-    testloader = DataLoader(testset, batch_size=32)
-    return trainloaders, valloaders, testloader
-
-
+DATA_ROOT = "~/.flower/data/cifar-10"
 
 def get_parameters(net) -> List[np.ndarray]:
     return [val.cpu().numpy() for _, val in net.state_dict().items()]
@@ -47,44 +24,78 @@ def set_parameters(net, parameters: List[np.ndarray]):
     state_dict = OrderedDict({k: torch.Tensor(v) for k, v in params_dict})
     net.load_state_dict(state_dict, strict=True)
 
+def load_model() -> model.Net:
+    """Load a simple CNN."""
+    return model.Net()
 
-def train(net, trainloader, epochs: int, DEVICE):
-    """Train the network on the training set."""
-    criterion = torch.nn.CrossEntropyLoss()
-    optimizer = torch.optim.Adam(net.parameters())
-    net.train()
-    for epoch in range(epochs):
-        correct, total, epoch_loss = 0, 0, 0.0
-        for images, labels in trainloader:
-            images, labels = images.to(DEVICE), labels.to(DEVICE)
+
+# pylint: disable=unused-argument
+def load_data() -> Tuple[torchvision.datasets.CIFAR10, torchvision.datasets.CIFAR10]:
+    """Load CIFAR-10 (training and test set)."""
+    transform = transforms.Compose(
+        [transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
+    )
+    trainset = torchvision.datasets.CIFAR10(
+        root=DATA_ROOT, train=True, download=True, transform=transform
+    )
+    testset = torchvision.datasets.CIFAR10(
+        root=DATA_ROOT, train=False, download=True, transform=transform
+    )
+    return trainset, testset
+
+
+def train(
+    net: model.Net,
+    trainloader: torch.utils.data.DataLoader,
+    epochs: int,
+    device: torch.device,  # pylint: disable=no-member
+) -> None:
+    """Train the network."""
+    # Define loss and optimizer
+    criterion = nn.CrossEntropyLoss()
+    optimizer = torch.optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
+
+    print(f"Training {epochs} epoch(s) w/ {len(trainloader)} batches each")
+
+    # Train the network
+    for epoch in range(epochs):  # loop over the dataset multiple times
+        running_loss = 0.0
+        for i, data in enumerate(trainloader, 0):
+            images, labels = data[0].to(device), data[1].to(device)
+
+            # zero the parameter gradients
             optimizer.zero_grad()
+
+            # forward + backward + optimize
             outputs = net(images)
-            loss = criterion(net(images), labels)
+            loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
-            # Metrics
-            epoch_loss += loss
-            total += labels.size(0)
-            correct += (torch.max(outputs.data, 1)[1] == labels).sum().item()
-        epoch_loss /= len(trainloader.dataset)
-        epoch_acc = correct / total
-        print(f"Epoch {epoch+1}: train loss {epoch_loss}, accuracy {epoch_acc}")
+
+            # print statistics
+            running_loss += loss.item()
+            if i % 2000 == 1999:  # print every 2000 mini-batches
+                print("[%d, %5d] loss: %.3f" % (epoch + 1, i + 1, running_loss / 2000))
+                running_loss = 0.0
 
 
-def test(net, testloader, DEVICE):
-    """Evaluate the network on the entire test set."""
-    criterion = torch.nn.CrossEntropyLoss()
-    correct, total, loss = 0, 0, 0.0
-    net.eval()
+def test(
+    net: model.Net,
+    testloader: torch.utils.data.DataLoader,
+    device: torch.device,  # pylint: disable=no-member
+) -> Tuple[float, float]:
+    """Validate the network on the entire test set."""
+    criterion = nn.CrossEntropyLoss()
+    correct = 0
+    total = 0
+    loss = 0.0
     with torch.no_grad():
-        for images, labels in testloader:
-            images, labels = images.to(DEVICE), labels.to(DEVICE)
+        for data in testloader:
+            images, labels = data[0].to(device), data[1].to(device)
             outputs = net(images)
             loss += criterion(outputs, labels).item()
-            _, predicted = torch.max(outputs.data, 1)
+            _, predicted = torch.max(outputs.data, 1)  # pylint: disable=no-member
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
-    loss /= len(testloader.dataset)
     accuracy = correct / total
     return loss, accuracy
-

@@ -70,3 +70,10 @@ class FlowerClient(fl.client.Client):
             num_examples=len(self.valloader),
             metrics={"accuracy": float(accuracy)},
         )
+
+
+def client_fn(cid) -> FlowerClient:
+    model = util.load_model()
+    trainset, testset = util.load_data()
+    return FlowerClient(cid, model, trainset, testset)
+        
