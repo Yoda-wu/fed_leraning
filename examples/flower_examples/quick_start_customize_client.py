@@ -30,7 +30,7 @@ class FlowerNumPyClient(fl.client.NumPyClient):
     def evaluate(self, parameters, config):
         print(f"[Client {self.cid}] evaluate, config: {config}")
         util.set_parameters(self.net, parameters)
-        loss, accuracy = test(self.net, self.valloader)
+        loss, accuracy = util.test(self.net, self.valloader)
         return float(loss), len(self.valloader), {"accuracy": float(accuracy)}
 
 
@@ -244,7 +244,7 @@ class FlowerClient(fl.client.Client):
 
     def fit(self, ins: FitIns) -> FitRes:
         print(f"[Client {self.cid}] fit, config: {ins.config}")
-
+        
         # Deserialize parameters to NumPy ndarray's using our custom function
         parameters_original = ins.parameters
         ndarrays_original = sparse_parameters_to_ndarrays(parameters_original)
