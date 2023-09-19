@@ -1,6 +1,6 @@
 from collections import OrderedDict
 from typing import Dict, List, Optional, Tuple
-import flower.utils.util  as util
+import utils.util  as util
 import numpy as np
 import torch
 import torch.nn as nn
@@ -179,7 +179,7 @@ fl.simulation.start_simulation(
     num_clients=2,
     config=fl.server.ServerConfig(num_rounds=3),
     strategy=FedCustom(),  # <-- pass the new strategy here
-    client_resources=util.client_resources,
+    client_resources= None ,
 )
 
 
