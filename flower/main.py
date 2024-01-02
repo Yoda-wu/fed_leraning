@@ -4,41 +4,49 @@ from utils.config_parser import Parser
 from strategy.fed_avg import FedAvgStrategy
 from flwr.server.strategy.strategy import Strategy
 from client.fedavg_client import gen_client_fn
+from client.fedavg_client_manager import FedAvgClientManager
+from dataset.mnist import prepare_dataset
 
 
+fl.common.logger.configure(identifier="myFlowerExperiment", filename="log.txt")
 
 if __name__ == '__main__':
     args = Parser().parse()
     config = Configuration(args)
-    strategy:Strategy=None
-    client_fn = gen_client_fn(config.model, config.device)
-    if config.participation_rate != 0:
+    trainloader, valloader, testloader = prepare_dataset(config.client_number, config.batch_size, val_ratio=0.3)
+    client_fn = gen_client_fn(trainloader, valloader, config.model, config.device)
+    strategy: Strategy = None
+    if config.frac_clients != 0:
         strategy = FedAvgStrategy(
-                fraction_fit         =           config.participation_rate,                          # Sample 100% of available clients for training
-                fraction_evaluate    =      config.participation_rate,                               # Sample 50% of available clients for evaluation
-                min_fit_clients      =        config.participation_rate * config.client_number,      # Never sample less than 10 clients for training
-                min_evaluate_clients =   config.participation_rate * config.client_number,           # Never sample less than 5 clients for evaluation
-                min_available_clients=  config.participation_rate * config.client_number,            # Wait until all 10 clients are available
+            fraction_fit=config.frac_clients,  # Sample 100% of available clients for training
+            fraction_evaluate=config.frac_clients,  # Sample 50% of available clients for evaluation
+            min_fit_clients=config.frac_clients * config.client_number,
+            # Never sample less than 10 clients for training
+            min_evaluate_clients=config.frac_clients * config.client_number,
+            # Never sample less than 5 clients for evaluation
+            min_available_clients=config.frac_clients * config.client_number,
+            # Wait until all 10 clients are available
+            available_clients=config.frac_clients * config.client_number,
+
         )
     else:
-        rate = float(config.avaliable_clients) / float(config.client_number)
+        rate = float(config.available_clients) / float(config.client_number)
         strategy = FedAvgStrategy(
-                fraction_fit            =           rate,                          # Sample 100% of available clients for training
-                fraction_evaluate       =           rate,                          # Sample 50% of available clients for evaluation
-                min_fit_clients         =           config.avaliable_clients ,     # Never sample less than 10 clients for training
-                min_evaluate_clients    =           config.avaliable_clients ,     # Never sample less than 5 clients for evaluation
-                min_available_clients   =           config.avaliable_clients ,     # Wait until all 10 clients are available
-                available_clients       =           config.avaliable_clients,
+            fraction_fit=rate,  # Sample 100% of available clients for training
+            fraction_evaluate=rate,  # Sample 50% of available clients for evaluation
+            min_fit_clients=config.available_clients,  # Never sample less than 10 clients for training
+            min_evaluate_clients=config.available_clients,  # Never sample less than 5 clients for evaluation
+            min_available_clients=config.available_clients,  # Wait until all 10 clients are available
+            available_clients=config.available_clients,
         )
     fl.simulation.start_simulation(
         client_fn=client_fn,
         num_clients=config.client_number,
-        config=config.serverconfig,
+        config=config.server_config,
         strategy=strategy,
-        client_resources=None
+        client_resources=None,
+        client_manager=FedAvgClientManager
     )
-
-
 
 # import torch
 # import numpy as np

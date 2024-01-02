@@ -2,9 +2,9 @@ from typing import Dict, Tuple
 
 import flwr as fl
 from collections import OrderedDict
-
+from flwr.common.logger import log
 from flwr.common import NDArrays, Scalar
-
+from logging import INFO
 from flower.model.lenet5 import train, test
 
 import torch
@@ -24,7 +24,7 @@ class FedAvgClient(fl.client.NumPyClient):
             state_dict = OrderedDict({k: torch.Tensor(v) for k, v in param_dict})
             self.net.load_state_dict(state_dict)
         except Exception as e:
-            print(f"err occurs in set parameters {e}")
+            log(INFO, f"err occurs in set parameters {e}")
 
     def get_parameters(self, config):
         return [val.cpu.numpy() for _, val in self.net.state_dict().items()]
@@ -41,6 +41,7 @@ class FedAvgClient(fl.client.NumPyClient):
     ) -> Tuple[float, int, Dict[str, Scalar]]:
         self.set_parameters(parameters)
         loss, acc = test(self.net, self.valloader, self.device)
+        log(INFO, f"client-side evaluation loss {loss} / accuracy {acc}")
         return float(loss), len(self.valloader), {"acc": acc}
 
 

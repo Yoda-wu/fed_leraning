@@ -8,20 +8,27 @@ class Parser:
     def set_arguments(self):
         # GPU ID
         self.parser.add_argument('--gpu', type=str, help='gpu ids to use e.g. 0,1,2,...')
-        # 分布式半监督学习算法
+        # 联邦学习算法
         self.parser.add_argument('--algorithm', type=str,
                                  help='distributed semi-supervised learning algorithm i.e. my_dssl, gossip_fixmatch, gossip, gossip_uy_known_fixmatch')
-        # 连接拓扑
-        self.parser.add_argument('--topology', type=str,
-                                 help='devices connectting topology i.e. random, fc(fully connected), star, round, rt(random tree)')
-        # 任务类型
-        self.parser.add_argument('running_mode', type=str, help='running_mode i.e. generate or train')
+        # 客户端数目
+        self.parser.add_argument('--client-number', type=str,
+                                 help='client number i.e. total client')
+        # 运行轮次
+        self.parser.add_argument('--num-rounds', type=str, help='total training round')
         # 数据集选择
-        self.parser.add_argument('dataset', type=str, help='dataset i.e. mnist, fmnist (fashion mnist) or cifar10')
-        # 是否IID
-        self.parser.add_argument('dist', type=str, help='distribution i.e. iid, non_iid')
+        self.parser.add_argument('--dataset', type=str, help='dataset i.e. mnist, fmnist (fashion mnist) or cifar10')
+        # 模型选择
+        self.parser.add_argument('-model', type=str, help='model i.e. lenet5, resnet')
+        # 客户端选择算法
+        self.parser.add_argument('--client-selection', type=str, help='client selection algorithm i.e. random')
+        # 每轮参与训练的客户端比例
+        self.parser.add_argument('--frac-clients', type=float, help='fraction of clients per round')
         # 每轮客户端数量
-        # self.parser.add_argument('--frac-clients', type=float, help='fraction of clients per round')
+        self.parser.add_argument('--available-clients', type=float, help='clients per round')
+        # batch_size
+        self.parser.add_argument('--batch-size', type=str, help='initial batch size i.e. 16, 32, 64')
+
 
     def parse(self):
         args, unparsed = self.parser.parse_known_args()

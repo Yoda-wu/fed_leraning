@@ -11,11 +11,15 @@ def process_cmd(yaml_file):
     cmd = ""
     if yaml_conf['framework'] == 'flower':
         cmd = (f'python {current_path}/{yaml_conf["framework"]}/main.py --algorithm {yaml_conf["algorithm"]} '
-               f'--client_selection {yaml_conf["client_selection"]} '
-               f'--client_number {yaml_conf["client_number"]}'
+               f'--client-selection {yaml_conf["client_selection"]} '
+               f'--client-number {yaml_conf["client_number"]}'
                f'--device {yaml_conf["device"]}'
-               f'--batch_size {yaml_conf["batch_size"]}'
+               f'--batch-size {yaml_conf["batch_size"]}'
                f'--dataset {yaml_conf["dataset"]}'
+               f'--model {yaml_conf["model"]}'
+               f'--num-round {yaml_conf["num_round"]}'
+               f'--frac-clients {yaml_conf["frac-clients"]}'
+               f'--available-clients {yaml_conf["available_clients"]}'
                )
     # elif ....
 
