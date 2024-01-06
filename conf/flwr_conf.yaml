@@ -1,0 +1,13 @@
+server_address: 127.0.0.1:9000
+framework: flower
+algorithm: fedavg
+job_name: flwr_fedAvg_10
+client_selection: random
+client_number: 10
+gpu: 0
+batch_size: 32
+model: lenet5
+dataset: mnist
+num_round: 200
+frac-clients: 0.3
+available_clients: 0

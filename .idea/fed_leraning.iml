@@ -15,7 +15,7 @@
     <option name="namespacePackageFolders">
       <list>
         <option value="$MODULE_DIR$/examples" />
-        <option value="$MODULE_DIR$/fedml" />
+        <option value="$MODULE_DIR$/fml" />
         <option value="$MODULE_DIR$/flower" />
       </list>
     </option>

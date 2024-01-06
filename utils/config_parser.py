@@ -19,7 +19,7 @@ class Parser:
         # 数据集选择
         self.parser.add_argument('--dataset', type=str, help='dataset i.e. mnist, fmnist (fashion mnist) or cifar10')
         # 模型选择
-        self.parser.add_argument('-model', type=str, help='model i.e. lenet5, resnet')
+        self.parser.add_argument('--model', type=str, help='model i.e. lenet5, resnet')
         # 客户端选择算法
         self.parser.add_argument('--client-selection', type=str, help='client selection algorithm i.e. random')
         # 每轮参与训练的客户端比例
@@ -28,8 +28,8 @@ class Parser:
         self.parser.add_argument('--available-clients', type=float, help='clients per round')
         # batch_size
         self.parser.add_argument('--batch-size', type=str, help='initial batch size i.e. 16, 32, 64')
-
-
+        self.parser.add_argument('--server-address', type=str, help='server address ip:port')
+        self.parser.add_argument("--node-id", type=int, help='node id which is associate to client-number i.e client-number = 10 then node-id in [0,1,...,9]')
     def parse(self):
         args, unparsed = self.parser.parse_known_args()
         if len(unparsed) != 0:

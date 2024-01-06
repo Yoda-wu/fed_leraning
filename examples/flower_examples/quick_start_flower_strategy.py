@@ -130,11 +130,11 @@ class FlowerClient(fl.client.NumPyClient):
         return get_parameters(self.net)
 
     def fit(self, parameters, config):
-        # print(f"[Client {self.cid}] fit, config: {config}")
-        # read value from config
+        # print(f"[Client {self.cid}] fit, Config: {Config}")
+        # read value from Config
         server_round = config["server_round"]
         local_epochs = config["local_epochs"]
-        # use values provided by the config
+        # use values provided by the Config
 
         print(f"[client {self.cid},  round {server_round}] fit config :{config}")
         set_parameters(self.net, parameters)

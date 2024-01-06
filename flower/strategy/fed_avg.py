@@ -1,4 +1,7 @@
-import  numpy as np
+import numpy as np
+import flwr as fl
+import torch
+from collections import OrderedDict
 from functools import reduce
 from flwr.common.logger import log
 from logging import INFO
@@ -18,6 +21,10 @@ from flwr.common import (
     ndarrays_to_parameters,
     parameters_to_ndarrays,
 )
+import sys
+
+sys.path.append('..')
+from flower.model.lenet5 import test
 
 
 class FedAvgStrategy(Strategy):
@@ -28,18 +35,20 @@ class FedAvgStrategy(Strategy):
                  min_evaluate_clients: int = 2,
                  min_available_clients: int = 2,
                  available_clients: int = 2,
+                 model=None,
+                 valdata=None,
                  evaluate_fn: Optional[
                      Callable[
                          [int, NDArrays, Dict[str, Scalar]],
                          Optional[Tuple[float, Dict[str, Scalar]]],
                      ]
                  ] = None,
-                 initialize_parameters=None,
+                 initial_parameters: Optional[Parameters] = None,
                  on_fit_config_fn: Optional[Callable[[int], Dict[str, Scalar]]] = None,
                  on_evaluate_config_fn: Optional[Callable[[int], Dict[str, Scalar]]] = None,
                  ):
         super().__init__()
-        self.initialize_parameters = initialize_parameters
+        self.initial_parameters = initial_parameters
         self.fraction_fit = fraction_fit
         self.fraction_evaluate = fraction_evaluate
         self.available_clients = available_clients
@@ -50,15 +59,20 @@ class FedAvgStrategy(Strategy):
         self.on_fit_config_fn = on_fit_config_fn
         self.on_evaluate_config_fn = on_evaluate_config_fn
         self.client_dict = {}  # cid -> client
+        self.model = model
+        self.valdata = valdata
 
     def __repr__(self):
         rep = f"FedAvg_Custom"
         return rep
 
-    def initialize_parameters(self, client_manager: ClientManager) -> Optional[Parameters]:
-        initialize_parameters = self.initialize_parameters
-        self.initialize_parameters = None
-        return initialize_parameters
+    def initialize_parameters(
+            self, client_manager: ClientManager
+    ) -> Optional[Parameters]:
+        """Initialize global model parameters."""
+        initial_parameters = self.initial_parameters
+        self.initial_parameters = None  # Don't keep initial parameters in memory
+        return initial_parameters
 
     def configure_fit(self, server_round: int, parameters: Parameters, client_manager: ClientManager) -> List[
         Tuple[ClientProxy, FitIns]]:
@@ -72,15 +86,15 @@ class FedAvgStrategy(Strategy):
         fit_config = []
         initial_config = {'local_epoch': 2}
         standard_config = {'local_epoch': 1}
-        for client in clients :
+        for client in clients:
             if client.cid not in self.client_dict.keys():
                 self.client_dict[client.cid] = 1
             else:
-                self.client_dict[client.cid] =  self.client_dict[client.cid] + 1
+                self.client_dict[client.cid] = self.client_dict[client.cid] + 1
             if self.client_dict[client.cid] < 3:
-                fit_config.append((client, FitIns(parameters, initial_config )))
+                fit_config.append((client, FitIns(parameters, initial_config)))
             else:
-                fit_config.append((client, FitIns(parameters, standard_config )))
+                fit_config.append((client, FitIns(parameters, standard_config)))
 
         return fit_config
 
@@ -106,10 +120,10 @@ class FedAvgStrategy(Strategy):
         if self.fraction_evaluate == 0.0:
             return []
 
-        # Parameters and config
+        # Parameters and Config
         config = {}
         if self.on_evaluate_config_fn is not None:
-            # Custom evaluation config function provided
+            # Custom evaluation Config function provided
             config = self.on_evaluate_config_fn(server_round)
         evaluate_ins = EvaluateIns(parameters, config)
 
@@ -117,11 +131,12 @@ class FedAvgStrategy(Strategy):
         sample_size, min_num_clients = self.num_evaluation_clients(
             client_manager.num_available()
         )
+        log(INFO, f"sample_size {sample_size}")
         clients = client_manager.sample(
             num_clients=sample_size, min_num_clients=min_num_clients
         )
 
-        # Return client/config pairs
+        # Return client/Config pairs
         return [(client, evaluate_ins) for client in clients]
 
     def aggregate_evaluate(self, server_round: int, results: List[Tuple[ClientProxy, EvaluateRes]],
@@ -141,17 +156,17 @@ class FedAvgStrategy(Strategy):
 
         # Aggregate custom metrics if aggregation fn was provided
         metrics_aggregated = {}
-        accuracies = [r.metrics["accuracy"] * r.num_examples for _, r in results]
+        accuracies = [r.metrics["acc"] * r.num_examples for _, r in results]
         examples = [r.num_examples for _, r in results]
 
         # Aggregate and print custom metric
         aggregated_accuracy = sum(accuracies) / sum(examples)
         log(INFO, f"Round {server_round} accuracy aggregated from client results: {aggregated_accuracy}")
 
-        return loss_aggregated, {"acc":aggregated_accuracy}
-
+        return loss_aggregated, {"acc": aggregated_accuracy}
 
     def evaluate(self, server_round: int, parameters: Parameters) -> Optional[Tuple[float, Dict[str, Scalar]]]:
+
         if self.evaluate_fn is None:
             # No evaluation function provided
             return None
@@ -160,6 +175,7 @@ class FedAvgStrategy(Strategy):
         if eval_res is None:
             return None
         loss, metrics = eval_res
+        log(INFO, f"server-side evaluation loss {loss} / accuracy {metrics['accuracy']}")
         return loss, metrics
 
     def num_fit_clients(self, num_available_clients: int) -> Tuple[int, int]:
@@ -180,14 +196,13 @@ def aggregate_helper(results):
         [layer * num_examples for layer in weights] for weights, num_examples in results
     ]
     weights_prim = [
-        reduce(np.add , layer_updates) / num_examples_total for layer_updates in zip(*weighted_weights)
+        reduce(np.add, layer_updates) / num_examples_total for layer_updates in zip(*weighted_weights)
     ]
     return weights_prim
+
 
 def weighted_loss_avg(results: List[Tuple[int, float]]) -> float:
     """Aggregate evaluation results obtained from multiple clients."""
     num_total_evaluation_examples = sum([num_examples for num_examples, _ in results])
     weighted_losses = [num_examples * loss for num_examples, loss in results]
     return sum(weighted_losses) / num_total_evaluation_examples
-
-

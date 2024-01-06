@@ -2,3 +2,6 @@ data/*
 /data
 /dataset
 dataset/**
+log/*
+log/**
+log/

@@ -8,7 +8,8 @@ from logging import INFO
 
 
 class FedAvgClientManager(SimpleClientManager):
-
+    def __init__(self):
+        super().__init__()
     def sample(
             self,
             num_clients: int,
@@ -22,6 +23,7 @@ class FedAvgClientManager(SimpleClientManager):
         self.wait_for(min_num_clients)
         # Sample clients which meet the criterion
         available_cids = list(self.clients)
+
         if criterion is not None:
             available_cids = [
                 cid for cid in available_cids if criterion.select(self.clients[cid])
@@ -36,6 +38,6 @@ class FedAvgClientManager(SimpleClientManager):
                 num_clients,
             )
             return []
-
+        log(INFO, f"type cids {type(available_cids)} type num_clients {type(num_clients)}")
         sampled_cids = random.sample(available_cids, num_clients)
         return [self.clients[cid] for cid in sampled_cids]

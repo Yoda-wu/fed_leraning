@@ -1,24 +1,16 @@
-import networkx as nx
-from networkx.drawing.nx_agraph import write_dot, graphviz_layout
-import matplotlib.pyplot as plt
-import numpy as np
-G = nx.DiGraph()
+from utils.config_parser import load_yml_conf
+from prettytable import PrettyTable
+yml = load_yml_conf('./conf/fedml_conf.yaml')
+print(yml['common_args']['training_type'])
+config_table = PrettyTable()
+config_table.add_column('Configuration Key', list(yml.keys()))
+config_table.add_column('Configuration Value', list(yml.values()))
+config_table = str(config_table)
+config_list = config_table.split('\n')
+print('----------------------------CONFIGURATION----------------------------')
+for config_entry in config_list:
+    print(config_entry)
+print('----------------------------CONFIGURATION----------------------------')
 
-G.add_node("ROOT")
-
-for i in range(5):
-    G.add_node("Child_%i" % i)
-    G.add_node("Grandchild_%i" % i)
-    G.add_node("Greatgrandchild_%i" % i)
-
-    G.add_edge("ROOT", "Child_%i" % i)
-    G.add_edge("Child_%i" % i, "Grandchild_%i" % i)
-    G.add_edge("Grandchild_%i" % i, "Greatgrandchild_%i" % i)
-
-# write dot file to use with graphviz
-# run "dot -Tpng test.dot >test.png"
-topology_ring = np.array(
-            nx.to_numpy_matrix(G), dtype=np.float32
-        )
-
-print(topology_ring)
+import fml
+fml.init()

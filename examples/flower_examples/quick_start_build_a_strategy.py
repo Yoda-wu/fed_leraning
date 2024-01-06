@@ -93,7 +93,7 @@ class FedCustom(fl.server.strategy.Strategy):
         )
         clients = client_manager.sample(num_clients=sample_size, min_num_clients=min_num_clients)
 
-        # Create custom config
+        # Create custom Config
         n_clients = len(clients)
         half_client = n_clients // 2
         standard_config = {"lr": 0.001}
@@ -134,7 +134,7 @@ class FedCustom(fl.server.strategy.Strategy):
 
         sample_size, min_num_clients = self.num_evaluation_clients(client_manager.num_available())
         clients = client_manager.sample(num_clients=sample_size, min_num_clients=min_num_clients)
-        # return client/config paris
+        # return client/Config paris
         return [(client, evaluate_ins) for client in clients]
     
     def aggregate_evaluate(self, server_round: int, results: List[Tuple[ClientProxy, EvaluateRes]], failures: List[Tuple[ClientProxy, EvaluateRes] | BaseException]) -> Tuple[float | None, Dict[str, Scalar]]:
