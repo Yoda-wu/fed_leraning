@@ -5,8 +5,8 @@ import torch.nn as nn
 import copy
 from fedml.core.alg_frame.server_aggregator import ServerAggregator
 from fedml.core import Context
-from fedml.utils.logging import logger
-
+import logging
+from fedml.ml.engine import ml_engine_adapter
 class FedAvgAggregator(ServerAggregator):
     def __init__(self, model, args):
         super().__init__(model, args)
@@ -91,7 +91,7 @@ class FedAvgAggregator(ServerAggregator):
         test_acc = sum(test_tot_corrects) / sum(test_num_samples)
         test_loss = sum(test_losses) / sum(test_num_samples)
         stats = {"test_acc": test_acc, "test_loss": test_loss}
-        logger.info(stats)
+        logging.info(stats)
         return test_acc, test_loss, None, None
 
     def test_all(self, train_data_local_dict, test_data_local_dict, device, args) -> bool:
@@ -116,7 +116,7 @@ class FedAvgAggregator(ServerAggregator):
         train_loss = sum(train_losses) / sum(train_num_samples)
 
         stats = {"training_acc": train_acc, "training_loss": train_loss}
-        logger.info(stats)
+        logging.info(stats)
 
         return True
 class Aggregator:
@@ -151,27 +151,39 @@ class Aggregator:
         self.client_num = client_number
         self.device = device
         self.args.device = device
-        logger.info("self.device = {}".format(self.device))
+        logging.info("self.device = {}".format(self.device))
         self.model_dict = dict()
         self.sample_num_dict = dict()
         self.flag_client_model_uploaded_dict = dict()
         for idx in range(self.client_num):
             self.flag_client_model_uploaded_dict[idx] = False
 
-    def get_global_model_param(self):
+    def get_global_model_params(self):
         return self.aggregator.get_model_params()
 
-    def set_global_model_param(self, model_param):
+    def set_global_model_params(self, model_param):
         self.aggregator.set_model_params(model_param)
 
     def check_whether_all_receive(self):
-        logger.debug("client_num = {}".format(self.client_num))
+        logging.debug("client_num = {}".format(self.client_num))
         for idx in range(self.client_num):
             if not self.flag_client_model_uploaded_dict[idx]:
                 return False
         for idx in range(self.client_num):
             self.flag_client_model_uploaded_dict[idx] = False
         return True
+
+    def add_local_trained_result(self, index, model_params, sample_num):
+        logging.info("add_model. index = %d" % index)
+
+        # for dictionary model_params, we let the user level code to control the device
+        if type(model_params) is not dict:
+            model_params = ml_engine_adapter.model_params_to_device(self.args, model_params, self.device)
+
+        self.model_dict[index] = model_params
+        self.sample_num_dict[index] = sample_num
+        self.flag_client_model_uploaded_dict[index] = True
+
 
     def aggregate(self):
         start = time.time()
@@ -186,17 +198,30 @@ class Aggregator:
 
         averaged_param = self.aggregator.aggregate(model_list)
 
-        self.set_global_model_param(averaged_param)
+        self.set_global_model_params(averaged_param)
         end = time.time()
-        logger.info(f'aggregate time cost: {end - start}s')
+        logging.info(f'aggregate time cost: {end - start}s')
         return  averaged_param, model_list, model_list_index
 
+    def data_silo_selection(self, round_idx, client_num_in_total, client_num_per_round):
+        logging.info(
+            "client_num_in_total = %d, client_num_per_round = %d" % (client_num_in_total, client_num_per_round)
+        )
+        assert client_num_in_total >= client_num_per_round
+
+        if client_num_in_total == client_num_per_round:
+            return [i for i in range(client_num_per_round)]
+        else:
+            np.random.seed(round_idx)  # make sure for each comparison, we are selecting the same clients each round
+            data_silo_index_list = np.random.choice(range(client_num_in_total), client_num_per_round, replace=False)
+            return data_silo_index_list
     def client_selection(self, round_idx, client_id_list_in_total, client_num_per_round):
 
         if client_num_per_round == len(client_id_list_in_total):
             return client_id_list_in_total
         np.random.seed(round_idx)  # make sure for each comparison, we are selecting the same clients each round
         client_id_list_in_this_round = np.random.choice(client_id_list_in_total, client_num_per_round, replace=False)
+        logging.info(f"client_selection： {client_id_list_in_this_round}")
         return client_id_list_in_this_round
 
     def client_sampling(self, round_idx, client_num_in_total, client_num_per_round):
@@ -206,12 +231,12 @@ class Aggregator:
             num_clients = min(client_num_per_round, client_num_in_total)
             np.random.seed(round_idx)  # make sure for each comparison, we are selecting the same clients each round
             client_indexes = np.random.choice(range(client_num_in_total), num_clients, replace=False)
-        logger.info("client_indexes = %s" % str(client_indexes))
+        logging.info("client_indexes = %s" % str(client_indexes))
         return client_indexes
 
     def test_on_server(self, round_idx):
         if round_idx == self.args.comm_round - 1 :
-            logger.info(f"============== test on server for all client {round_idx} ==============")
+            logging.info(f"============== test on server for all client {round_idx} ==============")
             self.aggregator.test_all(
                 self.train_data_local_dict,
                 self.test_data_local_dict,
@@ -219,4 +244,4 @@ class Aggregator:
                 self.args
             )
             metrics = self.aggregator.test(self.test_global, self.device, self.args)
-            logger.log(f"test on server metrics is {metrics}")
+            logging.info(f"test on server metrics is {metrics}")

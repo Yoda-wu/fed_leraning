@@ -20,7 +20,7 @@ class FedAvgClientManager(FedMLCommManager):
         self.num_round = args.comm_round
         self.round_idx = 0
         self.rank = client_rank
-        self.client_real_ids = json.load(args.client_id_list)
+        self.client_real_ids = json.loads(args.client_id_list)
         logger.info(f"client_real_ids = {self.client_real_ids}")
         self.client_real_id = self.client_real_ids[0]
 
@@ -99,6 +99,8 @@ class FedAvgClientManager(FedMLCommManager):
         logger.info("handle_message_receive_model_from_server")
         model_params = msg_param.get(MyMessage.MSG_ARG_KEY_MODEL_PARAMS)
         client_index = msg_param.get(MyMessage.MSG_ARG_KEY_CLIENT_INDEX)
+        epoch = msg_param.get(MyMessage.MSG_ARG_KEY_CLIENT_EPOCH)
+        self.trainer.set_epoch(int(epoch))
         self.trainer.update_dataset(int(client_index))
         self.trainer.update_model(model_params)
         if self.round_idx < self.num_round:

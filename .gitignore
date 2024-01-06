@@ -5,3 +5,6 @@ dataset/**
 log/*
 log/**
 log/
+*/data
+**/data/*
+*/data/**

@@ -32,7 +32,7 @@ def process_cmd(yaml_file):
     # elif ....
 
 
-        with open(f"{log_path}/{job_name}_server_logging", "w") as f:
+        with open(f"{log_path}/{yaml_conf['framework']}/{job_name}_server_logging", "w") as f:
             server_process = subprocess.Popen(cmd, cwd=working_dir, stdout=f, stderr=f, shell=False)
             pid = server_process.pid
             print(f"federate learning  server_process  is running pid is {pid} RUN kill -9 {pid} to stop the job")
@@ -53,7 +53,7 @@ def process_cmd(yaml_file):
                           "--model",  f"{yaml_conf['model']}",
                           ]
 
-            with open(f"{log_path}/{job_name}_client_{node_id}_logging", "w") as f:
+            with open(f"{log_path}/{yaml_conf['framework']}/{job_name}_client_{node_id}_logging", "w") as f:
                 client_process = subprocess.Popen(worker_cmd, cwd=working_dir, stdout=f, stderr=f, shell=False)
                 pid = client_process.pid
                 print(f"federate learning  client_process  is running pid is {pid} RUN kill -9 {pid} to stop the job")
@@ -69,23 +69,27 @@ def process_cmd(yaml_file):
         # process.wait()
     elif yaml_conf['framework'] == 'fedml':
         cmd = ["python", "server.py", "--cf", "../../conf/fedml.yaml", "--rank", "0", "--role", "server"]
-        working_dir = os.path.abspath(os.path.join(current_path, f'{yaml_conf["framework"]}/server'))
-        with open(f"{log_path}/{job_name}_server_logging", "w") as f:
+        working_dir = os.path.abspath(os.path.join(current_path, 'fml/server'))
+        print(f'server working dir is {working_dir}')
+        with open(f"{log_path}/{yaml_conf['framework']}/{job_name}_server_logging", "w") as f:
             server_process = subprocess.Popen(cmd, cwd=working_dir, stdout=f, stderr=f, shell=False)
             pid = server_process.pid
             print(f"federate learning  server_process  is running pid is {pid} RUN kill -9 {pid} to stop the job")
+        print('wait for the server to launch, then will launch clients.....')
+        time.sleep(30)
         rank = 1
-        working_dir = os.path.abspath(os.path.join(current_path, f'{yaml_conf["framework"]}/client'))
-
-        for _ in range(yaml_conf['client_number']):
+        working_dir = os.path.abspath(os.path.join(current_path, 'fml/client'))
+        print(f'client working dir is {working_dir}')
+        for _ in range(yaml_conf['worker_number']):
             worker_cmd = ["python", "client.py", "--cf", "../../conf/fedml.yaml", "--rank", f"{rank}", "--role", "client"]
-            with open(f"{log_path}/{job_name}_server_logging", "w") as f:
-                client_process = subprocess.Popen(cmd, cwd=working_dir, stdout=f, stderr=f, shell=False)
-                pid = server_process.pid
+            with open(f"{log_path}/{yaml_conf['framework']}/{job_name}_worker_{rank}_logging", "w") as f:
+                client_process = subprocess.Popen(worker_cmd, cwd=working_dir, stdout=f, stderr=f, shell=False)
+                pid = client_process.pid
                 print(f"federate learning  client_process  is running pid is {pid} RUN kill -9 {pid} to stop the job")
+            time.sleep(10)
             rank += 1
 
-    print(f"{job_name} is running, please check your logs {log_path}/{job_name}_server/client_logging")
+    print(f"{job_name} is running, please check your logs {log_path}/{yaml_conf['framework']}/{job_name}_server/client_logging")
     print("finish start a job. hope everything is good")
 
 def plot_res(job_name):

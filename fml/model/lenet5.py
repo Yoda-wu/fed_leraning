@@ -1,3 +1,4 @@
+import torch
 import torch.nn as nn
 
 class LeNet5(nn.Module):
@@ -23,6 +24,9 @@ class LeNet5(nn.Module):
         self.relu1 = nn.ReLU()
         self.fc2 = nn.Linear(84, num_classes)
     def forward(self, x):
+        # print(x.shape)
+        x = torch.unsqueeze(x, 1)
+        # x = x.view(19, 1, 28, 28)
         out = self.layer1(x)
         out = self.layer2(out)
         out = out.reshape(out.size(0), -1)

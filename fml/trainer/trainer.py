@@ -3,19 +3,13 @@ import torch
 import torch.nn as nn
 from fedml.ml.engine import ml_engine_adapter
 from fedml.ml.trainer.trainer_creator import create_model_trainer
-from fedml.utils.logging import logger
+import logging
 from fedml.core.alg_frame.client_trainer import ClientTrainer
 
 
 class FedAvgModelTrainer(ClientTrainer):
-    def __init__(self, model, args):
-        super().__init__(model, args)
-        self.cpu_transfer = False if not hasattr(self.args, "cpu_transfer") else self.args.cpu_transfer
-
     def get_model_params(self):
-        if self.cpu_transfer:
-            return self.model.cpu().state_dict()
-        return self.model.state_dict()
+        return self.model.cpu().state_dict()
 
     def set_model_params(self, model_parameters):
         self.model.load_state_dict(model_parameters)
@@ -54,7 +48,7 @@ class FedAvgModelTrainer(ClientTrainer):
                 epoch_loss.append(0.0)
             else:
                 epoch_loss.append(sum(batch_loss) / len(batch_loss))
-            logger.info(
+            logging.info(
                 "Client Index = {}\tEpoch: {}\tLoss: {:.6f}".format(
                     self.id, epoch, sum(epoch_loss) / len(epoch_loss)
                 )
@@ -101,7 +95,7 @@ class FedAvgModelTrainer(ClientTrainer):
                     break
             current_epoch += 1
             epoch_loss.append(sum(batch_loss) / len(batch_loss))
-            logger.info(
+            logging.info(
                 "Client Index = {}\tEpoch: {}\tLoss: {:.6f}".format(
                     self.id, current_epoch, sum(epoch_loss) / len(epoch_loss)
                 )
@@ -162,18 +156,22 @@ class Trainer:
         self.train_data_local_dict = train_data_local_dict
         self.test_data_local_dict = test_data_local_dict
 
+    def set_epoch(self, epoch):
+        self.args.epochs = epoch
+
     def train(self, round_idx):
         self.args.round_idx = round_idx
+
         tick = time.time()
         self.model_trainer.train(self.train_local, self.device, self.args)
-        logger.info(f'[client-{self.client_rank}] finish train, cost time: {time.time() - tick} s')
+        logging.info(f'[client-{self.client_rank}] finish train, cost time: {time.time() - tick} s')
         weights = self.model_trainer.get_model_params()
         return weights, self.local_sample_number
 
     def test(self, round_idx):
         self.args.round_idx = round_idx
         metrics = self.model_trainer.test(self.test_local, self.device, self.args)
-        logger.info(
+        logging.info(
             f"[client-{self.client_rank}] finish test, loss : {metrics['test_loss']} and acc : {float(metrics['test_correct']) / float(metrics['test_total'])}")
         return metrics
 
