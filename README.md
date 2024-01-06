@@ -57,6 +57,11 @@ python driver.py start ./conf/fedml_conf.yaml
 
 #### 运行结果
 
+<p align="center">
+<img src="./img/fedml_server_log.png" alt="fedml服务端运行日志" width="80%" height="auto">
+</p>
+<p></p>
+
 如果是方式二的运行结果，可以在`log/fedml` 下查看server和client的日志。
 
 TODO： 给出server端测试集上的精度图
