@@ -15,9 +15,10 @@
 # import fml
 # fml.init()
 
+class A:
+    def __init__(self):
+        self.a = 0
+A = A()
 
-config = {}
-round = 1
-for id in range(0, 10):
-    config[str(id)]['round'] = round
-print(config)
+A.a = 1
+print(A.a)

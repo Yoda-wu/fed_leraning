@@ -1,0 +1,800 @@
+{'Role': 'client #3', 'Round': 0, 'Results_raw': {'train_correct': 4.0, 'train_total': 20, 'train_acc': 0.2, 'train_loss': 45.21545648574829, 'train_avg_loss': 2.2607728242874146}}
+{'Role': 'Client #3', 'Round': 0, 'Results_raw': {'test_correct': 945.0, 'test_total': 2845, 'test_acc': 0.3321616871704745, 'test_loss': 6476.931985616684, 'test_avg_loss': 2.276601752413597}}
+{'Role': 'Client #3', 'Round': 0, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 0, 'Results_raw': {'test_correct': 945.0, 'test_total': 2845, 'test_acc': 0.3321616871704745, 'test_loss': 6476.931985616684, 'test_avg_loss': 2.276601752413597}}
+{'Role': 'client #3', 'Round': 1, 'Results_raw': {'train_correct': 2.0, 'train_total': 20, 'train_acc': 0.1, 'train_loss': 45.75004816055298, 'train_avg_loss': 2.287502408027649}}
+{'Role': 'Client #3', 'Round': 1, 'Results_raw': {'test_correct': 861.0, 'test_total': 2845, 'test_acc': 0.30263620386643236, 'test_loss': 6472.638666629791, 'test_avg_loss': 2.2750926771985207}}
+{'Role': 'Client #3', 'Round': 1, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 1, 'Results_raw': {'test_correct': 861.0, 'test_total': 2845, 'test_acc': 0.30263620386643236, 'test_loss': 6472.638666629791, 'test_avg_loss': 2.2750926771985207}}
+{'Role': 'client #3', 'Round': 2, 'Results_raw': {'train_correct': 2.0, 'train_total': 10, 'train_acc': 0.2, 'train_loss': 22.631115913391113, 'train_avg_loss': 2.2631115913391113}}
+{'Role': 'Client #3', 'Round': 2, 'Results_raw': {'test_correct': 914.0, 'test_total': 2845, 'test_acc': 0.32126537785588755, 'test_loss': 6462.579605579376, 'test_avg_loss': 2.2715569791140164}}
+{'Role': 'Client #3', 'Round': 2, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 2, 'Results_raw': {'test_correct': 914.0, 'test_total': 2845, 'test_acc': 0.32126537785588755, 'test_loss': 6462.579605579376, 'test_avg_loss': 2.2715569791140164}}
+{'Role': 'client #3', 'Round': 3, 'Results_raw': {'train_correct': 1.0, 'train_total': 10, 'train_acc': 0.1, 'train_loss': 22.54572629928589, 'train_avg_loss': 2.254572629928589}}
+{'Role': 'Client #3', 'Round': 3, 'Results_raw': {'test_correct': 924.0, 'test_total': 2845, 'test_acc': 0.32478031634446397, 'test_loss': 6453.687595129013, 'test_avg_loss': 2.268431492136736}}
+{'Role': 'Client #3', 'Round': 3, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 3, 'Results_raw': {'test_correct': 924.0, 'test_total': 2845, 'test_acc': 0.32478031634446397, 'test_loss': 6453.687595129013, 'test_avg_loss': 2.268431492136736}}
+{'Role': 'client #3', 'Round': 4, 'Results_raw': {'train_correct': 0.0, 'train_total': 10, 'train_acc': 0.0, 'train_loss': 22.805814743041992, 'train_avg_loss': 2.280581474304199}}
+{'Role': 'Client #3', 'Round': 4, 'Results_raw': {'test_correct': 860.0, 'test_total': 2845, 'test_acc': 0.3022847100175747, 'test_loss': 6453.990556001663, 'test_avg_loss': 2.2685379810199167}}
+{'Role': 'Client #3', 'Round': 4, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 4, 'Results_raw': {'test_correct': 860.0, 'test_total': 2845, 'test_acc': 0.3022847100175747, 'test_loss': 6453.990556001663, 'test_avg_loss': 2.2685379810199167}}
+{'Role': 'client #3', 'Round': 5, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 22.255961894989014, 'train_avg_loss': 2.2255961894989014}}
+{'Role': 'Client #3', 'Round': 5, 'Results_raw': {'test_correct': 894.0, 'test_total': 2845, 'test_acc': 0.31423550087873464, 'test_loss': 6445.292580127716, 'test_avg_loss': 2.265480696002712}}
+{'Role': 'Client #3', 'Round': 5, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 5, 'Results_raw': {'test_correct': 894.0, 'test_total': 2845, 'test_acc': 0.31423550087873464, 'test_loss': 6445.292580127716, 'test_avg_loss': 2.265480696002712}}
+{'Role': 'client #3', 'Round': 6, 'Results_raw': {'train_correct': 0.0, 'train_total': 10, 'train_acc': 0.0, 'train_loss': 22.627339363098145, 'train_avg_loss': 2.2627339363098145}}
+{'Role': 'Client #3', 'Round': 6, 'Results_raw': {'test_correct': 855.0, 'test_total': 2845, 'test_acc': 0.30052724077328646, 'test_loss': 6441.751358509064, 'test_avg_loss': 2.264235978386314}}
+{'Role': 'Client #3', 'Round': 6, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 6, 'Results_raw': {'test_correct': 855.0, 'test_total': 2845, 'test_acc': 0.30052724077328646, 'test_loss': 6441.751358509064, 'test_avg_loss': 2.264235978386314}}
+{'Role': 'client #3', 'Round': 7, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 22.26512908935547, 'train_avg_loss': 2.226512908935547}}
+{'Role': 'Client #3', 'Round': 7, 'Results_raw': {'test_correct': 836.0, 'test_total': 2845, 'test_acc': 0.2938488576449912, 'test_loss': 6437.873387336731, 'test_avg_loss': 2.262872895373192}}
+{'Role': 'Client #3', 'Round': 7, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 7, 'Results_raw': {'test_correct': 836.0, 'test_total': 2845, 'test_acc': 0.2938488576449912, 'test_loss': 6437.873387336731, 'test_avg_loss': 2.262872895373192}}
+{'Role': 'client #3', 'Round': 8, 'Results_raw': {'train_correct': 2.0, 'train_total': 10, 'train_acc': 0.2, 'train_loss': 22.570621967315674, 'train_avg_loss': 2.2570621967315674}}
+{'Role': 'Client #3', 'Round': 8, 'Results_raw': {'test_correct': 810.0, 'test_total': 2845, 'test_acc': 0.28471001757469244, 'test_loss': 6433.606251478195, 'test_avg_loss': 2.261373023366677}}
+{'Role': 'Client #3', 'Round': 8, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 8, 'Results_raw': {'test_correct': 810.0, 'test_total': 2845, 'test_acc': 0.28471001757469244, 'test_loss': 6433.606251478195, 'test_avg_loss': 2.261373023366677}}
+{'Role': 'client #3', 'Round': 9, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 22.47694969177246, 'train_avg_loss': 2.247694969177246}}
+{'Role': 'Client #3', 'Round': 9, 'Results_raw': {'test_correct': 840.0, 'test_total': 2845, 'test_acc': 0.29525483304042177, 'test_loss': 6423.143675327301, 'test_avg_loss': 2.2576954922064325}}
+{'Role': 'Client #3', 'Round': 9, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 9, 'Results_raw': {'test_correct': 840.0, 'test_total': 2845, 'test_acc': 0.29525483304042177, 'test_loss': 6423.143675327301, 'test_avg_loss': 2.2576954922064325}}
+{'Role': 'client #3', 'Round': 10, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 22.848236560821533, 'train_avg_loss': 2.2848236560821533}}
+{'Role': 'Client #3', 'Round': 10, 'Results_raw': {'test_correct': 858.0, 'test_total': 2845, 'test_acc': 0.3015817223198594, 'test_loss': 6419.944097995758, 'test_avg_loss': 2.256570860455451}}
+{'Role': 'Client #3', 'Round': 10, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 10, 'Results_raw': {'test_correct': 858.0, 'test_total': 2845, 'test_acc': 0.3015817223198594, 'test_loss': 6419.944097995758, 'test_avg_loss': 2.256570860455451}}
+{'Role': 'client #3', 'Round': 11, 'Results_raw': {'train_correct': 2.0, 'train_total': 10, 'train_acc': 0.2, 'train_loss': 22.464053630828857, 'train_avg_loss': 2.2464053630828857}}
+{'Role': 'Client #3', 'Round': 11, 'Results_raw': {'test_correct': 871.0, 'test_total': 2845, 'test_acc': 0.3061511423550088, 'test_loss': 6410.438237190247, 'test_avg_loss': 2.2532296088542165}}
+{'Role': 'Client #3', 'Round': 11, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 11, 'Results_raw': {'test_correct': 871.0, 'test_total': 2845, 'test_acc': 0.3061511423550088, 'test_loss': 6410.438237190247, 'test_avg_loss': 2.2532296088542165}}
+{'Role': 'client #3', 'Round': 12, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 22.056288719177246, 'train_avg_loss': 2.2056288719177246}}
+{'Role': 'Client #3', 'Round': 12, 'Results_raw': {'test_correct': 894.0, 'test_total': 2845, 'test_acc': 0.31423550087873464, 'test_loss': 6401.719374656677, 'test_avg_loss': 2.2501649823046317}}
+{'Role': 'Client #3', 'Round': 12, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 12, 'Results_raw': {'test_correct': 894.0, 'test_total': 2845, 'test_acc': 0.31423550087873464, 'test_loss': 6401.719374656677, 'test_avg_loss': 2.2501649823046317}}
+{'Role': 'client #3', 'Round': 13, 'Results_raw': {'train_correct': 1.0, 'train_total': 10, 'train_acc': 0.1, 'train_loss': 22.31860637664795, 'train_avg_loss': 2.231860637664795}}
+{'Role': 'Client #3', 'Round': 13, 'Results_raw': {'test_correct': 875.0, 'test_total': 2845, 'test_acc': 0.30755711775043937, 'test_loss': 6397.427787780762, 'test_avg_loss': 2.248656515915909}}
+{'Role': 'Client #3', 'Round': 13, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 13, 'Results_raw': {'test_correct': 875.0, 'test_total': 2845, 'test_acc': 0.30755711775043937, 'test_loss': 6397.427787780762, 'test_avg_loss': 2.248656515915909}}
+{'Role': 'client #3', 'Round': 14, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 22.11214542388916, 'train_avg_loss': 2.211214542388916}}
+{'Role': 'Client #3', 'Round': 14, 'Results_raw': {'test_correct': 901.0, 'test_total': 2845, 'test_acc': 0.3166959578207381, 'test_loss': 6388.200322389603, 'test_avg_loss': 2.24541311859037}}
+{'Role': 'Client #3', 'Round': 14, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 14, 'Results_raw': {'test_correct': 901.0, 'test_total': 2845, 'test_acc': 0.3166959578207381, 'test_loss': 6388.200322389603, 'test_avg_loss': 2.24541311859037}}
+{'Role': 'client #3', 'Round': 15, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 22.504725456237793, 'train_avg_loss': 2.2504725456237793}}
+{'Role': 'Client #3', 'Round': 15, 'Results_raw': {'test_correct': 879.0, 'test_total': 2845, 'test_acc': 0.30896309314586995, 'test_loss': 6385.106956958771, 'test_avg_loss': 2.2443258196691636}}
+{'Role': 'Client #3', 'Round': 15, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 15, 'Results_raw': {'test_correct': 879.0, 'test_total': 2845, 'test_acc': 0.30896309314586995, 'test_loss': 6385.106956958771, 'test_avg_loss': 2.2443258196691636}}
+{'Role': 'client #3', 'Round': 16, 'Results_raw': {'train_correct': 1.0, 'train_total': 10, 'train_acc': 0.1, 'train_loss': 22.7833890914917, 'train_avg_loss': 2.27833890914917}}
+{'Role': 'Client #3', 'Round': 16, 'Results_raw': {'test_correct': 874.0, 'test_total': 2845, 'test_acc': 0.30720562390158174, 'test_loss': 6382.961074113846, 'test_avg_loss': 2.2435715550488036}}
+{'Role': 'Client #3', 'Round': 16, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 16, 'Results_raw': {'test_correct': 874.0, 'test_total': 2845, 'test_acc': 0.30720562390158174, 'test_loss': 6382.961074113846, 'test_avg_loss': 2.2435715550488036}}
+{'Role': 'client #3', 'Round': 17, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 22.455525398254395, 'train_avg_loss': 2.2455525398254395}}
+{'Role': 'Client #3', 'Round': 17, 'Results_raw': {'test_correct': 881.0, 'test_total': 2845, 'test_acc': 0.3096660808435852, 'test_loss': 6374.798910617828, 'test_avg_loss': 2.240702604786583}}
+{'Role': 'Client #3', 'Round': 17, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 17, 'Results_raw': {'test_correct': 881.0, 'test_total': 2845, 'test_acc': 0.3096660808435852, 'test_loss': 6374.798910617828, 'test_avg_loss': 2.240702604786583}}
+{'Role': 'client #3', 'Round': 18, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 22.09635019302368, 'train_avg_loss': 2.209635019302368}}
+{'Role': 'Client #3', 'Round': 18, 'Results_raw': {'test_correct': 893.0, 'test_total': 2845, 'test_acc': 0.31388400702987695, 'test_loss': 6368.978686332703, 'test_avg_loss': 2.2386568317513893}}
+{'Role': 'Client #3', 'Round': 18, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 18, 'Results_raw': {'test_correct': 893.0, 'test_total': 2845, 'test_acc': 0.31388400702987695, 'test_loss': 6368.978686332703, 'test_avg_loss': 2.2386568317513893}}
+{'Role': 'client #3', 'Round': 19, 'Results_raw': {'train_correct': 2.0, 'train_total': 10, 'train_acc': 0.2, 'train_loss': 22.385971546173096, 'train_avg_loss': 2.2385971546173096}}
+{'Role': 'Client #3', 'Round': 19, 'Results_raw': {'test_correct': 951.0, 'test_total': 2845, 'test_acc': 0.3342706502636204, 'test_loss': 6350.422444343567, 'test_avg_loss': 2.232134426834294}}
+{'Role': 'Client #3', 'Round': 19, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 19, 'Results_raw': {'test_correct': 951.0, 'test_total': 2845, 'test_acc': 0.3342706502636204, 'test_loss': 6350.422444343567, 'test_avg_loss': 2.232134426834294}}
+{'Role': 'client #3', 'Round': 20, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 21.51907444000244, 'train_avg_loss': 2.151907444000244}}
+{'Role': 'Client #3', 'Round': 20, 'Results_raw': {'test_correct': 982.0, 'test_total': 2845, 'test_acc': 0.34516695957820737, 'test_loss': 6339.439727067947, 'test_avg_loss': 2.2282740692681715}}
+{'Role': 'Client #3', 'Round': 20, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 20, 'Results_raw': {'test_correct': 982.0, 'test_total': 2845, 'test_acc': 0.34516695957820737, 'test_loss': 6339.439727067947, 'test_avg_loss': 2.2282740692681715}}
+{'Role': 'client #3', 'Round': 21, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 22.18597650527954, 'train_avg_loss': 2.218597650527954}}
+{'Role': 'Client #3', 'Round': 21, 'Results_raw': {'test_correct': 1022.0, 'test_total': 2845, 'test_acc': 0.3592267135325132, 'test_loss': 6325.39852142334, 'test_avg_loss': 2.2233386718535466}}
+{'Role': 'Client #3', 'Round': 21, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 21, 'Results_raw': {'test_correct': 1022.0, 'test_total': 2845, 'test_acc': 0.3592267135325132, 'test_loss': 6325.39852142334, 'test_avg_loss': 2.2233386718535466}}
+{'Role': 'client #3', 'Round': 22, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 22.10627555847168, 'train_avg_loss': 2.210627555847168}}
+{'Role': 'Client #3', 'Round': 22, 'Results_raw': {'test_correct': 1049.0, 'test_total': 2845, 'test_acc': 0.3687170474516696, 'test_loss': 6317.8166580200195, 'test_avg_loss': 2.2206736935044007}}
+{'Role': 'Client #3', 'Round': 22, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 22, 'Results_raw': {'test_correct': 1049.0, 'test_total': 2845, 'test_acc': 0.3687170474516696, 'test_loss': 6317.8166580200195, 'test_avg_loss': 2.2206736935044007}}
+{'Role': 'client #3', 'Round': 23, 'Results_raw': {'train_correct': 1.0, 'train_total': 10, 'train_acc': 0.1, 'train_loss': 22.543675899505615, 'train_avg_loss': 2.2543675899505615}}
+{'Role': 'Client #3', 'Round': 23, 'Results_raw': {'test_correct': 1067.0, 'test_total': 2845, 'test_acc': 0.3750439367311072, 'test_loss': 6316.531866788864, 'test_avg_loss': 2.220222097289583}}
+{'Role': 'Client #3', 'Round': 23, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 23, 'Results_raw': {'test_correct': 1067.0, 'test_total': 2845, 'test_acc': 0.3750439367311072, 'test_loss': 6316.531866788864, 'test_avg_loss': 2.220222097289583}}
+{'Role': 'client #3', 'Round': 24, 'Results_raw': {'train_correct': 2.0, 'train_total': 10, 'train_acc': 0.2, 'train_loss': 22.591655254364014, 'train_avg_loss': 2.2591655254364014}}
+{'Role': 'Client #3', 'Round': 24, 'Results_raw': {'test_correct': 1111.0, 'test_total': 2845, 'test_acc': 0.3905096660808436, 'test_loss': 6309.22411441803, 'test_avg_loss': 2.21765346728226}}
+{'Role': 'Client #3', 'Round': 24, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 24, 'Results_raw': {'test_correct': 1111.0, 'test_total': 2845, 'test_acc': 0.3905096660808436, 'test_loss': 6309.22411441803, 'test_avg_loss': 2.21765346728226}}
+{'Role': 'client #3', 'Round': 25, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 21.910033226013184, 'train_avg_loss': 2.1910033226013184}}
+{'Role': 'Client #3', 'Round': 25, 'Results_raw': {'test_correct': 1138.0, 'test_total': 2845, 'test_acc': 0.4, 'test_loss': 6301.3599264621735, 'test_avg_loss': 2.214889253589516}}
+{'Role': 'Client #3', 'Round': 25, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 25, 'Results_raw': {'test_correct': 1138.0, 'test_total': 2845, 'test_acc': 0.4, 'test_loss': 6301.3599264621735, 'test_avg_loss': 2.214889253589516}}
+{'Role': 'client #3', 'Round': 26, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 22.101492881774902, 'train_avg_loss': 2.2101492881774902}}
+{'Role': 'Client #3', 'Round': 26, 'Results_raw': {'test_correct': 1171.0, 'test_total': 2845, 'test_acc': 0.4115992970123023, 'test_loss': 6292.952343225479, 'test_avg_loss': 2.2119340397980594}}
+{'Role': 'Client #3', 'Round': 26, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 26, 'Results_raw': {'test_correct': 1171.0, 'test_total': 2845, 'test_acc': 0.4115992970123023, 'test_loss': 6292.952343225479, 'test_avg_loss': 2.2119340397980594}}
+{'Role': 'client #3', 'Round': 27, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.71677827835083, 'train_avg_loss': 2.171677827835083}}
+{'Role': 'Client #3', 'Round': 27, 'Results_raw': {'test_correct': 1151.0, 'test_total': 2845, 'test_acc': 0.4045694200351494, 'test_loss': 6283.906242847443, 'test_avg_loss': 2.208754391159031}}
+{'Role': 'Client #3', 'Round': 27, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 27, 'Results_raw': {'test_correct': 1151.0, 'test_total': 2845, 'test_acc': 0.4045694200351494, 'test_loss': 6283.906242847443, 'test_avg_loss': 2.208754391159031}}
+{'Role': 'client #3', 'Round': 28, 'Results_raw': {'train_correct': 2.0, 'train_total': 10, 'train_acc': 0.2, 'train_loss': 22.396786212921143, 'train_avg_loss': 2.2396786212921143}}
+{'Role': 'Client #3', 'Round': 28, 'Results_raw': {'test_correct': 1198.0, 'test_total': 2845, 'test_acc': 0.4210896309314587, 'test_loss': 6275.563412904739, 'test_avg_loss': 2.205821937752105}}
+{'Role': 'Client #3', 'Round': 28, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 28, 'Results_raw': {'test_correct': 1198.0, 'test_total': 2845, 'test_acc': 0.4210896309314587, 'test_loss': 6275.563412904739, 'test_avg_loss': 2.205821937752105}}
+{'Role': 'client #3', 'Round': 29, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 21.540613174438477, 'train_avg_loss': 2.1540613174438477}}
+{'Role': 'Client #3', 'Round': 29, 'Results_raw': {'test_correct': 1209.0, 'test_total': 2845, 'test_acc': 0.4249560632688928, 'test_loss': 6267.232520580292, 'test_avg_loss': 2.2028936803445665}}
+{'Role': 'Client #3', 'Round': 29, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 29, 'Results_raw': {'test_correct': 1209.0, 'test_total': 2845, 'test_acc': 0.4249560632688928, 'test_loss': 6267.232520580292, 'test_avg_loss': 2.2028936803445665}}
+{'Role': 'client #3', 'Round': 30, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 22.239012718200684, 'train_avg_loss': 2.2239012718200684}}
+{'Role': 'Client #3', 'Round': 30, 'Results_raw': {'test_correct': 1261.0, 'test_total': 2845, 'test_acc': 0.44323374340949034, 'test_loss': 6261.0948276519775, 'test_avg_loss': 2.200736319034087}}
+{'Role': 'Client #3', 'Round': 30, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 30, 'Results_raw': {'test_correct': 1261.0, 'test_total': 2845, 'test_acc': 0.44323374340949034, 'test_loss': 6261.0948276519775, 'test_avg_loss': 2.200736319034087}}
+{'Role': 'client #3', 'Round': 31, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 21.99124574661255, 'train_avg_loss': 2.199124574661255}}
+{'Role': 'Client #3', 'Round': 31, 'Results_raw': {'test_correct': 1285.0, 'test_total': 2845, 'test_acc': 0.45166959578207383, 'test_loss': 6254.483424425125, 'test_avg_loss': 2.1984124514675307}}
+{'Role': 'Client #3', 'Round': 31, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 31, 'Results_raw': {'test_correct': 1285.0, 'test_total': 2845, 'test_acc': 0.45166959578207383, 'test_loss': 6254.483424425125, 'test_avg_loss': 2.1984124514675307}}
+{'Role': 'client #3', 'Round': 32, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 21.860365867614746, 'train_avg_loss': 2.1860365867614746}}
+{'Role': 'Client #3', 'Round': 32, 'Results_raw': {'test_correct': 1308.0, 'test_total': 2845, 'test_acc': 0.45975395430579963, 'test_loss': 6243.863220214844, 'test_avg_loss': 2.194679515014005}}
+{'Role': 'Client #3', 'Round': 32, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 32, 'Results_raw': {'test_correct': 1308.0, 'test_total': 2845, 'test_acc': 0.45975395430579963, 'test_loss': 6243.863220214844, 'test_avg_loss': 2.194679515014005}}
+{'Role': 'client #3', 'Round': 33, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 22.49053955078125, 'train_avg_loss': 2.249053955078125}}
+{'Role': 'Client #3', 'Round': 33, 'Results_raw': {'test_correct': 1282.0, 'test_total': 2845, 'test_acc': 0.4506151142355009, 'test_loss': 6245.393431186676, 'test_avg_loss': 2.1952173747580583}}
+{'Role': 'Client #3', 'Round': 33, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 33, 'Results_raw': {'test_correct': 1282.0, 'test_total': 2845, 'test_acc': 0.4506151142355009, 'test_loss': 6245.393431186676, 'test_avg_loss': 2.1952173747580583}}
+{'Role': 'client #3', 'Round': 34, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 21.524605751037598, 'train_avg_loss': 2.1524605751037598}}
+{'Role': 'Client #3', 'Round': 34, 'Results_raw': {'test_correct': 1272.0, 'test_total': 2845, 'test_acc': 0.44710017574692446, 'test_loss': 6236.89092874527, 'test_avg_loss': 2.192228797450007}}
+{'Role': 'Client #3', 'Round': 34, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 34, 'Results_raw': {'test_correct': 1272.0, 'test_total': 2845, 'test_acc': 0.44710017574692446, 'test_loss': 6236.89092874527, 'test_avg_loss': 2.192228797450007}}
+{'Role': 'client #3', 'Round': 35, 'Results_raw': {'train_correct': 1.0, 'train_total': 10, 'train_acc': 0.1, 'train_loss': 22.236690521240234, 'train_avg_loss': 2.2236690521240234}}
+{'Role': 'Client #3', 'Round': 35, 'Results_raw': {'test_correct': 1344.0, 'test_total': 2845, 'test_acc': 0.47240773286467486, 'test_loss': 6230.897166728973, 'test_avg_loss': 2.190122026969762}}
+{'Role': 'Client #3', 'Round': 35, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 35, 'Results_raw': {'test_correct': 1344.0, 'test_total': 2845, 'test_acc': 0.47240773286467486, 'test_loss': 6230.897166728973, 'test_avg_loss': 2.190122026969762}}
+{'Role': 'client #3', 'Round': 36, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 21.756949424743652, 'train_avg_loss': 2.1756949424743652}}
+{'Role': 'Client #3', 'Round': 36, 'Results_raw': {'test_correct': 1347.0, 'test_total': 2845, 'test_acc': 0.4734622144112478, 'test_loss': 6219.800827503204, 'test_avg_loss': 2.1862217319870667}}
+{'Role': 'Client #3', 'Round': 36, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 36, 'Results_raw': {'test_correct': 1347.0, 'test_total': 2845, 'test_acc': 0.4734622144112478, 'test_loss': 6219.800827503204, 'test_avg_loss': 2.1862217319870667}}
+{'Role': 'client #3', 'Round': 37, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 21.517784595489502, 'train_avg_loss': 2.15177845954895}}
+{'Role': 'Client #3', 'Round': 37, 'Results_raw': {'test_correct': 1379.0, 'test_total': 2845, 'test_acc': 0.48471001757469245, 'test_loss': 6209.608174562454, 'test_avg_loss': 2.1826390771748523}}
+{'Role': 'Client #3', 'Round': 37, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 37, 'Results_raw': {'test_correct': 1379.0, 'test_total': 2845, 'test_acc': 0.48471001757469245, 'test_loss': 6209.608174562454, 'test_avg_loss': 2.1826390771748523}}
+{'Role': 'client #3', 'Round': 38, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.88192367553711, 'train_avg_loss': 2.188192367553711}}
+{'Role': 'Client #3', 'Round': 38, 'Results_raw': {'test_correct': 1437.0, 'test_total': 2845, 'test_acc': 0.5050966608084358, 'test_loss': 6208.100755214691, 'test_avg_loss': 2.1821092285464645}}
+{'Role': 'Client #3', 'Round': 38, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 38, 'Results_raw': {'test_correct': 1437.0, 'test_total': 2845, 'test_acc': 0.5050966608084358, 'test_loss': 6208.100755214691, 'test_avg_loss': 2.1821092285464645}}
+{'Role': 'client #3', 'Round': 39, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 21.80798053741455, 'train_avg_loss': 2.180798053741455}}
+{'Role': 'Client #3', 'Round': 39, 'Results_raw': {'test_correct': 1455.0, 'test_total': 2845, 'test_acc': 0.5114235500878734, 'test_loss': 6204.0870904922485, 'test_avg_loss': 2.1806984500851487}}
+{'Role': 'Client #3', 'Round': 39, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 39, 'Results_raw': {'test_correct': 1455.0, 'test_total': 2845, 'test_acc': 0.5114235500878734, 'test_loss': 6204.0870904922485, 'test_avg_loss': 2.1806984500851487}}
+{'Role': 'client #3', 'Round': 40, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 21.49714946746826, 'train_avg_loss': 2.149714946746826}}
+{'Role': 'Client #3', 'Round': 40, 'Results_raw': {'test_correct': 1450.0, 'test_total': 2845, 'test_acc': 0.5096660808435852, 'test_loss': 6194.065989255905, 'test_avg_loss': 2.1771760946417946}}
+{'Role': 'Client #3', 'Round': 40, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 40, 'Results_raw': {'test_correct': 1450.0, 'test_total': 2845, 'test_acc': 0.5096660808435852, 'test_loss': 6194.065989255905, 'test_avg_loss': 2.1771760946417946}}
+{'Role': 'client #3', 'Round': 41, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 21.389572620391846, 'train_avg_loss': 2.1389572620391846}}
+{'Role': 'Client #3', 'Round': 41, 'Results_raw': {'test_correct': 1454.0, 'test_total': 2845, 'test_acc': 0.5110720562390159, 'test_loss': 6183.043348789215, 'test_avg_loss': 2.1733017043195835}}
+{'Role': 'Client #3', 'Round': 41, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 41, 'Results_raw': {'test_correct': 1454.0, 'test_total': 2845, 'test_acc': 0.5110720562390159, 'test_loss': 6183.043348789215, 'test_avg_loss': 2.1733017043195835}}
+{'Role': 'client #3', 'Round': 42, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 21.487669944763184, 'train_avg_loss': 2.1487669944763184}}
+{'Role': 'Client #3', 'Round': 42, 'Results_raw': {'test_correct': 1505.0, 'test_total': 2845, 'test_acc': 0.5289982425307557, 'test_loss': 6175.728821754456, 'test_avg_loss': 2.1707306930595625}}
+{'Role': 'Client #3', 'Round': 42, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 42, 'Results_raw': {'test_correct': 1505.0, 'test_total': 2845, 'test_acc': 0.5289982425307557, 'test_loss': 6175.728821754456, 'test_avg_loss': 2.1707306930595625}}
+{'Role': 'client #3', 'Round': 43, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 21.437907218933105, 'train_avg_loss': 2.1437907218933105}}
+{'Role': 'Client #3', 'Round': 43, 'Results_raw': {'test_correct': 1499.0, 'test_total': 2845, 'test_acc': 0.5268892794376099, 'test_loss': 6167.506374120712, 'test_avg_loss': 2.1678405532937477}}
+{'Role': 'Client #3', 'Round': 43, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 43, 'Results_raw': {'test_correct': 1499.0, 'test_total': 2845, 'test_acc': 0.5268892794376099, 'test_loss': 6167.506374120712, 'test_avg_loss': 2.1678405532937477}}
+{'Role': 'client #3', 'Round': 44, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.724610328674316, 'train_avg_loss': 2.1724610328674316}}
+{'Role': 'Client #3', 'Round': 44, 'Results_raw': {'test_correct': 1513.0, 'test_total': 2845, 'test_acc': 0.5318101933216168, 'test_loss': 6162.018165588379, 'test_avg_loss': 2.1659114817533847}}
+{'Role': 'Client #3', 'Round': 44, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 44, 'Results_raw': {'test_correct': 1513.0, 'test_total': 2845, 'test_acc': 0.5318101933216168, 'test_loss': 6162.018165588379, 'test_avg_loss': 2.1659114817533847}}
+{'Role': 'client #3', 'Round': 45, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 21.86448574066162, 'train_avg_loss': 2.186448574066162}}
+{'Role': 'Client #3', 'Round': 45, 'Results_raw': {'test_correct': 1545.0, 'test_total': 2845, 'test_acc': 0.5430579964850615, 'test_loss': 6158.937681913376, 'test_avg_loss': 2.1648287106901147}}
+{'Role': 'Client #3', 'Round': 45, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 45, 'Results_raw': {'test_correct': 1545.0, 'test_total': 2845, 'test_acc': 0.5430579964850615, 'test_loss': 6158.937681913376, 'test_avg_loss': 2.1648287106901147}}
+{'Role': 'client #3', 'Round': 46, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 21.592793464660645, 'train_avg_loss': 2.1592793464660645}}
+{'Role': 'Client #3', 'Round': 46, 'Results_raw': {'test_correct': 1542.0, 'test_total': 2845, 'test_acc': 0.5420035149384885, 'test_loss': 6160.4128086566925, 'test_avg_loss': 2.1653472086666756}}
+{'Role': 'Client #3', 'Round': 46, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 46, 'Results_raw': {'test_correct': 1542.0, 'test_total': 2845, 'test_acc': 0.5420035149384885, 'test_loss': 6160.4128086566925, 'test_avg_loss': 2.1653472086666756}}
+{'Role': 'client #3', 'Round': 47, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 21.37248992919922, 'train_avg_loss': 2.137248992919922}}
+{'Role': 'Client #3', 'Round': 47, 'Results_raw': {'test_correct': 1546.0, 'test_total': 2845, 'test_acc': 0.5434094903339192, 'test_loss': 6153.782744407654, 'test_avg_loss': 2.1630167818656076}}
+{'Role': 'Client #3', 'Round': 47, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 47, 'Results_raw': {'test_correct': 1546.0, 'test_total': 2845, 'test_acc': 0.5434094903339192, 'test_loss': 6153.782744407654, 'test_avg_loss': 2.1630167818656076}}
+{'Role': 'client #3', 'Round': 48, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 21.434736251831055, 'train_avg_loss': 2.1434736251831055}}
+{'Role': 'Client #3', 'Round': 48, 'Results_raw': {'test_correct': 1583.0, 'test_total': 2845, 'test_acc': 0.556414762741652, 'test_loss': 6143.943580389023, 'test_avg_loss': 2.1595583762351573}}
+{'Role': 'Client #3', 'Round': 48, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 48, 'Results_raw': {'test_correct': 1583.0, 'test_total': 2845, 'test_acc': 0.556414762741652, 'test_loss': 6143.943580389023, 'test_avg_loss': 2.1595583762351573}}
+{'Role': 'client #3', 'Round': 49, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 21.66252613067627, 'train_avg_loss': 2.166252613067627}}
+{'Role': 'Client #3', 'Round': 49, 'Results_raw': {'test_correct': 1589.0, 'test_total': 2845, 'test_acc': 0.5585237258347979, 'test_loss': 6144.114905595779, 'test_avg_loss': 2.1596185959914864}}
+{'Role': 'Client #3', 'Round': 49, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 49, 'Results_raw': {'test_correct': 1589.0, 'test_total': 2845, 'test_acc': 0.5585237258347979, 'test_loss': 6144.114905595779, 'test_avg_loss': 2.1596185959914864}}
+{'Role': 'client #3', 'Round': 50, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 21.61824941635132, 'train_avg_loss': 2.161824941635132}}
+{'Role': 'Client #3', 'Round': 50, 'Results_raw': {'test_correct': 1614.0, 'test_total': 2845, 'test_acc': 0.567311072056239, 'test_loss': 6130.3209137916565, 'test_avg_loss': 2.1547700927211446}}
+{'Role': 'Client #3', 'Round': 50, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 50, 'Results_raw': {'test_correct': 1614.0, 'test_total': 2845, 'test_acc': 0.567311072056239, 'test_loss': 6130.3209137916565, 'test_avg_loss': 2.1547700927211446}}
+{'Role': 'client #3', 'Round': 51, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 22.7648663520813, 'train_avg_loss': 2.27648663520813}}
+{'Role': 'Client #3', 'Round': 51, 'Results_raw': {'test_correct': 1605.0, 'test_total': 2845, 'test_acc': 0.5641476274165202, 'test_loss': 6129.148724079132, 'test_avg_loss': 2.1543580752474982}}
+{'Role': 'Client #3', 'Round': 51, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 51, 'Results_raw': {'test_correct': 1605.0, 'test_total': 2845, 'test_acc': 0.5641476274165202, 'test_loss': 6129.148724079132, 'test_avg_loss': 2.1543580752474982}}
+{'Role': 'client #3', 'Round': 52, 'Results_raw': {'train_correct': 9.0, 'train_total': 10, 'train_acc': 0.9, 'train_loss': 20.625646114349365, 'train_avg_loss': 2.0625646114349365}}
+{'Role': 'Client #3', 'Round': 52, 'Results_raw': {'test_correct': 1567.0, 'test_total': 2845, 'test_acc': 0.5507908611599297, 'test_loss': 6107.186629772186, 'test_avg_loss': 2.146638534190575}}
+{'Role': 'Client #3', 'Round': 52, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 52, 'Results_raw': {'test_correct': 1567.0, 'test_total': 2845, 'test_acc': 0.5507908611599297, 'test_loss': 6107.186629772186, 'test_avg_loss': 2.146638534190575}}
+{'Role': 'client #3', 'Round': 53, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.922834873199463, 'train_avg_loss': 2.0922834873199463}}
+{'Role': 'Client #3', 'Round': 53, 'Results_raw': {'test_correct': 1552.0, 'test_total': 2845, 'test_acc': 0.5455184534270651, 'test_loss': 6099.766558408737, 'test_avg_loss': 2.1440304247482382}}
+{'Role': 'Client #3', 'Round': 53, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 53, 'Results_raw': {'test_correct': 1552.0, 'test_total': 2845, 'test_acc': 0.5455184534270651, 'test_loss': 6099.766558408737, 'test_avg_loss': 2.1440304247482382}}
+{'Role': 'client #3', 'Round': 54, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 20.734972953796387, 'train_avg_loss': 2.0734972953796387}}
+{'Role': 'Client #3', 'Round': 54, 'Results_raw': {'test_correct': 1546.0, 'test_total': 2845, 'test_acc': 0.5434094903339192, 'test_loss': 6088.129799365997, 'test_avg_loss': 2.1399401755240763}}
+{'Role': 'Client #3', 'Round': 54, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 54, 'Results_raw': {'test_correct': 1546.0, 'test_total': 2845, 'test_acc': 0.5434094903339192, 'test_loss': 6088.129799365997, 'test_avg_loss': 2.1399401755240763}}
+{'Role': 'client #3', 'Round': 55, 'Results_raw': {'train_correct': 2.0, 'train_total': 10, 'train_acc': 0.2, 'train_loss': 21.99580430984497, 'train_avg_loss': 2.199580430984497}}
+{'Role': 'Client #3', 'Round': 55, 'Results_raw': {'test_correct': 1591.0, 'test_total': 2845, 'test_acc': 0.5592267135325132, 'test_loss': 6082.566961050034, 'test_avg_loss': 2.1379848720738255}}
+{'Role': 'Client #3', 'Round': 55, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 55, 'Results_raw': {'test_correct': 1591.0, 'test_total': 2845, 'test_acc': 0.5592267135325132, 'test_loss': 6082.566961050034, 'test_avg_loss': 2.1379848720738255}}
+{'Role': 'client #3', 'Round': 56, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.067285537719727, 'train_avg_loss': 2.1067285537719727}}
+{'Role': 'Client #3', 'Round': 56, 'Results_raw': {'test_correct': 1587.0, 'test_total': 2845, 'test_acc': 0.5578207381370826, 'test_loss': 6073.742697238922, 'test_avg_loss': 2.1348831976235227}}
+{'Role': 'Client #3', 'Round': 56, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 56, 'Results_raw': {'test_correct': 1587.0, 'test_total': 2845, 'test_acc': 0.5578207381370826, 'test_loss': 6073.742697238922, 'test_avg_loss': 2.1348831976235227}}
+{'Role': 'client #3', 'Round': 57, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.350669860839844, 'train_avg_loss': 2.1350669860839844}}
+{'Role': 'Client #3', 'Round': 57, 'Results_raw': {'test_correct': 1563.0, 'test_total': 2845, 'test_acc': 0.5493848857644992, 'test_loss': 6068.355612754822, 'test_avg_loss': 2.132989670564085}}
+{'Role': 'Client #3', 'Round': 57, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 57, 'Results_raw': {'test_correct': 1563.0, 'test_total': 2845, 'test_acc': 0.5493848857644992, 'test_loss': 6068.355612754822, 'test_avg_loss': 2.132989670564085}}
+{'Role': 'client #3', 'Round': 58, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 21.156833171844482, 'train_avg_loss': 2.1156833171844482}}
+{'Role': 'Client #3', 'Round': 58, 'Results_raw': {'test_correct': 1578.0, 'test_total': 2845, 'test_acc': 0.5546572934973638, 'test_loss': 6064.639314413071, 'test_avg_loss': 2.1316834145564396}}
+{'Role': 'Client #3', 'Round': 58, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 58, 'Results_raw': {'test_correct': 1578.0, 'test_total': 2845, 'test_acc': 0.5546572934973638, 'test_loss': 6064.639314413071, 'test_avg_loss': 2.1316834145564396}}
+{'Role': 'client #3', 'Round': 59, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 21.426520347595215, 'train_avg_loss': 2.1426520347595215}}
+{'Role': 'Client #3', 'Round': 59, 'Results_raw': {'test_correct': 1559.0, 'test_total': 2845, 'test_acc': 0.5479789103690685, 'test_loss': 6062.128007411957, 'test_avg_loss': 2.130800705592955}}
+{'Role': 'Client #3', 'Round': 59, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 59, 'Results_raw': {'test_correct': 1559.0, 'test_total': 2845, 'test_acc': 0.5479789103690685, 'test_loss': 6062.128007411957, 'test_avg_loss': 2.130800705592955}}
+{'Role': 'client #3', 'Round': 60, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 21.074340343475342, 'train_avg_loss': 2.107434034347534}}
+{'Role': 'Client #3', 'Round': 60, 'Results_raw': {'test_correct': 1507.0, 'test_total': 2845, 'test_acc': 0.529701230228471, 'test_loss': 6059.24516916275, 'test_avg_loss': 2.1297874056811072}}
+{'Role': 'Client #3', 'Round': 60, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 60, 'Results_raw': {'test_correct': 1507.0, 'test_total': 2845, 'test_acc': 0.529701230228471, 'test_loss': 6059.24516916275, 'test_avg_loss': 2.1297874056811072}}
+{'Role': 'client #3', 'Round': 61, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 21.193127632141113, 'train_avg_loss': 2.1193127632141113}}
+{'Role': 'Client #3', 'Round': 61, 'Results_raw': {'test_correct': 1525.0, 'test_total': 2845, 'test_acc': 0.5360281195079086, 'test_loss': 6047.9666340351105, 'test_avg_loss': 2.1258230699596172}}
+{'Role': 'Client #3', 'Round': 61, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 61, 'Results_raw': {'test_correct': 1525.0, 'test_total': 2845, 'test_acc': 0.5360281195079086, 'test_loss': 6047.9666340351105, 'test_avg_loss': 2.1258230699596172}}
+{'Role': 'client #3', 'Round': 62, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 20.82493543624878, 'train_avg_loss': 2.082493543624878}}
+{'Role': 'Client #3', 'Round': 62, 'Results_raw': {'test_correct': 1597.0, 'test_total': 2845, 'test_acc': 0.5613356766256591, 'test_loss': 6033.099372386932, 'test_avg_loss': 2.1205973189409253}}
+{'Role': 'Client #3', 'Round': 62, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 62, 'Results_raw': {'test_correct': 1597.0, 'test_total': 2845, 'test_acc': 0.5613356766256591, 'test_loss': 6033.099372386932, 'test_avg_loss': 2.1205973189409253}}
+{'Role': 'client #3', 'Round': 63, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 21.258585453033447, 'train_avg_loss': 2.1258585453033447}}
+{'Role': 'Client #3', 'Round': 63, 'Results_raw': {'test_correct': 1613.0, 'test_total': 2845, 'test_acc': 0.5669595782073814, 'test_loss': 6023.322541713715, 'test_avg_loss': 2.1171608230979664}}
+{'Role': 'Client #3', 'Round': 63, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 63, 'Results_raw': {'test_correct': 1613.0, 'test_total': 2845, 'test_acc': 0.5669595782073814, 'test_loss': 6023.322541713715, 'test_avg_loss': 2.1171608230979664}}
+{'Role': 'client #3', 'Round': 64, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.305222511291504, 'train_avg_loss': 2.1305222511291504}}
+{'Role': 'Client #3', 'Round': 64, 'Results_raw': {'test_correct': 1597.0, 'test_total': 2845, 'test_acc': 0.5613356766256591, 'test_loss': 6017.782336473465, 'test_avg_loss': 2.1152134750346097}}
+{'Role': 'Client #3', 'Round': 64, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 64, 'Results_raw': {'test_correct': 1597.0, 'test_total': 2845, 'test_acc': 0.5613356766256591, 'test_loss': 6017.782336473465, 'test_avg_loss': 2.1152134750346097}}
+{'Role': 'client #3', 'Round': 65, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 22.258048057556152, 'train_avg_loss': 2.2258048057556152}}
+{'Role': 'Client #3', 'Round': 65, 'Results_raw': {'test_correct': 1609.0, 'test_total': 2845, 'test_acc': 0.5655536028119508, 'test_loss': 6009.60310459137, 'test_avg_loss': 2.112338525339673}}
+{'Role': 'Client #3', 'Round': 65, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 65, 'Results_raw': {'test_correct': 1609.0, 'test_total': 2845, 'test_acc': 0.5655536028119508, 'test_loss': 6009.60310459137, 'test_avg_loss': 2.112338525339673}}
+{'Role': 'client #3', 'Round': 66, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.552849769592285, 'train_avg_loss': 2.0552849769592285}}
+{'Role': 'Client #3', 'Round': 66, 'Results_raw': {'test_correct': 1615.0, 'test_total': 2845, 'test_acc': 0.5676625659050967, 'test_loss': 5996.388403177261, 'test_avg_loss': 2.1076936390781236}}
+{'Role': 'Client #3', 'Round': 66, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 66, 'Results_raw': {'test_correct': 1615.0, 'test_total': 2845, 'test_acc': 0.5676625659050967, 'test_loss': 5996.388403177261, 'test_avg_loss': 2.1076936390781236}}
+{'Role': 'client #3', 'Round': 67, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.327426433563232, 'train_avg_loss': 2.1327426433563232}}
+{'Role': 'Client #3', 'Round': 67, 'Results_raw': {'test_correct': 1633.0, 'test_total': 2845, 'test_acc': 0.5739894551845343, 'test_loss': 5987.5517773628235, 'test_avg_loss': 2.104587619459692}}
+{'Role': 'Client #3', 'Round': 67, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 67, 'Results_raw': {'test_correct': 1633.0, 'test_total': 2845, 'test_acc': 0.5739894551845343, 'test_loss': 5987.5517773628235, 'test_avg_loss': 2.104587619459692}}
+{'Role': 'client #3', 'Round': 68, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 20.80984115600586, 'train_avg_loss': 2.080984115600586}}
+{'Role': 'Client #3', 'Round': 68, 'Results_raw': {'test_correct': 1674.0, 'test_total': 2845, 'test_acc': 0.5884007029876978, 'test_loss': 5974.3155908584595, 'test_avg_loss': 2.0999351813210754}}
+{'Role': 'Client #3', 'Round': 68, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 68, 'Results_raw': {'test_correct': 1674.0, 'test_total': 2845, 'test_acc': 0.5884007029876978, 'test_loss': 5974.3155908584595, 'test_avg_loss': 2.0999351813210754}}
+{'Role': 'client #3', 'Round': 69, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.603903770446777, 'train_avg_loss': 2.1603903770446777}}
+{'Role': 'Client #3', 'Round': 69, 'Results_raw': {'test_correct': 1649.0, 'test_total': 2845, 'test_acc': 0.5796133567662566, 'test_loss': 5974.090480804443, 'test_avg_loss': 2.0998560565217725}}
+{'Role': 'Client #3', 'Round': 69, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 69, 'Results_raw': {'test_correct': 1649.0, 'test_total': 2845, 'test_acc': 0.5796133567662566, 'test_loss': 5974.090480804443, 'test_avg_loss': 2.0998560565217725}}
+{'Role': 'client #3', 'Round': 70, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 21.04997158050537, 'train_avg_loss': 2.104997158050537}}
+{'Role': 'Client #3', 'Round': 70, 'Results_raw': {'test_correct': 1614.0, 'test_total': 2845, 'test_acc': 0.567311072056239, 'test_loss': 5970.528277158737, 'test_avg_loss': 2.0986039638519287}}
+{'Role': 'Client #3', 'Round': 70, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 70, 'Results_raw': {'test_correct': 1614.0, 'test_total': 2845, 'test_acc': 0.567311072056239, 'test_loss': 5970.528277158737, 'test_avg_loss': 2.0986039638519287}}
+{'Role': 'client #3', 'Round': 71, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.507534980773926, 'train_avg_loss': 2.1507534980773926}}
+{'Role': 'Client #3', 'Round': 71, 'Results_raw': {'test_correct': 1613.0, 'test_total': 2845, 'test_acc': 0.5669595782073814, 'test_loss': 5973.059324026108, 'test_avg_loss': 2.09949361125698}}
+{'Role': 'Client #3', 'Round': 71, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 71, 'Results_raw': {'test_correct': 1613.0, 'test_total': 2845, 'test_acc': 0.5669595782073814, 'test_loss': 5973.059324026108, 'test_avg_loss': 2.09949361125698}}
+{'Role': 'client #3', 'Round': 72, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 21.59409999847412, 'train_avg_loss': 2.159409999847412}}
+{'Role': 'Client #3', 'Round': 72, 'Results_raw': {'test_correct': 1657.0, 'test_total': 2845, 'test_acc': 0.5824253075571177, 'test_loss': 5965.588178634644, 'test_avg_loss': 2.096867549607959}}
+{'Role': 'Client #3', 'Round': 72, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 72, 'Results_raw': {'test_correct': 1657.0, 'test_total': 2845, 'test_acc': 0.5824253075571177, 'test_loss': 5965.588178634644, 'test_avg_loss': 2.096867549607959}}
+{'Role': 'client #3', 'Round': 73, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.550713539123535, 'train_avg_loss': 2.0550713539123535}}
+{'Role': 'Client #3', 'Round': 73, 'Results_raw': {'test_correct': 1670.0, 'test_total': 2845, 'test_acc': 0.5869947275922671, 'test_loss': 5952.320289611816, 'test_avg_loss': 2.0922039682291094}}
+{'Role': 'Client #3', 'Round': 73, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 73, 'Results_raw': {'test_correct': 1670.0, 'test_total': 2845, 'test_acc': 0.5869947275922671, 'test_loss': 5952.320289611816, 'test_avg_loss': 2.0922039682291094}}
+{'Role': 'client #3', 'Round': 74, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.339502334594727, 'train_avg_loss': 2.1339502334594727}}
+{'Role': 'Client #3', 'Round': 74, 'Results_raw': {'test_correct': 1657.0, 'test_total': 2845, 'test_acc': 0.5824253075571177, 'test_loss': 5949.082129001617, 'test_avg_loss': 2.0910657746930115}}
+{'Role': 'Client #3', 'Round': 74, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 74, 'Results_raw': {'test_correct': 1657.0, 'test_total': 2845, 'test_acc': 0.5824253075571177, 'test_loss': 5949.082129001617, 'test_avg_loss': 2.0910657746930115}}
+{'Role': 'client #3', 'Round': 75, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.05480670928955, 'train_avg_loss': 2.105480670928955}}
+{'Role': 'Client #3', 'Round': 75, 'Results_raw': {'test_correct': 1669.0, 'test_total': 2845, 'test_acc': 0.5866432337434095, 'test_loss': 5936.198266744614, 'test_avg_loss': 2.0865371763601455}}
+{'Role': 'Client #3', 'Round': 75, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 75, 'Results_raw': {'test_correct': 1669.0, 'test_total': 2845, 'test_acc': 0.5866432337434095, 'test_loss': 5936.198266744614, 'test_avg_loss': 2.0865371763601455}}
+{'Role': 'client #3', 'Round': 76, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 21.996960639953613, 'train_avg_loss': 2.1996960639953613}}
+{'Role': 'Client #3', 'Round': 76, 'Results_raw': {'test_correct': 1695.0, 'test_total': 2845, 'test_acc': 0.5957820738137083, 'test_loss': 5932.867876291275, 'test_avg_loss': 2.0853665646015025}}
+{'Role': 'Client #3', 'Round': 76, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 76, 'Results_raw': {'test_correct': 1695.0, 'test_total': 2845, 'test_acc': 0.5957820738137083, 'test_loss': 5932.867876291275, 'test_avg_loss': 2.0853665646015025}}
+{'Role': 'client #3', 'Round': 77, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 20.60938596725464, 'train_avg_loss': 2.060938596725464}}
+{'Role': 'Client #3', 'Round': 77, 'Results_raw': {'test_correct': 1705.0, 'test_total': 2845, 'test_acc': 0.5992970123022847, 'test_loss': 5919.076068401337, 'test_avg_loss': 2.0805188289635628}}
+{'Role': 'Client #3', 'Round': 77, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 77, 'Results_raw': {'test_correct': 1705.0, 'test_total': 2845, 'test_acc': 0.5992970123022847, 'test_loss': 5919.076068401337, 'test_avg_loss': 2.0805188289635628}}
+{'Role': 'client #3', 'Round': 78, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.386743545532227, 'train_avg_loss': 2.0386743545532227}}
+{'Role': 'Client #3', 'Round': 78, 'Results_raw': {'test_correct': 1690.0, 'test_total': 2845, 'test_acc': 0.5940246045694201, 'test_loss': 5911.802583932877, 'test_avg_loss': 2.0779622439131376}}
+{'Role': 'Client #3', 'Round': 78, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 78, 'Results_raw': {'test_correct': 1690.0, 'test_total': 2845, 'test_acc': 0.5940246045694201, 'test_loss': 5911.802583932877, 'test_avg_loss': 2.0779622439131376}}
+{'Role': 'client #3', 'Round': 79, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.890986919403076, 'train_avg_loss': 2.0890986919403076}}
+{'Role': 'Client #3', 'Round': 79, 'Results_raw': {'test_correct': 1669.0, 'test_total': 2845, 'test_acc': 0.5866432337434095, 'test_loss': 5910.140681266785, 'test_avg_loss': 2.0773780953486063}}
+{'Role': 'Client #3', 'Round': 79, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 79, 'Results_raw': {'test_correct': 1669.0, 'test_total': 2845, 'test_acc': 0.5866432337434095, 'test_loss': 5910.140681266785, 'test_avg_loss': 2.0773780953486063}}
+{'Role': 'client #3', 'Round': 80, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.513627529144287, 'train_avg_loss': 2.0513627529144287}}
+{'Role': 'Client #3', 'Round': 80, 'Results_raw': {'test_correct': 1675.0, 'test_total': 2845, 'test_acc': 0.5887521968365553, 'test_loss': 5894.9800527095795, 'test_avg_loss': 2.072049227665933}}
+{'Role': 'Client #3', 'Round': 80, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 80, 'Results_raw': {'test_correct': 1675.0, 'test_total': 2845, 'test_acc': 0.5887521968365553, 'test_loss': 5894.9800527095795, 'test_avg_loss': 2.072049227665933}}
+{'Role': 'client #3', 'Round': 81, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 21.457619667053223, 'train_avg_loss': 2.1457619667053223}}
+{'Role': 'Client #3', 'Round': 81, 'Results_raw': {'test_correct': 1724.0, 'test_total': 2845, 'test_acc': 0.60597539543058, 'test_loss': 5884.746652841568, 'test_avg_loss': 2.0684522505594263}}
+{'Role': 'Client #3', 'Round': 81, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 81, 'Results_raw': {'test_correct': 1724.0, 'test_total': 2845, 'test_acc': 0.60597539543058, 'test_loss': 5884.746652841568, 'test_avg_loss': 2.0684522505594263}}
+{'Role': 'client #3', 'Round': 82, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.033199787139893, 'train_avg_loss': 2.0033199787139893}}
+{'Role': 'Client #3', 'Round': 82, 'Results_raw': {'test_correct': 1718.0, 'test_total': 2845, 'test_acc': 0.6038664323374341, 'test_loss': 5874.237732887268, 'test_avg_loss': 2.0647584298373527}}
+{'Role': 'Client #3', 'Round': 82, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 82, 'Results_raw': {'test_correct': 1718.0, 'test_total': 2845, 'test_acc': 0.6038664323374341, 'test_loss': 5874.237732887268, 'test_avg_loss': 2.0647584298373527}}
+{'Role': 'client #3', 'Round': 83, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 21.74145221710205, 'train_avg_loss': 2.174145221710205}}
+{'Role': 'Client #3', 'Round': 83, 'Results_raw': {'test_correct': 1716.0, 'test_total': 2845, 'test_acc': 0.6031634446397188, 'test_loss': 5871.0321843624115, 'test_avg_loss': 2.063631699248651}}
+{'Role': 'Client #3', 'Round': 83, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 83, 'Results_raw': {'test_correct': 1716.0, 'test_total': 2845, 'test_acc': 0.6031634446397188, 'test_loss': 5871.0321843624115, 'test_avg_loss': 2.063631699248651}}
+{'Role': 'client #3', 'Round': 84, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.6699800491333, 'train_avg_loss': 2.06699800491333}}
+{'Role': 'Client #3', 'Round': 84, 'Results_raw': {'test_correct': 1697.0, 'test_total': 2845, 'test_acc': 0.5964850615114236, 'test_loss': 5869.454357624054, 'test_avg_loss': 2.063077102855555}}
+{'Role': 'Client #3', 'Round': 84, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 84, 'Results_raw': {'test_correct': 1697.0, 'test_total': 2845, 'test_acc': 0.5964850615114236, 'test_loss': 5869.454357624054, 'test_avg_loss': 2.063077102855555}}
+{'Role': 'client #3', 'Round': 85, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 20.094683170318604, 'train_avg_loss': 2.0094683170318604}}
+{'Role': 'Client #3', 'Round': 85, 'Results_raw': {'test_correct': 1728.0, 'test_total': 2845, 'test_acc': 0.6073813708260105, 'test_loss': 5856.856060028076, 'test_avg_loss': 2.0586488787444908}}
+{'Role': 'Client #3', 'Round': 85, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 85, 'Results_raw': {'test_correct': 1728.0, 'test_total': 2845, 'test_acc': 0.6073813708260105, 'test_loss': 5856.856060028076, 'test_avg_loss': 2.0586488787444908}}
+{'Role': 'client #3', 'Round': 86, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.062159538269043, 'train_avg_loss': 2.1062159538269043}}
+{'Role': 'Client #3', 'Round': 86, 'Results_raw': {'test_correct': 1741.0, 'test_total': 2845, 'test_acc': 0.6119507908611599, 'test_loss': 5856.416018009186, 'test_avg_loss': 2.058494206681612}}
+{'Role': 'Client #3', 'Round': 86, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 86, 'Results_raw': {'test_correct': 1741.0, 'test_total': 2845, 'test_acc': 0.6119507908611599, 'test_loss': 5856.416018009186, 'test_avg_loss': 2.058494206681612}}
+{'Role': 'client #3', 'Round': 87, 'Results_raw': {'train_correct': 9.0, 'train_total': 10, 'train_acc': 0.9, 'train_loss': 19.63848352432251, 'train_avg_loss': 1.963848352432251}}
+{'Role': 'Client #3', 'Round': 87, 'Results_raw': {'test_correct': 1784.0, 'test_total': 2845, 'test_acc': 0.6270650263620386, 'test_loss': 5835.190922021866, 'test_avg_loss': 2.051033716000656}}
+{'Role': 'Client #3', 'Round': 87, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 87, 'Results_raw': {'test_correct': 1784.0, 'test_total': 2845, 'test_acc': 0.6270650263620386, 'test_loss': 5835.190922021866, 'test_avg_loss': 2.051033716000656}}
+{'Role': 'client #3', 'Round': 88, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 20.639150142669678, 'train_avg_loss': 2.0639150142669678}}
+{'Role': 'Client #3', 'Round': 88, 'Results_raw': {'test_correct': 1783.0, 'test_total': 2845, 'test_acc': 0.6267135325131811, 'test_loss': 5824.926631450653, 'test_avg_loss': 2.047425881001987}}
+{'Role': 'Client #3', 'Round': 88, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 88, 'Results_raw': {'test_correct': 1783.0, 'test_total': 2845, 'test_acc': 0.6267135325131811, 'test_loss': 5824.926631450653, 'test_avg_loss': 2.047425881001987}}
+{'Role': 'client #3', 'Round': 89, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 21.408212184906006, 'train_avg_loss': 2.1408212184906006}}
+{'Role': 'Client #3', 'Round': 89, 'Results_raw': {'test_correct': 1762.0, 'test_total': 2845, 'test_acc': 0.6193321616871704, 'test_loss': 5824.697285890579, 'test_avg_loss': 2.047345267448358}}
+{'Role': 'Client #3', 'Round': 89, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 89, 'Results_raw': {'test_correct': 1762.0, 'test_total': 2845, 'test_acc': 0.6193321616871704, 'test_loss': 5824.697285890579, 'test_avg_loss': 2.047345267448358}}
+{'Role': 'client #3', 'Round': 90, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 20.400691032409668, 'train_avg_loss': 2.040069103240967}}
+{'Role': 'Client #3', 'Round': 90, 'Results_raw': {'test_correct': 1804.0, 'test_total': 2845, 'test_acc': 0.6340949033391916, 'test_loss': 5812.722933292389, 'test_avg_loss': 2.0431363561660416}}
+{'Role': 'Client #3', 'Round': 90, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 90, 'Results_raw': {'test_correct': 1804.0, 'test_total': 2845, 'test_acc': 0.6340949033391916, 'test_loss': 5812.722933292389, 'test_avg_loss': 2.0431363561660416}}
+{'Role': 'client #3', 'Round': 91, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.104689598083496, 'train_avg_loss': 2.0104689598083496}}
+{'Role': 'Client #3', 'Round': 91, 'Results_raw': {'test_correct': 1817.0, 'test_total': 2845, 'test_acc': 0.638664323374341, 'test_loss': 5801.7247402668, 'test_avg_loss': 2.0392705589689983}}
+{'Role': 'Client #3', 'Round': 91, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 91, 'Results_raw': {'test_correct': 1817.0, 'test_total': 2845, 'test_acc': 0.638664323374341, 'test_loss': 5801.7247402668, 'test_avg_loss': 2.0392705589689983}}
+{'Role': 'client #3', 'Round': 92, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 21.160542964935303, 'train_avg_loss': 2.1160542964935303}}
+{'Role': 'Client #3', 'Round': 92, 'Results_raw': {'test_correct': 1802.0, 'test_total': 2845, 'test_acc': 0.6333919156414762, 'test_loss': 5803.256924152374, 'test_avg_loss': 2.0398091121800963}}
+{'Role': 'Client #3', 'Round': 92, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 92, 'Results_raw': {'test_correct': 1802.0, 'test_total': 2845, 'test_acc': 0.6333919156414762, 'test_loss': 5803.256924152374, 'test_avg_loss': 2.0398091121800963}}
+{'Role': 'client #3', 'Round': 93, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 20.69126844406128, 'train_avg_loss': 2.069126844406128}}
+{'Role': 'Client #3', 'Round': 93, 'Results_raw': {'test_correct': 1794.0, 'test_total': 2845, 'test_acc': 0.6305799648506151, 'test_loss': 5787.88969874382, 'test_avg_loss': 2.0344076269749807}}
+{'Role': 'Client #3', 'Round': 93, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 93, 'Results_raw': {'test_correct': 1794.0, 'test_total': 2845, 'test_acc': 0.6305799648506151, 'test_loss': 5787.88969874382, 'test_avg_loss': 2.0344076269749807}}
+{'Role': 'client #3', 'Round': 94, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 20.007004737854004, 'train_avg_loss': 2.0007004737854004}}
+{'Role': 'Client #3', 'Round': 94, 'Results_raw': {'test_correct': 1822.0, 'test_total': 2845, 'test_acc': 0.6404217926186292, 'test_loss': 5767.973269224167, 'test_avg_loss': 2.027407124507616}}
+{'Role': 'Client #3', 'Round': 94, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 94, 'Results_raw': {'test_correct': 1822.0, 'test_total': 2845, 'test_acc': 0.6404217926186292, 'test_loss': 5767.973269224167, 'test_avg_loss': 2.027407124507616}}
+{'Role': 'client #3', 'Round': 95, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 20.931763648986816, 'train_avg_loss': 2.0931763648986816}}
+{'Role': 'Client #3', 'Round': 95, 'Results_raw': {'test_correct': 1829.0, 'test_total': 2845, 'test_acc': 0.6428822495606327, 'test_loss': 5749.850254058838, 'test_avg_loss': 2.021036996154249}}
+{'Role': 'Client #3', 'Round': 95, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 95, 'Results_raw': {'test_correct': 1829.0, 'test_total': 2845, 'test_acc': 0.6428822495606327, 'test_loss': 5749.850254058838, 'test_avg_loss': 2.021036996154249}}
+{'Role': 'client #3', 'Round': 96, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 20.28313398361206, 'train_avg_loss': 2.028313398361206}}
+{'Role': 'Client #3', 'Round': 96, 'Results_raw': {'test_correct': 1841.0, 'test_total': 2845, 'test_acc': 0.6471001757469245, 'test_loss': 5727.515528202057, 'test_avg_loss': 2.0131864773996684}}
+{'Role': 'Client #3', 'Round': 96, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 96, 'Results_raw': {'test_correct': 1841.0, 'test_total': 2845, 'test_acc': 0.6471001757469245, 'test_loss': 5727.515528202057, 'test_avg_loss': 2.0131864773996684}}
+{'Role': 'client #3', 'Round': 97, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 20.374159812927246, 'train_avg_loss': 2.0374159812927246}}
+{'Role': 'Client #3', 'Round': 97, 'Results_raw': {'test_correct': 1843.0, 'test_total': 2845, 'test_acc': 0.6478031634446397, 'test_loss': 5709.457718133926, 'test_avg_loss': 2.006839268236881}}
+{'Role': 'Client #3', 'Round': 97, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 97, 'Results_raw': {'test_correct': 1843.0, 'test_total': 2845, 'test_acc': 0.6478031634446397, 'test_loss': 5709.457718133926, 'test_avg_loss': 2.006839268236881}}
+{'Role': 'client #3', 'Round': 98, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.398070812225342, 'train_avg_loss': 2.039807081222534}}
+{'Role': 'Client #3', 'Round': 98, 'Results_raw': {'test_correct': 1831.0, 'test_total': 2845, 'test_acc': 0.6435852372583479, 'test_loss': 5701.568208932877, 'test_avg_loss': 2.004066154282206}}
+{'Role': 'Client #3', 'Round': 98, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 98, 'Results_raw': {'test_correct': 1831.0, 'test_total': 2845, 'test_acc': 0.6435852372583479, 'test_loss': 5701.568208932877, 'test_avg_loss': 2.004066154282206}}
+{'Role': 'client #3', 'Round': 99, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.082263946533203, 'train_avg_loss': 2.0082263946533203}}
+{'Role': 'Client #3', 'Round': 99, 'Results_raw': {'test_correct': 1837.0, 'test_total': 2845, 'test_acc': 0.6456942003514938, 'test_loss': 5689.040457010269, 'test_avg_loss': 1.999662726541395}}
+{'Role': 'Client #3', 'Round': 99, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 99, 'Results_raw': {'test_correct': 1837.0, 'test_total': 2845, 'test_acc': 0.6456942003514938, 'test_loss': 5689.040457010269, 'test_avg_loss': 1.999662726541395}}
+{'Role': 'client #3', 'Round': 100, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 20.405547618865967, 'train_avg_loss': 2.0405547618865967}}
+{'Role': 'Client #3', 'Round': 100, 'Results_raw': {'test_correct': 1873.0, 'test_total': 2845, 'test_acc': 0.6583479789103691, 'test_loss': 5681.743575334549, 'test_avg_loss': 1.9970979175165373}}
+{'Role': 'Client #3', 'Round': 100, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 100, 'Results_raw': {'test_correct': 1873.0, 'test_total': 2845, 'test_acc': 0.6583479789103691, 'test_loss': 5681.743575334549, 'test_avg_loss': 1.9970979175165373}}
+{'Role': 'client #3', 'Round': 101, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 19.794318675994873, 'train_avg_loss': 1.9794318675994873}}
+{'Role': 'Client #3', 'Round': 101, 'Results_raw': {'test_correct': 1846.0, 'test_total': 2845, 'test_acc': 0.6488576449912127, 'test_loss': 5670.3582310676575, 'test_avg_loss': 1.9930960390395984}}
+{'Role': 'Client #3', 'Round': 101, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 101, 'Results_raw': {'test_correct': 1846.0, 'test_total': 2845, 'test_acc': 0.6488576449912127, 'test_loss': 5670.3582310676575, 'test_avg_loss': 1.9930960390395984}}
+{'Role': 'client #3', 'Round': 102, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.10741949081421, 'train_avg_loss': 2.010741949081421}}
+{'Role': 'Client #3', 'Round': 102, 'Results_raw': {'test_correct': 1869.0, 'test_total': 2845, 'test_acc': 0.6569420035149385, 'test_loss': 5656.148010492325, 'test_avg_loss': 1.9881012339164585}}
+{'Role': 'Client #3', 'Round': 102, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 102, 'Results_raw': {'test_correct': 1869.0, 'test_total': 2845, 'test_acc': 0.6569420035149385, 'test_loss': 5656.148010492325, 'test_avg_loss': 1.9881012339164585}}
+{'Role': 'client #3', 'Round': 103, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 21.026301383972168, 'train_avg_loss': 2.102630138397217}}
+{'Role': 'Client #3', 'Round': 103, 'Results_raw': {'test_correct': 1847.0, 'test_total': 2845, 'test_acc': 0.6492091388400703, 'test_loss': 5655.096814632416, 'test_avg_loss': 1.987731745037756}}
+{'Role': 'Client #3', 'Round': 103, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 103, 'Results_raw': {'test_correct': 1847.0, 'test_total': 2845, 'test_acc': 0.6492091388400703, 'test_loss': 5655.096814632416, 'test_avg_loss': 1.987731745037756}}
+{'Role': 'client #3', 'Round': 104, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 19.985650777816772, 'train_avg_loss': 1.9985650777816772}}
+{'Role': 'Client #3', 'Round': 104, 'Results_raw': {'test_correct': 1852.0, 'test_total': 2845, 'test_acc': 0.6509666080843586, 'test_loss': 5636.198178529739, 'test_avg_loss': 1.9810889906958662}}
+{'Role': 'Client #3', 'Round': 104, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 104, 'Results_raw': {'test_correct': 1852.0, 'test_total': 2845, 'test_acc': 0.6509666080843586, 'test_loss': 5636.198178529739, 'test_avg_loss': 1.9810889906958662}}
+{'Role': 'client #3', 'Round': 105, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 20.650973320007324, 'train_avg_loss': 2.0650973320007324}}
+{'Role': 'Client #3', 'Round': 105, 'Results_raw': {'test_correct': 1858.0, 'test_total': 2845, 'test_acc': 0.6530755711775044, 'test_loss': 5638.702481985092, 'test_avg_loss': 1.9819692379560956}}
+{'Role': 'Client #3', 'Round': 105, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 105, 'Results_raw': {'test_correct': 1858.0, 'test_total': 2845, 'test_acc': 0.6530755711775044, 'test_loss': 5638.702481985092, 'test_avg_loss': 1.9819692379560956}}
+{'Role': 'client #3', 'Round': 106, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 18.753429651260376, 'train_avg_loss': 1.8753429651260376}}
+{'Role': 'Client #3', 'Round': 106, 'Results_raw': {'test_correct': 1864.0, 'test_total': 2845, 'test_acc': 0.6551845342706503, 'test_loss': 5617.634176015854, 'test_avg_loss': 1.9745638580020577}}
+{'Role': 'Client #3', 'Round': 106, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 106, 'Results_raw': {'test_correct': 1864.0, 'test_total': 2845, 'test_acc': 0.6551845342706503, 'test_loss': 5617.634176015854, 'test_avg_loss': 1.9745638580020577}}
+{'Role': 'client #3', 'Round': 107, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 20.588271617889404, 'train_avg_loss': 2.0588271617889404}}
+{'Role': 'Client #3', 'Round': 107, 'Results_raw': {'test_correct': 1874.0, 'test_total': 2845, 'test_acc': 0.6586994727592267, 'test_loss': 5613.927236795425, 'test_avg_loss': 1.973260891667988}}
+{'Role': 'Client #3', 'Round': 107, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 107, 'Results_raw': {'test_correct': 1874.0, 'test_total': 2845, 'test_acc': 0.6586994727592267, 'test_loss': 5613.927236795425, 'test_avg_loss': 1.973260891667988}}
+{'Role': 'client #3', 'Round': 108, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 20.2074933052063, 'train_avg_loss': 2.02074933052063}}
+{'Role': 'Client #3', 'Round': 108, 'Results_raw': {'test_correct': 1843.0, 'test_total': 2845, 'test_acc': 0.6478031634446397, 'test_loss': 5599.822770357132, 'test_avg_loss': 1.9683032584735085}}
+{'Role': 'Client #3', 'Round': 108, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 108, 'Results_raw': {'test_correct': 1843.0, 'test_total': 2845, 'test_acc': 0.6478031634446397, 'test_loss': 5599.822770357132, 'test_avg_loss': 1.9683032584735085}}
+{'Role': 'client #3', 'Round': 109, 'Results_raw': {'train_correct': 9.0, 'train_total': 10, 'train_acc': 0.9, 'train_loss': 18.11577081680298, 'train_avg_loss': 1.8115770816802979}}
+{'Role': 'Client #3', 'Round': 109, 'Results_raw': {'test_correct': 1847.0, 'test_total': 2845, 'test_acc': 0.6492091388400703, 'test_loss': 5577.065389156342, 'test_avg_loss': 1.9603041789653222}}
+{'Role': 'Client #3', 'Round': 109, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 109, 'Results_raw': {'test_correct': 1847.0, 'test_total': 2845, 'test_acc': 0.6492091388400703, 'test_loss': 5577.065389156342, 'test_avg_loss': 1.9603041789653222}}
+{'Role': 'client #3', 'Round': 110, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 18.119287490844727, 'train_avg_loss': 1.8119287490844727}}
+{'Role': 'Client #3', 'Round': 110, 'Results_raw': {'test_correct': 1815.0, 'test_total': 2845, 'test_acc': 0.6379613356766256, 'test_loss': 5545.4636788368225, 'test_avg_loss': 1.9491963721746302}}
+{'Role': 'Client #3', 'Round': 110, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 110, 'Results_raw': {'test_correct': 1815.0, 'test_total': 2845, 'test_acc': 0.6379613356766256, 'test_loss': 5545.4636788368225, 'test_avg_loss': 1.9491963721746302}}
+{'Role': 'client #3', 'Round': 111, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 19.7451913356781, 'train_avg_loss': 1.97451913356781}}
+{'Role': 'Client #3', 'Round': 111, 'Results_raw': {'test_correct': 1818.0, 'test_total': 2845, 'test_acc': 0.6390158172231986, 'test_loss': 5520.874762535095, 'test_avg_loss': 1.9405535193444974}}
+{'Role': 'Client #3', 'Round': 111, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 111, 'Results_raw': {'test_correct': 1818.0, 'test_total': 2845, 'test_acc': 0.6390158172231986, 'test_loss': 5520.874762535095, 'test_avg_loss': 1.9405535193444974}}
+{'Role': 'client #3', 'Round': 112, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 19.670016765594482, 'train_avg_loss': 1.9670016765594482}}
+{'Role': 'Client #3', 'Round': 112, 'Results_raw': {'test_correct': 1805.0, 'test_total': 2845, 'test_acc': 0.6344463971880492, 'test_loss': 5516.5226221084595, 'test_avg_loss': 1.9390237687551704}}
+{'Role': 'Client #3', 'Round': 112, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 112, 'Results_raw': {'test_correct': 1805.0, 'test_total': 2845, 'test_acc': 0.6344463971880492, 'test_loss': 5516.5226221084595, 'test_avg_loss': 1.9390237687551704}}
+{'Role': 'client #3', 'Round': 113, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 19.29067373275757, 'train_avg_loss': 1.9290673732757568}}
+{'Role': 'Client #3', 'Round': 113, 'Results_raw': {'test_correct': 1817.0, 'test_total': 2845, 'test_acc': 0.638664323374341, 'test_loss': 5506.806397438049, 'test_avg_loss': 1.9356085755494021}}
+{'Role': 'Client #3', 'Round': 113, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 113, 'Results_raw': {'test_correct': 1817.0, 'test_total': 2845, 'test_acc': 0.638664323374341, 'test_loss': 5506.806397438049, 'test_avg_loss': 1.9356085755494021}}
+{'Role': 'client #3', 'Round': 114, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 19.347931146621704, 'train_avg_loss': 1.9347931146621704}}
+{'Role': 'Client #3', 'Round': 114, 'Results_raw': {'test_correct': 1825.0, 'test_total': 2845, 'test_acc': 0.6414762741652021, 'test_loss': 5485.941219329834, 'test_avg_loss': 1.9282745937890453}}
+{'Role': 'Client #3', 'Round': 114, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 114, 'Results_raw': {'test_correct': 1825.0, 'test_total': 2845, 'test_acc': 0.6414762741652021, 'test_loss': 5485.941219329834, 'test_avg_loss': 1.9282745937890453}}
+{'Role': 'client #3', 'Round': 115, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 18.779138326644897, 'train_avg_loss': 1.8779138326644897}}
+{'Role': 'Client #3', 'Round': 115, 'Results_raw': {'test_correct': 1812.0, 'test_total': 2845, 'test_acc': 0.6369068541300528, 'test_loss': 5467.908753156662, 'test_avg_loss': 1.921936292849442}}
+{'Role': 'Client #3', 'Round': 115, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 115, 'Results_raw': {'test_correct': 1812.0, 'test_total': 2845, 'test_acc': 0.6369068541300528, 'test_loss': 5467.908753156662, 'test_avg_loss': 1.921936292849442}}
+{'Role': 'client #3', 'Round': 116, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 21.16950750350952, 'train_avg_loss': 2.116950750350952}}
+{'Role': 'Client #3', 'Round': 116, 'Results_raw': {'test_correct': 1827.0, 'test_total': 2845, 'test_acc': 0.6421792618629174, 'test_loss': 5470.847411155701, 'test_avg_loss': 1.9229692130600002}}
+{'Role': 'Client #3', 'Round': 116, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 116, 'Results_raw': {'test_correct': 1827.0, 'test_total': 2845, 'test_acc': 0.6421792618629174, 'test_loss': 5470.847411155701, 'test_avg_loss': 1.9229692130600002}}
+{'Role': 'client #3', 'Round': 117, 'Results_raw': {'train_correct': 9.0, 'train_total': 10, 'train_acc': 0.9, 'train_loss': 17.816007137298584, 'train_avg_loss': 1.7816007137298584}}
+{'Role': 'Client #3', 'Round': 117, 'Results_raw': {'test_correct': 1832.0, 'test_total': 2845, 'test_acc': 0.6439367311072056, 'test_loss': 5432.156790494919, 'test_avg_loss': 1.909369697889251}}
+{'Role': 'Client #3', 'Round': 117, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 117, 'Results_raw': {'test_correct': 1832.0, 'test_total': 2845, 'test_acc': 0.6439367311072056, 'test_loss': 5432.156790494919, 'test_avg_loss': 1.909369697889251}}
+{'Role': 'client #3', 'Round': 118, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 19.317859411239624, 'train_avg_loss': 1.9317859411239624}}
+{'Role': 'Client #3', 'Round': 118, 'Results_raw': {'test_correct': 1839.0, 'test_total': 2845, 'test_acc': 0.6463971880492091, 'test_loss': 5423.722475767136, 'test_avg_loss': 1.9064050881431056}}
+{'Role': 'Client #3', 'Round': 118, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 118, 'Results_raw': {'test_correct': 1839.0, 'test_total': 2845, 'test_acc': 0.6463971880492091, 'test_loss': 5423.722475767136, 'test_avg_loss': 1.9064050881431056}}
+{'Role': 'client #3', 'Round': 119, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 19.461427927017212, 'train_avg_loss': 1.9461427927017212}}
+{'Role': 'Client #3', 'Round': 119, 'Results_raw': {'test_correct': 1832.0, 'test_total': 2845, 'test_acc': 0.6439367311072056, 'test_loss': 5416.160885095596, 'test_avg_loss': 1.9037472355344802}}
+{'Role': 'Client #3', 'Round': 119, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 119, 'Results_raw': {'test_correct': 1832.0, 'test_total': 2845, 'test_acc': 0.6439367311072056, 'test_loss': 5416.160885095596, 'test_avg_loss': 1.9037472355344802}}
+{'Role': 'client #3', 'Round': 120, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 17.359167337417603, 'train_avg_loss': 1.7359167337417603}}
+{'Role': 'Client #3', 'Round': 120, 'Results_raw': {'test_correct': 1827.0, 'test_total': 2845, 'test_acc': 0.6421792618629174, 'test_loss': 5402.716807126999, 'test_avg_loss': 1.8990217248249557}}
+{'Role': 'Client #3', 'Round': 120, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 120, 'Results_raw': {'test_correct': 1827.0, 'test_total': 2845, 'test_acc': 0.6421792618629174, 'test_loss': 5402.716807126999, 'test_avg_loss': 1.8990217248249557}}
+{'Role': 'client #3', 'Round': 121, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 18.299448490142822, 'train_avg_loss': 1.8299448490142822}}
+{'Role': 'Client #3', 'Round': 121, 'Results_raw': {'test_correct': 1817.0, 'test_total': 2845, 'test_acc': 0.638664323374341, 'test_loss': 5391.608055830002, 'test_avg_loss': 1.895117067075572}}
+{'Role': 'Client #3', 'Round': 121, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 121, 'Results_raw': {'test_correct': 1817.0, 'test_total': 2845, 'test_acc': 0.638664323374341, 'test_loss': 5391.608055830002, 'test_avg_loss': 1.895117067075572}}
+{'Role': 'client #3', 'Round': 122, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 18.58903169631958, 'train_avg_loss': 1.858903169631958}}
+{'Role': 'Client #3', 'Round': 122, 'Results_raw': {'test_correct': 1829.0, 'test_total': 2845, 'test_acc': 0.6428822495606327, 'test_loss': 5374.457108974457, 'test_avg_loss': 1.8890886147537633}}
+{'Role': 'Client #3', 'Round': 122, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 122, 'Results_raw': {'test_correct': 1829.0, 'test_total': 2845, 'test_acc': 0.6428822495606327, 'test_loss': 5374.457108974457, 'test_avg_loss': 1.8890886147537633}}
+{'Role': 'client #3', 'Round': 123, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 20.244672298431396, 'train_avg_loss': 2.0244672298431396}}
+{'Role': 'Client #3', 'Round': 123, 'Results_raw': {'test_correct': 1830.0, 'test_total': 2845, 'test_acc': 0.6432337434094904, 'test_loss': 5354.185419082642, 'test_avg_loss': 1.8819632404508406}}
+{'Role': 'Client #3', 'Round': 123, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 123, 'Results_raw': {'test_correct': 1830.0, 'test_total': 2845, 'test_acc': 0.6432337434094904, 'test_loss': 5354.185419082642, 'test_avg_loss': 1.8819632404508406}}
+{'Role': 'client #3', 'Round': 124, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 20.2046799659729, 'train_avg_loss': 2.02046799659729}}
+{'Role': 'Client #3', 'Round': 124, 'Results_raw': {'test_correct': 1834.0, 'test_total': 2845, 'test_acc': 0.6446397188049209, 'test_loss': 5350.326232910156, 'test_avg_loss': 1.8806067602496155}}
+{'Role': 'Client #3', 'Round': 124, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 124, 'Results_raw': {'test_correct': 1834.0, 'test_total': 2845, 'test_acc': 0.6446397188049209, 'test_loss': 5350.326232910156, 'test_avg_loss': 1.8806067602496155}}
+{'Role': 'client #3', 'Round': 125, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 19.732259511947632, 'train_avg_loss': 1.9732259511947632}}
+{'Role': 'Client #3', 'Round': 125, 'Results_raw': {'test_correct': 1833.0, 'test_total': 2845, 'test_acc': 0.6442882249560633, 'test_loss': 5344.339547157288, 'test_avg_loss': 1.8785024770324386}}
+{'Role': 'Client #3', 'Round': 125, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 125, 'Results_raw': {'test_correct': 1833.0, 'test_total': 2845, 'test_acc': 0.6442882249560633, 'test_loss': 5344.339547157288, 'test_avg_loss': 1.8785024770324386}}
+{'Role': 'client #3', 'Round': 126, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 19.527873992919922, 'train_avg_loss': 1.9527873992919922}}
+{'Role': 'Client #3', 'Round': 126, 'Results_raw': {'test_correct': 1830.0, 'test_total': 2845, 'test_acc': 0.6432337434094904, 'test_loss': 5333.073275089264, 'test_avg_loss': 1.8745424517009714}}
+{'Role': 'Client #3', 'Round': 126, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 126, 'Results_raw': {'test_correct': 1830.0, 'test_total': 2845, 'test_acc': 0.6432337434094904, 'test_loss': 5333.073275089264, 'test_avg_loss': 1.8745424517009714}}
+{'Role': 'client #3', 'Round': 127, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 18.141828775405884, 'train_avg_loss': 1.8141828775405884}}
+{'Role': 'Client #3', 'Round': 127, 'Results_raw': {'test_correct': 1822.0, 'test_total': 2845, 'test_acc': 0.6404217926186292, 'test_loss': 5321.724879741669, 'test_avg_loss': 1.870553560541887}}
+{'Role': 'Client #3', 'Round': 127, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 127, 'Results_raw': {'test_correct': 1822.0, 'test_total': 2845, 'test_acc': 0.6404217926186292, 'test_loss': 5321.724879741669, 'test_avg_loss': 1.870553560541887}}
+{'Role': 'client #3', 'Round': 128, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 18.487091064453125, 'train_avg_loss': 1.8487091064453125}}
+{'Role': 'Client #3', 'Round': 128, 'Results_raw': {'test_correct': 1801.0, 'test_total': 2845, 'test_acc': 0.6330404217926187, 'test_loss': 5309.287996292114, 'test_avg_loss': 1.8661820725104092}}
+{'Role': 'Client #3', 'Round': 128, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 128, 'Results_raw': {'test_correct': 1801.0, 'test_total': 2845, 'test_acc': 0.6330404217926187, 'test_loss': 5309.287996292114, 'test_avg_loss': 1.8661820725104092}}
+{'Role': 'client #3', 'Round': 129, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 17.86209464073181, 'train_avg_loss': 1.7862094640731812}}
+{'Role': 'Client #3', 'Round': 129, 'Results_raw': {'test_correct': 1777.0, 'test_total': 2845, 'test_acc': 0.6246045694200352, 'test_loss': 5291.04251742363, 'test_avg_loss': 1.8597688989186747}}
+{'Role': 'Client #3', 'Round': 129, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 129, 'Results_raw': {'test_correct': 1777.0, 'test_total': 2845, 'test_acc': 0.6246045694200352, 'test_loss': 5291.04251742363, 'test_avg_loss': 1.8597688989186747}}
+{'Role': 'client #3', 'Round': 130, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 18.034474849700928, 'train_avg_loss': 1.8034474849700928}}
+{'Role': 'Client #3', 'Round': 130, 'Results_raw': {'test_correct': 1750.0, 'test_total': 2845, 'test_acc': 0.6151142355008787, 'test_loss': 5255.5882477760315, 'test_avg_loss': 1.8473069412218037}}
+{'Role': 'Client #3', 'Round': 130, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 130, 'Results_raw': {'test_correct': 1750.0, 'test_total': 2845, 'test_acc': 0.6151142355008787, 'test_loss': 5255.5882477760315, 'test_avg_loss': 1.8473069412218037}}
+{'Role': 'client #3', 'Round': 131, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 19.65727210044861, 'train_avg_loss': 1.9657272100448608}}
+{'Role': 'Client #3', 'Round': 131, 'Results_raw': {'test_correct': 1758.0, 'test_total': 2845, 'test_acc': 0.6179261862917399, 'test_loss': 5252.265160083771, 'test_avg_loss': 1.8461388963387595}}
+{'Role': 'Client #3', 'Round': 131, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 131, 'Results_raw': {'test_correct': 1758.0, 'test_total': 2845, 'test_acc': 0.6179261862917399, 'test_loss': 5252.265160083771, 'test_avg_loss': 1.8461388963387595}}
+{'Role': 'client #3', 'Round': 132, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 20.098133087158203, 'train_avg_loss': 2.0098133087158203}}
+{'Role': 'Client #3', 'Round': 132, 'Results_raw': {'test_correct': 1761.0, 'test_total': 2845, 'test_acc': 0.6189806678383128, 'test_loss': 5249.573650360107, 'test_avg_loss': 1.8451928472267514}}
+{'Role': 'Client #3', 'Round': 132, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 132, 'Results_raw': {'test_correct': 1761.0, 'test_total': 2845, 'test_acc': 0.6189806678383128, 'test_loss': 5249.573650360107, 'test_avg_loss': 1.8451928472267514}}
+{'Role': 'client #3', 'Round': 133, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 19.143558740615845, 'train_avg_loss': 1.9143558740615845}}
+{'Role': 'Client #3', 'Round': 133, 'Results_raw': {'test_correct': 1781.0, 'test_total': 2845, 'test_acc': 0.6260105448154657, 'test_loss': 5235.442748069763, 'test_avg_loss': 1.840225921992887}}
+{'Role': 'Client #3', 'Round': 133, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 133, 'Results_raw': {'test_correct': 1781.0, 'test_total': 2845, 'test_acc': 0.6260105448154657, 'test_loss': 5235.442748069763, 'test_avg_loss': 1.840225921992887}}
+{'Role': 'client #3', 'Round': 134, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 17.280426025390625, 'train_avg_loss': 1.7280426025390625}}
+{'Role': 'Client #3', 'Round': 134, 'Results_raw': {'test_correct': 1793.0, 'test_total': 2845, 'test_acc': 0.6302284710017575, 'test_loss': 5209.836980104446, 'test_avg_loss': 1.8312256520578019}}
+{'Role': 'Client #3', 'Round': 134, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 134, 'Results_raw': {'test_correct': 1793.0, 'test_total': 2845, 'test_acc': 0.6302284710017575, 'test_loss': 5209.836980104446, 'test_avg_loss': 1.8312256520578019}}
+{'Role': 'client #3', 'Round': 135, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 19.616771936416626, 'train_avg_loss': 1.9616771936416626}}
+{'Role': 'Client #3', 'Round': 135, 'Results_raw': {'test_correct': 1854.0, 'test_total': 2845, 'test_acc': 0.6516695957820738, 'test_loss': 5198.904857635498, 'test_avg_loss': 1.827383078255008}}
+{'Role': 'Client #3', 'Round': 135, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 135, 'Results_raw': {'test_correct': 1854.0, 'test_total': 2845, 'test_acc': 0.6516695957820738, 'test_loss': 5198.904857635498, 'test_avg_loss': 1.827383078255008}}
+{'Role': 'client #3', 'Round': 136, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 18.725391626358032, 'train_avg_loss': 1.8725391626358032}}
+{'Role': 'Client #3', 'Round': 136, 'Results_raw': {'test_correct': 1847.0, 'test_total': 2845, 'test_acc': 0.6492091388400703, 'test_loss': 5173.098483085632, 'test_avg_loss': 1.8183122963394138}}
+{'Role': 'Client #3', 'Round': 136, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 136, 'Results_raw': {'test_correct': 1847.0, 'test_total': 2845, 'test_acc': 0.6492091388400703, 'test_loss': 5173.098483085632, 'test_avg_loss': 1.8183122963394138}}
+{'Role': 'client #3', 'Round': 137, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 16.686025857925415, 'train_avg_loss': 1.6686025857925415}}
+{'Role': 'Client #3', 'Round': 137, 'Results_raw': {'test_correct': 1824.0, 'test_total': 2845, 'test_acc': 0.6411247803163445, 'test_loss': 5149.683794975281, 'test_avg_loss': 1.810082177495705}}
+{'Role': 'Client #3', 'Round': 137, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 137, 'Results_raw': {'test_correct': 1824.0, 'test_total': 2845, 'test_acc': 0.6411247803163445, 'test_loss': 5149.683794975281, 'test_avg_loss': 1.810082177495705}}
+{'Role': 'client #3', 'Round': 138, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 19.993412494659424, 'train_avg_loss': 1.9993412494659424}}
+{'Role': 'Client #3', 'Round': 138, 'Results_raw': {'test_correct': 1851.0, 'test_total': 2845, 'test_acc': 0.6506151142355009, 'test_loss': 5141.998070478439, 'test_avg_loss': 1.8073806926110507}}
+{'Role': 'Client #3', 'Round': 138, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 138, 'Results_raw': {'test_correct': 1851.0, 'test_total': 2845, 'test_acc': 0.6506151142355009, 'test_loss': 5141.998070478439, 'test_avg_loss': 1.8073806926110507}}
+{'Role': 'client #3', 'Round': 139, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 19.57362174987793, 'train_avg_loss': 1.957362174987793}}
+{'Role': 'Client #3', 'Round': 139, 'Results_raw': {'test_correct': 1869.0, 'test_total': 2845, 'test_acc': 0.6569420035149385, 'test_loss': 5140.314710140228, 'test_avg_loss': 1.8067890018067587}}
+{'Role': 'Client #3', 'Round': 139, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 139, 'Results_raw': {'test_correct': 1869.0, 'test_total': 2845, 'test_acc': 0.6569420035149385, 'test_loss': 5140.314710140228, 'test_avg_loss': 1.8067890018067587}}
+{'Role': 'client #3', 'Round': 140, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 17.898576259613037, 'train_avg_loss': 1.7898576259613037}}
+{'Role': 'Client #3', 'Round': 140, 'Results_raw': {'test_correct': 1852.0, 'test_total': 2845, 'test_acc': 0.6509666080843586, 'test_loss': 5137.943698167801, 'test_avg_loss': 1.8059556056828825}}
+{'Role': 'Client #3', 'Round': 140, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 140, 'Results_raw': {'test_correct': 1852.0, 'test_total': 2845, 'test_acc': 0.6509666080843586, 'test_loss': 5137.943698167801, 'test_avg_loss': 1.8059556056828825}}
+{'Role': 'client #3', 'Round': 141, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 18.03431749343872, 'train_avg_loss': 1.803431749343872}}
+{'Role': 'Client #3', 'Round': 141, 'Results_raw': {'test_correct': 1865.0, 'test_total': 2845, 'test_acc': 0.655536028119508, 'test_loss': 5110.500268936157, 'test_avg_loss': 1.7963094091163998}}
+{'Role': 'Client #3', 'Round': 141, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 141, 'Results_raw': {'test_correct': 1865.0, 'test_total': 2845, 'test_acc': 0.655536028119508, 'test_loss': 5110.500268936157, 'test_avg_loss': 1.7963094091163998}}
+{'Role': 'client #3', 'Round': 142, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 17.367289066314697, 'train_avg_loss': 1.7367289066314697}}
+{'Role': 'Client #3', 'Round': 142, 'Results_raw': {'test_correct': 1855.0, 'test_total': 2845, 'test_acc': 0.6520210896309314, 'test_loss': 5094.308823347092, 'test_avg_loss': 1.79061821558773}}
+{'Role': 'Client #3', 'Round': 142, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 142, 'Results_raw': {'test_correct': 1855.0, 'test_total': 2845, 'test_acc': 0.6520210896309314, 'test_loss': 5094.308823347092, 'test_avg_loss': 1.79061821558773}}
+{'Role': 'client #3', 'Round': 143, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 18.321794271469116, 'train_avg_loss': 1.8321794271469116}}
+{'Role': 'Client #3', 'Round': 143, 'Results_raw': {'test_correct': 1820.0, 'test_total': 2845, 'test_acc': 0.6397188049209139, 'test_loss': 5074.209532737732, 'test_avg_loss': 1.7835534385721377}}
+{'Role': 'Client #3', 'Round': 143, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 143, 'Results_raw': {'test_correct': 1820.0, 'test_total': 2845, 'test_acc': 0.6397188049209139, 'test_loss': 5074.209532737732, 'test_avg_loss': 1.7835534385721377}}
+{'Role': 'client #3', 'Round': 144, 'Results_raw': {'train_correct': 9.0, 'train_total': 10, 'train_acc': 0.9, 'train_loss': 16.10909104347229, 'train_avg_loss': 1.610909104347229}}
+{'Role': 'Client #3', 'Round': 144, 'Results_raw': {'test_correct': 1804.0, 'test_total': 2845, 'test_acc': 0.6340949033391916, 'test_loss': 5052.735298871994, 'test_avg_loss': 1.7760053774594005}}
+{'Role': 'Client #3', 'Round': 144, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 144, 'Results_raw': {'test_correct': 1804.0, 'test_total': 2845, 'test_acc': 0.6340949033391916, 'test_loss': 5052.735298871994, 'test_avg_loss': 1.7760053774594005}}
+{'Role': 'client #3', 'Round': 145, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 18.18247079849243, 'train_avg_loss': 1.8182470798492432}}
+{'Role': 'Client #3', 'Round': 145, 'Results_raw': {'test_correct': 1787.0, 'test_total': 2845, 'test_acc': 0.6281195079086116, 'test_loss': 5023.09464097023, 'test_avg_loss': 1.7655868685308367}}
+{'Role': 'Client #3', 'Round': 145, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 145, 'Results_raw': {'test_correct': 1787.0, 'test_total': 2845, 'test_acc': 0.6281195079086116, 'test_loss': 5023.09464097023, 'test_avg_loss': 1.7655868685308367}}
+{'Role': 'client #3', 'Round': 146, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 16.41845703125, 'train_avg_loss': 1.641845703125}}
+{'Role': 'Client #3', 'Round': 146, 'Results_raw': {'test_correct': 1782.0, 'test_total': 2845, 'test_acc': 0.6263620386643234, 'test_loss': 4985.200799107552, 'test_avg_loss': 1.7522674162065208}}
+{'Role': 'Client #3', 'Round': 146, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 146, 'Results_raw': {'test_correct': 1782.0, 'test_total': 2845, 'test_acc': 0.6263620386643234, 'test_loss': 4985.200799107552, 'test_avg_loss': 1.7522674162065208}}
+{'Role': 'client #3', 'Round': 147, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 18.128023147583008, 'train_avg_loss': 1.8128023147583008}}
+{'Role': 'Client #3', 'Round': 147, 'Results_raw': {'test_correct': 1827.0, 'test_total': 2845, 'test_acc': 0.6421792618629174, 'test_loss': 4945.842086076736, 'test_avg_loss': 1.738433070677236}}
+{'Role': 'Client #3', 'Round': 147, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 147, 'Results_raw': {'test_correct': 1827.0, 'test_total': 2845, 'test_acc': 0.6421792618629174, 'test_loss': 4945.842086076736, 'test_avg_loss': 1.738433070677236}}
+{'Role': 'client #3', 'Round': 148, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 17.798194885253906, 'train_avg_loss': 1.7798194885253906}}
+{'Role': 'Client #3', 'Round': 148, 'Results_raw': {'test_correct': 1846.0, 'test_total': 2845, 'test_acc': 0.6488576449912127, 'test_loss': 4931.984585523605, 'test_avg_loss': 1.733562244472269}}
+{'Role': 'Client #3', 'Round': 148, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 148, 'Results_raw': {'test_correct': 1846.0, 'test_total': 2845, 'test_acc': 0.6488576449912127, 'test_loss': 4931.984585523605, 'test_avg_loss': 1.733562244472269}}
+{'Role': 'client #3', 'Round': 149, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 17.238975763320923, 'train_avg_loss': 1.7238975763320923}}
+{'Role': 'Client #3', 'Round': 149, 'Results_raw': {'test_correct': 1832.0, 'test_total': 2845, 'test_acc': 0.6439367311072056, 'test_loss': 4913.067114949226, 'test_avg_loss': 1.7269128699294294}}
+{'Role': 'Client #3', 'Round': 149, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 149, 'Results_raw': {'test_correct': 1832.0, 'test_total': 2845, 'test_acc': 0.6439367311072056, 'test_loss': 4913.067114949226, 'test_avg_loss': 1.7269128699294294}}
+{'Role': 'client #3', 'Round': 150, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 18.27627420425415, 'train_avg_loss': 1.827627420425415}}
+{'Role': 'Client #3', 'Round': 150, 'Results_raw': {'test_correct': 1853.0, 'test_total': 2845, 'test_acc': 0.6513181019332162, 'test_loss': 4917.028168439865, 'test_avg_loss': 1.728305155866385}}
+{'Role': 'Client #3', 'Round': 150, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 150, 'Results_raw': {'test_correct': 1853.0, 'test_total': 2845, 'test_acc': 0.6513181019332162, 'test_loss': 4917.028168439865, 'test_avg_loss': 1.728305155866385}}
+{'Role': 'client #3', 'Round': 151, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 16.143184900283813, 'train_avg_loss': 1.6143184900283813}}
+{'Role': 'Client #3', 'Round': 151, 'Results_raw': {'test_correct': 1870.0, 'test_total': 2845, 'test_acc': 0.6572934973637962, 'test_loss': 4896.411818265915, 'test_avg_loss': 1.7210586355943462}}
+{'Role': 'Client #3', 'Round': 151, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 151, 'Results_raw': {'test_correct': 1870.0, 'test_total': 2845, 'test_acc': 0.6572934973637962, 'test_loss': 4896.411818265915, 'test_avg_loss': 1.7210586355943462}}
+{'Role': 'client #3', 'Round': 152, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 17.57147192955017, 'train_avg_loss': 1.757147192955017}}
+{'Role': 'Client #3', 'Round': 152, 'Results_raw': {'test_correct': 1859.0, 'test_total': 2845, 'test_acc': 0.653427065026362, 'test_loss': 4873.107981085777, 'test_avg_loss': 1.7128674801707477}}
+{'Role': 'Client #3', 'Round': 152, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 152, 'Results_raw': {'test_correct': 1859.0, 'test_total': 2845, 'test_acc': 0.653427065026362, 'test_loss': 4873.107981085777, 'test_avg_loss': 1.7128674801707477}}
+{'Role': 'client #3', 'Round': 153, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 15.722355842590332, 'train_avg_loss': 1.5722355842590332}}
+{'Role': 'Client #3', 'Round': 153, 'Results_raw': {'test_correct': 1877.0, 'test_total': 2845, 'test_acc': 0.6597539543057996, 'test_loss': 4837.928596138954, 'test_avg_loss': 1.7005021427553442}}
+{'Role': 'Client #3', 'Round': 153, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 153, 'Results_raw': {'test_correct': 1877.0, 'test_total': 2845, 'test_acc': 0.6597539543057996, 'test_loss': 4837.928596138954, 'test_avg_loss': 1.7005021427553442}}
+{'Role': 'client #3', 'Round': 154, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 17.467094659805298, 'train_avg_loss': 1.7467094659805298}}
+{'Role': 'Client #3', 'Round': 154, 'Results_raw': {'test_correct': 1900.0, 'test_total': 2845, 'test_acc': 0.6678383128295254, 'test_loss': 4823.7205374240875, 'test_avg_loss': 1.6955080975128602}}
+{'Role': 'Client #3', 'Round': 154, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 154, 'Results_raw': {'test_correct': 1900.0, 'test_total': 2845, 'test_acc': 0.6678383128295254, 'test_loss': 4823.7205374240875, 'test_avg_loss': 1.6955080975128602}}
+{'Role': 'client #3', 'Round': 155, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 14.862700700759888, 'train_avg_loss': 1.4862700700759888}}
+{'Role': 'Client #3', 'Round': 155, 'Results_raw': {'test_correct': 1952.0, 'test_total': 2845, 'test_acc': 0.686115992970123, 'test_loss': 4817.168574929237, 'test_avg_loss': 1.6932051229979745}}
+{'Role': 'Client #3', 'Round': 155, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 155, 'Results_raw': {'test_correct': 1952.0, 'test_total': 2845, 'test_acc': 0.686115992970123, 'test_loss': 4817.168574929237, 'test_avg_loss': 1.6932051229979745}}
+{'Role': 'client #3', 'Round': 156, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 17.493127584457397, 'train_avg_loss': 1.7493127584457397}}
+{'Role': 'Client #3', 'Round': 156, 'Results_raw': {'test_correct': 1936.0, 'test_total': 2845, 'test_acc': 0.6804920913884007, 'test_loss': 4829.672211408615, 'test_avg_loss': 1.6976000743088278}}
+{'Role': 'Client #3', 'Round': 156, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 156, 'Results_raw': {'test_correct': 1936.0, 'test_total': 2845, 'test_acc': 0.6804920913884007, 'test_loss': 4829.672211408615, 'test_avg_loss': 1.6976000743088278}}
+{'Role': 'client #3', 'Round': 157, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 18.015140295028687, 'train_avg_loss': 1.8015140295028687}}
+{'Role': 'Client #3', 'Round': 157, 'Results_raw': {'test_correct': 1933.0, 'test_total': 2845, 'test_acc': 0.6794376098418278, 'test_loss': 4830.365476608276, 'test_avg_loss': 1.6978437527621357}}
+{'Role': 'Client #3', 'Round': 157, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 157, 'Results_raw': {'test_correct': 1933.0, 'test_total': 2845, 'test_acc': 0.6794376098418278, 'test_loss': 4830.365476608276, 'test_avg_loss': 1.6978437527621357}}
+{'Role': 'client #3', 'Round': 158, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 16.315314769744873, 'train_avg_loss': 1.6315314769744873}}
+{'Role': 'Client #3', 'Round': 158, 'Results_raw': {'test_correct': 1888.0, 'test_total': 2845, 'test_acc': 0.6636203866432338, 'test_loss': 4804.600356221199, 'test_avg_loss': 1.6887874714310014}}
+{'Role': 'Client #3', 'Round': 158, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 158, 'Results_raw': {'test_correct': 1888.0, 'test_total': 2845, 'test_acc': 0.6636203866432338, 'test_loss': 4804.600356221199, 'test_avg_loss': 1.6887874714310014}}
+{'Role': 'client #3', 'Round': 159, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 17.323367595672607, 'train_avg_loss': 1.7323367595672607}}
+{'Role': 'Client #3', 'Round': 159, 'Results_raw': {'test_correct': 1886.0, 'test_total': 2845, 'test_acc': 0.6629173989455185, 'test_loss': 4774.671769142151, 'test_avg_loss': 1.6782677571677156}}
+{'Role': 'Client #3', 'Round': 159, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 159, 'Results_raw': {'test_correct': 1886.0, 'test_total': 2845, 'test_acc': 0.6629173989455185, 'test_loss': 4774.671769142151, 'test_avg_loss': 1.6782677571677156}}
+{'Role': 'client #3', 'Round': 160, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 17.196613550186157, 'train_avg_loss': 1.7196613550186157}}
+{'Role': 'Client #3', 'Round': 160, 'Results_raw': {'test_correct': 1909.0, 'test_total': 2845, 'test_acc': 0.6710017574692443, 'test_loss': 4747.713493704796, 'test_avg_loss': 1.6687920891756751}}
+{'Role': 'Client #3', 'Round': 160, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 160, 'Results_raw': {'test_correct': 1909.0, 'test_total': 2845, 'test_acc': 0.6710017574692443, 'test_loss': 4747.713493704796, 'test_avg_loss': 1.6687920891756751}}
+{'Role': 'client #3', 'Round': 161, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 15.97825288772583, 'train_avg_loss': 1.597825288772583}}
+{'Role': 'Client #3', 'Round': 161, 'Results_raw': {'test_correct': 1892.0, 'test_total': 2845, 'test_acc': 0.6650263620386643, 'test_loss': 4727.427351474762, 'test_avg_loss': 1.661661634964767}}
+{'Role': 'Client #3', 'Round': 161, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 161, 'Results_raw': {'test_correct': 1892.0, 'test_total': 2845, 'test_acc': 0.6650263620386643, 'test_loss': 4727.427351474762, 'test_avg_loss': 1.661661634964767}}
+{'Role': 'client #3', 'Round': 162, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 14.620592594146729, 'train_avg_loss': 1.4620592594146729}}
+{'Role': 'Client #3', 'Round': 162, 'Results_raw': {'test_correct': 1907.0, 'test_total': 2845, 'test_acc': 0.670298769771529, 'test_loss': 4701.4540058374405, 'test_avg_loss': 1.652532163738995}}
+{'Role': 'Client #3', 'Round': 162, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 162, 'Results_raw': {'test_correct': 1907.0, 'test_total': 2845, 'test_acc': 0.670298769771529, 'test_loss': 4701.4540058374405, 'test_avg_loss': 1.652532163738995}}
+{'Role': 'client #3', 'Round': 163, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 15.529787540435791, 'train_avg_loss': 1.552978754043579}}
+{'Role': 'Client #3', 'Round': 163, 'Results_raw': {'test_correct': 1880.0, 'test_total': 2845, 'test_acc': 0.6608084358523726, 'test_loss': 4712.868173122406, 'test_avg_loss': 1.6565441733294926}}
+{'Role': 'Client #3', 'Round': 163, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 163, 'Results_raw': {'test_correct': 1880.0, 'test_total': 2845, 'test_acc': 0.6608084358523726, 'test_loss': 4712.868173122406, 'test_avg_loss': 1.6565441733294926}}
+{'Role': 'client #3', 'Round': 164, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 14.748468399047852, 'train_avg_loss': 1.4748468399047852}}
+{'Role': 'Client #3', 'Round': 164, 'Results_raw': {'test_correct': 1890.0, 'test_total': 2845, 'test_acc': 0.664323374340949, 'test_loss': 4695.236958265305, 'test_avg_loss': 1.6503469097593337}}
+{'Role': 'Client #3', 'Round': 164, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 164, 'Results_raw': {'test_correct': 1890.0, 'test_total': 2845, 'test_acc': 0.664323374340949, 'test_loss': 4695.236958265305, 'test_avg_loss': 1.6503469097593337}}
+{'Role': 'client #3', 'Round': 165, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 15.120842456817627, 'train_avg_loss': 1.5120842456817627}}
+{'Role': 'Client #3', 'Round': 165, 'Results_raw': {'test_correct': 1880.0, 'test_total': 2845, 'test_acc': 0.6608084358523726, 'test_loss': 4668.086307048798, 'test_avg_loss': 1.6408036228642522}}
+{'Role': 'Client #3', 'Round': 165, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 165, 'Results_raw': {'test_correct': 1880.0, 'test_total': 2845, 'test_acc': 0.6608084358523726, 'test_loss': 4668.086307048798, 'test_avg_loss': 1.6408036228642522}}
+{'Role': 'client #3', 'Round': 166, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 15.642187595367432, 'train_avg_loss': 1.5642187595367432}}
+{'Role': 'Client #3', 'Round': 166, 'Results_raw': {'test_correct': 1878.0, 'test_total': 2845, 'test_acc': 0.6601054481546573, 'test_loss': 4625.206091403961, 'test_avg_loss': 1.625731490827403}}
+{'Role': 'Client #3', 'Round': 166, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 166, 'Results_raw': {'test_correct': 1878.0, 'test_total': 2845, 'test_acc': 0.6601054481546573, 'test_loss': 4625.206091403961, 'test_avg_loss': 1.625731490827403}}
+{'Role': 'client #3', 'Round': 167, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 16.090129613876343, 'train_avg_loss': 1.6090129613876343}}
+{'Role': 'Client #3', 'Round': 167, 'Results_raw': {'test_correct': 1864.0, 'test_total': 2845, 'test_acc': 0.6551845342706503, 'test_loss': 4589.7754645347595, 'test_avg_loss': 1.613277843421708}}
+{'Role': 'Client #3', 'Round': 167, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 167, 'Results_raw': {'test_correct': 1864.0, 'test_total': 2845, 'test_acc': 0.6551845342706503, 'test_loss': 4589.7754645347595, 'test_avg_loss': 1.613277843421708}}
+{'Role': 'client #3', 'Round': 168, 'Results_raw': {'train_correct': 9.0, 'train_total': 10, 'train_acc': 0.9, 'train_loss': 15.939546823501587, 'train_avg_loss': 1.5939546823501587}}
+{'Role': 'Client #3', 'Round': 168, 'Results_raw': {'test_correct': 1908.0, 'test_total': 2845, 'test_acc': 0.6706502636203866, 'test_loss': 4562.965512275696, 'test_avg_loss': 1.60385431011448}}
+{'Role': 'Client #3', 'Round': 168, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 168, 'Results_raw': {'test_correct': 1908.0, 'test_total': 2845, 'test_acc': 0.6706502636203866, 'test_loss': 4562.965512275696, 'test_avg_loss': 1.60385431011448}}
+{'Role': 'client #3', 'Round': 169, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 15.764093399047852, 'train_avg_loss': 1.5764093399047852}}
+{'Role': 'Client #3', 'Round': 169, 'Results_raw': {'test_correct': 1910.0, 'test_total': 2845, 'test_acc': 0.671353251318102, 'test_loss': 4554.822553396225, 'test_avg_loss': 1.6009921101568454}}
+{'Role': 'Client #3', 'Round': 169, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 169, 'Results_raw': {'test_correct': 1910.0, 'test_total': 2845, 'test_acc': 0.671353251318102, 'test_loss': 4554.822553396225, 'test_avg_loss': 1.6009921101568454}}
+{'Role': 'client #3', 'Round': 170, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 16.745725870132446, 'train_avg_loss': 1.6745725870132446}}
+{'Role': 'Client #3', 'Round': 170, 'Results_raw': {'test_correct': 1909.0, 'test_total': 2845, 'test_acc': 0.6710017574692443, 'test_loss': 4540.734997987747, 'test_avg_loss': 1.596040421085324}}
+{'Role': 'Client #3', 'Round': 170, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 170, 'Results_raw': {'test_correct': 1909.0, 'test_total': 2845, 'test_acc': 0.6710017574692443, 'test_loss': 4540.734997987747, 'test_avg_loss': 1.596040421085324}}
+{'Role': 'client #3', 'Round': 171, 'Results_raw': {'train_correct': 4.0, 'train_total': 10, 'train_acc': 0.4, 'train_loss': 18.145732879638672, 'train_avg_loss': 1.8145732879638672}}
+{'Role': 'Client #3', 'Round': 171, 'Results_raw': {'test_correct': 1972.0, 'test_total': 2845, 'test_acc': 0.6931458699472759, 'test_loss': 4528.748664855957, 'test_avg_loss': 1.5918272987191413}}
+{'Role': 'Client #3', 'Round': 171, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 171, 'Results_raw': {'test_correct': 1972.0, 'test_total': 2845, 'test_acc': 0.6931458699472759, 'test_loss': 4528.748664855957, 'test_avg_loss': 1.5918272987191413}}
+{'Role': 'client #3', 'Round': 172, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 17.85400390625, 'train_avg_loss': 1.785400390625}}
+{'Role': 'Client #3', 'Round': 172, 'Results_raw': {'test_correct': 1953.0, 'test_total': 2845, 'test_acc': 0.6864674868189806, 'test_loss': 4520.95932841301, 'test_avg_loss': 1.5890893948727627}}
+{'Role': 'Client #3', 'Round': 172, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 172, 'Results_raw': {'test_correct': 1953.0, 'test_total': 2845, 'test_acc': 0.6864674868189806, 'test_loss': 4520.95932841301, 'test_avg_loss': 1.5890893948727627}}
+{'Role': 'client #3', 'Round': 173, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 15.099482536315918, 'train_avg_loss': 1.5099482536315918}}
+{'Role': 'Client #3', 'Round': 173, 'Results_raw': {'test_correct': 1968.0, 'test_total': 2845, 'test_acc': 0.6917398945518454, 'test_loss': 4512.221701145172, 'test_avg_loss': 1.5860181726345068}}
+{'Role': 'Client #3', 'Round': 173, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 173, 'Results_raw': {'test_correct': 1968.0, 'test_total': 2845, 'test_acc': 0.6917398945518454, 'test_loss': 4512.221701145172, 'test_avg_loss': 1.5860181726345068}}
+{'Role': 'client #3', 'Round': 174, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 15.355931520462036, 'train_avg_loss': 1.5355931520462036}}
+{'Role': 'Client #3', 'Round': 174, 'Results_raw': {'test_correct': 1987.0, 'test_total': 2845, 'test_acc': 0.6984182776801406, 'test_loss': 4495.538774728775, 'test_avg_loss': 1.5801542266181987}}
+{'Role': 'Client #3', 'Round': 174, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 174, 'Results_raw': {'test_correct': 1987.0, 'test_total': 2845, 'test_acc': 0.6984182776801406, 'test_loss': 4495.538774728775, 'test_avg_loss': 1.5801542266181987}}
+{'Role': 'client #3', 'Round': 175, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 19.620730876922607, 'train_avg_loss': 1.9620730876922607}}
+{'Role': 'Client #3', 'Round': 175, 'Results_raw': {'test_correct': 1979.0, 'test_total': 2845, 'test_acc': 0.6956063268892795, 'test_loss': 4489.53221142292, 'test_avg_loss': 1.5780429565634166}}
+{'Role': 'Client #3', 'Round': 175, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 175, 'Results_raw': {'test_correct': 1979.0, 'test_total': 2845, 'test_acc': 0.6956063268892795, 'test_loss': 4489.53221142292, 'test_avg_loss': 1.5780429565634166}}
+{'Role': 'client #3', 'Round': 176, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 15.660619735717773, 'train_avg_loss': 1.5660619735717773}}
+{'Role': 'Client #3', 'Round': 176, 'Results_raw': {'test_correct': 2019.0, 'test_total': 2845, 'test_acc': 0.7096660808435853, 'test_loss': 4479.654925465584, 'test_avg_loss': 1.5745711513060048}}
+{'Role': 'Client #3', 'Round': 176, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 176, 'Results_raw': {'test_correct': 2019.0, 'test_total': 2845, 'test_acc': 0.7096660808435853, 'test_loss': 4479.654925465584, 'test_avg_loss': 1.5745711513060048}}
+{'Role': 'client #3', 'Round': 177, 'Results_raw': {'train_correct': 9.0, 'train_total': 10, 'train_acc': 0.9, 'train_loss': 15.535776615142822, 'train_avg_loss': 1.5535776615142822}}
+{'Role': 'Client #3', 'Round': 177, 'Results_raw': {'test_correct': 2020.0, 'test_total': 2845, 'test_acc': 0.7100175746924429, 'test_loss': 4480.168368220329, 'test_avg_loss': 1.5747516232760383}}
+{'Role': 'Client #3', 'Round': 177, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 177, 'Results_raw': {'test_correct': 2020.0, 'test_total': 2845, 'test_acc': 0.7100175746924429, 'test_loss': 4480.168368220329, 'test_avg_loss': 1.5747516232760383}}
+{'Role': 'client #3', 'Round': 178, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 14.169284105300903, 'train_avg_loss': 1.4169284105300903}}
+{'Role': 'Client #3', 'Round': 178, 'Results_raw': {'test_correct': 2023.0, 'test_total': 2845, 'test_acc': 0.7110720562390158, 'test_loss': 4445.752026438713, 'test_avg_loss': 1.562654490839618}}
+{'Role': 'Client #3', 'Round': 178, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 178, 'Results_raw': {'test_correct': 2023.0, 'test_total': 2845, 'test_acc': 0.7110720562390158, 'test_loss': 4445.752026438713, 'test_avg_loss': 1.562654490839618}}
+{'Role': 'client #3', 'Round': 179, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 15.942291021347046, 'train_avg_loss': 1.5942291021347046}}
+{'Role': 'Client #3', 'Round': 179, 'Results_raw': {'test_correct': 2064.0, 'test_total': 2845, 'test_acc': 0.7254833040421793, 'test_loss': 4423.875758051872, 'test_avg_loss': 1.5549651170656844}}
+{'Role': 'Client #3', 'Round': 179, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 179, 'Results_raw': {'test_correct': 2064.0, 'test_total': 2845, 'test_acc': 0.7254833040421793, 'test_loss': 4423.875758051872, 'test_avg_loss': 1.5549651170656844}}
+{'Role': 'client #3', 'Round': 180, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 15.769375562667847, 'train_avg_loss': 1.5769375562667847}}
+{'Role': 'Client #3', 'Round': 180, 'Results_raw': {'test_correct': 2076.0, 'test_total': 2845, 'test_acc': 0.729701230228471, 'test_loss': 4390.266896486282, 'test_avg_loss': 1.5431518089582714}}
+{'Role': 'Client #3', 'Round': 180, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 180, 'Results_raw': {'test_correct': 2076.0, 'test_total': 2845, 'test_acc': 0.729701230228471, 'test_loss': 4390.266896486282, 'test_avg_loss': 1.5431518089582714}}
+{'Role': 'client #3', 'Round': 181, 'Results_raw': {'train_correct': 8.0, 'train_total': 10, 'train_acc': 0.8, 'train_loss': 14.092134237289429, 'train_avg_loss': 1.4092134237289429}}
+{'Role': 'Client #3', 'Round': 181, 'Results_raw': {'test_correct': 2073.0, 'test_total': 2845, 'test_acc': 0.728646748681898, 'test_loss': 4377.310845851898, 'test_avg_loss': 1.5385978368547972}}
+{'Role': 'Client #3', 'Round': 181, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 181, 'Results_raw': {'test_correct': 2073.0, 'test_total': 2845, 'test_acc': 0.728646748681898, 'test_loss': 4377.310845851898, 'test_avg_loss': 1.5385978368547972}}
+{'Role': 'client #3', 'Round': 182, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 17.352041006088257, 'train_avg_loss': 1.7352041006088257}}
+{'Role': 'Client #3', 'Round': 182, 'Results_raw': {'test_correct': 2055.0, 'test_total': 2845, 'test_acc': 0.7223198594024605, 'test_loss': 4362.200991511345, 'test_avg_loss': 1.5332868159969577}}
+{'Role': 'Client #3', 'Round': 182, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 182, 'Results_raw': {'test_correct': 2055.0, 'test_total': 2845, 'test_acc': 0.7223198594024605, 'test_loss': 4362.200991511345, 'test_avg_loss': 1.5332868159969577}}
+{'Role': 'client #3', 'Round': 183, 'Results_raw': {'train_correct': 9.0, 'train_total': 10, 'train_acc': 0.9, 'train_loss': 14.236894845962524, 'train_avg_loss': 1.4236894845962524}}
+{'Role': 'Client #3', 'Round': 183, 'Results_raw': {'test_correct': 2013.0, 'test_total': 2845, 'test_acc': 0.7075571177504394, 'test_loss': 4312.716682553291, 'test_avg_loss': 1.5158933857832306}}
+{'Role': 'Client #3', 'Round': 183, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 183, 'Results_raw': {'test_correct': 2013.0, 'test_total': 2845, 'test_acc': 0.7075571177504394, 'test_loss': 4312.716682553291, 'test_avg_loss': 1.5158933857832306}}
+{'Role': 'client #3', 'Round': 184, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 15.64313530921936, 'train_avg_loss': 1.564313530921936}}
+{'Role': 'Client #3', 'Round': 184, 'Results_raw': {'test_correct': 1989.0, 'test_total': 2845, 'test_acc': 0.6991212653778559, 'test_loss': 4294.4587206840515, 'test_avg_loss': 1.5094758244935154}}
+{'Role': 'Client #3', 'Round': 184, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 184, 'Results_raw': {'test_correct': 1989.0, 'test_total': 2845, 'test_acc': 0.6991212653778559, 'test_loss': 4294.4587206840515, 'test_avg_loss': 1.5094758244935154}}
+{'Role': 'client #3', 'Round': 185, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 12.252930402755737, 'train_avg_loss': 1.2252930402755737}}
+{'Role': 'Client #3', 'Round': 185, 'Results_raw': {'test_correct': 2008.0, 'test_total': 2845, 'test_acc': 0.7057996485061512, 'test_loss': 4289.253992438316, 'test_avg_loss': 1.507646394530164}}
+{'Role': 'Client #3', 'Round': 185, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 185, 'Results_raw': {'test_correct': 2008.0, 'test_total': 2845, 'test_acc': 0.7057996485061512, 'test_loss': 4289.253992438316, 'test_avg_loss': 1.507646394530164}}
+{'Role': 'client #3', 'Round': 186, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 15.603384971618652, 'train_avg_loss': 1.5603384971618652}}
+{'Role': 'Client #3', 'Round': 186, 'Results_raw': {'test_correct': 2024.0, 'test_total': 2845, 'test_acc': 0.7114235500878735, 'test_loss': 4263.322566747665, 'test_avg_loss': 1.498531657907791}}
+{'Role': 'Client #3', 'Round': 186, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 186, 'Results_raw': {'test_correct': 2024.0, 'test_total': 2845, 'test_acc': 0.7114235500878735, 'test_loss': 4263.322566747665, 'test_avg_loss': 1.498531657907791}}
+{'Role': 'client #3', 'Round': 187, 'Results_raw': {'train_correct': 5.0, 'train_total': 10, 'train_acc': 0.5, 'train_loss': 18.71531844139099, 'train_avg_loss': 1.8715318441390991}}
+{'Role': 'Client #3', 'Round': 187, 'Results_raw': {'test_correct': 2031.0, 'test_total': 2845, 'test_acc': 0.713884007029877, 'test_loss': 4285.364050269127, 'test_avg_loss': 1.5062791037852818}}
+{'Role': 'Client #3', 'Round': 187, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 187, 'Results_raw': {'test_correct': 2031.0, 'test_total': 2845, 'test_acc': 0.713884007029877, 'test_loss': 4285.364050269127, 'test_avg_loss': 1.5062791037852818}}
+{'Role': 'client #3', 'Round': 188, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 17.890732288360596, 'train_avg_loss': 1.7890732288360596}}
+{'Role': 'Client #3', 'Round': 188, 'Results_raw': {'test_correct': 2006.0, 'test_total': 2845, 'test_acc': 0.7050966608084358, 'test_loss': 4261.7083859443665, 'test_avg_loss': 1.4979642832844873}}
+{'Role': 'Client #3', 'Round': 188, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 188, 'Results_raw': {'test_correct': 2006.0, 'test_total': 2845, 'test_acc': 0.7050966608084358, 'test_loss': 4261.7083859443665, 'test_avg_loss': 1.4979642832844873}}
+{'Role': 'client #3', 'Round': 189, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 13.345732688903809, 'train_avg_loss': 1.3345732688903809}}
+{'Role': 'Client #3', 'Round': 189, 'Results_raw': {'test_correct': 2000.0, 'test_total': 2845, 'test_acc': 0.70298769771529, 'test_loss': 4253.510119318962, 'test_avg_loss': 1.4950826429943627}}
+{'Role': 'Client #3', 'Round': 189, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 189, 'Results_raw': {'test_correct': 2000.0, 'test_total': 2845, 'test_acc': 0.70298769771529, 'test_loss': 4253.510119318962, 'test_avg_loss': 1.4950826429943627}}
+{'Role': 'client #3', 'Round': 190, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 16.56329870223999, 'train_avg_loss': 1.656329870223999}}
+{'Role': 'Client #3', 'Round': 190, 'Results_raw': {'test_correct': 2015.0, 'test_total': 2845, 'test_acc': 0.7082601054481547, 'test_loss': 4237.51051068306, 'test_avg_loss': 1.4894588789747134}}
+{'Role': 'Client #3', 'Round': 190, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 190, 'Results_raw': {'test_correct': 2015.0, 'test_total': 2845, 'test_acc': 0.7082601054481547, 'test_loss': 4237.51051068306, 'test_avg_loss': 1.4894588789747134}}
+{'Role': 'client #3', 'Round': 191, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 13.69355320930481, 'train_avg_loss': 1.369355320930481}}
+{'Role': 'Client #3', 'Round': 191, 'Results_raw': {'test_correct': 2032.0, 'test_total': 2845, 'test_acc': 0.7142355008787347, 'test_loss': 4200.731374025345, 'test_avg_loss': 1.4765312386732319}}
+{'Role': 'Client #3', 'Round': 191, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 191, 'Results_raw': {'test_correct': 2032.0, 'test_total': 2845, 'test_acc': 0.7142355008787347, 'test_loss': 4200.731374025345, 'test_avg_loss': 1.4765312386732319}}
+{'Role': 'client #3', 'Round': 192, 'Results_raw': {'train_correct': 3.0, 'train_total': 10, 'train_acc': 0.3, 'train_loss': 17.975995540618896, 'train_avg_loss': 1.7975995540618896}}
+{'Role': 'Client #3', 'Round': 192, 'Results_raw': {'test_correct': 2068.0, 'test_total': 2845, 'test_acc': 0.7268892794376098, 'test_loss': 4191.827520728111, 'test_avg_loss': 1.4734015890081236}}
+{'Role': 'Client #3', 'Round': 192, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 192, 'Results_raw': {'test_correct': 2068.0, 'test_total': 2845, 'test_acc': 0.7268892794376098, 'test_loss': 4191.827520728111, 'test_avg_loss': 1.4734015890081236}}
+{'Role': 'client #3', 'Round': 193, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 13.92956256866455, 'train_avg_loss': 1.392956256866455}}
+{'Role': 'Client #3', 'Round': 193, 'Results_raw': {'test_correct': 2061.0, 'test_total': 2845, 'test_acc': 0.7244288224956064, 'test_loss': 4164.379006624222, 'test_avg_loss': 1.463753605140324}}
+{'Role': 'Client #3', 'Round': 193, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 193, 'Results_raw': {'test_correct': 2061.0, 'test_total': 2845, 'test_acc': 0.7244288224956064, 'test_loss': 4164.379006624222, 'test_avg_loss': 1.463753605140324}}
+{'Role': 'client #3', 'Round': 194, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 14.61780309677124, 'train_avg_loss': 1.461780309677124}}
+{'Role': 'Client #3', 'Round': 194, 'Results_raw': {'test_correct': 2066.0, 'test_total': 2845, 'test_acc': 0.7261862917398946, 'test_loss': 4160.800263285637, 'test_avg_loss': 1.4624956988701712}}
+{'Role': 'Client #3', 'Round': 194, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 194, 'Results_raw': {'test_correct': 2066.0, 'test_total': 2845, 'test_acc': 0.7261862917398946, 'test_loss': 4160.800263285637, 'test_avg_loss': 1.4624956988701712}}
+{'Role': 'client #3', 'Round': 195, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 14.930529594421387, 'train_avg_loss': 1.4930529594421387}}
+{'Role': 'Client #3', 'Round': 195, 'Results_raw': {'test_correct': 2038.0, 'test_total': 2845, 'test_acc': 0.7163444639718805, 'test_loss': 4134.103796482086, 'test_avg_loss': 1.4531120550024907}}
+{'Role': 'Client #3', 'Round': 195, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 195, 'Results_raw': {'test_correct': 2038.0, 'test_total': 2845, 'test_acc': 0.7163444639718805, 'test_loss': 4134.103796482086, 'test_avg_loss': 1.4531120550024907}}
+{'Role': 'client #3', 'Round': 196, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 12.75865912437439, 'train_avg_loss': 1.275865912437439}}
+{'Role': 'Client #3', 'Round': 196, 'Results_raw': {'test_correct': 2038.0, 'test_total': 2845, 'test_acc': 0.7163444639718805, 'test_loss': 4117.120851278305, 'test_avg_loss': 1.4471426542278751}}
+{'Role': 'Client #3', 'Round': 196, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 196, 'Results_raw': {'test_correct': 2038.0, 'test_total': 2845, 'test_acc': 0.7163444639718805, 'test_loss': 4117.120851278305, 'test_avg_loss': 1.4471426542278751}}
+{'Role': 'client #3', 'Round': 197, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 16.312625408172607, 'train_avg_loss': 1.6312625408172607}}
+{'Role': 'Client #3', 'Round': 197, 'Results_raw': {'test_correct': 2033.0, 'test_total': 2845, 'test_acc': 0.7145869947275922, 'test_loss': 4111.597881913185, 'test_avg_loss': 1.4452013644686064}}
+{'Role': 'Client #3', 'Round': 197, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 197, 'Results_raw': {'test_correct': 2033.0, 'test_total': 2845, 'test_acc': 0.7145869947275922, 'test_loss': 4111.597881913185, 'test_avg_loss': 1.4452013644686064}}
+{'Role': 'client #3', 'Round': 198, 'Results_raw': {'train_correct': 7.0, 'train_total': 10, 'train_acc': 0.7, 'train_loss': 13.097549676895142, 'train_avg_loss': 1.3097549676895142}}
+{'Role': 'Client #3', 'Round': 198, 'Results_raw': {'test_correct': 2056.0, 'test_total': 2845, 'test_acc': 0.7226713532513181, 'test_loss': 4090.151710510254, 'test_avg_loss': 1.4376631671389293}}
+{'Role': 'Client #3', 'Round': 198, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 198, 'Results_raw': {'test_correct': 2056.0, 'test_total': 2845, 'test_acc': 0.7226713532513181, 'test_loss': 4090.151710510254, 'test_avg_loss': 1.4376631671389293}}
+{'Role': 'client #3', 'Round': 199, 'Results_raw': {'train_correct': 6.0, 'train_total': 10, 'train_acc': 0.6, 'train_loss': 15.34883737564087, 'train_avg_loss': 1.534883737564087}}
+{'Role': 'Client #3', 'Round': 199, 'Results_raw': {'test_correct': 2042.0, 'test_total': 2845, 'test_acc': 0.7177504393673111, 'test_loss': 4092.297059893608, 'test_avg_loss': 1.438417244250829}}
+{'Role': 'Client #3', 'Round': 199, 'Results_raw': {}}
+{'Role': 'Client #3', 'Round': 199, 'Results_raw': {'test_correct': 2042.0, 'test_total': 2845, 'test_acc': 0.7177504393673111, 'test_loss': 4092.297059893608, 'test_avg_loss': 1.438417244250829}}
