@@ -705,3 +705,137 @@ Filtered para names in local update: {'layer2.1.num_batches_tracked', 'layer1.1.
 2024-01-08 17:04:00,927 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 131, 'Results_raw': {'train_avg_loss': 2.298244, 'train_acc': 0.1, 'train_total': 10, 'train_loss': 22.982445, 'train_correct': 1.0}}
 2024-01-08 17:04:03,081 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
 2024-01-08 17:04:03,092 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 132, 'Results_raw': {'train_avg_loss': 2.231428, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 22.314277, 'train_correct': 2.0}}
+2024-01-08 17:04:05,290 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:05,301 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 133, 'Results_raw': {'train_avg_loss': 2.210984, 'train_acc': 0.1, 'train_total': 10, 'train_loss': 22.109845, 'train_correct': 1.0}}
+2024-01-08 17:04:07,381 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:07,391 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 134, 'Results_raw': {'train_avg_loss': 2.195113, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 21.951127, 'train_correct': 3.0}}
+2024-01-08 17:04:09,470 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:09,481 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 135, 'Results_raw': {'train_avg_loss': 2.194491, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 21.944909, 'train_correct': 3.0}}
+2024-01-08 17:04:11,608 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:11,618 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 136, 'Results_raw': {'train_avg_loss': 2.193576, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 21.935763, 'train_correct': 3.0}}
+2024-01-08 17:04:13,752 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:13,762 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 137, 'Results_raw': {'train_avg_loss': 2.298232, 'train_acc': 0.0, 'train_total': 10, 'train_loss': 22.982321, 'train_correct': 0.0}}
+2024-01-08 17:04:15,797 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:15,807 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 138, 'Results_raw': {'train_avg_loss': 2.455453, 'train_acc': 0.0, 'train_total': 10, 'train_loss': 24.554532, 'train_correct': 0.0}}
+2024-01-08 17:04:17,951 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:17,962 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 139, 'Results_raw': {'train_avg_loss': 2.034658, 'train_acc': 0.5, 'train_total': 10, 'train_loss': 20.34658, 'train_correct': 5.0}}
+2024-01-08 17:04:20,061 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:20,071 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 140, 'Results_raw': {'train_avg_loss': 2.250929, 'train_acc': 0.1, 'train_total': 10, 'train_loss': 22.509286, 'train_correct': 1.0}}
+2024-01-08 17:04:22,183 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:22,193 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 141, 'Results_raw': {'train_avg_loss': 2.04037, 'train_acc': 0.4, 'train_total': 10, 'train_loss': 20.403705, 'train_correct': 4.0}}
+2024-01-08 17:04:24,349 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:24,360 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 142, 'Results_raw': {'train_avg_loss': 2.295826, 'train_acc': 0.1, 'train_total': 10, 'train_loss': 22.958262, 'train_correct': 1.0}}
+2024-01-08 17:04:26,589 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:26,602 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 143, 'Results_raw': {'train_avg_loss': 2.381572, 'train_acc': 0.0, 'train_total': 10, 'train_loss': 23.815722, 'train_correct': 0.0}}
+2024-01-08 17:04:28,871 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:28,881 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 144, 'Results_raw': {'train_avg_loss': 2.330689, 'train_acc': 0.0, 'train_total': 10, 'train_loss': 23.306892, 'train_correct': 0.0}}
+2024-01-08 17:04:31,192 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:31,204 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 145, 'Results_raw': {'train_avg_loss': 2.242344, 'train_acc': 0.4, 'train_total': 10, 'train_loss': 22.423444, 'train_correct': 4.0}}
+2024-01-08 17:04:33,420 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:33,431 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 146, 'Results_raw': {'train_avg_loss': 2.208934, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 22.089336, 'train_correct': 2.0}}
+2024-01-08 17:04:35,616 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:35,626 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 147, 'Results_raw': {'train_avg_loss': 2.267006, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 22.670059, 'train_correct': 3.0}}
+2024-01-08 17:04:37,796 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:37,807 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 148, 'Results_raw': {'train_avg_loss': 2.05397, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 20.539703, 'train_correct': 3.0}}
+2024-01-08 17:04:40,097 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:40,108 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 149, 'Results_raw': {'train_avg_loss': 2.271645, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 22.716446, 'train_correct': 2.0}}
+2024-01-08 17:04:42,321 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:42,331 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 150, 'Results_raw': {'train_avg_loss': 2.196636, 'train_acc': 0.1, 'train_total': 10, 'train_loss': 21.966362, 'train_correct': 1.0}}
+2024-01-08 17:04:44,486 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:44,499 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 151, 'Results_raw': {'train_avg_loss': 1.968706, 'train_acc': 0.4, 'train_total': 10, 'train_loss': 19.687064, 'train_correct': 4.0}}
+2024-01-08 17:04:46,689 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:46,702 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 152, 'Results_raw': {'train_avg_loss': 2.058463, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 20.584626, 'train_correct': 3.0}}
+2024-01-08 17:04:48,896 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:48,908 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 153, 'Results_raw': {'train_avg_loss': 2.109304, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 21.093037, 'train_correct': 2.0}}
+2024-01-08 17:04:51,220 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:51,232 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 154, 'Results_raw': {'train_avg_loss': 2.137593, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 21.375933, 'train_correct': 2.0}}
+2024-01-08 17:04:53,428 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:53,439 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 155, 'Results_raw': {'train_avg_loss': 1.824207, 'train_acc': 0.7, 'train_total': 10, 'train_loss': 18.242071, 'train_correct': 7.0}}
+2024-01-08 17:04:55,534 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:55,545 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 156, 'Results_raw': {'train_avg_loss': 1.997068, 'train_acc': 0.4, 'train_total': 10, 'train_loss': 19.970684, 'train_correct': 4.0}}
+2024-01-08 17:04:57,622 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:57,632 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 157, 'Results_raw': {'train_avg_loss': 2.339885, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 23.398855, 'train_correct': 2.0}}
+2024-01-08 17:04:59,786 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:04:59,797 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 158, 'Results_raw': {'train_avg_loss': 2.29747, 'train_acc': 0.0, 'train_total': 10, 'train_loss': 22.974696, 'train_correct': 0.0}}
+2024-01-08 17:05:02,075 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:02,089 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 159, 'Results_raw': {'train_avg_loss': 2.102293, 'train_acc': 0.4, 'train_total': 10, 'train_loss': 21.022933, 'train_correct': 4.0}}
+2024-01-08 17:05:04,254 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:04,264 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 160, 'Results_raw': {'train_avg_loss': 2.295717, 'train_acc': 0.1, 'train_total': 10, 'train_loss': 22.957172, 'train_correct': 1.0}}
+2024-01-08 17:05:06,519 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:06,530 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 161, 'Results_raw': {'train_avg_loss': 2.24611, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 22.461097, 'train_correct': 3.0}}
+2024-01-08 17:05:08,660 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:08,670 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 162, 'Results_raw': {'train_avg_loss': 2.046445, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 20.464451, 'train_correct': 2.0}}
+2024-01-08 17:05:11,123 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:11,134 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 163, 'Results_raw': {'train_avg_loss': 2.222102, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 22.221019, 'train_correct': 2.0}}
+2024-01-08 17:05:13,372 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:13,384 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 164, 'Results_raw': {'train_avg_loss': 2.149501, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 21.495006, 'train_correct': 2.0}}
+2024-01-08 17:05:15,723 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:15,734 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 165, 'Results_raw': {'train_avg_loss': 2.110803, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 21.108027, 'train_correct': 2.0}}
+2024-01-08 17:05:17,945 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:17,957 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 166, 'Results_raw': {'train_avg_loss': 2.08888, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 20.888796, 'train_correct': 3.0}}
+2024-01-08 17:05:20,288 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:20,299 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 167, 'Results_raw': {'train_avg_loss': 2.178177, 'train_acc': 0.0, 'train_total': 10, 'train_loss': 21.781769, 'train_correct': 0.0}}
+2024-01-08 17:05:22,524 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:22,538 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 168, 'Results_raw': {'train_avg_loss': 2.25894, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 22.589395, 'train_correct': 2.0}}
+2024-01-08 17:05:24,792 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:24,803 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 169, 'Results_raw': {'train_avg_loss': 2.216371, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 22.163708, 'train_correct': 2.0}}
+2024-01-08 17:05:27,012 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:27,024 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 170, 'Results_raw': {'train_avg_loss': 2.175808, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 21.758084, 'train_correct': 2.0}}
+2024-01-08 17:05:29,361 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:29,377 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 171, 'Results_raw': {'train_avg_loss': 2.087634, 'train_acc': 0.4, 'train_total': 10, 'train_loss': 20.876338, 'train_correct': 4.0}}
+2024-01-08 17:05:31,695 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:31,709 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 172, 'Results_raw': {'train_avg_loss': 2.180147, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 21.801469, 'train_correct': 3.0}}
+2024-01-08 17:05:33,923 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:33,933 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 173, 'Results_raw': {'train_avg_loss': 2.031545, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 20.315452, 'train_correct': 3.0}}
+2024-01-08 17:05:36,137 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:36,148 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 174, 'Results_raw': {'train_avg_loss': 2.320765, 'train_acc': 0.0, 'train_total': 10, 'train_loss': 23.207645, 'train_correct': 0.0}}
+2024-01-08 17:05:38,499 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:38,511 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 175, 'Results_raw': {'train_avg_loss': 2.080432, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 20.804322, 'train_correct': 3.0}}
+2024-01-08 17:05:40,641 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:40,652 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 176, 'Results_raw': {'train_avg_loss': 2.100207, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 21.002069, 'train_correct': 2.0}}
+2024-01-08 17:05:42,720 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:42,730 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 177, 'Results_raw': {'train_avg_loss': 2.15907, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 21.590703, 'train_correct': 2.0}}
+2024-01-08 17:05:44,814 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:44,827 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 178, 'Results_raw': {'train_avg_loss': 1.951023, 'train_acc': 0.5, 'train_total': 10, 'train_loss': 19.510233, 'train_correct': 5.0}}
+2024-01-08 17:05:47,116 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:47,129 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 179, 'Results_raw': {'train_avg_loss': 1.982111, 'train_acc': 0.4, 'train_total': 10, 'train_loss': 19.821106, 'train_correct': 4.0}}
+2024-01-08 17:05:49,331 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:49,341 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 180, 'Results_raw': {'train_avg_loss': 2.047424, 'train_acc': 0.4, 'train_total': 10, 'train_loss': 20.474243, 'train_correct': 4.0}}
+2024-01-08 17:05:51,517 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:51,528 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 181, 'Results_raw': {'train_avg_loss': 2.071162, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 20.71162, 'train_correct': 2.0}}
+2024-01-08 17:05:53,714 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:53,724 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 182, 'Results_raw': {'train_avg_loss': 2.285416, 'train_acc': 0.1, 'train_total': 10, 'train_loss': 22.854164, 'train_correct': 1.0}}
+2024-01-08 17:05:55,943 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:55,955 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 183, 'Results_raw': {'train_avg_loss': 2.338576, 'train_acc': 0.0, 'train_total': 10, 'train_loss': 23.385756, 'train_correct': 0.0}}
+2024-01-08 17:05:58,133 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:05:58,144 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 184, 'Results_raw': {'train_avg_loss': 2.381133, 'train_acc': 0.1, 'train_total': 10, 'train_loss': 23.811328, 'train_correct': 1.0}}
+2024-01-08 17:06:00,342 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:00,352 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 185, 'Results_raw': {'train_avg_loss': 2.039077, 'train_acc': 0.4, 'train_total': 10, 'train_loss': 20.390766, 'train_correct': 4.0}}
+2024-01-08 17:06:02,514 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:02,524 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 186, 'Results_raw': {'train_avg_loss': 1.987898, 'train_acc': 0.4, 'train_total': 10, 'train_loss': 19.878975, 'train_correct': 4.0}}
+2024-01-08 17:06:04,633 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:04,644 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 187, 'Results_raw': {'train_avg_loss': 2.164501, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 21.645014, 'train_correct': 3.0}}
+2024-01-08 17:06:06,764 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:06,775 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 188, 'Results_raw': {'train_avg_loss': 1.718987, 'train_acc': 0.7, 'train_total': 10, 'train_loss': 17.189867, 'train_correct': 7.0}}
+2024-01-08 17:06:08,927 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:08,937 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 189, 'Results_raw': {'train_avg_loss': 2.065159, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 20.651588, 'train_correct': 2.0}}
+2024-01-08 17:06:11,090 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:11,100 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 190, 'Results_raw': {'train_avg_loss': 2.355102, 'train_acc': 0.1, 'train_total': 10, 'train_loss': 23.551018, 'train_correct': 1.0}}
+2024-01-08 17:06:13,237 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:13,248 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 191, 'Results_raw': {'train_avg_loss': 2.111243, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 21.112425, 'train_correct': 3.0}}
+2024-01-08 17:06:15,388 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:15,399 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 192, 'Results_raw': {'train_avg_loss': 1.95684, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 19.568402, 'train_correct': 3.0}}
+2024-01-08 17:06:17,536 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:17,548 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 193, 'Results_raw': {'train_avg_loss': 2.238407, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 22.384069, 'train_correct': 2.0}}
+2024-01-08 17:06:19,764 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:19,776 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 194, 'Results_raw': {'train_avg_loss': 2.222671, 'train_acc': 0.1, 'train_total': 10, 'train_loss': 22.226713, 'train_correct': 1.0}}
+2024-01-08 17:06:22,208 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:22,219 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 195, 'Results_raw': {'train_avg_loss': 1.817439, 'train_acc': 0.5, 'train_total': 10, 'train_loss': 18.174393, 'train_correct': 5.0}}
+2024-01-08 17:06:24,486 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:24,496 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 196, 'Results_raw': {'train_avg_loss': 2.196138, 'train_acc': 0.2, 'train_total': 10, 'train_loss': 21.961384, 'train_correct': 2.0}}
+2024-01-08 17:06:26,719 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:26,731 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 197, 'Results_raw': {'train_avg_loss': 2.172343, 'train_acc': 0.1, 'train_total': 10, 'train_loss': 21.723435, 'train_correct': 1.0}}
+2024-01-08 17:06:29,044 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:29,055 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 198, 'Results_raw': {'train_avg_loss': 2.147653, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 21.476526, 'train_correct': 3.0}}
+2024-01-08 17:06:31,262 (fedavg_client:100) INFO: ================= client 1 received model_para message =================
+2024-01-08 17:06:31,275 (fedavg_client:115) INFO: {'Role': 'client #1', 'Round': 199, 'Results_raw': {'train_avg_loss': 2.00762, 'train_acc': 0.3, 'train_total': 10, 'train_loss': 20.076203, 'train_correct': 3.0}}

@@ -323,6 +323,7 @@ class FedAvgServer(BaseServer):
                     logger.info('Server: Training is finished! Starting '
                                 'evaluation.')
                     self.eval()
+                    self.state += 1
             else:
                 self._merge_and_format_eval_results()
                 if self.state >= self.total_round_num:

@@ -44,9 +44,9 @@ python client.py --cf ../../conf/fedml.yaml --rank 2 --role client
 ```
 就可以了。
 
-方式二 统一启动
+方式二 脚本启动
 
-与方式一不同的是需要配置两个文件，一个是`conf`目录下，配置`conf/fedml.yaml`， 另一个是`conf/fedml_conf.yaml`
+本仓库提供driver脚本启动方式，与方式一不同的是需要配置两个文件，一个是`conf`目录下，配置`conf/fedml.yaml`， 另一个是`conf/fedml_conf.yaml`
 
 前者是fedml的固定配置文件，后者是启动配置文件。
 
@@ -69,7 +69,7 @@ TODO： 给出server端测试集上的精度图
 ### flower
 #### 启动方式
 
-与fedml不同的是，只需要一个配置文件`conf/flwr_conf.yaml`， 然后启动driver脚本即可
+本仓库提供driver脚本启动方式，与fedml不同的是，只需要一个配置文件`conf/flwr_conf.yaml`， 然后启动driver脚本即可
 ```shell
 python driver.py start ./conf/flwr_conf.yaml
 ```
@@ -77,5 +77,38 @@ python driver.py start ./conf/flwr_conf.yaml
 #### 运行结果
 
 如果是方式二的运行结果，可以在`log/flwr` 下查看server和client的日志。
+
+TODO： 给出server端测试集上的精度图
+
+
+### federatedScope
+
+#### 启动方式 
+
+方式一 分别启动
+方式一可以参考FederatedScope官网的example。 
+首先需要为server和client配置对应的配置文件, 这里可以参考`conf/fedscope_server.yaml`和`conf/fedscope_client.yaml`
+然后先启动server端
+```shell
+python main.py --cfg ../conf/fedscope_server.yaml        
+```
+然后再启动配置文件中`client_number`对应数目的client进程即可
+```shell
+python main.py --cfg ../conf/fedscope_client.yaml   distribute.data_idx 2  distribute.client_port 50052
+python main.py --cfg ../conf/fedscope_client.yaml   distribute.data_idx 3  distribute.client_port 50053
+python main.py --cfg ../conf/fedscope_client.yaml   distribute.data_idx 4  distribute.client_port 50054
+```
+
+方式二 脚本启动
+
+本仓库提供了另一种启动方式，driver脚本启动， 除了上述两个配置文件之外，需要再配置一个启动文件： `conf/fedscope_conf.yaml`
+当然如果对FederatedScope运行进程的配置还是要在上述两个配置文件里面进行修改
+
+启动方法：
+```shell
+python driver.py start conf/fedscope_conf.yaml      
+```
+#### 运行结果
+如果是方式二的运行结果，可以在`log/fedscope` 下查看server和client的日志。
 
 TODO： 给出server端测试集上的精度图

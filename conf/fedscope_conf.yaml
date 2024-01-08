@@ -1,0 +1,4 @@
+framework:  fedscope
+client_number: 3
+job_name: fedscope_fedAvg_10
+server_port: 50051
