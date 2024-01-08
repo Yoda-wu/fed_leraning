@@ -435,48 +435,6 @@ class FedAvgServer(BaseServer):
             logger.info('waiting client to join....')
             msg = self.comm_manager.receive()
             self.msg_handlers[msg.msg_type](msg)
-        min_received_num = self._cfg.federate.sample_client_num
-        time_budget = self._cfg.asyn.time_budget if self._cfg.asyn.use else -1
-        # with Timeout(time_budget) as time_counter:
-        #     while self.state <= self.total_round_num:
-        #         try:
-        #             msg = self.comm_manager.receive()
-        #
-        #             move_on_flag = self.msg_handlers[msg.msg_type](msg)
-        #             if move_on_flag:
-        #                 time_counter.reset()
-        #         except TimeoutError:
-        #             logger.info('Time out at the training round #{}'.format(
-        #                 self.state))
-        #             move_on_flag_eval = self.check_and_move_on(
-        #                 min_received_num=min_received_num,
-        #                 check_eval_result=True)
-        #             move_on_flag = self.check_and_move_on(
-        #                 min_received_num=min_received_num)
-        #             if not move_on_flag and not move_on_flag_eval:
-        #                 num_failure += 1
-        #                 # Terminate the training if the number of failure
-        #                 # exceeds the maximum number (default value: 10)
-        #                 if time_counter.exceed_max_failure(num_failure):
-        #                     logger.info(f'----------- Training fails at round '
-        #                                 f'#{self.state}-------------')
-        #                     break
-        #
-        #                 # Time out, broadcast the model para and re-start
-        #                 # the training round
-        #                 logger.info(
-        #                     f'----------- Re-starting the training round ('
-        #                     f'Round #{self.state}) for {num_failure} time '
-        #                     f'-------------')
-        #                 if self.state in self.msg_buffer['train']:
-        #                     self.msg_buffer['train'][self.state].clear()
-        #
-        #                 self.broadcast_model_para(
-        #                     msg_type='model_para',
-        #                     sample_client_num=self.sample_client_num)
-        #             else:
-        #                 num_failure = 0
-        #             time_counter.reset()
         while self.state <= self.total_round_num:
             msg = self.comm_manager.receive()
             move_on_flag = self.msg_handlers[msg.msg_type](msg)

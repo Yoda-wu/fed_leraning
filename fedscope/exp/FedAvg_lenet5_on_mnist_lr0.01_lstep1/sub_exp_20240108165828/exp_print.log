@@ -1902,3 +1902,643 @@ Filtered para names in local update: {'layer2.1.num_batches_tracked', 'layer2.1.
 2024-01-08 17:02:35,851 (fedavg_server:335) INFO: server 0 received model_para message 
 2024-01-08 17:02:35,851 (fedavg_server:353) INFO: model_para receive 3 round: 92 info
 2024-01-08 17:02:35,858 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 92. ------------------
+2024-01-08 17:02:37,879 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 93, 'Results_raw': {'test_correct': 2696.0, 'test_acc': 0.2696, 'test_total': 10000, 'test_loss': 22585.763743, 'test_avg_loss': 2.258576}}
+2024-01-08 17:02:37,879 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:02:37,880 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 93, 'Results_raw': {}}
+2024-01-08 17:02:37,880 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 93, 'Results_raw': {'test_correct': 2696.0, 'test_acc': 0.2696, 'test_total': 10000, 'test_loss': 22585.763743, 'test_avg_loss': 2.258576}}-------
+2024-01-08 17:02:37,880 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #93) -------------
+2024-01-08 17:02:37,880 (fedavg_server:183) INFO: receiver is [2, 1, 3]
+2024-01-08 17:02:37,964 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:02:37,965 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:37,965 (fedavg_server:353) INFO: model_para receive 2 round: 93 info
+2024-01-08 17:02:37,965 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:37,965 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:37,965 (fedavg_server:353) INFO: model_para receive 1 round: 93 info
+2024-01-08 17:02:37,965 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:37,993 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:37,993 (fedavg_server:353) INFO: model_para receive 3 round: 93 info
+2024-01-08 17:02:38,000 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 93. ------------------
+2024-01-08 17:02:40,015 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 94, 'Results_raw': {'test_correct': 2741.0, 'test_acc': 0.2741, 'test_total': 10000, 'test_loss': 22579.211471, 'test_avg_loss': 2.257921}}
+2024-01-08 17:02:40,015 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:02:40,015 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 94, 'Results_raw': {}}
+2024-01-08 17:02:40,015 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 94, 'Results_raw': {'test_correct': 2741.0, 'test_acc': 0.2741, 'test_total': 10000, 'test_loss': 22579.211471, 'test_avg_loss': 2.257921}}-------
+2024-01-08 17:02:40,016 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #94) -------------
+2024-01-08 17:02:40,016 (fedavg_server:183) INFO: receiver is [2, 1, 3]
+2024-01-08 17:02:40,069 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:02:40,070 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:40,070 (fedavg_server:353) INFO: model_para receive 2 round: 94 info
+2024-01-08 17:02:40,070 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:40,070 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:40,070 (fedavg_server:353) INFO: model_para receive 1 round: 94 info
+2024-01-08 17:02:40,070 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:40,098 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:40,098 (fedavg_server:353) INFO: model_para receive 3 round: 94 info
+2024-01-08 17:02:40,105 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 94. ------------------
+2024-01-08 17:02:42,145 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 95, 'Results_raw': {'test_correct': 2726.0, 'test_acc': 0.2726, 'test_total': 10000, 'test_loss': 22570.183187, 'test_avg_loss': 2.257018}}
+2024-01-08 17:02:42,145 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:02:42,145 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 95, 'Results_raw': {}}
+2024-01-08 17:02:42,145 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 95, 'Results_raw': {'test_correct': 2726.0, 'test_acc': 0.2726, 'test_total': 10000, 'test_loss': 22570.183187, 'test_avg_loss': 2.257018}}-------
+2024-01-08 17:02:42,146 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #95) -------------
+2024-01-08 17:02:42,146 (fedavg_server:183) INFO: receiver is [3, 1, 2]
+2024-01-08 17:02:42,199 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:02:42,200 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:42,200 (fedavg_server:353) INFO: model_para receive 3 round: 95 info
+2024-01-08 17:02:42,200 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:42,200 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:42,200 (fedavg_server:353) INFO: model_para receive 1 round: 95 info
+2024-01-08 17:02:42,200 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:42,229 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:42,229 (fedavg_server:353) INFO: model_para receive 2 round: 95 info
+2024-01-08 17:02:42,235 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 95. ------------------
+2024-01-08 17:02:44,275 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 96, 'Results_raw': {'test_correct': 2760.0, 'test_acc': 0.276, 'test_total': 10000, 'test_loss': 22561.1463, 'test_avg_loss': 2.256115}}
+2024-01-08 17:02:44,275 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:02:44,275 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 96, 'Results_raw': {}}
+2024-01-08 17:02:44,276 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 96, 'Results_raw': {'test_correct': 2760.0, 'test_acc': 0.276, 'test_total': 10000, 'test_loss': 22561.1463, 'test_avg_loss': 2.256115}}-------
+2024-01-08 17:02:44,276 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #96) -------------
+2024-01-08 17:02:44,276 (fedavg_server:183) INFO: receiver is [2, 3, 1]
+2024-01-08 17:02:44,340 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:02:44,340 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:44,340 (fedavg_server:353) INFO: model_para receive 2 round: 96 info
+2024-01-08 17:02:44,340 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:44,340 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:44,340 (fedavg_server:353) INFO: model_para receive 3 round: 96 info
+2024-01-08 17:02:44,341 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:44,379 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:44,379 (fedavg_server:353) INFO: model_para receive 1 round: 96 info
+2024-01-08 17:02:44,386 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 96. ------------------
+2024-01-08 17:02:46,410 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 97, 'Results_raw': {'test_correct': 2775.0, 'test_acc': 0.2775, 'test_total': 10000, 'test_loss': 22548.24013, 'test_avg_loss': 2.254824}}
+2024-01-08 17:02:46,411 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:02:46,411 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 97, 'Results_raw': {}}
+2024-01-08 17:02:46,411 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 97, 'Results_raw': {'test_correct': 2775.0, 'test_acc': 0.2775, 'test_total': 10000, 'test_loss': 22548.24013, 'test_avg_loss': 2.254824}}-------
+2024-01-08 17:02:46,411 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #97) -------------
+2024-01-08 17:02:46,411 (fedavg_server:183) INFO: receiver is [3, 1, 2]
+2024-01-08 17:02:46,480 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:02:46,481 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:46,481 (fedavg_server:353) INFO: model_para receive 3 round: 97 info
+2024-01-08 17:02:46,481 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:46,481 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:46,481 (fedavg_server:353) INFO: model_para receive 1 round: 97 info
+2024-01-08 17:02:46,481 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:46,519 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:46,519 (fedavg_server:353) INFO: model_para receive 2 round: 97 info
+2024-01-08 17:02:46,525 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 97. ------------------
+2024-01-08 17:02:48,534 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 98, 'Results_raw': {'test_correct': 2786.0, 'test_acc': 0.2786, 'test_total': 10000, 'test_loss': 22537.967963, 'test_avg_loss': 2.253797}}
+2024-01-08 17:02:48,534 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:02:48,534 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 98, 'Results_raw': {}}
+2024-01-08 17:02:48,535 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 98, 'Results_raw': {'test_correct': 2786.0, 'test_acc': 0.2786, 'test_total': 10000, 'test_loss': 22537.967963, 'test_avg_loss': 2.253797}}-------
+2024-01-08 17:02:48,535 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #98) -------------
+2024-01-08 17:02:48,535 (fedavg_server:183) INFO: receiver is [1, 2, 3]
+2024-01-08 17:02:48,599 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:02:48,599 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:48,599 (fedavg_server:353) INFO: model_para receive 1 round: 98 info
+2024-01-08 17:02:48,599 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:48,600 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:48,600 (fedavg_server:353) INFO: model_para receive 2 round: 98 info
+2024-01-08 17:02:48,600 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:48,622 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:48,622 (fedavg_server:353) INFO: model_para receive 3 round: 98 info
+2024-01-08 17:02:48,629 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 98. ------------------
+2024-01-08 17:02:50,719 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 99, 'Results_raw': {'test_correct': 2736.0, 'test_acc': 0.2736, 'test_total': 10000, 'test_loss': 22531.660905, 'test_avg_loss': 2.253166}}
+2024-01-08 17:02:50,720 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:02:50,720 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 99, 'Results_raw': {}}
+2024-01-08 17:02:50,720 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 99, 'Results_raw': {'test_correct': 2736.0, 'test_acc': 0.2736, 'test_total': 10000, 'test_loss': 22531.660905, 'test_avg_loss': 2.253166}}-------
+2024-01-08 17:02:50,720 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #99) -------------
+2024-01-08 17:02:50,720 (fedavg_server:183) INFO: receiver is [3, 1, 2]
+2024-01-08 17:02:50,794 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:02:50,795 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:50,795 (fedavg_server:353) INFO: model_para receive 3 round: 99 info
+2024-01-08 17:02:50,795 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:50,795 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:50,795 (fedavg_server:353) INFO: model_para receive 1 round: 99 info
+2024-01-08 17:02:50,795 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:50,825 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:50,825 (fedavg_server:353) INFO: model_para receive 2 round: 99 info
+2024-01-08 17:02:50,831 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 99. ------------------
+2024-01-08 17:02:52,926 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 100, 'Results_raw': {'test_correct': 2702.0, 'test_acc': 0.2702, 'test_total': 10000, 'test_loss': 22525.152235, 'test_avg_loss': 2.252515}}
+2024-01-08 17:02:52,927 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:02:52,927 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 100, 'Results_raw': {}}
+2024-01-08 17:02:52,927 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 100, 'Results_raw': {'test_correct': 2702.0, 'test_acc': 0.2702, 'test_total': 10000, 'test_loss': 22525.152235, 'test_avg_loss': 2.252515}}-------
+2024-01-08 17:02:52,927 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #100) -------------
+2024-01-08 17:02:52,927 (fedavg_server:183) INFO: receiver is [1, 3, 2]
+2024-01-08 17:02:53,017 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:02:53,017 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:53,017 (fedavg_server:353) INFO: model_para receive 1 round: 100 info
+2024-01-08 17:02:53,017 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:53,018 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:53,018 (fedavg_server:353) INFO: model_para receive 3 round: 100 info
+2024-01-08 17:02:53,018 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:53,040 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:53,040 (fedavg_server:353) INFO: model_para receive 2 round: 100 info
+2024-01-08 17:02:53,047 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 100. ------------------
+2024-01-08 17:02:55,071 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 101, 'Results_raw': {'test_correct': 2695.0, 'test_acc': 0.2695, 'test_total': 10000, 'test_loss': 22516.513174, 'test_avg_loss': 2.251651}}
+2024-01-08 17:02:55,071 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:02:55,072 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 101, 'Results_raw': {}}
+2024-01-08 17:02:55,072 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 101, 'Results_raw': {'test_correct': 2695.0, 'test_acc': 0.2695, 'test_total': 10000, 'test_loss': 22516.513174, 'test_avg_loss': 2.251651}}-------
+2024-01-08 17:02:55,072 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #101) -------------
+2024-01-08 17:02:55,072 (fedavg_server:183) INFO: receiver is [2, 3, 1]
+2024-01-08 17:02:55,151 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:02:55,152 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:55,152 (fedavg_server:353) INFO: model_para receive 2 round: 101 info
+2024-01-08 17:02:55,152 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:55,152 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:55,152 (fedavg_server:353) INFO: model_para receive 3 round: 101 info
+2024-01-08 17:02:55,152 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:55,180 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:55,180 (fedavg_server:353) INFO: model_para receive 1 round: 101 info
+2024-01-08 17:02:55,187 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 101. ------------------
+2024-01-08 17:02:57,157 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 102, 'Results_raw': {'test_correct': 2656.0, 'test_acc': 0.2656, 'test_total': 10000, 'test_loss': 22510.144684, 'test_avg_loss': 2.251014}}
+2024-01-08 17:02:57,157 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:02:57,158 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 102, 'Results_raw': {}}
+2024-01-08 17:02:57,158 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 102, 'Results_raw': {'test_correct': 2656.0, 'test_acc': 0.2656, 'test_total': 10000, 'test_loss': 22510.144684, 'test_avg_loss': 2.251014}}-------
+2024-01-08 17:02:57,158 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #102) -------------
+2024-01-08 17:02:57,158 (fedavg_server:183) INFO: receiver is [2, 3, 1]
+2024-01-08 17:02:57,248 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:02:57,248 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:57,248 (fedavg_server:353) INFO: model_para receive 2 round: 102 info
+2024-01-08 17:02:57,248 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:57,248 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:57,248 (fedavg_server:353) INFO: model_para receive 3 round: 102 info
+2024-01-08 17:02:57,248 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:57,276 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:57,277 (fedavg_server:353) INFO: model_para receive 1 round: 102 info
+2024-01-08 17:02:57,283 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 102. ------------------
+2024-01-08 17:02:59,308 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 103, 'Results_raw': {'test_correct': 2622.0, 'test_acc': 0.2622, 'test_total': 10000, 'test_loss': 22502.028742, 'test_avg_loss': 2.250203}}
+2024-01-08 17:02:59,309 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:02:59,309 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 103, 'Results_raw': {}}
+2024-01-08 17:02:59,309 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 103, 'Results_raw': {'test_correct': 2622.0, 'test_acc': 0.2622, 'test_total': 10000, 'test_loss': 22502.028742, 'test_avg_loss': 2.250203}}-------
+2024-01-08 17:02:59,309 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #103) -------------
+2024-01-08 17:02:59,309 (fedavg_server:183) INFO: receiver is [1, 3, 2]
+2024-01-08 17:02:59,388 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:02:59,389 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:59,389 (fedavg_server:353) INFO: model_para receive 1 round: 103 info
+2024-01-08 17:02:59,389 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:59,389 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:59,389 (fedavg_server:353) INFO: model_para receive 3 round: 103 info
+2024-01-08 17:02:59,389 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:02:59,417 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:02:59,417 (fedavg_server:353) INFO: model_para receive 2 round: 103 info
+2024-01-08 17:02:59,423 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 103. ------------------
+2024-01-08 17:03:01,441 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 104, 'Results_raw': {'test_correct': 2622.0, 'test_acc': 0.2622, 'test_total': 10000, 'test_loss': 22495.535107, 'test_avg_loss': 2.249554}}
+2024-01-08 17:03:01,441 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:01,441 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 104, 'Results_raw': {}}
+2024-01-08 17:03:01,441 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 104, 'Results_raw': {'test_correct': 2622.0, 'test_acc': 0.2622, 'test_total': 10000, 'test_loss': 22495.535107, 'test_avg_loss': 2.249554}}-------
+2024-01-08 17:03:01,442 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #104) -------------
+2024-01-08 17:03:01,442 (fedavg_server:183) INFO: receiver is [2, 3, 1]
+2024-01-08 17:03:01,520 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:01,521 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:01,521 (fedavg_server:353) INFO: model_para receive 2 round: 104 info
+2024-01-08 17:03:01,521 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:01,521 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:01,521 (fedavg_server:353) INFO: model_para receive 3 round: 104 info
+2024-01-08 17:03:01,521 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:01,561 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:01,561 (fedavg_server:353) INFO: model_para receive 1 round: 104 info
+2024-01-08 17:03:01,568 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 104. ------------------
+2024-01-08 17:03:03,596 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 105, 'Results_raw': {'test_correct': 2629.0, 'test_acc': 0.2629, 'test_total': 10000, 'test_loss': 22486.794291, 'test_avg_loss': 2.248679}}
+2024-01-08 17:03:03,596 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:03,596 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 105, 'Results_raw': {}}
+2024-01-08 17:03:03,597 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 105, 'Results_raw': {'test_correct': 2629.0, 'test_acc': 0.2629, 'test_total': 10000, 'test_loss': 22486.794291, 'test_avg_loss': 2.248679}}-------
+2024-01-08 17:03:03,597 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #105) -------------
+2024-01-08 17:03:03,597 (fedavg_server:183) INFO: receiver is [2, 1, 3]
+2024-01-08 17:03:03,671 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:03,671 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:03,671 (fedavg_server:353) INFO: model_para receive 2 round: 105 info
+2024-01-08 17:03:03,671 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:03,672 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:03,672 (fedavg_server:353) INFO: model_para receive 1 round: 105 info
+2024-01-08 17:03:03,672 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:03,704 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:03,704 (fedavg_server:353) INFO: model_para receive 3 round: 105 info
+2024-01-08 17:03:03,711 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 105. ------------------
+2024-01-08 17:03:05,730 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 106, 'Results_raw': {'test_correct': 2687.0, 'test_acc': 0.2687, 'test_total': 10000, 'test_loss': 22470.389383, 'test_avg_loss': 2.247039}}
+2024-01-08 17:03:05,730 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:05,730 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 106, 'Results_raw': {}}
+2024-01-08 17:03:05,731 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 106, 'Results_raw': {'test_correct': 2687.0, 'test_acc': 0.2687, 'test_total': 10000, 'test_loss': 22470.389383, 'test_avg_loss': 2.247039}}-------
+2024-01-08 17:03:05,731 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #106) -------------
+2024-01-08 17:03:05,731 (fedavg_server:183) INFO: receiver is [2, 1, 3]
+2024-01-08 17:03:05,820 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:05,820 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:05,820 (fedavg_server:353) INFO: model_para receive 2 round: 106 info
+2024-01-08 17:03:05,820 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:05,821 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:05,821 (fedavg_server:353) INFO: model_para receive 1 round: 106 info
+2024-01-08 17:03:05,821 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:05,853 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:05,854 (fedavg_server:353) INFO: model_para receive 3 round: 106 info
+2024-01-08 17:03:05,860 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 106. ------------------
+2024-01-08 17:03:07,885 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 107, 'Results_raw': {'test_correct': 2705.0, 'test_acc': 0.2705, 'test_total': 10000, 'test_loss': 22456.349595, 'test_avg_loss': 2.245635}}
+2024-01-08 17:03:07,885 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:07,885 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 107, 'Results_raw': {}}
+2024-01-08 17:03:07,885 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 107, 'Results_raw': {'test_correct': 2705.0, 'test_acc': 0.2705, 'test_total': 10000, 'test_loss': 22456.349595, 'test_avg_loss': 2.245635}}-------
+2024-01-08 17:03:07,886 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #107) -------------
+2024-01-08 17:03:07,886 (fedavg_server:183) INFO: receiver is [2, 1, 3]
+2024-01-08 17:03:07,961 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:07,961 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:07,961 (fedavg_server:353) INFO: model_para receive 2 round: 107 info
+2024-01-08 17:03:07,961 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:07,961 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:07,962 (fedavg_server:353) INFO: model_para receive 1 round: 107 info
+2024-01-08 17:03:07,962 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:07,997 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:07,997 (fedavg_server:353) INFO: model_para receive 3 round: 107 info
+2024-01-08 17:03:08,004 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 107. ------------------
+2024-01-08 17:03:10,019 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 108, 'Results_raw': {'test_correct': 2691.0, 'test_acc': 0.2691, 'test_total': 10000, 'test_loss': 22448.665054, 'test_avg_loss': 2.244867}}
+2024-01-08 17:03:10,019 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:10,019 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 108, 'Results_raw': {}}
+2024-01-08 17:03:10,019 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 108, 'Results_raw': {'test_correct': 2691.0, 'test_acc': 0.2691, 'test_total': 10000, 'test_loss': 22448.665054, 'test_avg_loss': 2.244867}}-------
+2024-01-08 17:03:10,020 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #108) -------------
+2024-01-08 17:03:10,020 (fedavg_server:183) INFO: receiver is [3, 1, 2]
+2024-01-08 17:03:10,099 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:10,100 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:10,100 (fedavg_server:353) INFO: model_para receive 3 round: 108 info
+2024-01-08 17:03:10,100 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:10,100 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:10,100 (fedavg_server:353) INFO: model_para receive 1 round: 108 info
+2024-01-08 17:03:10,100 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:10,127 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:10,128 (fedavg_server:353) INFO: model_para receive 2 round: 108 info
+2024-01-08 17:03:10,134 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 108. ------------------
+2024-01-08 17:03:12,127 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 109, 'Results_raw': {'test_correct': 2736.0, 'test_acc': 0.2736, 'test_total': 10000, 'test_loss': 22437.615616, 'test_avg_loss': 2.243762}}
+2024-01-08 17:03:12,127 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:12,127 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 109, 'Results_raw': {}}
+2024-01-08 17:03:12,128 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 109, 'Results_raw': {'test_correct': 2736.0, 'test_acc': 0.2736, 'test_total': 10000, 'test_loss': 22437.615616, 'test_avg_loss': 2.243762}}-------
+2024-01-08 17:03:12,128 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #109) -------------
+2024-01-08 17:03:12,128 (fedavg_server:183) INFO: receiver is [2, 1, 3]
+2024-01-08 17:03:12,191 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:12,192 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:12,192 (fedavg_server:353) INFO: model_para receive 2 round: 109 info
+2024-01-08 17:03:12,192 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:12,192 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:12,192 (fedavg_server:353) INFO: model_para receive 1 round: 109 info
+2024-01-08 17:03:12,192 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:12,220 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:12,220 (fedavg_server:353) INFO: model_para receive 3 round: 109 info
+2024-01-08 17:03:12,227 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 109. ------------------
+2024-01-08 17:03:14,211 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 110, 'Results_raw': {'test_correct': 2729.0, 'test_acc': 0.2729, 'test_total': 10000, 'test_loss': 22430.202577, 'test_avg_loss': 2.24302}}
+2024-01-08 17:03:14,211 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:14,211 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 110, 'Results_raw': {}}
+2024-01-08 17:03:14,212 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 110, 'Results_raw': {'test_correct': 2729.0, 'test_acc': 0.2729, 'test_total': 10000, 'test_loss': 22430.202577, 'test_avg_loss': 2.24302}}-------
+2024-01-08 17:03:14,212 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #110) -------------
+2024-01-08 17:03:14,212 (fedavg_server:183) INFO: receiver is [1, 2, 3]
+2024-01-08 17:03:14,301 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:14,302 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:14,302 (fedavg_server:353) INFO: model_para receive 1 round: 110 info
+2024-01-08 17:03:14,302 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:14,302 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:14,302 (fedavg_server:353) INFO: model_para receive 2 round: 110 info
+2024-01-08 17:03:14,302 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:14,340 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:14,341 (fedavg_server:353) INFO: model_para receive 3 round: 110 info
+2024-01-08 17:03:14,347 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 110. ------------------
+2024-01-08 17:03:16,568 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 111, 'Results_raw': {'test_correct': 2726.0, 'test_acc': 0.2726, 'test_total': 10000, 'test_loss': 22411.316934, 'test_avg_loss': 2.241132}}
+2024-01-08 17:03:16,568 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:16,568 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 111, 'Results_raw': {}}
+2024-01-08 17:03:16,568 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 111, 'Results_raw': {'test_correct': 2726.0, 'test_acc': 0.2726, 'test_total': 10000, 'test_loss': 22411.316934, 'test_avg_loss': 2.241132}}-------
+2024-01-08 17:03:16,568 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #111) -------------
+2024-01-08 17:03:16,569 (fedavg_server:183) INFO: receiver is [2, 3, 1]
+2024-01-08 17:03:16,594 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:16,604 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:16,604 (fedavg_server:353) INFO: model_para receive 2 round: 111 info
+2024-01-08 17:03:16,605 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:16,611 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:16,611 (fedavg_server:353) INFO: model_para receive 3 round: 111 info
+2024-01-08 17:03:16,611 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:16,628 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:16,629 (fedavg_server:353) INFO: model_para receive 1 round: 111 info
+2024-01-08 17:03:16,637 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 111. ------------------
+2024-01-08 17:03:18,703 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 112, 'Results_raw': {'test_correct': 2689.0, 'test_acc': 0.2689, 'test_total': 10000, 'test_loss': 22398.757727, 'test_avg_loss': 2.239876}}
+2024-01-08 17:03:18,703 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:18,704 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 112, 'Results_raw': {}}
+2024-01-08 17:03:18,704 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 112, 'Results_raw': {'test_correct': 2689.0, 'test_acc': 0.2689, 'test_total': 10000, 'test_loss': 22398.757727, 'test_avg_loss': 2.239876}}-------
+2024-01-08 17:03:18,704 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #112) -------------
+2024-01-08 17:03:18,704 (fedavg_server:183) INFO: receiver is [3, 1, 2]
+2024-01-08 17:03:18,783 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:18,784 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:18,784 (fedavg_server:353) INFO: model_para receive 3 round: 112 info
+2024-01-08 17:03:18,784 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:18,784 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:18,784 (fedavg_server:353) INFO: model_para receive 1 round: 112 info
+2024-01-08 17:03:18,784 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:18,807 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:18,807 (fedavg_server:353) INFO: model_para receive 2 round: 112 info
+2024-01-08 17:03:18,814 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 112. ------------------
+2024-01-08 17:03:20,870 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 113, 'Results_raw': {'test_correct': 2701.0, 'test_acc': 0.2701, 'test_total': 10000, 'test_loss': 22392.053292, 'test_avg_loss': 2.239205}}
+2024-01-08 17:03:20,870 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:20,870 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 113, 'Results_raw': {}}
+2024-01-08 17:03:20,871 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 113, 'Results_raw': {'test_correct': 2701.0, 'test_acc': 0.2701, 'test_total': 10000, 'test_loss': 22392.053292, 'test_avg_loss': 2.239205}}-------
+2024-01-08 17:03:20,871 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #113) -------------
+2024-01-08 17:03:20,871 (fedavg_server:183) INFO: receiver is [2, 1, 3]
+2024-01-08 17:03:20,946 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:20,946 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:20,946 (fedavg_server:353) INFO: model_para receive 2 round: 113 info
+2024-01-08 17:03:20,946 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:20,947 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:20,947 (fedavg_server:353) INFO: model_para receive 1 round: 113 info
+2024-01-08 17:03:20,947 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:20,969 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:20,969 (fedavg_server:353) INFO: model_para receive 3 round: 113 info
+2024-01-08 17:03:20,976 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 113. ------------------
+2024-01-08 17:03:22,993 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 114, 'Results_raw': {'test_correct': 2703.0, 'test_acc': 0.2703, 'test_total': 10000, 'test_loss': 22379.181488, 'test_avg_loss': 2.237918}}
+2024-01-08 17:03:22,993 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:22,993 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 114, 'Results_raw': {}}
+2024-01-08 17:03:22,994 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 114, 'Results_raw': {'test_correct': 2703.0, 'test_acc': 0.2703, 'test_total': 10000, 'test_loss': 22379.181488, 'test_avg_loss': 2.237918}}-------
+2024-01-08 17:03:22,994 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #114) -------------
+2024-01-08 17:03:22,994 (fedavg_server:183) INFO: receiver is [2, 1, 3]
+2024-01-08 17:03:23,067 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:23,068 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:23,068 (fedavg_server:353) INFO: model_para receive 2 round: 114 info
+2024-01-08 17:03:23,068 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:23,068 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:23,068 (fedavg_server:353) INFO: model_para receive 1 round: 114 info
+2024-01-08 17:03:23,068 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:23,101 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:23,101 (fedavg_server:353) INFO: model_para receive 3 round: 114 info
+2024-01-08 17:03:23,108 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 114. ------------------
+2024-01-08 17:03:25,153 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 115, 'Results_raw': {'test_correct': 2748.0, 'test_acc': 0.2748, 'test_total': 10000, 'test_loss': 22368.098409, 'test_avg_loss': 2.23681}}
+2024-01-08 17:03:25,153 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:25,154 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 115, 'Results_raw': {}}
+2024-01-08 17:03:25,154 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 115, 'Results_raw': {'test_correct': 2748.0, 'test_acc': 0.2748, 'test_total': 10000, 'test_loss': 22368.098409, 'test_avg_loss': 2.23681}}-------
+2024-01-08 17:03:25,154 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #115) -------------
+2024-01-08 17:03:25,154 (fedavg_server:183) INFO: receiver is [3, 1, 2]
+2024-01-08 17:03:25,213 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:25,213 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:25,213 (fedavg_server:353) INFO: model_para receive 3 round: 115 info
+2024-01-08 17:03:25,213 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:25,214 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:25,214 (fedavg_server:353) INFO: model_para receive 1 round: 115 info
+2024-01-08 17:03:25,214 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:25,251 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:25,252 (fedavg_server:353) INFO: model_para receive 2 round: 115 info
+2024-01-08 17:03:25,258 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 115. ------------------
+2024-01-08 17:03:27,347 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 116, 'Results_raw': {'test_correct': 2747.0, 'test_acc': 0.2747, 'test_total': 10000, 'test_loss': 22358.223231, 'test_avg_loss': 2.235822}}
+2024-01-08 17:03:27,347 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:27,347 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 116, 'Results_raw': {}}
+2024-01-08 17:03:27,348 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 116, 'Results_raw': {'test_correct': 2747.0, 'test_acc': 0.2747, 'test_total': 10000, 'test_loss': 22358.223231, 'test_avg_loss': 2.235822}}-------
+2024-01-08 17:03:27,348 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #116) -------------
+2024-01-08 17:03:27,348 (fedavg_server:183) INFO: receiver is [2, 1, 3]
+2024-01-08 17:03:27,387 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:27,387 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:27,387 (fedavg_server:353) INFO: model_para receive 2 round: 116 info
+2024-01-08 17:03:27,387 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:27,388 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:27,388 (fedavg_server:353) INFO: model_para receive 1 round: 116 info
+2024-01-08 17:03:27,388 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:27,420 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:27,421 (fedavg_server:353) INFO: model_para receive 3 round: 116 info
+2024-01-08 17:03:27,427 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 116. ------------------
+2024-01-08 17:03:29,557 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 117, 'Results_raw': {'test_correct': 2798.0, 'test_acc': 0.2798, 'test_total': 10000, 'test_loss': 22343.404794, 'test_avg_loss': 2.23434}}
+2024-01-08 17:03:29,557 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:29,557 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 117, 'Results_raw': {}}
+2024-01-08 17:03:29,557 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 117, 'Results_raw': {'test_correct': 2798.0, 'test_acc': 0.2798, 'test_total': 10000, 'test_loss': 22343.404794, 'test_avg_loss': 2.23434}}-------
+2024-01-08 17:03:29,557 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #117) -------------
+2024-01-08 17:03:29,558 (fedavg_server:183) INFO: receiver is [3, 2, 1]
+2024-01-08 17:03:29,625 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:29,626 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:29,626 (fedavg_server:353) INFO: model_para receive 3 round: 117 info
+2024-01-08 17:03:29,626 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:29,626 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:29,626 (fedavg_server:353) INFO: model_para receive 2 round: 117 info
+2024-01-08 17:03:29,626 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:29,675 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:29,676 (fedavg_server:353) INFO: model_para receive 1 round: 117 info
+2024-01-08 17:03:29,683 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 117. ------------------
+2024-01-08 17:03:31,826 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 118, 'Results_raw': {'test_correct': 2786.0, 'test_acc': 0.2786, 'test_total': 10000, 'test_loss': 22329.279487, 'test_avg_loss': 2.232928}}
+2024-01-08 17:03:31,826 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:31,826 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 118, 'Results_raw': {}}
+2024-01-08 17:03:31,827 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 118, 'Results_raw': {'test_correct': 2786.0, 'test_acc': 0.2786, 'test_total': 10000, 'test_loss': 22329.279487, 'test_avg_loss': 2.232928}}-------
+2024-01-08 17:03:31,827 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #118) -------------
+2024-01-08 17:03:31,827 (fedavg_server:183) INFO: receiver is [1, 2, 3]
+2024-01-08 17:03:31,882 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:31,882 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:31,882 (fedavg_server:353) INFO: model_para receive 1 round: 118 info
+2024-01-08 17:03:31,882 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:31,915 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:31,916 (fedavg_server:353) INFO: model_para receive 2 round: 118 info
+2024-01-08 17:03:31,916 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:31,916 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:31,916 (fedavg_server:353) INFO: model_para receive 3 round: 118 info
+2024-01-08 17:03:31,922 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 118. ------------------
+2024-01-08 17:03:34,064 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 119, 'Results_raw': {'test_correct': 2772.0, 'test_acc': 0.2772, 'test_total': 10000, 'test_loss': 22314.078465, 'test_avg_loss': 2.231408}}
+2024-01-08 17:03:34,064 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:34,064 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 119, 'Results_raw': {}}
+2024-01-08 17:03:34,065 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 119, 'Results_raw': {'test_correct': 2772.0, 'test_acc': 0.2772, 'test_total': 10000, 'test_loss': 22314.078465, 'test_avg_loss': 2.231408}}-------
+2024-01-08 17:03:34,065 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #119) -------------
+2024-01-08 17:03:34,065 (fedavg_server:183) INFO: receiver is [3, 2, 1]
+2024-01-08 17:03:34,154 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:34,154 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:34,154 (fedavg_server:353) INFO: model_para receive 3 round: 119 info
+2024-01-08 17:03:34,154 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:34,155 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:34,155 (fedavg_server:353) INFO: model_para receive 2 round: 119 info
+2024-01-08 17:03:34,155 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:34,183 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:34,183 (fedavg_server:353) INFO: model_para receive 1 round: 119 info
+2024-01-08 17:03:34,190 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 119. ------------------
+2024-01-08 17:03:36,186 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 120, 'Results_raw': {'test_correct': 2747.0, 'test_acc': 0.2747, 'test_total': 10000, 'test_loss': 22302.386723, 'test_avg_loss': 2.230239}}
+2024-01-08 17:03:36,186 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:36,187 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 120, 'Results_raw': {}}
+2024-01-08 17:03:36,187 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 120, 'Results_raw': {'test_correct': 2747.0, 'test_acc': 0.2747, 'test_total': 10000, 'test_loss': 22302.386723, 'test_avg_loss': 2.230239}}-------
+2024-01-08 17:03:36,187 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #120) -------------
+2024-01-08 17:03:36,187 (fedavg_server:183) INFO: receiver is [2, 3, 1]
+2024-01-08 17:03:36,251 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:36,252 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:36,252 (fedavg_server:353) INFO: model_para receive 2 round: 120 info
+2024-01-08 17:03:36,252 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:36,252 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:36,252 (fedavg_server:353) INFO: model_para receive 3 round: 120 info
+2024-01-08 17:03:36,252 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:36,280 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:36,280 (fedavg_server:353) INFO: model_para receive 1 round: 120 info
+2024-01-08 17:03:36,287 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 120. ------------------
+2024-01-08 17:03:38,337 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 121, 'Results_raw': {'test_correct': 2744.0, 'test_acc': 0.2744, 'test_total': 10000, 'test_loss': 22293.144898, 'test_avg_loss': 2.229314}}
+2024-01-08 17:03:38,337 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:38,337 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 121, 'Results_raw': {}}
+2024-01-08 17:03:38,337 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 121, 'Results_raw': {'test_correct': 2744.0, 'test_acc': 0.2744, 'test_total': 10000, 'test_loss': 22293.144898, 'test_avg_loss': 2.229314}}-------
+2024-01-08 17:03:38,338 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #121) -------------
+2024-01-08 17:03:38,338 (fedavg_server:183) INFO: receiver is [3, 1, 2]
+2024-01-08 17:03:38,416 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:38,417 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:38,417 (fedavg_server:353) INFO: model_para receive 3 round: 121 info
+2024-01-08 17:03:38,417 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:38,417 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:38,417 (fedavg_server:353) INFO: model_para receive 1 round: 121 info
+2024-01-08 17:03:38,417 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:38,445 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:38,445 (fedavg_server:353) INFO: model_para receive 2 round: 121 info
+2024-01-08 17:03:38,451 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 121. ------------------
+2024-01-08 17:03:40,615 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 122, 'Results_raw': {'test_correct': 2724.0, 'test_acc': 0.2724, 'test_total': 10000, 'test_loss': 22280.589123, 'test_avg_loss': 2.228059}}
+2024-01-08 17:03:40,615 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:40,615 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 122, 'Results_raw': {}}
+2024-01-08 17:03:40,615 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 122, 'Results_raw': {'test_correct': 2724.0, 'test_acc': 0.2724, 'test_total': 10000, 'test_loss': 22280.589123, 'test_avg_loss': 2.228059}}-------
+2024-01-08 17:03:40,616 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #122) -------------
+2024-01-08 17:03:40,616 (fedavg_server:183) INFO: receiver is [3, 2, 1]
+2024-01-08 17:03:40,641 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:40,655 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:40,656 (fedavg_server:353) INFO: model_para receive 3 round: 122 info
+2024-01-08 17:03:40,656 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:40,664 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:40,664 (fedavg_server:353) INFO: model_para receive 2 round: 122 info
+2024-01-08 17:03:40,664 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:40,665 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:40,665 (fedavg_server:353) INFO: model_para receive 1 round: 122 info
+2024-01-08 17:03:40,671 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 122. ------------------
+2024-01-08 17:03:42,947 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 123, 'Results_raw': {'test_correct': 2740.0, 'test_acc': 0.274, 'test_total': 10000, 'test_loss': 22258.441958, 'test_avg_loss': 2.225844}}
+2024-01-08 17:03:42,947 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:42,947 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 123, 'Results_raw': {}}
+2024-01-08 17:03:42,948 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 123, 'Results_raw': {'test_correct': 2740.0, 'test_acc': 0.274, 'test_total': 10000, 'test_loss': 22258.441958, 'test_avg_loss': 2.225844}}-------
+2024-01-08 17:03:42,948 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #123) -------------
+2024-01-08 17:03:42,948 (fedavg_server:183) INFO: receiver is [3, 1, 2]
+2024-01-08 17:03:43,013 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:43,013 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:43,014 (fedavg_server:353) INFO: model_para receive 3 round: 123 info
+2024-01-08 17:03:43,014 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:43,024 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:43,025 (fedavg_server:353) INFO: model_para receive 1 round: 123 info
+2024-01-08 17:03:43,025 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:43,047 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:43,048 (fedavg_server:353) INFO: model_para receive 2 round: 123 info
+2024-01-08 17:03:43,055 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 123. ------------------
+2024-01-08 17:03:45,519 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 124, 'Results_raw': {'test_correct': 2719.0, 'test_acc': 0.2719, 'test_total': 10000, 'test_loss': 22235.510747, 'test_avg_loss': 2.223551}}
+2024-01-08 17:03:45,519 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:45,519 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 124, 'Results_raw': {}}
+2024-01-08 17:03:45,520 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 124, 'Results_raw': {'test_correct': 2719.0, 'test_acc': 0.2719, 'test_total': 10000, 'test_loss': 22235.510747, 'test_avg_loss': 2.223551}}-------
+2024-01-08 17:03:45,520 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #124) -------------
+2024-01-08 17:03:45,520 (fedavg_server:183) INFO: receiver is [2, 1, 3]
+2024-01-08 17:03:45,614 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:45,614 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:45,614 (fedavg_server:353) INFO: model_para receive 2 round: 124 info
+2024-01-08 17:03:45,614 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:45,615 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:45,615 (fedavg_server:353) INFO: model_para receive 1 round: 124 info
+2024-01-08 17:03:45,615 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:45,637 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:45,637 (fedavg_server:353) INFO: model_para receive 3 round: 124 info
+2024-01-08 17:03:45,644 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 124. ------------------
+2024-01-08 17:03:47,646 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 125, 'Results_raw': {'test_correct': 2724.0, 'test_acc': 0.2724, 'test_total': 10000, 'test_loss': 22225.380561, 'test_avg_loss': 2.222538}}
+2024-01-08 17:03:47,646 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:47,646 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 125, 'Results_raw': {}}
+2024-01-08 17:03:47,647 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 125, 'Results_raw': {'test_correct': 2724.0, 'test_acc': 0.2724, 'test_total': 10000, 'test_loss': 22225.380561, 'test_avg_loss': 2.222538}}-------
+2024-01-08 17:03:47,647 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #125) -------------
+2024-01-08 17:03:47,647 (fedavg_server:183) INFO: receiver is [1, 3, 2]
+2024-01-08 17:03:47,705 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:47,706 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:47,706 (fedavg_server:353) INFO: model_para receive 1 round: 125 info
+2024-01-08 17:03:47,706 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:47,706 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:47,706 (fedavg_server:353) INFO: model_para receive 3 round: 125 info
+2024-01-08 17:03:47,706 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:47,734 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:47,734 (fedavg_server:353) INFO: model_para receive 2 round: 125 info
+2024-01-08 17:03:47,740 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 125. ------------------
+2024-01-08 17:03:49,844 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 126, 'Results_raw': {'test_correct': 2699.0, 'test_acc': 0.2699, 'test_total': 10000, 'test_loss': 22211.934495, 'test_avg_loss': 2.221193}}
+2024-01-08 17:03:49,844 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:49,845 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 126, 'Results_raw': {}}
+2024-01-08 17:03:49,845 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 126, 'Results_raw': {'test_correct': 2699.0, 'test_acc': 0.2699, 'test_total': 10000, 'test_loss': 22211.934495, 'test_avg_loss': 2.221193}}-------
+2024-01-08 17:03:49,845 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #126) -------------
+2024-01-08 17:03:49,845 (fedavg_server:183) INFO: receiver is [2, 1, 3]
+2024-01-08 17:03:49,919 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:49,920 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:49,920 (fedavg_server:353) INFO: model_para receive 2 round: 126 info
+2024-01-08 17:03:49,920 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:49,920 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:49,920 (fedavg_server:353) INFO: model_para receive 1 round: 126 info
+2024-01-08 17:03:49,920 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:49,958 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:49,959 (fedavg_server:353) INFO: model_para receive 3 round: 126 info
+2024-01-08 17:03:49,965 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 126. ------------------
+2024-01-08 17:03:52,152 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 127, 'Results_raw': {'test_correct': 2708.0, 'test_acc': 0.2708, 'test_total': 10000, 'test_loss': 22196.105592, 'test_avg_loss': 2.219611}}
+2024-01-08 17:03:52,153 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:52,153 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 127, 'Results_raw': {}}
+2024-01-08 17:03:52,153 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 127, 'Results_raw': {'test_correct': 2708.0, 'test_acc': 0.2708, 'test_total': 10000, 'test_loss': 22196.105592, 'test_avg_loss': 2.219611}}-------
+2024-01-08 17:03:52,153 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #127) -------------
+2024-01-08 17:03:52,153 (fedavg_server:183) INFO: receiver is [3, 2, 1]
+2024-01-08 17:03:52,243 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:52,243 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:52,243 (fedavg_server:353) INFO: model_para receive 3 round: 127 info
+2024-01-08 17:03:52,243 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:52,243 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:52,244 (fedavg_server:353) INFO: model_para receive 2 round: 127 info
+2024-01-08 17:03:52,244 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:52,272 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:52,272 (fedavg_server:353) INFO: model_para receive 1 round: 127 info
+2024-01-08 17:03:52,278 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 127. ------------------
+2024-01-08 17:03:54,307 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 128, 'Results_raw': {'test_correct': 2706.0, 'test_acc': 0.2706, 'test_total': 10000, 'test_loss': 22189.315813, 'test_avg_loss': 2.218932}}
+2024-01-08 17:03:54,307 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:54,307 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 128, 'Results_raw': {}}
+2024-01-08 17:03:54,307 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 128, 'Results_raw': {'test_correct': 2706.0, 'test_acc': 0.2706, 'test_total': 10000, 'test_loss': 22189.315813, 'test_avg_loss': 2.218932}}-------
+2024-01-08 17:03:54,308 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #128) -------------
+2024-01-08 17:03:54,308 (fedavg_server:183) INFO: receiver is [1, 2, 3]
+2024-01-08 17:03:54,382 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:54,382 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:54,382 (fedavg_server:353) INFO: model_para receive 1 round: 128 info
+2024-01-08 17:03:54,382 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:54,382 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:54,382 (fedavg_server:353) INFO: model_para receive 2 round: 128 info
+2024-01-08 17:03:54,383 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:54,405 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:54,405 (fedavg_server:353) INFO: model_para receive 3 round: 128 info
+2024-01-08 17:03:54,412 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 128. ------------------
+2024-01-08 17:03:56,439 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 129, 'Results_raw': {'test_correct': 2692.0, 'test_acc': 0.2692, 'test_total': 10000, 'test_loss': 22179.365082, 'test_avg_loss': 2.217937}}
+2024-01-08 17:03:56,440 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:56,440 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 129, 'Results_raw': {}}
+2024-01-08 17:03:56,440 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 129, 'Results_raw': {'test_correct': 2692.0, 'test_acc': 0.2692, 'test_total': 10000, 'test_loss': 22179.365082, 'test_avg_loss': 2.217937}}-------
+2024-01-08 17:03:56,440 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #129) -------------
+2024-01-08 17:03:56,440 (fedavg_server:183) INFO: receiver is [1, 3, 2]
+2024-01-08 17:03:56,509 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:56,510 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:56,510 (fedavg_server:353) INFO: model_para receive 1 round: 129 info
+2024-01-08 17:03:56,510 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:56,510 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:56,510 (fedavg_server:353) INFO: model_para receive 3 round: 129 info
+2024-01-08 17:03:56,510 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:56,538 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:56,538 (fedavg_server:353) INFO: model_para receive 2 round: 129 info
+2024-01-08 17:03:56,544 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 129. ------------------
+2024-01-08 17:03:58,644 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 130, 'Results_raw': {'test_correct': 2691.0, 'test_acc': 0.2691, 'test_total': 10000, 'test_loss': 22161.374886, 'test_avg_loss': 2.216137}}
+2024-01-08 17:03:58,644 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:03:58,644 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 130, 'Results_raw': {}}
+2024-01-08 17:03:58,644 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 130, 'Results_raw': {'test_correct': 2691.0, 'test_acc': 0.2691, 'test_total': 10000, 'test_loss': 22161.374886, 'test_avg_loss': 2.216137}}-------
+2024-01-08 17:03:58,645 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #130) -------------
+2024-01-08 17:03:58,645 (fedavg_server:183) INFO: receiver is [1, 3, 2]
+2024-01-08 17:03:58,717 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:03:58,717 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:58,717 (fedavg_server:353) INFO: model_para receive 1 round: 130 info
+2024-01-08 17:03:58,717 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:58,718 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:58,718 (fedavg_server:353) INFO: model_para receive 3 round: 130 info
+2024-01-08 17:03:58,718 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:03:58,757 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:03:58,758 (fedavg_server:353) INFO: model_para receive 2 round: 130 info
+2024-01-08 17:03:58,764 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 130. ------------------
+2024-01-08 17:04:00,857 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 131, 'Results_raw': {'test_correct': 2682.0, 'test_acc': 0.2682, 'test_total': 10000, 'test_loss': 22151.639864, 'test_avg_loss': 2.215164}}
+2024-01-08 17:04:00,857 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:04:00,857 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 131, 'Results_raw': {}}
+2024-01-08 17:04:00,857 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 131, 'Results_raw': {'test_correct': 2682.0, 'test_acc': 0.2682, 'test_total': 10000, 'test_loss': 22151.639864, 'test_avg_loss': 2.215164}}-------
+2024-01-08 17:04:00,858 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #131) -------------
+2024-01-08 17:04:00,858 (fedavg_server:183) INFO: receiver is [3, 1, 2]
+2024-01-08 17:04:00,928 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:04:00,929 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:04:00,929 (fedavg_server:353) INFO: model_para receive 3 round: 131 info
+2024-01-08 17:04:00,929 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:04:00,946 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:04:00,946 (fedavg_server:353) INFO: model_para receive 1 round: 131 info
+2024-01-08 17:04:00,946 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:04:00,988 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:04:00,988 (fedavg_server:353) INFO: model_para receive 2 round: 131 info
+2024-01-08 17:04:00,994 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 131. ------------------
+2024-01-08 17:04:03,051 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 132, 'Results_raw': {'test_correct': 2713.0, 'test_acc': 0.2713, 'test_total': 10000, 'test_loss': 22131.651354, 'test_avg_loss': 2.213165}}
+2024-01-08 17:04:03,051 (context:297) WARNING: No val_data or val_loader in the trainer, will skip evaluation.If this is not the case you want, please check whether there is typo for the name
+2024-01-08 17:04:03,051 (fedavg_server:152) INFO: {'Role': 'Client #0', 'Round': 132, 'Results_raw': {}}
+2024-01-08 17:04:03,051 (fedavg_server:172) INFO: ------global eval res :{'Role': 'Server #', 'Round': 132, 'Results_raw': {'test_correct': 2713.0, 'test_acc': 0.2713, 'test_total': 10000, 'test_loss': 22131.651354, 'test_avg_loss': 2.213165}}-------
+2024-01-08 17:04:03,052 (fedavg_server:313) INFO: ----------- Starting a new training round (Round #132) -------------
+2024-01-08 17:04:03,052 (fedavg_server:183) INFO: receiver is [1, 2, 3]
+2024-01-08 17:04:03,131 (fedavg_server:359) INFO: model_para can move on ? True
+2024-01-08 17:04:03,132 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:04:03,132 (fedavg_server:353) INFO: model_para receive 1 round: 132 info
+2024-01-08 17:04:03,132 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:04:03,132 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:04:03,132 (fedavg_server:353) INFO: model_para receive 2 round: 132 info
+2024-01-08 17:04:03,132 (fedavg_server:359) INFO: model_para can move on ? False
+2024-01-08 17:04:03,166 (fedavg_server:335) INFO: server 0 received model_para message 
+2024-01-08 17:04:03,167 (fedavg_server:353) INFO: model_para receive 3 round: 132 info
+2024-01-08 17:04:03,173 (fedavg_server:308) INFO: -------------- Server: Starting evaluation at the end of round 132. ------------------
