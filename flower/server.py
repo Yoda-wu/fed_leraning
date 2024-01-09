@@ -1,10 +1,9 @@
 import flwr as fl
 from config import Configuration
 from strategy.fed_avg import FedAvgStrategy
-from flwr.server.strategy import FedAvg
 import sys
 import torch
-from model.lenet5 import test
+from fed_scale.model.lenet5 import test
 from client.fedavg_client import get_parameters
 from client.fedavg_client_manager import FedAvgClientManager
 from dataset.mnist import prepare_dataset

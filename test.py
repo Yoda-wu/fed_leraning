@@ -14,11 +14,3 @@
 #
 # import fml
 # fml.init()
-
-class A:
-    def __init__(self):
-        self.a = 0
-A = A()
-
-A.a = 1
-print(A.a)

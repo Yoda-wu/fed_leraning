@@ -1,7 +1,4 @@
 import numpy as np
-import flwr as fl
-import torch
-from collections import OrderedDict
 from functools import reduce
 from flwr.common.logger import log
 from logging import INFO
@@ -14,7 +11,6 @@ from flwr.common import (
     EvaluateRes,
     FitIns,
     FitRes,
-    MetricsAggregationFn,
     NDArrays,
     Parameters,
     Scalar,
@@ -24,7 +20,6 @@ from flwr.common import (
 import sys
 
 sys.path.append('..')
-from flower.model.lenet5 import test
 
 
 class FedAvgStrategy(Strategy):

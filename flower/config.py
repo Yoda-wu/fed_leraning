@@ -20,7 +20,7 @@ class Configuration:
         if self.dataset in ['mnist', 'cifar10']:
             self.num_classes = 10
         if args.model == 'lenet5':
-            from model.lenet5 import lenet5
+            from fed_scale.model.lenet5 import lenet5
             self.model = lenet5(num_classes=self.num_classes)
 
     def generate_config_dict(self):

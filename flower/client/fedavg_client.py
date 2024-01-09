@@ -10,7 +10,7 @@ import torch
 import sys
 
 sys.path.append('../..')
-from flower.model.lenet5 import lenet5, train, test
+from fed_scale.model.lenet5 import lenet5, train, test
 from utils.config_parser import Parser
 from flower.dataset.mnist import load_data
 
