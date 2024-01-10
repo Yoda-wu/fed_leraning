@@ -104,7 +104,8 @@ class FedAvgClient(BaseClient):
         content = message.content
         model_para = content[0]
         config = content[1]
-        self.trainer.ctx['num_train_batch'] = config[self.ID]['epochs']
+        # logger.info(content)
+        self.trainer.ctx['num_train_epoch'] = config[self.ID]['epochs']
         # 更新参数
         self.trainer.update(model_para, strict=self._cfg.federate.share_local_model)
         self.state = round

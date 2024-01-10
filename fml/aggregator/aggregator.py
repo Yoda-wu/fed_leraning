@@ -7,6 +7,8 @@ from fedml.core.alg_frame.server_aggregator import ServerAggregator
 from fedml.core import Context
 import logging
 from fedml.ml.engine import ml_engine_adapter
+
+
 class FedAvgAggregator(ServerAggregator):
     def __init__(self, model, args):
         super().__init__(model, args)
@@ -15,7 +17,6 @@ class FedAvgAggregator(ServerAggregator):
         self.id = 0
         self.cpu_transfer = False if not hasattr(self.args, "cpu_transfer") else self.args.cpu_transfer
 
-
     def get_model_params(self):
         if self.cpu_transfer:
             return self.model.cpu().state_dict()
@@ -23,6 +24,7 @@ class FedAvgAggregator(ServerAggregator):
 
     def set_model_params(self, model_parameters):
         self.model.load_state_dict(model_parameters)
+
     def aggregate(self, model_list):
         training_num = 0
         for i in range(len(model_list)):
@@ -119,6 +121,8 @@ class FedAvgAggregator(ServerAggregator):
         logging.info(stats)
 
         return True
+
+
 class Aggregator:
 
     def __init__(
@@ -184,7 +188,6 @@ class Aggregator:
         self.sample_num_dict[index] = sample_num
         self.flag_client_model_uploaded_dict[index] = True
 
-
     def aggregate(self):
         start = time.time()
         model_list = []
@@ -201,7 +204,7 @@ class Aggregator:
         self.set_global_model_params(averaged_param)
         end = time.time()
         logging.info(f'aggregate time cost: {end - start}s')
-        return  averaged_param, model_list, model_list_index
+        return averaged_param, model_list, model_list_index
 
     def data_silo_selection(self, round_idx, client_num_in_total, client_num_per_round):
         logging.info(
@@ -215,6 +218,7 @@ class Aggregator:
             np.random.seed(round_idx)  # make sure for each comparison, we are selecting the same clients each round
             data_silo_index_list = np.random.choice(range(client_num_in_total), client_num_per_round, replace=False)
             return data_silo_index_list
+
     def client_selection(self, round_idx, client_id_list_in_total, client_num_per_round):
 
         if client_num_per_round == len(client_id_list_in_total):
@@ -235,13 +239,13 @@ class Aggregator:
         return client_indexes
 
     def test_on_server(self, round_idx):
-        if round_idx == self.args.comm_round - 1 :
-            logging.info(f"============== test on server for all client {round_idx} ==============")
-            self.aggregator.test_all(
-                self.train_data_local_dict,
-                self.test_data_local_dict,
-                self.device,
-                self.args
-            )
-            metrics = self.aggregator.test(self.test_global, self.device, self.args)
-            logging.info(f"test on server metrics is {metrics}")
+
+        logging.info(f"============== test on server for all client {round_idx} ==============")
+        self.aggregator.test_all(
+            self.train_data_local_dict,
+            self.test_data_local_dict,
+            self.device,
+            self.args
+        )
+        metrics = self.aggregator.test(self.test_global, self.device, self.args)
+        logging.info(f"test on server metrics is {metrics}")

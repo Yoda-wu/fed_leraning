@@ -43,7 +43,8 @@ class FedAvgTrainer(TorchClient):
         """
         total_data_num = conf.total_data
         # logging.info(total_data_num)
-        cur_data_num = len(client_data)
+
+        cur_data_num = len(client_data) * client_data.batch_size
         client_id = conf.client_id
         logging.info(f"Start to train (CLIENT: {client_id}) ...")
 
@@ -69,6 +70,7 @@ class FedAvgTrainer(TorchClient):
         model_param = {p: state_dicts[p].data.cpu().numpy()
                        for p in state_dicts}
 
+        logging.info(f"{cur_data_num}, {total_data_num}, {cur_data_num / total_data_num}")
         model_param = [cur_data_num / total_data_num * x.astype(np.float64) for x in model_param.values()]
 
         results = {'client_id': client_id, 'moving_loss': self.epoch_train_loss,

@@ -67,7 +67,7 @@ class FedAvgExecutor(Executor):
             tuple (int, dictionary): The client id and train result
 
         """
-        # logging.info(config)
+        logging.info(self.report_executor_info_handler())
         config["epochs"] = int(config['task_config']["epochs"])
         total_data = 0
         sizes = self.training_sets.getSize()['size']

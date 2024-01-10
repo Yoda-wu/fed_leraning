@@ -127,7 +127,7 @@ class FedAvgServer(BaseServer):
         model = self.model
         aggregator = self.aggregator
         msg_list = list()
-        for client_id in train_msg_buffer:
+        for client_id in train_msg_buffer.keys():
             msg_list.append(train_msg_buffer[client_id])
 
         self._monitor.calc_model_metric(self.model.state_dict(), msg_list, rnd=self.state)
@@ -140,7 +140,7 @@ class FedAvgServer(BaseServer):
         merged_param = merge_param_dict(model.state_dict().copy(), result)
         model.load_state_dict(merged_param, strict=False)
         self.model = model
-        self.trainer.update(merged_param, strict=False)
+        # self.trainer.update(merged_param, strict=False)
 
     def eval(self):
         if self._cfg.federate.make_global_eval:

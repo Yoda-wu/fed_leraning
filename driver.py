@@ -78,7 +78,7 @@ def process_cmd(yaml_file):
             pid = server_process.pid
             print(f"federate learning  server_process  is running pid is {pid} RUN kill -9 {pid} to stop the job")
         print('wait for the server to launch, then will launch clients.....')
-        time.sleep(30)
+        time.sleep(40)
         rank = 1
         working_dir = os.path.abspath(os.path.join(current_path, 'fml/client'))
         print(f'client working dir is {working_dir}')
@@ -89,7 +89,7 @@ def process_cmd(yaml_file):
                 client_process = subprocess.Popen(worker_cmd, cwd=working_dir, stdout=f, stderr=f, shell=False)
                 pid = client_process.pid
                 print(f"federate learning  client_process  is running pid is {pid} RUN kill -9 {pid} to stop the job")
-            time.sleep(10)
+            time.sleep(20)
             rank += 1
     elif yaml_conf['framework'] == 'fedscope':
         job_name = yaml_conf["job_name"]
@@ -172,6 +172,7 @@ def process_cmd(yaml_file):
 
                         subprocess.Popen(f'{worker_cmd}', cwd=working_dir,
                                          shell=True, stdout=fout, stderr=fout)
+                        print(f'Executor local PID {local_pid}. Run kill -9 {local_pid} to kill the job.')
     print(
         f"{job_name} is running, please check your logs {log_path}/{yaml_conf['framework']}/{job_name}_server/client_logging")
     print("finish start a job. hope everything is good")

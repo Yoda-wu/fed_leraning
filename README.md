@@ -57,14 +57,12 @@ python driver.py start ./conf/fedml_conf.yaml
 
 #### 运行结果
 
-<p align="center">
-<img src="./img/fedml_server_log.png" alt="fedml服务端运行日志" width="80%" height="auto">
-</p>
-<p></p>
 
 如果是方式二的运行结果，可以在`log/fedml` 下查看server和client的日志。
-
-TODO： 给出server端测试集上的精度图
+<p align="center">
+<img src="./img/fedml_server_round_acc.png" alt="fedml服务端精度图" width="80%" height="auto">
+</p>
+<p></p>
 
 ### flower
 #### 启动方式
@@ -78,7 +76,10 @@ python driver.py start ./conf/flwr_conf.yaml
 
 如果是方式二的运行结果，可以在`log/flwr` 下查看server和client的日志。
 
-TODO： 给出server端测试集上的精度图
+<p align="center">
+<img src="./img/flwr_server_round_acc.png" alt="flower服务端精度图" width="80%" height="auto">
+</p>
+<p></p>
 
 
 ### federatedScope
@@ -111,4 +112,29 @@ python driver.py start conf/fedscope_conf.yaml
 #### 运行结果
 如果是方式二的运行结果，可以在`log/fedscope` 下查看server和client的日志。
 
-TODO： 给出server端测试集上的精度图
+<p align="center">
+<img src="./img/fedscope_server_round_acc.png" alt="fedscope服务端精度图" width="80%" height="auto">
+</p>
+<p></p>
+
+
+
+### fedScale
+
+#### 启动方式
+
+fedScale只有脚本启动的方式， 本仓库的启动方式都是参考fedscale的启动方式。
+首先还是准备一个配置文件，可以参考`conf/fedscale.yaml`
+接着运行下面的脚本即可
+
+```shell
+python driver.py start conf/fedscale.yaml  
+```
+
+#### 运行结果
+如果是方式二的运行结果，可以在`log/fedscale` 下查看server和client的日志。
+
+<p align="center">
+<img src="./img/fedscale_server_round_acc.png" alt="fedscale服务端精度图" width="80%" height="auto">
+</p>
+<p></p>

@@ -18,13 +18,13 @@ distribute:
   data_idx: 2
 data:
   root: data/
-  type: femnist
+  type: mnist
   splits: [0.6,0.2,0.2]
   subsample: 0.05
   splitter: 'lda'
   transform: [['ToTensor'], ['Normalize', {'mean': [0.9637], 'std': [0.1592]}]]
 dataloader:
-  batch_size: 10
+  batch_size: 32
 model:
   type: lenet5
 train:

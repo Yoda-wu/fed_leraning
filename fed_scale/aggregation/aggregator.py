@@ -1,3 +1,4 @@
+import logging
 import sys
 import copy
 
@@ -40,6 +41,8 @@ class FedAvgAggregator(Aggregator):
         return conf
 
     def update_weight_aggregation(self, results):
+        logging.info(self.tasks_round)
+        # super().update_weight_aggregation(results)
         update_weights = results["update_weight"]  # 这里传输的权重以及是加权过后的 i.e. w[i] = w[i] * (data[i] / total_data)
         if type(update_weights) is dict:
             update_weights = [x for x in update_weights.values()]
