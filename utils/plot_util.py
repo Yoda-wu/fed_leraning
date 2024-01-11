@@ -30,13 +30,15 @@ def plot_fedscope():
         for line in lines:
             if 'global eval res' in line:
                 ss = line.split(' ')
-                index = ss.index("'test_acc':")
+                print(ss)
+                index = ss.index("{'test_acc':")
                 print(ss[index + 1])
                 s = ss[index + 1]
                 idx = s.index(',')
                 acc = s[:idx]
                 print(acc, float(acc))
                 fedscope_acc.append(float(acc))
+    print(len(fedscope_acc))
     plt.plot(range(len(fedscope_acc)), fedscope_acc, label='fedscope', color='g')
     plt.xlabel('round')
     plt.ylabel('acc')
@@ -147,9 +149,9 @@ def plot_all():
     plt.show()
 
 
-plot_fedml()
-plot_flwr()
-plot_fedscale()
+# plot_fedml()
+# plot_flwr()
+# plot_fedscale()
 plot_fedscope()
 # plot_all()
 # cnt = 0

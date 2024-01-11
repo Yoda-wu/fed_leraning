@@ -30,9 +30,20 @@ conda create -n fed python==3.10
 然后根据每个框架的安装指引即可配置环境。
 
 ### fedml
+
+#### 模块介绍
+
+- **Client**：client模块作为FedAvg算法的工作节点。 这个模块在fedml里主要是启动模块。主要的工作内容由两个模块完成，
+  一个是`Trainer`， 一个是`ClientManager`。 前者负责训练相关功能，后者负责通信相关功能。
+- **ClientManager**： 这个模块主要负责与server之间的通信。发送模型参数和接受模型参数，响应server的请求。它拥有trainer，训练时就调用trainer的api，进行训练。
+- **Trainer**： 这个模块就是负责模型训练与测试的功能。对ClientManager提供训练和测试的api。
+- **Server**：与client模块类似， 作为FedAvg算法的聚合节点。在fedml里也是一个启动模块。主要工作内容由两个模块完成，
+ 一个是`Aggregator`,一个是`ServerManager`。前者负责聚合相关功能，后者负责通信相关功能。
+- **ServerManager**： 这个模块主要负责与client之间的通信。收发模型参数，以及训练配置。聚合功能以及选取客户端的功能由aggregator提供。
+- **Aggregator**： 这个模块主要负责聚合，客户端选取算法的实现都是由这个模块提供。
+
+
 #### 启动方式
-
-
 方式一 client/server分别启动
 
 首先配置文件在`conf`目录下， 配置`conf/fedml.yaml`
@@ -72,6 +83,15 @@ python driver.py start ./conf/fedml_conf.yaml
 <p></p>
 
 ### flower
+
+#### 模块介绍
+
+- **client**: client模块作为FedAvg算法的工作节点，所有训练，节点测评估都在client这里实现。
+- **server**: server模块也是一个启动模块，主要功能例如模型聚合，客户端选择分别是由`strategy`和`client_manager`这两个模块实现
+- **strategy**: strategy模块是FedAvg算法主要实现的模块，聚合功能，server侧的评估功能都在这部分实现。
+- **client_manager**: client_manager模块主要是实现客户端选择算法，如随机选择。
+
+
 #### 启动方式
 
 本仓库提供driver脚本启动方式，与fedml不同的是，只需要一个配置文件`conf/flwr_conf.yaml`， 然后启动driver脚本即可
@@ -90,6 +110,18 @@ python driver.py start ./conf/flwr_conf.yaml
 
 
 ### federatedScope
+
+#### 模块介绍
+
+- **client**: client模块作为FedAvg算法的工作节点，负责响应server请求以及发送模型参数到server处。训练由trainer模块实现
+- **server**: server模块也是一个启动模块，负责响应client请求以及发送请求给client，聚合功能由aggregator实现，客户端选择由sampler实现。
+- **trainer**: trainer模块负责模型的训练和评估过程，这部分我选择了框架自带的，而不是自己实现。因为如果要重写这部分的功能太负责，fedscope采用的是hook方式进行训练。
+ 模型训练过程比较统一，主要和采用的框架有关，因此fedscope提供了两种trainer：TorchTrainer和TensorflowTrainer。
+- **aggregator**: aggregator负责模型的聚合过程。
+- **sampler**: sampler模块主要是实现客户端选择算法，如随机选择。
+
+以上是fedscope的主要模块。除此之外如果要自定义模型和数据集，需要自己写好模型定义，并通过`register`注册到fedscope里。
+
 
 #### 启动方式 
 
@@ -127,6 +159,13 @@ python driver.py start conf/fedscope_conf.yaml
 
 
 ### fedScale
+
+#### 模块介绍
+
+- **aggregator**: 这个模块负责FedAvg算法服务端的一切功能， 聚合，评估的所有功能。
+- **executor**: executor它不是一个client工作节点，它更像是启动client的执行器，类比edgeTB的emulator。这个模块负责客户端选择（由client_manager实现)，模型训练与评估（由trainer实现）。
+- **trainer**: trainer模块负责模型的训练和评估过程。
+- **client_manager**: client_manager模块主要是实现客户端选择算法，如随机选择。
 
 #### 启动方式
 

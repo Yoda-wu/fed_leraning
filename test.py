@@ -14,3 +14,20 @@
 #
 # import fml
 # fml.init()
+
+class model:
+    def __init__(self):
+        self.a = 1
+
+class model_adapter:
+    def __init__(self, model):
+        self.model = model
+m = model()
+ma = model_adapter(m)
+m_list = [m]
+for i in range(10):
+    mm = m_list[0]
+    mm.a += 1
+
+print(m_list[0].a)
+print(ma.model.a)

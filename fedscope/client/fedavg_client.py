@@ -129,6 +129,7 @@ class FedAvgClient(BaseClient):
         content = message.content
         self.ID = int(content)
         data = self.data[self.ID]
+        logger.info(f"{len(data)}, {len(data['train'])} {data['train'].batch_size}")
         logger.info(
             f"================= client {self.ID} received assign_id message "
             f"=================")

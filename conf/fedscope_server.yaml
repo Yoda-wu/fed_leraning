@@ -18,7 +18,7 @@ data:
   type: 'mnist'
   splits: [0.6,0.2,0.2]
   subsample: 0.05
-  splitter: 'lda'
+  splitter: 'iid'
   transform: [['ToTensor'], ['Normalize', {'mean': [0.9637], 'std': [0.1592]}]]
 dataloader:
   batch_size: 10
