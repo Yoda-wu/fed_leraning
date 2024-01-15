@@ -10,6 +10,12 @@ from fedml.ml.engine import ml_engine_adapter
 
 
 class FedAvgAggregator(ServerAggregator):
+    """
+    为FedAvg算法的聚合器提供聚合功能和模型测试。
+    主要功能有：
+    1. 聚合本地模型参数
+    2. 全局模型测试
+    """
     def __init__(self, model, args):
         super().__init__(model, args)
         self.model = model
@@ -124,6 +130,13 @@ class FedAvgAggregator(ServerAggregator):
 
 
 class Aggregator:
+    """
+    FedAvg算法的聚合器
+    主要功能有：
+    1. 模型聚合
+    2. 客户端选择算法实现
+    3. 模型评估
+    """
 
     def __init__(
             self,

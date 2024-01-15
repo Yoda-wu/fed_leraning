@@ -8,6 +8,14 @@ from fedml.core.alg_frame.client_trainer import ClientTrainer
 
 
 class FedAvgModelTrainer(ClientTrainer):
+    """
+    本地训练器，用于训练本地模型。
+    主要功能有：
+    1. 训练本地模型
+    2. 获取本地模型参数
+    3. 设置本地模型参数
+    4. 测试本地模型
+    """
     def get_model_params(self):
         return self.model.cpu().state_dict()
 
@@ -129,6 +137,10 @@ class FedAvgModelTrainer(ClientTrainer):
 
 
 class Trainer:
+    """
+    这个类是用来训练模型的，包括本地训练，本地测试，本地模型参数更新
+    主要功能的实现是调用FedAvgModelTrainer类的方法
+    """
     def __init__(self,
                  args,
                  device,

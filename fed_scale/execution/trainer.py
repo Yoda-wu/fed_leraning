@@ -11,27 +11,6 @@ class FedAvgTrainer(TorchClient):
         super(FedAvgTrainer, self).__init__(conf)
         self.global_model = None
 
-    # def train_step(self, client_data, conf, model, optimizer, criterion):
-    #     running_loss = 0.0
-    #     for data_pair in client_data:
-    #         data, target = data_pair
-    #         data = Variable(data).to(device=self.device)
-    #
-    #         target = Variable(target).to(device=self.device)
-    #         logging.info(data.shape)
-    #         # zero the parameter gradients
-    #         optimizer.zero_grad()
-    #
-    #         # forward + backward + optimize
-    #         outputs = model(data)
-    #         loss = criterion(outputs, target)
-    #         loss.backward()
-    #         optimizer.step()
-    #
-    #         # print statistics
-    #         running_loss += loss.item()
-    #     logging.info(f" loss: {running_loss}" )
-
 
     def train(self, client_data, model, conf):
         """

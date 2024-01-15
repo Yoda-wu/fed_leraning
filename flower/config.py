@@ -3,6 +3,10 @@ from prettytable import PrettyTable
 
 
 class Configuration:
+    """
+    这个类是我为了方便使用driver统一启动而写的配置类。
+    因为我想只用一个脚本能够启动所有的实验，所以我需要一个配置类来统一管理配置。
+    """
     def __init__(self, args):
         self.algorithm = args.algorithm
         self.client_number = int(args.client_number)

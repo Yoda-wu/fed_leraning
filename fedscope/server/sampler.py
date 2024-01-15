@@ -3,6 +3,9 @@ from federatedscope.core.sampler import Sampler
 
 
 class RandomSampler(Sampler):
+    """
+    客户端随机选择算法实现
+    """
     def __init__(self, client_num):
         super(RandomSampler, self).__init__(client_num)
 

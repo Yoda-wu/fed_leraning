@@ -12,10 +12,18 @@ from fed_scale.client_manager import FedAvgClientManager
 
 
 class FedAvgAggregator(Aggregator):
+    """
+    FedAvg算法的聚合器实现，继承自fedscale.cloud.aggregation.aggregator.Aggregator类以屏蔽对底层通信的感知，来实现算法的聚合逻辑
+    这里即充当server角色又充当aggregator角色.
+    聚合功能就在update_weight_aggregation这个函数中实现。
+    客户端选择功能则在client_manager中实现。
+
+    """
 
     def __init__(self, args):
         super(FedAvgAggregator, self).__init__(args)
         self.client_select_dict = dict()
+
         self.client_manager = self.init_client_manager(args)
 
     def init_client_manager(self, args):

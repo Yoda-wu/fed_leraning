@@ -5,7 +5,9 @@ from fedscale.cloud.client_manager import ClientManager
 
 
 class FedAvgClientManager(ClientManager):
-
+    """
+    客户端选择算法实现
+    """
     def __init__(self, mode, args, sample_seed=233):
         super(FedAvgClientManager, self).__init__(mode, args, sample_seed)
 

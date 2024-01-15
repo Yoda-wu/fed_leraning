@@ -15,6 +15,11 @@ from fed_scale.model.lenet5 import LeNet5
 
 
 class FedAvgExecutor(Executor):
+    """
+    FedAvg算法的执行器。与前几个算法不同的是，这里的client是分布在这个执行器中的，而不是单独创造。
+    执行器的数量取决于args.num_executors，每个执行器中的client数量取决于args.num_clients_per_executor。
+    trainer是在执行器中创建的，用来模拟client的训练过程。
+    """
     def __init__(self, args):
         logger.initiate_client_setting()
 
@@ -58,13 +63,14 @@ class FedAvgExecutor(Executor):
         super(Executor, self).__init__()
 
     def Train(self, config):
-        """Load train config and data to start training on that client
+        """
+        加载训练配置和数据以开始在该客户端上训练
 
         Args:
-            config (dictionary): The client training config.
+            config (dictionary): 客户端训练配置
 
         Returns:
-            tuple (int, dictionary): The client id and train result
+            tuple (int, dictionary): 返回客户端的id和训练结果
 
         """
         logging.info(self.report_executor_info_handler())

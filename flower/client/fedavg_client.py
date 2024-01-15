@@ -16,6 +16,16 @@ from flower.dataset.mnist import load_data
 
 
 class FedAvgClient(fl.client.NumPyClient):
+    """
+    FedAvg算法的客户端实现，继承自flower框架里的NumPyClient类
+    本地训练的功能由这个类实现
+    功能有：
+    1.本地模型训练
+    2.本地模型评估
+    3.获取本地模型参数
+    4.设置本地模型参数
+
+    """
     def __init__(self, cid, net, trainloader, valloader, device):
         self.cid = cid
         self.net = net
@@ -53,6 +63,10 @@ class FedAvgClient(fl.client.NumPyClient):
 
 
 def gen_client_fn(trainloaders, valloaders, model, device):
+    """
+    生成客户端的函数，用于创建客户端实例，这个方法会有flower框架调用
+    启动客户端的时候，会调用这个方法，生成客户端实例。
+    """
     def client_fn(cid: str):
         return FedAvgClient(
             int(cid),

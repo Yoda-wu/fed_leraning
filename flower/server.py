@@ -37,6 +37,9 @@ def evaluate(
         parameters: fl.common.NDArrays,
         config: Dict[str, fl.common.Scalar],
 ) -> Optional[Tuple[float, Dict[str, fl.common.Scalar]]]:
+    """
+    在服务器端进行评估
+    """
     net = Config.model
     valloader = testloader
     try:

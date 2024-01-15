@@ -23,6 +23,16 @@ sys.path.append('..')
 
 
 class FedAvgStrategy(Strategy):
+    """
+    FedAvg算法实现
+    flower中strategy模拟了服务端的行为，实现了服务端的逻辑
+    包括：
+    1. 调用client_manger的sample方法，随机选择客户端
+    2. 初始化参数
+    3. 聚合模型参数
+    4. 评估模型
+    支持配置训练的参数以及评估的参数。
+    """
     def __init__(self,
                  fraction_fit: float = 1.0,
                  fraction_evaluate: float = 1.0,

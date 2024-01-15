@@ -17,6 +17,11 @@ from federatedscope.core.auxiliaries.logging import logger
 
 
 class FedAvgServer(BaseServer):
+    """
+    FedAvg算法的服务端实现，继承自federatedscope框架里的BaseServer类
+    聚合功能偷懒使用了内置的ClientAvgAggregator类。客户端会传来两个参数，一个是本地样本量，一个是本地模型参数。
+    与FedML类似， 对用户屏蔽了通信细姐，用户可以注册handler，实现自己的通信逻辑。
+    """
     def __init__(self,
                  ID=-1,
                  state=0,

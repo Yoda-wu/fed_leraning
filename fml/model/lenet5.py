@@ -2,6 +2,9 @@ import torch
 import torch.nn as nn
 
 class LeNet5(nn.Module):
+    """
+    LeNet5模型， 作为FedAvg算法中本地训练的模型
+    """
     def __init__(self, num_classes):
         super().__init__()
         # 卷积层

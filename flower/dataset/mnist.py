@@ -1,9 +1,14 @@
+"""
+这个文件是用来加载MNIST数据集的。
+"""
 import torch
 from torch.utils.data import random_split, DataLoader
 from torchvision.transforms import ToTensor, Normalize, Compose
 from torchvision.datasets import MNIST
 
 from flwr_datasets import FederatedDataset
+
+
 
 def get_mnist(data_path: str = "./data"):
     tr = Compose([ToTensor(), Normalize((0.1307,), (0.3081,))])

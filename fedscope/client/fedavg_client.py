@@ -12,6 +12,10 @@ from federatedscope.register import register_worker
 from federatedscope.core.auxiliaries.logging import logger
 
 class FedAvgClient(BaseClient):
+    """
+    FedAvg算法的客户端实现。
+    本地训练过程偷懒使用了框架自带的GeneralTorchTrainer类。
+    """
     def __init__(self,
                  ID=-1,
                  server_id=None,
