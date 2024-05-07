@@ -15,6 +15,9 @@ from fed_scale.model.lenet5 import LeNet5
 
 
 class FedAvgExecutor(Executor):
+    """
+    负责启动client， 并且执行client的训练任务
+    """
     def __init__(self, args):
         logger.initiate_client_setting()
 

@@ -18,14 +18,27 @@ class FedAvgAggregator(ServerAggregator):
         self.cpu_transfer = False if not hasattr(self.args, "cpu_transfer") else self.args.cpu_transfer
 
     def get_model_params(self):
+        """
+        需要用户自己实现
+        获取模型参数
+        """
         if self.cpu_transfer:
             return self.model.cpu().state_dict()
         return self.model.state_dict()
 
     def set_model_params(self, model_parameters):
+        """
+        需要用户自己实现
+        设置模型参数
+        """
         self.model.load_state_dict(model_parameters)
 
     def aggregate(self, model_list):
+        """
+        FedAvg的核心聚合算法 需要用户自己实现
+        Server端最核心的功能——模型聚合
+        :param model_list: list of model parameters from clients
+        """
         training_num = 0
         for i in range(len(model_list)):
             local_sample_num, local_model_params = model_list[i]
@@ -42,8 +55,11 @@ class FedAvgAggregator(ServerAggregator):
         return avg_param
 
     def _test(self, test_data, device, args):
+        """
+        需要用户自己实现
+        测试模型，返回测试结果
+        """
         model = self.model
-
         model.to(device)
         model.eval()
 
@@ -73,7 +89,10 @@ class FedAvgAggregator(ServerAggregator):
         return metrics
 
     def test(self, test_data, device, args):
-        # test data
+        """
+        需要用户自己实现
+        全局测试，使用测试数据集
+        """
         test_num_samples = []
         test_tot_corrects = []
         test_losses = []
@@ -96,7 +115,11 @@ class FedAvgAggregator(ServerAggregator):
         logging.info(stats)
         return test_acc, test_loss, None, None
 
-    def test_all(self, train_data_local_dict, test_data_local_dict, device, args) -> bool:
+    def test_all(self, train_data_local_dict, device, args) -> bool:
+        """
+        需要用户自己实现
+        测试所有client的模型，使用的是训练数据集
+        """
         train_num_samples = []
         train_tot_corrects = []
         train_losses = []
@@ -124,7 +147,10 @@ class FedAvgAggregator(ServerAggregator):
 
 
 class Aggregator:
-
+    """
+    对聚合功能的封装，以及聚合以外的功能实现如客户端选择
+    参考FedML的实例，这部分也需要用户自己实现
+    """
     def __init__(
             self,
             args,
@@ -139,15 +165,16 @@ class Aggregator:
             train_data_local_num_dict,
     ):
         self.args = args
+        # 聚合器
         self.aggregator = FedAvgAggregator(model, args)
-
+        #  全局数据
         self.train_global = train_data_global
         self.test_global = test_data_global
         self.val_global = test_data_global
         self.all_train_data_num = all_train_data_num
 
         Context().add(Context.KEY_TEST_DATA, self.val_global)
-
+        # 本地数据 {id: data}
         self.train_data_local_dict = train_data_local_dict
         self.test_data_local_dict = test_data_local_dict
         self.train_data_local_num_dict = train_data_local_num_dict
@@ -163,12 +190,21 @@ class Aggregator:
             self.flag_client_model_uploaded_dict[idx] = False
 
     def get_global_model_params(self):
+        """
+        调用聚合器获取全局模型参数
+        """
         return self.aggregator.get_model_params()
 
     def set_global_model_params(self, model_param):
+        """
+        调用聚合器设置全局模型参数
+        """
         self.aggregator.set_model_params(model_param)
 
     def check_whether_all_receive(self):
+        """
+        检查是否所有的client都已经上传了模型
+        """
         logging.debug("client_num = {}".format(self.client_num))
         for idx in range(self.client_num):
             if not self.flag_client_model_uploaded_dict[idx]:
@@ -178,35 +214,36 @@ class Aggregator:
         return True
 
     def add_local_trained_result(self, index, model_params, sample_num):
+        """
+        记录本地训练结果
+        """
         logging.info("add_model. index = %d" % index)
-
         # for dictionary model_params, we let the user level code to control the device
         if type(model_params) is not dict:
             model_params = ml_engine_adapter.model_params_to_device(self.args, model_params, self.device)
-
         self.model_dict[index] = model_params
         self.sample_num_dict[index] = sample_num
         self.flag_client_model_uploaded_dict[index] = True
 
     def aggregate(self):
+        """
+        聚合模型
+        """
         start = time.time()
         model_list = []
-
         for idx in range(self.client_num):
             model_list.append((self.sample_num_dict[idx], self.model_dict[idx]))
-
         model_list_index = [i for i in range(len(model_list))]
-
         Context().add(Context.KEY_CLIENT_MODEL_LIST, model_list)
-
         averaged_param = self.aggregator.aggregate(model_list)
-
         self.set_global_model_params(averaged_param)
         end = time.time()
         logging.info(f'aggregate time cost: {end - start}s')
         return averaged_param, model_list, model_list_index
 
     def data_silo_selection(self, round_idx, client_num_in_total, client_num_per_round):
+        """
+        """
         logging.info(
             "client_num_in_total = %d, client_num_per_round = %d" % (client_num_in_total, client_num_per_round)
         )
@@ -215,12 +252,13 @@ class Aggregator:
         if client_num_in_total == client_num_per_round:
             return [i for i in range(client_num_per_round)]
         else:
-            np.random.seed(round_idx)  # make sure for each comparison, we are selecting the same clients each round
+            np.random.seed(round_idx)
             data_silo_index_list = np.random.choice(range(client_num_in_total), client_num_per_round, replace=False)
             return data_silo_index_list
 
     def client_selection(self, round_idx, client_id_list_in_total, client_num_per_round):
-
+        """
+        """
         if client_num_per_round == len(client_id_list_in_total):
             return client_id_list_in_total
         np.random.seed(round_idx)  # make sure for each comparison, we are selecting the same clients each round
@@ -228,22 +266,14 @@ class Aggregator:
         logging.info(f"client_selection： {client_id_list_in_this_round}")
         return client_id_list_in_this_round
 
-    def client_sampling(self, round_idx, client_num_in_total, client_num_per_round):
-        if client_num_in_total == client_num_per_round:
-            client_indexes = [client_index for client_index in range(client_num_in_total)]
-        else:
-            num_clients = min(client_num_per_round, client_num_in_total)
-            np.random.seed(round_idx)  # make sure for each comparison, we are selecting the same clients each round
-            client_indexes = np.random.choice(range(client_num_in_total), num_clients, replace=False)
-        logging.info("client_indexes = %s" % str(client_indexes))
-        return client_indexes
 
     def test_on_server(self, round_idx):
-
+        """
+        服务端全局测试，也是调用聚合器的测试功能
+        """
         logging.info(f"============== test on server for all client {round_idx} ==============")
         self.aggregator.test_all(
             self.train_data_local_dict,
-            self.test_data_local_dict,
             self.device,
             self.args
         )

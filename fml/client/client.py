@@ -6,6 +6,12 @@ sys.path.append('..')
 from ClientManager import FedAvgClientManager
 from fedml.cross_silo.client.fedml_client_master_manager import ClientMasterManager
 
+"""
+FedML client 实现
+参考FedML的fedavg示例，用户需要自己实现客户端的实体
+
+"""
+
 
 class FedAvgClient:
     def __init__(self, args, device, dataset, model):
@@ -91,7 +97,10 @@ def get_trainer(
 from fedml.data.MNIST.data_loader import download_mnist, load_partition_data_mnist
 
 
-def load_data(args):
+def load_data_mnist(args):
+    """
+    加载mnist数据集——调用load_partition_data_mnist的API
+    """
     download_mnist(args.data_cache_dir)
     fedml.logging.info("load_data. dataset_name = %s" % args.dataset)
 
@@ -133,6 +142,40 @@ def load_data(args):
     return dataset, class_num
 
 
+def load_data_cifar(args):
+    """
+    加载cifar数据集——使用fedml.data.load的API
+    """
+    fedml.logging.info("load_data. dataset_name = %s" % args.dataset)
+    centralized = True if (args.client_num_in_total == 1 and args.training_type != "cross_silo") else False
+    print(f"centralized = {centralized}")
+    """
+    For shallow NN or linear models, 
+    we uniformly sample a fraction of clients each round (as the original FedAvg paper)
+    """
+    dataset, class_num = fedml.data.load(
+        args
+    )
+    print(f"dataset = {len(dataset)}")
+    (train_data_num,
+     test_data_num,
+     train_data_global,
+     test_data_global,
+     train_data_local_num_dict,
+     train_data_local_dict,
+     test_data_local_dict, _
+     ) = dataset
+    print(f"train_data_local_dict = {train_data_local_dict.keys()} client num  ={class_num}")
+    return dataset, class_num
+
+def load_data(args):
+    if args.dataset == "mnist":
+        return load_data_mnist(args)
+    elif args.dataset == "cifar10":
+        return load_data_cifar(args)
+    else:
+        raise Exception("The dataset is not supported: %s" % args.dataset)
+
 if __name__ == '__main__':
     args = fedml.init()
 
@@ -141,7 +184,13 @@ if __name__ == '__main__':
     datasets, output_dim = load_data(args)
     from fml.model.lenet5 import LeNet5
 
-    model = LeNet5(num_classes=output_dim)
+    in_channels = 1
+    if args.dataset == 'mnist':
+        output_dim = 10
+    elif args.dataset == 'cifar10':
+        output_dim = 10
+        in_channels = 3
+    model = LeNet5(in_channels=in_channels, num_classes=output_dim)
 
     client_runner = FedAvgClient(args, device, datasets, model)
 

@@ -23,6 +23,10 @@ sys.path.append('..')
 
 
 class FedAvgStrategy(Strategy):
+    """
+    Flower中实现联邦学习的核心部分——Strategy，定义了服务端的主要行为。
+    用户需要自己实现对应的方法
+    """
     def __init__(self,
                  fraction_fit: float = 1.0,
                  fraction_evaluate: float = 1.0,
@@ -42,7 +46,7 @@ class FedAvgStrategy(Strategy):
                  on_fit_config_fn: Optional[Callable[[int], Dict[str, Scalar]]] = None,
                  on_evaluate_config_fn: Optional[Callable[[int], Dict[str, Scalar]]] = None,
                  ):
-        super().__init__()
+
         self.initial_parameters = initial_parameters
         self.fraction_fit = fraction_fit
         self.fraction_evaluate = fraction_evaluate
@@ -71,6 +75,7 @@ class FedAvgStrategy(Strategy):
 
     def configure_fit(self, server_round: int, parameters: Parameters, client_manager: ClientManager) -> List[
         Tuple[ClientProxy, FitIns]]:
+        log(INFO, "--------------in configure_fit------------------")
         # Sample clients
         sample_size, min_num_clients = self.num_fit_clients(
             client_manager.num_available()
@@ -78,6 +83,7 @@ class FedAvgStrategy(Strategy):
         clients = client_manager.sample(
             num_clients=sample_size, min_num_clients=min_num_clients
         )
+        log(INFO, f"clients {clients}")
         fit_config = []
         initial_config = {'local_epoch': 2}
         standard_config = {'local_epoch': 1}
@@ -96,6 +102,9 @@ class FedAvgStrategy(Strategy):
     def aggregate_fit(self, server_round: int, results: List[Tuple[ClientProxy, FitRes]],
                       failures: List[Union[Tuple[ClientProxy, FitRes], BaseException]]) -> Tuple[
         Optional[Parameters], Dict[str, Scalar]]:
+        """
+        FedAvg聚合操作
+        """
         if not results:
             return None, {}
 
@@ -103,11 +112,6 @@ class FedAvgStrategy(Strategy):
             (parameters_to_ndarrays(fit_res.parameters), fit_res.num_examples) for _, fit_res in results
         ]
         parameters_aggregated = ndarrays_to_parameters(aggregate_helper(weights_results))
-        # metrics_aggregated = {}
-        # if self.fit_metrics_aggregation_fn:
-        #     fit_metrics = [(res.num_examples, res.metrics) for _, res in results]
-        #     metrics_aggregated = self.fit_metrics_aggregation_fn(fit_metrics)
-        #
         return parameters_aggregated, {}
 
     def configure_evaluate(self, server_round: int, parameters: Parameters, client_manager: ClientManager) -> List[
@@ -185,6 +189,9 @@ class FedAvgStrategy(Strategy):
 
 
 def aggregate_helper(results):
+    """
+    FedAvg聚合操作的辅助函数，即对于每个客户端的更新参数进行加权平均
+    """
     num_examples_total = sum([num_examples for _, num_examples in results])
 
     weighted_weights = [
@@ -197,7 +204,9 @@ def aggregate_helper(results):
 
 
 def weighted_loss_avg(results: List[Tuple[int, float]]) -> float:
-    """Aggregate evaluation results obtained from multiple clients."""
+    """
+    平均多个客户端的评估结果
+    """
     num_total_evaluation_examples = sum([num_examples for num_examples, _ in results])
     weighted_losses = [num_examples * loss for num_examples, loss in results]
     return sum(weighted_losses) / num_total_evaluation_examples

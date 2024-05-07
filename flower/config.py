@@ -3,6 +3,9 @@ from prettytable import PrettyTable
 
 
 class Configuration:
+    """
+    这里是我自己写的配置类，方便使用脚本启动。这里不是Flower的一部分。
+    """
     def __init__(self, args):
         self.algorithm = args.algorithm
         self.client_number = int(args.client_number)
@@ -19,9 +22,13 @@ class Configuration:
         self.server_address = args.server_address
         if self.dataset in ['mnist', 'cifar10']:
             self.num_classes = 10
+        if self.dataset == 'mnist':
+            self.in_channels = 1
+        if self.dataset == 'cifar10':
+            self.in_channels = 3
         if args.model == 'lenet5':
-            from fed_scale.model.lenet5 import lenet5
-            self.model = lenet5(num_classes=self.num_classes)
+            from flower.model.lenet5 import lenet5
+            self.model = lenet5(in_channel=self.in_channels, num_classes=self.num_classes)
 
     def generate_config_dict(self):
         '''

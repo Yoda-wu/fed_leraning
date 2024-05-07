@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f9694767-db15-4e9c-bba8-9d249dab5954" name="worker">
+        <fileTransfer rootFolder="/home/wyd" accessType="SFTP" host="192.168.0.105" port="22" sshConfigId="a9715331-d6ca-4c08-9d5e-6975870320c2" sshConfig="wyd@192.168.0.105:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

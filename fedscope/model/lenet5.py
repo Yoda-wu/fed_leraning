@@ -9,11 +9,11 @@ from federatedscope.register import register_model
 
 class LeNet5(nn.Module):
 
-    def __init__(self, num_classes):
+    def __init__(self, in_channels=1, num_classes=10):
         super().__init__()
         # 卷积层
         self.layer1 = nn.Sequential(
-            nn.Conv2d(1, 6, kernel_size=5, stride=1, padding=0),
+            nn.Conv2d(in_channels, 6, kernel_size=5, stride=1, padding=0),
             nn.BatchNorm2d(6),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)
@@ -24,8 +24,13 @@ class LeNet5(nn.Module):
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)
         )
+        in_features = 16 * 5 * 5
+        if in_channels == 3:
+            in_features = 16 * 5 * 5
+        else:
+            in_features = 16 * 4 * 4
         # 全连接层
-        self.fc = nn.Linear(4 * 4 * 16, 120)
+        self.fc = nn.Linear(in_features, 120)
         self.relu = nn.ReLU()
         self.fc1 = nn.Linear(120, 84)
         self.relu1 = nn.ReLU()
@@ -105,8 +110,11 @@ def test(
 
 
 def call_lenet5(config, num_classes=10):
+    print(config)
     if config.type == 'lenet5' :
-        model = LeNet5(num_classes=10)
+
+
+        model = LeNet5(config.in_channels,num_classes=10)
         return model
 
 

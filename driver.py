@@ -36,6 +36,7 @@ def process_cmd(yaml_file):
         with open(f"{log_path}/{yaml_conf['framework']}/{job_name}_server_logging", "w") as f:
             server_process = subprocess.Popen(cmd, cwd=working_dir, stdout=f, stderr=f, shell=False)
             pid = server_process.pid
+            print(" ".join(cmd))
             print(f"federate learning  server_process  is running pid is {pid} RUN kill -9 {pid} to stop the job")
         # 启动client端
         print('wait for the server to launch, then will launch clients.....')
@@ -57,6 +58,7 @@ def process_cmd(yaml_file):
             with open(f"{log_path}/{yaml_conf['framework']}/{job_name}_client_{node_id}_logging", "w") as f:
                 client_process = subprocess.Popen(worker_cmd, cwd=working_dir, stdout=f, stderr=f, shell=False)
                 pid = client_process.pid
+                print(" ".join(worker_cmd))
                 print(f"federate learning  client_process  is running pid is {pid} RUN kill -9 {pid} to stop the job")
             node_id += 1
         # with open(f"{log_path}/{job_name}_server_logging", "w") as f:
@@ -89,7 +91,7 @@ def process_cmd(yaml_file):
                 client_process = subprocess.Popen(worker_cmd, cwd=working_dir, stdout=f, stderr=f, shell=False)
                 pid = client_process.pid
                 print(f"federate learning  client_process  is running pid is {pid} RUN kill -9 {pid} to stop the job")
-            time.sleep(20)
+            time.sleep(10)
             rank += 1
     elif yaml_conf['framework'] == 'fedscope':
         job_name = yaml_conf["job_name"]

@@ -57,11 +57,7 @@ if __name__ == '__main__':
     data, modified_cfg = load_mnist(config=init_cfg.clone(),
                                   client_cfgs=client_cfgs)
     init_cfg.merge_from_other_cfg(modified_cfg)
-
-
-
     init_cfg.freeze()
-
     logger.info(f"len( {len(data)} ) ,  keys : {data.keys()}")
     runner = get_runner(data=data,
                         server_class=FedAvgServer,

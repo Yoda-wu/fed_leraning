@@ -7,7 +7,13 @@ from fedml.utils.logging import logger
 from fedml.core.distributed.communication.message import Message
 from fml.message_define import MyMessage
 
-
+"""
+FedML提供了两种ClientManager，分别是ClientMasterManager和ClientSlaveManager
+其中只有前者是可以与服务器直接通信，后者只能与Master节点通信。
+这里不选择直接继承ClientMasterManager，而是直接继承FedMLCommManager，实现自己的ClientManager的原因如下：
+1. Trainer的包装——ClientMasterManager中的Trainer是通过TrainerDistAdapter来包装的，而TrainerDistAdapter中的又包装了一层FedMLTrainer，而FedMLTrainer中的又包装了一层ClientTrainer
+2. 这里需要自定义与服务器通信的消息处理。
+"""
 class FedAvgClientManager(FedMLCommManager):
     ONLINE_STATUS_FLAG = "ONLINE"
     RUN_FINISHED_STATUS_FLAG = "FINISHED"
@@ -16,7 +22,7 @@ class FedAvgClientManager(FedMLCommManager):
         super().__init__(args, comm, client_rank, size=client_number, backend=backend)
         self.trainer = trainer
         self.args = args
-
+        self.hello = "hello"
         self.num_round = args.comm_round
         self.round_idx = 0
         self.rank = client_rank
@@ -28,11 +34,17 @@ class FedAvgClientManager(FedMLCommManager):
         self.is_inited = False
 
     def is_main_process(self):
+        """
+        判断是否是主进程
+        """
         return getattr(self.trainer, "trainer", None) is None or \
             getattr(self.trainer.trainer, "trainer", None) is None or \
             self.trainer.model_trainer.is_main_process()
 
     def register_message_receive_handlers(self) -> None:
+        """
+        注册消息处理函数
+        """
         self.register_message_receive_handler(
             MyMessage.MSG_TYPE_CONNECTION_IS_READY, self.handle_message_connection_ready
         )
@@ -51,6 +63,9 @@ class FedAvgClientManager(FedMLCommManager):
         )
 
     def send_client_status(self, receive_id, status=ONLINE_STATUS_FLAG):
+        """
+        发送客户端状态
+        """
         if self.is_main_process():
             logger.info("send_client_status")
             logger.info(f"self.client_read_id{self.client_real_id}")
@@ -61,6 +76,9 @@ class FedAvgClientManager(FedMLCommManager):
             self.send_message(message)
 
     def send_model_to_server(self, receive_id, weights, local_sample_num):
+        """
+        发送模型到服务器
+        """
         if self.is_main_process():
             tick = time.time()
             message = Message(MyMessage.MSG_TYPE_C2S_SEND_MODEL_TO_SERVER, self.client_real_id, receive_id)
@@ -71,14 +89,23 @@ class FedAvgClientManager(FedMLCommManager):
             logger.info(f"communication cost time :{time.time() - tick} s")
 
     def handle_message_connection_ready(self, msg_param):
+        """
+        处理连接准备就绪消息
+        """
         if not self.has_sent_online_msg:
             self.has_sent_online_msg = True
             self.send_client_status(0)
 
     def handle_message_check_status(self, msg_param):
+        """
+        处理检查状态消息
+        """
         self.send_client_status(0)
 
     def handle_message_init(self, msg_param):
+        """
+        处理初始化消息
+        """
         if self.is_inited:
             return
 
@@ -96,6 +123,10 @@ class FedAvgClientManager(FedMLCommManager):
         self.round_idx += 1
 
     def handle_message_receive_model_from_server(self, msg_param):
+        """
+
+        处理从服务器接收模型消息 —— 需要额外接收epoch数据
+        """
         logger.info("handle_message_receive_model_from_server")
         model_params = msg_param.get(MyMessage.MSG_ARG_KEY_MODEL_PARAMS)
         client_index = msg_param.get(MyMessage.MSG_ARG_KEY_CLIENT_INDEX)
@@ -104,7 +135,6 @@ class FedAvgClientManager(FedMLCommManager):
         self.trainer.update_dataset(int(client_index))
         self.trainer.update_model(model_params)
         if self.round_idx < self.num_round:
-
             self.train()
             self.test()
             self.round_idx += 1
@@ -113,14 +143,23 @@ class FedAvgClientManager(FedMLCommManager):
             self.finish()
 
     def handle_message_finish(self, msg_param):
+        """
+        处理结束消息
+        """
         logger.info(" ==================finish================== ")
         self.cleanup()
 
     def cleanup(self):
+        """
+        结束
+        """
         self.send_client_status(0, FedAvgClientManager.RUN_FINISHED_STATUS_FLAG)
         self.finish()
 
     def train(self):
+        """
+        本地训练
+        """
         logger.info(f"=======training=======  round_id = {self.round_idx}")
         weights, local_sample_num = self.trainer.train(self.round_idx)
         self.send_model_to_server(0, weights, local_sample_num)
@@ -129,4 +168,7 @@ class FedAvgClientManager(FedMLCommManager):
         self.trainer.test(self.round_idx)
     
     def run(self):
+        """
+        启动
+        """
         super().run()

@@ -12,13 +12,16 @@ from fed_scale.client_manager import FedAvgClientManager
 
 
 class FedAvgAggregator(Aggregator):
-
+    """
+    FedAvg的聚合器， 负责FedAvg中服务端所有功能。
+    """
     def __init__(self, args):
         super(FedAvgAggregator, self).__init__(args)
         self.client_select_dict = dict()
         self.client_manager = self.init_client_manager(args)
 
     def init_client_manager(self, args):
+        # client_manager负责客户端选择
         client_manager = FedAvgClientManager(args.sample_mode , args=args)
         return client_manager
 
@@ -43,7 +46,9 @@ class FedAvgAggregator(Aggregator):
     def update_weight_aggregation(self, results):
         logging.info(self.tasks_round)
         # super().update_weight_aggregation(results)
-        update_weights = results["update_weight"]  # 这里传输的权重以及是加权过后的 i.e. w[i] = w[i] * (data[i] / total_data)
+        update_weights = results["update_weight"]
+        # 这里传输的权重以及是加权过后的 i.e. w[i] = w[i] * (data[i] / total_data)
+        # 因此下面只需要简单的相加即可
         if type(update_weights) is dict:
             update_weights = [x for x in update_weights.values()]
         if self._is_first_result_in_round():

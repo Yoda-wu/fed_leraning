@@ -21,9 +21,10 @@ data:
   splitter: 'iid'
   transform: [['ToTensor'], ['Normalize', {'mean': [0.9637], 'std': [0.1592]}]]
 dataloader:
-  batch_size: 10
+  batch_size: 32
 model:
   type: 'lenet5'
+  in_channels: 1
 train:
   local_update_steps: 1
   batch_or_epoch: epoch

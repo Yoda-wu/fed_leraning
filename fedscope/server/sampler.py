@@ -8,7 +8,7 @@ class RandomSampler(Sampler):
 
     def sample(self, size):
         """
-        To sample clients
+        客户端随机选择策略
         """
         idle_clients = np.nonzero(self.client_state)[0]
         # print(idle_clients)

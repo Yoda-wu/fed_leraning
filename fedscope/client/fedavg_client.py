@@ -11,6 +11,13 @@ from federatedscope.core.auxiliaries.utils import calculate_time_cost, merge_dic
 from federatedscope.register import register_worker
 from federatedscope.core.auxiliaries.logging import logger
 
+"""
+FedScope的Client与FedML中的ClientManager类似，都是处理通信/事件的类。
+用户只需要在BaseClient的框架下，实现默认的消息处理函数即可，也可以自定义消息处理函数。
+本地训练由Trainer类完成，这里采用了FedScope提供了通用的TorchTrainer类，用户无需自己实现。
+"""
+
+
 class FedAvgClient(BaseClient):
     def __init__(self,
                  ID=-1,
@@ -65,7 +72,6 @@ class FedAvgClient(BaseClient):
     def _gen_timestamp(self, init_timestamp, instance_number):
         if init_timestamp is None:
             return None
-
         comp_cost, comm_cost = calculate_time_cost(
             instance_number=instance_number,
             comm_size=self.model_size,
@@ -93,7 +99,7 @@ class FedAvgClient(BaseClient):
 
     def callback_funcs_for_model_para(self, message):
         """
-        handler for receiving model parameters
+        回调函数，处理来自server的model_para消息，即接收全局模型参数
         """
         round = message.state
         sender = message.sender
@@ -126,6 +132,9 @@ class FedAvgClient(BaseClient):
                     content=(sample_size, shared_model_para)))
 
     def callback_funcs_for_assign_id(self, message):
+        """
+        接收到server的assign_id消息，即分配client ID
+        """
         content = message.content
         self.ID = int(content)
         data = self.data[self.ID]
@@ -142,10 +151,13 @@ class FedAvgClient(BaseClient):
         logger.info(self.trainer)
         logger.info(f"client (address {self.comm_manager.host}:{self.comm_manager.port}) is assigned with {self.ID}")
         self.comm_manager.send(
-            Message(msg_type='confirm_assign_id', sender=self.ID, receiver=[self.server_id],state=self.state)
+            Message(msg_type='confirm_assign_id', sender=self.ID, receiver=[self.server_id], state=self.state)
         )
 
     def callback_funcs_for_join_in_info(self, message):
+        """
+        接收到server的join_in_info消息，获取本地训练所需的样本数
+        """
         logger.info(
             f"================= client {self.ID} received join_in_info message "
             f"=================")

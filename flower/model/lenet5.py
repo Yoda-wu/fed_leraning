@@ -7,11 +7,11 @@ from typing import Tuple
 
 class LeNet5(nn.Module):
 
-    def __init__(self, num_classes):
+    def __init__(self, in_channels, num_classes):
         super().__init__()
         # 卷积层
         self.layer1 = nn.Sequential(
-            nn.Conv2d(1, 6, kernel_size=5, stride=1, padding=0),
+            nn.Conv2d(in_channels, 6, kernel_size=5, stride=1, padding=0),
             nn.BatchNorm2d(6),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)
@@ -22,13 +22,20 @@ class LeNet5(nn.Module):
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)
         )
+        in_features = 4 * 4 * 16
+        if in_channels == 1:
+            in_features = 4*4*16
+        else:
+            in_features = 5*5*16
+        self.fc = nn.Linear(in_features,120)
         # 全连接层
-        self.fc = nn.Linear(4*4*16,120)
+        self.fc = nn.Linear(in_features,120)
         self.relu = nn.ReLU()
         self.fc1 = nn.Linear(120, 84)
         self.relu1 = nn.ReLU()
         self.fc2 = nn.Linear(84, num_classes)
     def forward(self, x):
+        # print(x.shape)
         out = self.layer1(x)
         out = self.layer2(out)
         out = out.reshape(out.size(0), -1)
@@ -41,8 +48,8 @@ class LeNet5(nn.Module):
 
 
 
-def lenet5(num_classes):
-    return LeNet5(num_classes)
+def lenet5(in_channel, num_classes):
+    return LeNet5(in_channel, num_classes)
 
 
 def train(
@@ -75,9 +82,9 @@ def train(
 
             # print statistics
             running_loss += loss.item()
-            if i % 2000 == 1999:  # print every 2000 mini-batches
-                print("[%d, %5d] loss: %.3f" % (epoch + 1, i + 1, running_loss / 2000))
-                running_loss = 0.0
+
+            print("[%d, %5d] total loss: %.3f" % (epoch + 1, i + 1, running_loss))
+            running_loss = 0.0
 
 
 def test(

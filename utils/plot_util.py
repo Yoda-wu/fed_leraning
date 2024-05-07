@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 def plot_flwr():
     plt.figure(figsize=(12, 8), dpi=100)
     flwr_acc = []
-    with open('../log/flwr/flwr_fedAvg_10_server_logging', 'r') as f:
+    with open('../log/flower/flwr_fedAvg_10_server_logging', 'r') as f:
         lines = f.readlines()
         for line in lines:
             # print('server-side evaluation' in line)
@@ -12,7 +12,7 @@ def plot_flwr():
                 ss = line.split(' ')
                 flwr_acc.append(float(ss[-1]))
                 print(ss[-1])
-    plt.plot(range(len(flwr_acc)), flwr_acc, label='flwr')
+    plt.plot(range(len(flwr_acc)), flwr_acc, label='flower')
     plt.xlabel('acc')
     plt.ylabel('round')
     plt.title('server-round-acc plot')
@@ -76,14 +76,16 @@ def plot_fedscale():
 
 
 def plot_fedml():
+
     plt.figure(figsize=(12, 8), dpi=100)
     fedml_acc = []
-    with open('../log/fedml/fedml_fedAvg_10_server_logging', 'r') as f:
+    with open('../log/fedml/fedml_fedAvg_20_cifar10_server_logging', 'r') as f:
         lines = f.readlines()
         for line in lines:
-            if 'test on server metrics' in line:
+            if 'test_acc' in line:
                 ss = line.split(' ')
-                index = ss.index('is')
+                print(ss)
+                index = ss.index("{'test_acc':")
                 # print(ss[index + 2])
                 t = ss[index + 1]
                 idx = t.index(',')
@@ -104,7 +106,7 @@ def plot_fedml():
 def plot_all():
     plt.figure(figsize=(12, 8), dpi=100)
     flwr_acc = []
-    with open('../log/flwr/flwr_fedAvg_10_server_logging', 'r') as f:
+    with open('../log/flower/flwr_fedAvg_10_server_logging', 'r') as f:
         lines = f.readlines()
         for line in lines:
             # print('server-side evaluation' in line)
@@ -139,7 +141,7 @@ def plot_all():
                 print(t[1:idx], round(float(t[1:idx]), 3))
                 fedml_acc.append(round(float(t[1:idx]), 3))
 
-    plt.plot(range(len(flwr_acc)), flwr_acc, label='flwr')
+    plt.plot(range(len(flwr_acc)), flwr_acc, label='flower')
     plt.plot(range(len(fedscope_acc)), fedscope_acc, label='fedscope')
     plt.plot(range(len(fedml_acc)), fedml_acc, label='fedml')
     plt.xlabel('acc')
@@ -150,9 +152,9 @@ def plot_all():
 
 
 # plot_fedml()
-# plot_flwr()
+plot_flwr()
 # plot_fedscale()
-plot_fedscope()
+# plot_fedscope()
 # plot_all()
 # cnt = 0
 #

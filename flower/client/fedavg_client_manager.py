@@ -10,13 +10,16 @@ from logging import INFO
 class FedAvgClientManager(SimpleClientManager):
     def __init__(self):
         super().__init__()
+
     def sample(
             self,
             num_clients: int,
             min_num_clients: Optional[int] = None,
             criterion: Optional[Criterion] = None,
     ) -> List[ClientProxy]:
-        """客户端随机选择策略"""
+        """
+        客户端随机选择策略——需要用户自己实现对应的策略。
+        """
         # Block until at least num_clients are connected.
         if min_num_clients is None:
             min_num_clients = num_clients

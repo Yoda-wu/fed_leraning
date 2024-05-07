@@ -3,10 +3,11 @@ from config import Configuration
 from strategy.fed_avg import FedAvgStrategy
 import sys
 import torch
-from fed_scale.model.lenet5 import test
-from client.fedavg_client import get_parameters
+from flower.model.lenet5 import test
 from client.fedavg_client_manager import FedAvgClientManager
-from dataset.mnist import prepare_dataset
+from dataset.utils import prepare_dataset
+from dataset.mnist import get_mnist
+from dataset.cifar10 import get_cifar10
 from flwr.common.logger import log
 from logging import INFO
 from collections import OrderedDict
@@ -27,9 +28,18 @@ Config.generate_config_dict()
 Config.show_configuration()
 _, _, testloader = [], [], []
 if Config.dataset == 'mnist':
-    _, _, testloader = prepare_dataset(Config.client_number, Config.batch_size, val_ratio=0.3)
+    _, _, testloader = prepare_dataset(get_mnist, Config.client_number, Config.batch_size, val_ratio=0.3)
     print('finish loading dataset')
+elif Config.dataset == 'cifar10':
+    _, _, testloader = prepare_dataset(get_cifar10, Config.client_number, Config.batch_size, val_ratio=0.3)
 strategy: FedAvgStrategy = None
+
+
+def get_parameters(net):
+    """
+    获取模型参数
+    """
+    return [val.cpu().numpy() for _, val in net.state_dict().items()]
 
 
 def evaluate(
@@ -37,6 +47,9 @@ def evaluate(
         parameters: fl.common.NDArrays,
         config: Dict[str, fl.common.Scalar],
 ) -> Optional[Tuple[float, Dict[str, fl.common.Scalar]]]:
+    """
+    全局评估过程，作为strategy里的evaluate_fn
+    """
     net = Config.model
     valloader = testloader
     try:
@@ -102,7 +115,7 @@ fl.server.start_server(
 # import torchvision.transforms as transforms
 # from torchvision.datasets import CIFAR10
 # from torch.utils.data import DataLoader, random_split
-# from flwr.common import (
+# from flower.common import (
 #     Code,
 #     EvaluateIns,
 #     EvaluateRes,
