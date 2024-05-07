@@ -7,6 +7,10 @@ from federatedscope.core.data import BaseDataTranslator
 
 
 def load_mnist(config, client_cfgs=None):
+    """
+    这个文件是用来加载MNIST数据集的。
+    加载MNIST并且注册到FederatedScope中。
+    """
     tr = Compose([ToTensor(), Normalize((0.1307,), (0.3081,))])
 
     data_train = MNIST('../data', train=True, download=True, transform=tr)

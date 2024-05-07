@@ -16,6 +16,17 @@ from fedml.core import Context
 """
 
 class FedAvgServerManager(FedMLServerManager):
+    """
+    FedAvgServerManager，作为FedAvg算法里的服务器主要功能实现的角色类。
+    这个类继承FedML提供的FedMLServerManager类，在这个框架下定义FedAvg的行为。
+
+    这个类主要负责与客户端的通信，包括：
+    1. 初始化客户端
+    2. 接收客户端的模型
+    3. 发送模型给客户端
+    4. 客户端选择
+    等
+    """
     def __init__(self, args, aggregator, comm=None, client_rank=0, client_num=0, backend="MQTT_S3"):
         super().__init__(args, aggregator, comm=comm, client_rank=client_rank, client_num=client_num, backend=backend)
         self.client_round_map = {}

@@ -19,6 +19,10 @@ FedScope的Client与FedML中的ClientManager类似，都是处理通信/事件�
 
 
 class FedAvgClient(BaseClient):
+    """
+    FedAvg算法的客户端实现。
+    本地训练过程偷懒使用了框架自带的GeneralTorchTrainer类。
+    """
     def __init__(self,
                  ID=-1,
                  server_id=None,

@@ -15,6 +15,11 @@ FedML提供了两种ClientManager，分别是ClientMasterManager和ClientSlaveMa
 2. 这里需要自定义与服务器通信的消息处理。
 """
 class FedAvgClientManager(FedMLCommManager):
+    """
+    FedAvgClientManager，作为FedAvg算法里的客户端主要功能实现的角色类。
+    这个类继承FedML提供的FedMLClientManager类，在这个框架下定义FedAvg的行为。
+    在这个框架下对用户屏蔽了底层通信逻辑的实现，用户只需要实现自己的算法逻辑即可。
+    """
     ONLINE_STATUS_FLAG = "ONLINE"
     RUN_FINISHED_STATUS_FLAG = "FINISHED"
 

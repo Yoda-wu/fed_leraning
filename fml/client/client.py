@@ -14,6 +14,17 @@ FedML client 实现
 
 
 class FedAvgClient:
+    """
+    FedAvgClient，作为FedAvg算法里的客户端的角色。
+    这个类的主要作用是初始化客户端，然后运行客户端。
+    客户端的初始化需要的参数有：
+    1. args：命令行参数
+    2. device：设备 CPU/GPU
+    3. dataset：数据集，这里是MNIST数据集
+    4. model：模型，这里是LeNet5
+
+    客户端里主要的方法是run()，这个方法会调用FedMLClientManager的run()方法。
+    """
     def __init__(self, args, device, dataset, model):
         [
             train_data_num,
@@ -54,6 +65,11 @@ def init_client(
         train_data_local_dict,
         test_data_local_dict
 ):
+    """
+    初始化客户端的方法
+    这里会初始化本地训练器trainer
+    以及客户端管理器client_manager
+    """
     client_manager: FedAvgClientManager = None
     backend = args.backend
     trainer = get_trainer(
@@ -81,6 +97,9 @@ def get_trainer(
         test_data_local_dict,
 
 ):
+    """
+    初始化本地训练器trainer
+    """
     from fml.trainer.trainer import Trainer
     return Trainer(
         args,
