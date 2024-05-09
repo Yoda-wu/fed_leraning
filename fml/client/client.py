@@ -25,6 +25,7 @@ class FedAvgClient:
 
     客户端里主要的方法是run()，这个方法会调用FedMLClientManager的run()方法。
     """
+
     def __init__(self, args, device, dataset, model):
         [
             train_data_num,
@@ -166,7 +167,8 @@ def load_data_cifar(args):
     加载cifar数据集——使用fedml.data.load的API
     """
     fedml.logging.info("load_data. dataset_name = %s" % args.dataset)
-    centralized = True if (args.client_num_in_total == 1 and args.training_type != "cross_silo") else False
+    centralized = True if (
+            args.client_num_in_total == 1 and args.training_type != "cross_silo") else False
     print(f"centralized = {centralized}")
     """
     For shallow NN or linear models, 
@@ -187,6 +189,7 @@ def load_data_cifar(args):
     print(f"train_data_local_dict = {train_data_local_dict.keys()} client num  ={class_num}")
     return dataset, class_num
 
+
 def load_data(args):
     if args.dataset == "mnist":
         return load_data_mnist(args)
@@ -194,6 +197,7 @@ def load_data(args):
         return load_data_cifar(args)
     else:
         raise Exception("The dataset is not supported: %s" % args.dataset)
+
 
 if __name__ == '__main__':
     args = fedml.init()

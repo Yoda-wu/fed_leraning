@@ -76,7 +76,6 @@ def plot_fedscale():
 
 
 def plot_fedml():
-
     plt.figure(figsize=(12, 8), dpi=100)
     fedml_acc = []
     with open('../log/fedml/fedml_fedAvg_20_cifar10_server_logging', 'r') as f:

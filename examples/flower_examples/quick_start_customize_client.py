@@ -1,6 +1,6 @@
 from collections import OrderedDict
 from typing import Dict, List, Optional, Tuple
-import flower_examples.utils.util  as util
+import flower_examples.utils.util as util
 import numpy as np
 import torch
 import torch.nn as nn
@@ -9,6 +9,7 @@ import torchvision.transforms as transforms
 from torch.utils.data import DataLoader, random_split
 from torchvision.datasets import CIFAR10
 import flwr as fl
+
 
 class FlowerNumPyClient(fl.client.NumPyClient):
     def __init__(self, cid, net, trainloader, valloader):
@@ -66,6 +67,7 @@ from flwr.common import (
     parameters_to_ndarrays,
 )
 
+
 class FlowerClient(fl.client.Client):
     def __init__(self, cid, net, trainloader, valloader):
         self.cid = cid
@@ -73,11 +75,10 @@ class FlowerClient(fl.client.Client):
         self.trainloader = trainloader
         self.valloader = valloader
 
-    
     def get_parameters(self, ins: GetParametersIns) -> GetParametersRes:
         print(f"[client {self.cid}] get parameters")
 
-        ndarrays:List[np.ndarray]  = util.get_parameters(self.net)
+        ndarrays: List[np.ndarray] = util.get_parameters(self.net)
 
         parameters = ndarrays_to_parameters(ndarrays)
         status = Status(code=Code.OK, message="Success")
@@ -85,7 +86,7 @@ class FlowerClient(fl.client.Client):
             status=status,
             parameters=parameters
         )
-    
+
     def fit(self, ins: FitIns) -> FitRes:
         print(f"[Client {self.cid}] fit, config : {ins.config}")
         # Deserialize parameters to NumPy ndarrays's
@@ -103,6 +104,7 @@ class FlowerClient(fl.client.Client):
             num_examples=len(self.trainloader),
             metrics={},
         )
+
     def evaluate(self, ins: EvaluateIns) -> EvaluateRes:
         print(f"[Client {self.cid}] evaluate, config: {ins.config}")
 
@@ -129,7 +131,7 @@ def client_fn(cid) -> FlowerClient:
     trainloader = util.trainloaders[int(cid)]
     valloader = util.valloaders[int(cid)]
     return FlowerClient(cid, net, trainloader, valloader)
-        
+
 
 fl.simulation.start_simulation(
     client_fn=client_fn,
@@ -207,6 +209,7 @@ def sparse_bytes_to_ndarray(tensor: bytes) -> NDArray:
         ndarray_deserialized = loader
     return cast(NDArray, ndarray_deserialized)
 
+
 from flwr.common import (
     Code,
     EvaluateIns,
@@ -244,7 +247,7 @@ class FlowerClient(fl.client.Client):
 
     def fit(self, ins: FitIns) -> FitRes:
         print(f"[Client {self.cid}] fit, config: {ins.config}")
-        
+
         # Deserialize parameters to NumPy ndarray's using our custom function
         parameters_original = ins.parameters
         ndarrays_original = sparse_parameters_to_ndarrays(parameters_original)
@@ -292,6 +295,7 @@ def client_fn(cid) -> FlowerClient:
     valloader = util.valloaders[int(cid)]
     return FlowerClient(cid, net, trainloader, valloader)
 
+
 from logging import WARNING
 from typing import Callable, Dict, List, Optional, Tuple, Union
 
@@ -311,25 +315,25 @@ than or equal to the values of `min_fit_clients` and `min_evaluate_clients`.
 
 class FedSparse(FedAvg):
     def __init__(
-        self,
-        *,
-        fraction_fit: float = 1.0,
-        fraction_evaluate: float = 1.0,
-        min_fit_clients: int = 2,
-        min_evaluate_clients: int = 2,
-        min_available_clients: int = 2,
-        evaluate_fn: Optional[
-            Callable[
-                [int, NDArrays, Dict[str, Scalar]],
-                Optional[Tuple[float, Dict[str, Scalar]]],
-            ]
-        ] = None,
-        on_fit_config_fn: Optional[Callable[[int], Dict[str, Scalar]]] = None,
-        on_evaluate_config_fn: Optional[Callable[[int], Dict[str, Scalar]]] = None,
-        accept_failures: bool = True,
-        initial_parameters: Optional[Parameters] = None,
-        fit_metrics_aggregation_fn: Optional[MetricsAggregationFn] = None,
-        evaluate_metrics_aggregation_fn: Optional[MetricsAggregationFn] = None,
+            self,
+            *,
+            fraction_fit: float = 1.0,
+            fraction_evaluate: float = 1.0,
+            min_fit_clients: int = 2,
+            min_evaluate_clients: int = 2,
+            min_available_clients: int = 2,
+            evaluate_fn: Optional[
+                Callable[
+                    [int, NDArrays, Dict[str, Scalar]],
+                    Optional[Tuple[float, Dict[str, Scalar]]],
+                ]
+            ] = None,
+            on_fit_config_fn: Optional[Callable[[int], Dict[str, Scalar]]] = None,
+            on_evaluate_config_fn: Optional[Callable[[int], Dict[str, Scalar]]] = None,
+            accept_failures: bool = True,
+            initial_parameters: Optional[Parameters] = None,
+            fit_metrics_aggregation_fn: Optional[MetricsAggregationFn] = None,
+            evaluate_metrics_aggregation_fn: Optional[MetricsAggregationFn] = None,
     ) -> None:
         """Custom FedAvg strategy with sparse matrices.
 
@@ -358,8 +362,8 @@ class FedSparse(FedAvg):
         """
 
         if (
-            min_fit_clients > min_available_clients
-            or min_evaluate_clients > min_available_clients
+                min_fit_clients > min_available_clients
+                or min_evaluate_clients > min_available_clients
         ):
             log(WARNING, WARNING_MIN_AVAILABLE_CLIENTS_TOO_LOW)
 
@@ -379,7 +383,7 @@ class FedSparse(FedAvg):
         )
 
     def evaluate(
-        self, server_round: int, parameters: Parameters
+            self, server_round: int, parameters: Parameters
     ) -> Optional[Tuple[float, Dict[str, Scalar]]]:
         """Evaluate model parameters using an evaluation function."""
         if self.evaluate_fn is None:
@@ -396,10 +400,10 @@ class FedSparse(FedAvg):
         return loss, metrics
 
     def aggregate_fit(
-        self,
-        server_round: int,
-        results: List[Tuple[ClientProxy, FitRes]],
-        failures: List[Union[Tuple[ClientProxy, FitRes], BaseException]],
+            self,
+            server_round: int,
+            results: List[Tuple[ClientProxy, FitRes]],
+            failures: List[Union[Tuple[ClientProxy, FitRes], BaseException]],
     ) -> Tuple[Optional[Parameters], Dict[str, Scalar]]:
         """Aggregate fit results using weighted average."""
         if not results:

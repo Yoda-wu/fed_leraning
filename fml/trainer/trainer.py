@@ -142,6 +142,7 @@ class Trainer:
     客户端的训练器，这里不是采用FedML实现的三层Trainer封装，而是两层封装。
     模型训练相关功能直接调用FedAvgModelTrainer的API，除此之外可以加一些自定义的功能。
     """
+
     def __init__(self,
                  args,
                  device,
@@ -219,4 +220,5 @@ class Trainer:
             self.test_local = self.test_data_local_dict[client_index]
         else:
             self.test_local = None
-        self.model_trainer.update_dataset(self.train_local, self.test_local, self.local_sample_number)
+        self.model_trainer.update_dataset(self.train_local, self.test_local,
+                                          self.local_sample_number)

@@ -19,7 +19,6 @@ class FedAvgTrainer(TorchClient):
         :return: training results
         """
         total_data_num = conf.total_data
-        # logging.info(total_data_num)
 
         cur_data_num = len(client_data) * client_data.batch_size
         client_id = conf.client_id
@@ -30,7 +29,6 @@ class FedAvgTrainer(TorchClient):
 
         trained_unique_samples = min(
             len(client_data.dataset), conf.local_steps * conf.batch_size)
-        # logging.info(hasattr(conf, 'epochs'))
         epochs = conf.epochs
         optimizer = self.get_optimizer(model, conf)
         criterion = self.get_criterion(conf)
@@ -39,24 +37,21 @@ class FedAvgTrainer(TorchClient):
         # NOTE: If one may hope to run fixed number of epochs, instead of iterations,
         # use `while self.completed_steps < conf.local_steps * len(client_data)` instead
         while self.completed_steps < epochs:
-
             self.train_step(client_data, conf, model, optimizer, criterion)
-
 
         state_dicts = model.state_dict()
         model_param = {p: state_dicts[p].data.cpu().numpy()
                        for p in state_dicts}
 
         logging.info(f"{cur_data_num}, {total_data_num}, {cur_data_num / total_data_num}")
-        model_param = [cur_data_num / total_data_num * x.astype(np.float64) for x in model_param.values()]
+        model_param = [cur_data_num / total_data_num * x.astype(np.float64) for x in
+                       model_param.values()]
 
         results = {'client_id': client_id, 'moving_loss': self.epoch_train_loss,
                    'trained_size': self.completed_steps * conf.batch_size,
                    'success': self.completed_steps == conf.local_steps}
 
-
         logging.info(f"Training of (CLIENT: {client_id}) completes, {results}")
-
 
         results['utility'] = math.sqrt(
             self.loss_squared) * float(trained_unique_samples)
@@ -64,25 +59,3 @@ class FedAvgTrainer(TorchClient):
         results['wall_duration'] = 0
 
         return results
-
-    # def train_step(self, client_data, conf, model, optimizer, criterion):
-    #     running_loss = 0.0
-    #     for data_pair in client_data:
-    #         data, target = data_pair
-    #         data = Variable(data).to(device=self.device)
-    #
-    #         target = Variable(target).to(device=self.device)
-    #         logging.info(data.shape)
-    #         # zero the parameter gradients
-    #         optimizer.zero_grad()
-    #
-    #         # forward + backward + optimize
-    #         outputs = model(data)
-    #         loss = criterion(outputs, target)
-    #         loss.backward()
-    #         optimizer.step()
-    #
-    #         # print statistics
-    #         running_loss += loss.item()
-    #     logging.info(f" loss: {running_loss}" )
-

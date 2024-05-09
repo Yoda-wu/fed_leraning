@@ -14,6 +14,8 @@ FedML提供了两种ClientManager，分别是ClientMasterManager和ClientSlaveMa
 1. Trainer的包装——ClientMasterManager中的Trainer是通过TrainerDistAdapter来包装的，而TrainerDistAdapter中的又包装了一层FedMLTrainer，而FedMLTrainer中的又包装了一层ClientTrainer
 2. 这里需要自定义与服务器通信的消息处理。
 """
+
+
 class FedAvgClientManager(FedMLCommManager):
     """
     FedAvgClientManager，作为FedAvg算法里的客户端主要功能实现的角色类。
@@ -58,9 +60,11 @@ class FedAvgClientManager(FedMLCommManager):
             MyMessage.MSG_TYPE_S2C_CHECK_CLIENT_STATUS, self.handle_message_check_status
         )
 
-        self.register_message_receive_handler(MyMessage.MSG_TYPE_S2C_INIT_CONFIG, self.handle_message_init)
+        self.register_message_receive_handler(MyMessage.MSG_TYPE_S2C_INIT_CONFIG,
+                                              self.handle_message_init)
         self.register_message_receive_handler(
-            MyMessage.MSG_TYPE_S2C_SYNC_MODEL_TO_CLIENT, self.handle_message_receive_model_from_server,
+            MyMessage.MSG_TYPE_S2C_SYNC_MODEL_TO_CLIENT,
+            self.handle_message_receive_model_from_server,
         )
 
         self.register_message_receive_handler(
@@ -86,7 +90,8 @@ class FedAvgClientManager(FedMLCommManager):
         """
         if self.is_main_process():
             tick = time.time()
-            message = Message(MyMessage.MSG_TYPE_C2S_SEND_MODEL_TO_SERVER, self.client_real_id, receive_id)
+            message = Message(MyMessage.MSG_TYPE_C2S_SEND_MODEL_TO_SERVER, self.client_real_id,
+                              receive_id)
             message.add_params(MyMessage.MSG_ARG_KEY_MODEL_PARAMS, weights)
             message.add_params(MyMessage.MSG_ARG_KEY_NUM_SAMPLES, local_sample_num)
             self.send_message(message)
@@ -171,7 +176,7 @@ class FedAvgClientManager(FedMLCommManager):
 
     def test(self):
         self.trainer.test(self.round_idx)
-    
+
     def run(self):
         """
         启动

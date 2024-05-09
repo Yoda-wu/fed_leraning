@@ -111,10 +111,8 @@ def test(
 
 def call_lenet5(config, num_classes=10):
     print(config)
-    if config.type == 'lenet5' :
-
-
-        model = LeNet5(config.in_channels,num_classes=10)
+    if config.type == 'lenet5':
+        model = LeNet5(config.in_channels, num_classes=10)
         return model
 
 

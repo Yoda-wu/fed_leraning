@@ -1,8 +1,4 @@
-import copy
-import logging
-import pickle
 import sys
-import threading
 
 from fedscope.server.sampler import RandomSampler
 
@@ -61,9 +57,11 @@ class FedAvgServer(Server):
         self.sampler = RandomSampler(
             client_num=self.client_num
         )
+
     def _register_default_handlers(self):
         super(FedAvgServer, self)._register_default_handlers()
-        self.register_handlers("confirm_assign_id", self.callback_funcs_for_confirm_assign_id, ['confirm_assign_id'])
+        self.register_handlers("confirm_assign_id", self.callback_funcs_for_confirm_assign_id,
+                               ['confirm_assign_id'])
 
     def callback_funcs_for_confirm_assign_id(self, message):
         """
@@ -121,7 +119,8 @@ class FedAvgServer(Server):
         self.broadcast_model_para(msg_type='model_para', sample_client_num=self.sample_client_num)
 
     def trigger_for_start(self):
-        logger.info(f'----------- in trigger for start training #{self.check_client_join_in()} -------------')
+        logger.info(
+            f'----------- in trigger for start training #{self.check_client_join_in()} -------------')
         if self.check_client_join_in():
             self.trigger_for_feat_engr(
                 self.broadcast_model_para, {

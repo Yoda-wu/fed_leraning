@@ -23,6 +23,7 @@ class FedAvgClient(BaseClient):
     FedAvg算法的客户端实现。
     本地训练过程偷懒使用了框架自带的GeneralTorchTrainer类。
     """
+
     def __init__(self,
                  ID=-1,
                  server_id=None,
@@ -114,14 +115,14 @@ class FedAvgClient(BaseClient):
         content = message.content
         model_para = content[0]
         config = content[1]
-        # logger.info(content)
         self.trainer.ctx['num_train_epoch'] = config[self.ID]['epochs']
         # 更新参数
         self.trainer.update(model_para, strict=self._cfg.federate.share_local_model)
         self.state = round
         # 本地训练
         sample_size, model_para_all, results = self.trainer.train()
-        train_log_res = self._monitor.format_eval_res(results, rnd=self.state, role=f"client #{self.ID}",
+        train_log_res = self._monitor.format_eval_res(results, rnd=self.state,
+                                                      role=f"client #{self.ID}",
                                                       return_raw=True)
         logger.info(train_log_res)
         shared_model_para = model_para_all
@@ -153,9 +154,11 @@ class FedAvgClient(BaseClient):
                                            only_for_eval=False,
                                            monitor=self._monitor)
         logger.info(self.trainer)
-        logger.info(f"client (address {self.comm_manager.host}:{self.comm_manager.port}) is assigned with {self.ID}")
+        logger.info(
+            f"client (address {self.comm_manager.host}:{self.comm_manager.port}) is assigned with {self.ID}")
         self.comm_manager.send(
-            Message(msg_type='confirm_assign_id', sender=self.ID, receiver=[self.server_id], state=self.state)
+            Message(msg_type='confirm_assign_id', sender=self.ID, receiver=[self.server_id],
+                    state=self.state)
         )
 
     def callback_funcs_for_join_in_info(self, message):
@@ -195,36 +198,6 @@ class FedAvgClient(BaseClient):
         logger.info(
             f"================= client {self.ID} received evaluate message "
             f"=================")
-        sender, timestamp, content = message.sender, message.timestamp, message.content
-        self.state = message.state
-        if content is not None:
-            self.trainer.update(content, strict=self._cfg.federate.share_local_model)
-        metrics = {}
-        for split in self._cfg.eval.split:
-            eval_metrics = self.trainer.evaluate(
-                target_data_split_name=split
-            )
-            logger.info(
-                self._monitor.format_eval_res(eval_metrics,
-                                              rnd=self.state,
-                                              role='Client #{}'.format(
-                                                  self.ID),
-                                              return_raw=True))
-            metrics.update(**eval_metrics)
-
-        formatted_eval_res = self._monitor.format_eval_res(
-            metrics,
-            rnd=self.state,
-            role='Client #{}'.format(self.ID),
-            forms=['raw'],
-            return_raw=True)
-        logger.info(f'eval res :{formatted_eval_res}')
-
-        self._monitor.update_best_result(self.best_results,
-                                         formatted_eval_res['Results_raw'],
-                                         results_type=f"client #{self.ID}")
-        self.history_results = merge_dict_of_results(
-            self.history_results, formatted_eval_res['Results_raw'])
 
     def callback_funcs_for_finish(self, message):
         logger.info(

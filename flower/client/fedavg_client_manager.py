@@ -11,6 +11,7 @@ class FedAvgClientManager(SimpleClientManager):
     """
     客户端随机选择策略实现
     """
+
     def __init__(self):
         super().__init__()
 

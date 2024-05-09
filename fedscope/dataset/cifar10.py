@@ -17,7 +17,6 @@ def load_cifar10(config, client_cfgs=None):
     return fs_data, config
 
 
-
 def call_cifar10(config):
     if config.data.type == 'cifar10':
         data, modified_config = load_cifar10(config, None)

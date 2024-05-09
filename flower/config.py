@@ -6,6 +6,7 @@ class Configuration:
     """
     这里是我自己写的配置类，方便使用脚本启动。这里不是Flower的一部分。
     """
+
     def __init__(self, args):
         self.algorithm = args.algorithm
         self.client_number = int(args.client_number)

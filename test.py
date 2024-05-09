@@ -19,9 +19,12 @@ class model:
     def __init__(self):
         self.a = 1
 
+
 class model_adapter:
     def __init__(self, model):
         self.model = model
+
+
 m = model()
 ma = model_adapter(m)
 m_list = [m]

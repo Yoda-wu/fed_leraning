@@ -17,6 +17,7 @@ print(
 )
 NUM_CLIENTS = 10
 
+
 def load_datasets(num_clients: int):
     # Download and transform CIFAR-10 (train and test)
     transform = transforms.Compose(
@@ -45,6 +46,7 @@ def load_datasets(num_clients: int):
 
 
 trainloaders, valloaders, testloader = load_datasets(NUM_CLIENTS)
+
 
 class Net(nn.Module):
     def __init__(self) -> None:
@@ -96,7 +98,7 @@ def train(net, trainloader, epochs: int):
             correct += (torch.max(outputs.data, 1)[1] == labels).sum().item()
         epoch_loss /= len(trainloader.dataset)
         epoch_acc = correct / total
-        print(f"Epoch {epoch+1}: train loss {epoch_loss}, accuracy {epoch_acc}")
+        print(f"Epoch {epoch + 1}: train loss {epoch_loss}, accuracy {epoch_acc}")
 
 
 def test(net, testloader):
@@ -230,5 +232,3 @@ if __name__ == "__main__":
         config=fl.server.ServerConfig(num_rounds=3),
         client_resources=client_resources,
     )
-
-

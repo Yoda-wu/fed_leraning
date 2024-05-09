@@ -18,6 +18,7 @@ class FedAvgExecutor(Executor):
     """
     负责启动client， 并且执行client的训练任务
     """
+
     def __init__(self, args):
         logger.initiate_client_setting()
 
@@ -76,7 +77,7 @@ class FedAvgExecutor(Executor):
         sizes = self.training_sets.getSize()['size']
         for size in sizes:
             total_data += size
-        config['task_config']['total_data']=total_data
+        config['task_config']['total_data'] = total_data
         client_id, train_res = super().Train(config)
         return client_id, train_res
 

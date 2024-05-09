@@ -15,7 +15,8 @@ class FedAvgAggregator(ServerAggregator):
         self.model = model
         self.args = args
         self.id = 0
-        self.cpu_transfer = False if not hasattr(self.args, "cpu_transfer") else self.args.cpu_transfer
+        self.cpu_transfer = False if not hasattr(self.args,
+                                                 "cpu_transfer") else self.args.cpu_transfer
 
     def get_model_params(self):
         """
@@ -151,6 +152,7 @@ class Aggregator:
     对聚合功能的封装，以及聚合以外的功能实现如客户端选择
     参考FedML的实例，这部分也需要用户自己实现
     """
+
     def __init__(
             self,
             args,
@@ -220,7 +222,8 @@ class Aggregator:
         logging.info("add_model. index = %d" % index)
         # for dictionary model_params, we let the user level code to control the device
         if type(model_params) is not dict:
-            model_params = ml_engine_adapter.model_params_to_device(self.args, model_params, self.device)
+            model_params = ml_engine_adapter.model_params_to_device(self.args, model_params,
+                                                                    self.device)
         self.model_dict[index] = model_params
         self.sample_num_dict[index] = sample_num
         self.flag_client_model_uploaded_dict[index] = True
@@ -245,7 +248,8 @@ class Aggregator:
         """
         """
         logging.info(
-            "client_num_in_total = %d, client_num_per_round = %d" % (client_num_in_total, client_num_per_round)
+            "client_num_in_total = %d, client_num_per_round = %d" % (
+                client_num_in_total, client_num_per_round)
         )
         assert client_num_in_total >= client_num_per_round
 
@@ -253,7 +257,8 @@ class Aggregator:
             return [i for i in range(client_num_per_round)]
         else:
             np.random.seed(round_idx)
-            data_silo_index_list = np.random.choice(range(client_num_in_total), client_num_per_round, replace=False)
+            data_silo_index_list = np.random.choice(range(client_num_in_total),
+                                                    client_num_per_round, replace=False)
             return data_silo_index_list
 
     def client_selection(self, round_idx, client_id_list_in_total, client_num_per_round):
@@ -261,11 +266,12 @@ class Aggregator:
         """
         if client_num_per_round == len(client_id_list_in_total):
             return client_id_list_in_total
-        np.random.seed(round_idx)  # make sure for each comparison, we are selecting the same clients each round
-        client_id_list_in_this_round = np.random.choice(client_id_list_in_total, client_num_per_round, replace=False)
+        np.random.seed(
+            round_idx)  # make sure for each comparison, we are selecting the same clients each round
+        client_id_list_in_this_round = np.random.choice(client_id_list_in_total,
+                                                        client_num_per_round, replace=False)
         logging.info(f"client_selection： {client_id_list_in_this_round}")
         return client_id_list_in_this_round
-
 
     def test_on_server(self, round_idx):
         """

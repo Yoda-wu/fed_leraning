@@ -27,6 +27,7 @@ class FedAvgStrategy(Strategy):
     Flower中实现联邦学习的核心部分——Strategy，定义了服务端的主要行为。
     用户需要自己实现对应的方法
     """
+
     def __init__(self,
                  fraction_fit: float = 1.0,
                  fraction_evaluate: float = 1.0,
@@ -73,7 +74,8 @@ class FedAvgStrategy(Strategy):
         self.initial_parameters = None  # Don't keep initial parameters in memory
         return initial_parameters
 
-    def configure_fit(self, server_round: int, parameters: Parameters, client_manager: ClientManager) -> List[
+    def configure_fit(self, server_round: int, parameters: Parameters,
+                      client_manager: ClientManager) -> List[
         Tuple[ClientProxy, FitIns]]:
         log(INFO, "--------------in configure_fit------------------")
         # Sample clients
@@ -109,63 +111,29 @@ class FedAvgStrategy(Strategy):
             return None, {}
 
         weights_results = [
-            (parameters_to_ndarrays(fit_res.parameters), fit_res.num_examples) for _, fit_res in results
+            (parameters_to_ndarrays(fit_res.parameters), fit_res.num_examples) for _, fit_res in
+            results
         ]
         parameters_aggregated = ndarrays_to_parameters(aggregate_helper(weights_results))
         return parameters_aggregated, {}
 
-    def configure_evaluate(self, server_round: int, parameters: Parameters, client_manager: ClientManager) -> List[
+    def configure_evaluate(self, server_round: int, parameters: Parameters,
+                           client_manager: ClientManager) -> List[
         Tuple[ClientProxy, EvaluateIns]]:
-        if self.fraction_evaluate == 0.0:
-            return []
+        pass
 
-        # Parameters and Config
-        config = {}
-        if self.on_evaluate_config_fn is not None:
-            # Custom evaluation Config function provided
-            config = self.on_evaluate_config_fn(server_round)
-        evaluate_ins = EvaluateIns(parameters, config)
-
-        # Sample clients
-        sample_size, min_num_clients = self.num_evaluation_clients(
-            client_manager.num_available()
-        )
-        log(INFO, f"sample_size {sample_size}")
-        clients = client_manager.sample(
-            num_clients=sample_size, min_num_clients=min_num_clients
-        )
-
-        # Return client/Config pairs
-        return [(client, evaluate_ins) for client in clients]
 
     def aggregate_evaluate(self, server_round: int, results: List[Tuple[ClientProxy, EvaluateRes]],
-                           failures: List[Union[Tuple[ClientProxy, EvaluateRes], BaseException]]) -> Tuple[
-        Optional[float], Dict[str, Scalar]]:
-        if not results:
-            return None, {}
-        # Do not aggregate if there are failures and failures are not accepted
+                           failures: List[Union[Tuple[ClientProxy, EvaluateRes], BaseException]]) -> \
+            Tuple[
+                Optional[float], Dict[str, Scalar]]:
+        pass
 
-        # Aggregate loss
-        loss_aggregated = weighted_loss_avg(
-            [
-                (evaluate_res.num_examples, evaluate_res.loss)
-                for _, evaluate_res in results
-            ]
-        )
-
-        # Aggregate custom metrics if aggregation fn was provided
-        metrics_aggregated = {}
-        accuracies = [r.metrics["acc"] * r.num_examples for _, r in results]
-        examples = [r.num_examples for _, r in results]
-
-        # Aggregate and print custom metric
-        aggregated_accuracy = sum(accuracies) / sum(examples)
-        log(INFO, f"Round {server_round} accuracy aggregated from client results: {aggregated_accuracy}")
-
-        return loss_aggregated, {"acc": aggregated_accuracy}
-
-    def evaluate(self, server_round: int, parameters: Parameters) -> Optional[Tuple[float, Dict[str, Scalar]]]:
-
+    def evaluate(self, server_round: int, parameters: Parameters) -> Optional[
+        Tuple[float, Dict[str, Scalar]]]:
+        """
+        服务端全局评估过程
+        """
         if self.evaluate_fn is None:
             # No evaluation function provided
             return None
@@ -198,7 +166,8 @@ def aggregate_helper(results):
         [layer * num_examples for layer in weights] for weights, num_examples in results
     ]
     weights_prim = [
-        reduce(np.add, layer_updates) / num_examples_total for layer_updates in zip(*weighted_weights)
+        reduce(np.add, layer_updates) / num_examples_total for layer_updates in
+        zip(*weighted_weights)
     ]
     return weights_prim
 

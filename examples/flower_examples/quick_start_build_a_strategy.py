@@ -1,6 +1,6 @@
 from collections import OrderedDict
 from typing import Dict, List, Optional, Tuple
-import utils.util  as util
+import utils.util as util
 import numpy as np
 import torch
 import torch.nn as nn
@@ -38,9 +38,9 @@ class FedCustom(fl.server.strategy.Strategy):
             self,
             fraction_fit: float = 1.0,
             fraction_evaluate: float = 1.0,
-            min_fit_clients: int  = 2,
+            min_fit_clients: int = 2,
             min_evaluate_clients: int = 2,
-            min_available_clients : int = 2,
+            min_available_clients: int = 2,
             evaluate_fn: Optional[
                 Callable[
                     [int, NDArrays, Dict[str, Scalar]],
@@ -53,7 +53,7 @@ class FedCustom(fl.server.strategy.Strategy):
             initial_parameters: Optional[Parameters] = None,
             fit_metrics_aggregation_fn: Optional[MetricsAggregationFn] = None,
             evaluate_metrics_aggregation_fn: Optional[MetricsAggregationFn] = None,
-            ) -> None:
+    ) -> None:
         super().__init__()
         self.fraction_fit = fraction_fit
         self.fraction_evaluate = fraction_evaluate
@@ -67,11 +67,9 @@ class FedCustom(fl.server.strategy.Strategy):
         self.initial_parameters = initial_parameters
         self.fit_metrics_aggregation_fn = fit_metrics_aggregation_fn
         self.evaluate_metrics_aggregation_fn = evaluate_metrics_aggregation_fn
-    
 
     def __repr__(self) -> str:
         return "FedCustom"
-
 
     def initialize_parameters(self, client_manager: ClientManager) -> Parameters | None:
         """Initialize global model parameters"""
@@ -80,9 +78,9 @@ class FedCustom(fl.server.strategy.Strategy):
 
         return fl.common.ndarrays_to_parameters(ndarrays)
 
-    def configure_fit(self, 
-                      server_round: int, 
-                      parameters: Parameters, 
+    def configure_fit(self,
+                      server_round: int,
+                      parameters: Parameters,
                       client_manager: ClientManager
                       ) -> List[Tuple[ClientProxy, FitIns]]:
         """Configure the next round of training."""
@@ -101,21 +99,19 @@ class FedCustom(fl.server.strategy.Strategy):
         fit_configurations = []
         for idx, client in enumerate(clients):
             if idx < half_client:
-                fit_configurations.append( (client, FitIns(parameters, standard_config)))
-            else :
-                fit_configurations.append( 
+                fit_configurations.append((client, FitIns(parameters, standard_config)))
+            else:
+                fit_configurations.append(
                     (client, FitIns(parameters, higher_lr_config))
                 )
 
-
         return fit_configurations
-    
 
-    def aggregate_fit(self, 
-                      server_round: int, 
-                      results: List[Tuple[ClientProxy, FitRes]], 
+    def aggregate_fit(self,
+                      server_round: int,
+                      results: List[Tuple[ClientProxy, FitRes]],
                       failures: List[Tuple[ClientProxy, FitRes] | BaseException]
-                      )-> Tuple[Parameters | None, Dict[str, Scalar]]:
+                      ) -> Tuple[Parameters | None, Dict[str, Scalar]]:
         weights_results = [
             (parameters_to_ndarrays(fit_res.parameters), fit_res.num_examples)
             for _, fit_res in results
@@ -124,11 +120,12 @@ class FedCustom(fl.server.strategy.Strategy):
         metrics_aggregated = {}
         return parameters_aggregated, metrics_aggregated
 
-
-    def configure_evaluate(self, server_round: int, parameters: Parameters, client_manager: ClientManager) -> List[Tuple[ClientProxy, EvaluateIns]]:
-        if self.fraction_evaluate == 0.0 :
+    def configure_evaluate(self, server_round: int, parameters: Parameters,
+                           client_manager: ClientManager) -> List[
+        Tuple[ClientProxy, EvaluateIns]]:
+        if self.fraction_evaluate == 0.0:
             return []
-        
+
         config = {}
         evaluate_ins = EvaluateIns(parameters, config)
 
@@ -136,21 +133,25 @@ class FedCustom(fl.server.strategy.Strategy):
         clients = client_manager.sample(num_clients=sample_size, min_num_clients=min_num_clients)
         # return client/Config paris
         return [(client, evaluate_ins) for client in clients]
-    
-    def aggregate_evaluate(self, server_round: int, results: List[Tuple[ClientProxy, EvaluateRes]], failures: List[Tuple[ClientProxy, EvaluateRes] | BaseException]) -> Tuple[float | None, Dict[str, Scalar]]:
-       """Aggregate evaluation losses using weighted average."""
-       if not results :
-           return None , {}
-       loss_aggreated = weighted_loss_avg (
-           [
-               (evaluate_res.num_examples, evaluate_res.loss)
-               for _, evaluate_res in results
-           ]
-       )
-       metrics_aggregated = {}
-       return loss_aggreated, metrics_aggregated
-    
-    def evaluate(self, server_round: int, parameters: Parameters) -> Tuple[float, Dict[str, Scalar]] | None:
+
+    def aggregate_evaluate(self, server_round: int, results: List[Tuple[ClientProxy, EvaluateRes]],
+                           failures: List[Tuple[ClientProxy, EvaluateRes] | BaseException]) -> \
+            Tuple[
+                float | None, Dict[str, Scalar]]:
+        """Aggregate evaluation losses using weighted average."""
+        if not results:
+            return None, {}
+        loss_aggreated = weighted_loss_avg(
+            [
+                (evaluate_res.num_examples, evaluate_res.loss)
+                for _, evaluate_res in results
+            ]
+        )
+        metrics_aggregated = {}
+        return loss_aggreated, metrics_aggregated
+
+    def evaluate(self, server_round: int, parameters: Parameters) -> Tuple[float, Dict[
+        str, Scalar]] | None:
         """Evaluate global model parameters using an evaluation function."""
         # Let's assume we won't perform the global model evaluation on the server side.
         return None
@@ -166,23 +167,10 @@ class FedCustom(fl.server.strategy.Strategy):
         return max(num_clients, self.min_evaluate_clients), self.min_available_clients
 
 
-
-
-
-
-
-
-
-
 fl.simulation.start_simulation(
     client_fn=util.client_fn,
     num_clients=2,
     config=fl.server.ServerConfig(num_rounds=3),
     strategy=FedCustom(),  # <-- pass the new strategy here
-    client_resources= None ,
+    client_resources=None,
 )
-
-
-
-
-

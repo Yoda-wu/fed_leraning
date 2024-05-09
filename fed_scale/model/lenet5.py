@@ -5,6 +5,7 @@ import torch.utils.data.dataloader as dataloader
 
 from typing import Tuple
 
+
 class LeNet5(nn.Module):
 
     def __init__(self, num_classes):
@@ -23,11 +24,12 @@ class LeNet5(nn.Module):
             nn.MaxPool2d(kernel_size=2, stride=2)
         )
         # 全连接层
-        self.fc = nn.Linear(4*4*16,120)
+        self.fc = nn.Linear(4 * 4 * 16, 120)
         self.relu = nn.ReLU()
         self.fc1 = nn.Linear(120, 84)
         self.relu1 = nn.ReLU()
         self.fc2 = nn.Linear(84, num_classes)
+
     def forward(self, x):
         out = self.layer1(x)
         out = self.layer2(out)
@@ -38,7 +40,6 @@ class LeNet5(nn.Module):
         out = self.relu1(out)
         out = self.fc2(out)
         return out
-
 
 
 def lenet5(num_classes):
@@ -100,6 +101,3 @@ def test(
             correct += (predicted == labels).sum().item()
     accuracy = correct / total
     return loss, accuracy
-
-
-

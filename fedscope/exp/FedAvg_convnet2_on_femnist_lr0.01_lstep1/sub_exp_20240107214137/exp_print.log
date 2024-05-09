@@ -1,3 +1,0 @@
-2024-01-07 21:41:37,652 (logging:124) INFO: the current machine is at 127.0.1.1
-2024-01-07 21:41:37,652 (logging:126) INFO: the current dir is /home/wyd/github/fed_leraning/fedscope
-2024-01-07 21:41:37,652 (logging:127) INFO: the output dir is exp/FedAvg_convnet2_on_femnist_lr0.01_lstep1/sub_exp_20240107214137

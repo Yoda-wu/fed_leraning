@@ -12,6 +12,7 @@ class FedAvgServer:
     FedAvgServer 实现
     参考FedML的fedavg示例，用户需要自己实现服务器端的实体
     """
+
     def __init__(self, args, device, dataset, model):
         [
             train_data_num,
@@ -107,9 +108,12 @@ from fedml.data.MNIST.data_loader import download_mnist, load_partition_data_mni
 """
 加载数据集部分，客户端和服务器端都一样
 """
+
+
 def load_data_cifar(args):
     fedml.logging.info("load_data. dataset_name = %s" % args.dataset)
-    centralized = True if (args.client_num_in_total == 1 and args.training_type != "cross_silo") else False
+    centralized = True if (
+            args.client_num_in_total == 1 and args.training_type != "cross_silo") else False
     print(f"centralized = {centralized}")
     # download_mnist(args.data_cache_dir)
     # fedml.logging.info("load_data. dataset_name = %s" % args.dataset)
@@ -193,6 +197,7 @@ def load_data_mnist(args):
     ]
     return dataset, class_num
 
+
 def load_data(args):
     if args.dataset == "mnist":
         return load_data_mnist(args)
@@ -200,6 +205,7 @@ def load_data(args):
         return load_data_cifar(args)
     else:
         raise Exception("The dataset is not supported")
+
 
 if __name__ == '__main__':
     args = fedml.init()

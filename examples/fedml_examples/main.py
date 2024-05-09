@@ -1,6 +1,7 @@
 import fedml
-import time 
+import time
 from fedavg import FedAvgRunner
+
 if __name__ == '__main__':
     args = fedml.init()
 

@@ -9,6 +9,7 @@ class FedAvgAggregator(Aggregator):
     """
     聚合器
     """
+
     def __init__(self, model=None, device='cpu', config=None):
         super(Aggregator, self).__init__()
         self.model = model
@@ -28,7 +29,7 @@ class FedAvgAggregator(Aggregator):
 
         models = agg_info["client_feedback"]
         recover_fun = agg_info['recover_fun'] if (
-            'recover_fun' in agg_info and self.cfg.federate.use_ss) else None
+                'recover_fun' in agg_info and self.cfg.federate.use_ss) else None
         avg_model = self._para_weighted_avg(models, recover_fun=recover_fun)
 
         return avg_model

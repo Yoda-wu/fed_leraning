@@ -11,3 +11,14 @@ log/
 
 fedscope/exp
 fed_scale/data/*
+flower/data/*
+flower/data
+fml/data/*
+fml/data
+
+fedscope/exp/*
+fedscope/exp/**
+
+fed_scale/log/*
+fed_scale/log
+fed_scale/log/**

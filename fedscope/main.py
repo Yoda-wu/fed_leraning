@@ -2,7 +2,6 @@ import logging
 import os
 import sys
 
-
 DEV_MODE = False  # simplify the federatedscope re-setup everytime we change
 # the source codes of federatedscope
 if DEV_MODE:
@@ -15,8 +14,6 @@ sys.path.append('../..')
 from federatedscope.core.cmd_args import parse_args, parse_client_cfg
 from federatedscope.core.auxiliaries.utils import setup_seed
 from federatedscope.core.auxiliaries.logging import update_logger, logger
-from federatedscope.core.auxiliaries.worker_builder import get_client_cls, \
-    get_server_cls
 from federatedscope.core.configs.config import global_cfg, CfgNode
 from federatedscope.core.auxiliaries.runner_builder import get_runner
 from client.fedavg_client import FedAvgClient
@@ -24,12 +21,10 @@ from server.fedavg_server import FedAvgServer
 # 导入目的为了register可以注册到federatedScope框架里
 from model import lenet5
 
-
 if os.environ.get('https_proxy'):
     del os.environ['https_proxy']
 if os.environ.get('http_proxy'):
     del os.environ['http_proxy']
-
 
 if __name__ == '__main__':
     init_cfg = global_cfg.clone()
@@ -54,8 +49,9 @@ if __name__ == '__main__':
     # thus, we allow the creation procedure of dataset to modify the global
     # cfg object
     from dataset.mnist import load_mnist
+
     data, modified_cfg = load_mnist(config=init_cfg.clone(),
-                                  client_cfgs=client_cfgs)
+                                    client_cfgs=client_cfgs)
     init_cfg.merge_from_other_cfg(modified_cfg)
     init_cfg.freeze()
     logger.info(f"len( {len(data)} ) ,  keys : {data.keys()}")

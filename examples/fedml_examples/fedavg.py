@@ -1,6 +1,6 @@
 import copy
 import random
-import logging 
+import logging
 import fedml
 import numpy as np
 import torch
@@ -13,7 +13,8 @@ from fedml import mlops
 
 class Client:
     def __init__(
-        self, client_idx, local_training_data, local_test_data, local_sample_number, args, device, trainer,
+            self, client_idx, local_training_data, local_test_data, local_sample_number, args,
+            device, trainer,
     ):
         self.client_idx = client_idx
         self.local_training_data = local_training_data
@@ -25,14 +26,12 @@ class Client:
         self.trainer = trainer
 
 
-
 class FedAvgRunner(object):
-
 
     def __init__(self, args, device, dataset, model) -> None:
         self.device = device
         self.args = args
-       
+
         print(f"client_number = {args.client_num_in_total}")
         self.args.scenario = None
         [
@@ -56,7 +55,7 @@ class FedAvgRunner(object):
         self.train_data_local_num_dict = train_data_local_num_dict
         self.train_data_local_dict = train_data_local_dict
         self.test_data_local_dict = test_data_local_dict
-        
+
         self.model = model
         # logging.info("self.model_trainer = {}".format(self.model_trainer))
         server_aggregator = create_server_aggregator(model, args)
@@ -77,8 +76,9 @@ class FedAvgRunner(object):
         self._setup_clients(
             train_data_local_num_dict, train_data_local_dict, test_data_local_dict,
         )
+
     def _setup_clients(
-        self, train_data_local_num_dict, train_data_local_dict, test_data_local_dict,
+            self, train_data_local_num_dict, train_data_local_dict, test_data_local_dict,
     ):
         logging.info("############setup_clients (START)#############")
         for client_idx in range(1, self.args.client_num_per_round + 1):
@@ -132,12 +132,14 @@ class FedAvgRunner(object):
                 # update dataset
                 client_idx = client_indexes[idx]
                 client.trainer.update_dataset(client_idx)
-                
+
                 # train on new dataset
-                mlops.event("train", event_started=True, event_value="{}_{}".format(str(round_idx), str(idx)))
+                mlops.event("train", event_started=True,
+                            event_value="{}_{}".format(str(round_idx), str(idx)))
                 weights, local_sample_num = client.trainer.train(round_idx)
                 # w = client.train(copy.deepcopy(w_global))
-                mlops.event("train", event_started=False, event_value="{}_{}".format(str(round_idx), str(idx)))
+                mlops.event("train", event_started=False,
+                            event_value="{}_{}".format(str(round_idx), str(idx)))
                 # self.logging.info("local weights = " + str(w))
                 print(f"before aggregator add local trainer result client_idx = {client_idx}")
                 self.aggregator.add_local_trained_result(
@@ -271,7 +273,8 @@ class FedAvgRunner(object):
         mlops.log({"Train/Loss": train_loss, "round": round_idx})
         logging.info(stats)
         self.max_acc = max(self.max_acc, train_acc)
-        stats = {"test_acc": test_acc, "test_loss": test_loss, "round_id": round_idx, "max_acc" : self.max_acc}
+        stats = {"test_acc": test_acc, "test_loss": test_loss, "round_id": round_idx,
+                 "max_acc": self.max_acc}
 
         if self.args.enable_wandb:
             wandb.log({"Test/Acc": test_acc, "round": round_idx})

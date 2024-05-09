@@ -40,7 +40,7 @@ class MyMessage(object):
 
     MSG_ARG_KEY_CLIENT_STATUS = "client_status"
     MSG_ARG_KEY_CLIENT_OS = "client_os"
-    MSG_ARG_KEY_CLIENT_EPOCH="epoch"
+    MSG_ARG_KEY_CLIENT_EPOCH = "epoch"
 
     MSG_ARG_KEY_EVENT_NAME = "event_name"
     MSG_ARG_KEY_EVENT_VALUE = "event_value"

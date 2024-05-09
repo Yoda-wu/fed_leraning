@@ -5,6 +5,7 @@ import torch.utils.data.dataloader as dataloader
 
 from typing import Tuple
 
+
 class LeNet5(nn.Module):
 
     def __init__(self, in_channels, num_classes):
@@ -24,18 +25,18 @@ class LeNet5(nn.Module):
         )
         in_features = 4 * 4 * 16
         if in_channels == 1:
-            in_features = 4*4*16
+            in_features = 4 * 4 * 16
         else:
-            in_features = 5*5*16
-        self.fc = nn.Linear(in_features,120)
+            in_features = 5 * 5 * 16
+        self.fc = nn.Linear(in_features, 120)
         # 全连接层
-        self.fc = nn.Linear(in_features,120)
+        self.fc = nn.Linear(in_features, 120)
         self.relu = nn.ReLU()
         self.fc1 = nn.Linear(120, 84)
         self.relu1 = nn.ReLU()
         self.fc2 = nn.Linear(84, num_classes)
+
     def forward(self, x):
-        # print(x.shape)
         out = self.layer1(x)
         out = self.layer2(out)
         out = out.reshape(out.size(0), -1)
@@ -45,7 +46,6 @@ class LeNet5(nn.Module):
         out = self.relu1(out)
         out = self.fc2(out)
         return out
-
 
 
 def lenet5(in_channel, num_classes):
@@ -82,9 +82,9 @@ def train(
 
             # print statistics
             running_loss += loss.item()
-
-            print("[%d, %5d] total loss: %.3f" % (epoch + 1, i + 1, running_loss))
-            running_loss = 0.0
+            if i % 10 == 0:
+                print("[%d, %5d] total loss: %.3f" % (epoch + 1, i + 1, running_loss / 10))
+                running_loss = 0.0
 
 
 def test(
@@ -107,6 +107,3 @@ def test(
             correct += (predicted == labels).sum().item()
     accuracy = correct / total
     return loss, accuracy
-
-
-

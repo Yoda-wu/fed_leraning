@@ -15,7 +15,6 @@ def load_mnist(config, client_cfgs=None):
 
     data_train = MNIST('../data', train=True, download=True, transform=tr)
     data_test = MNIST('../data', train=False, download=True, transform=tr)
-    # print(len(data_train))
     translator = BaseDataTranslator(config, client_cfgs)
     fs_data = translator((data_train, [], data_test))
     return fs_data, config

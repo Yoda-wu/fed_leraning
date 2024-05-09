@@ -48,6 +48,7 @@ def load_datasets(num_clients: int):
 
 trainloaders, valloaders, testloader = load_datasets(NUM_CLIENTS)
 
+
 class Net(nn.Module):
     def __init__(self) -> None:
         super(Net, self).__init__()
@@ -98,7 +99,7 @@ def train(net, trainloader, epochs: int):
             correct += (torch.max(outputs.data, 1)[1] == labels).sum().item()
         epoch_loss /= len(trainloader.dataset)
         epoch_acc = correct / total
-        print(f"Epoch {epoch+1}: train loss {epoch_loss}, accuracy {epoch_acc}")
+        print(f"Epoch {epoch + 1}: train loss {epoch_loss}, accuracy {epoch_acc}")
 
 
 def test(net, testloader):
@@ -117,6 +118,7 @@ def test(net, testloader):
     loss /= len(testloader.dataset)
     accuracy = correct / total
     return loss, accuracy
+
 
 class FlowerClient(fl.client.NumPyClient):
     def __init__(self, cid, net, trainloader, valloader):
@@ -158,7 +160,7 @@ def client_fn(cid) -> FlowerClient:
 params = get_parameters(Net())
 
 strategy = fl.server.strategy.FedAvg(
-    fraction_fit=0.3, 
+    fraction_fit=0.3,
     fraction_evaluate=0.3,
     min_fit_clients=3,
     min_evaluate_clients=3,
@@ -166,15 +168,14 @@ strategy = fl.server.strategy.FedAvg(
     initial_parameters=fl.common.ndarrays_to_parameters(params)
 )
 
-
 client_resource = None
 if DEVICE.type == 'cuda':
-    client_resource = {"num_gpus":1}
+    client_resource = {"num_gpus": 1}
 
 fl.simulation.start_simulation(client_fn=client_fn,
                                num_clients=NUM_CLIENTS,
                                config=fl.server.ServerConfig(num_rounds=3),
-                               strategy=strategy, 
+                               strategy=strategy,
                                client_resources=client_resource
                                )
 
@@ -198,19 +199,20 @@ fl.simulation.start_simulation(
     client_resources=client_resource,
 )
 
+
 # implement evaluate aggregated model parameters on the server-side
 
 def evaluate(
-        server_round:int,  
-        parameters: fl.common.NDArray, 
+        server_round: int,
+        parameters: fl.common.NDArray,
         config: Dict[str, fl.common.Scalar]
-        ) -> Optional[Tuple[float, Dict[str, fl.common.Scalar]]]:
+) -> Optional[Tuple[float, Dict[str, fl.common.Scalar]]]:
     net = Net().to(DEVICE)
     valloader = valloaders[0]
-    set_parameters(net,parameters)
-    loss,accuracy = test(net, valloader)
-    print(f"Server-side evaluation loss {loss} / accuracy { accuracy}")
-    return loss, {"accuracy":accuracy}
+    set_parameters(net, parameters)
+    loss, accuracy = test(net, valloader)
+    print(f"Server-side evaluation loss {loss} / accuracy {accuracy}")
+    return loss, {"accuracy": accuracy}
 
 
 strategy = fl.server.strategy.FedAvg(
@@ -231,7 +233,7 @@ fl.simulation.start_simulation(
 )
 
 
-def fit_config(server_round: int) :
+def fit_config(server_round: int):
     """
     Return training configuration dict for each round.
     Perform two rounds of training with one local epoch, increase to two local
@@ -243,6 +245,7 @@ def fit_config(server_round: int) :
     }
     return config
 
+
 strategy = fl.server.strategy.FedAvg(
     fraction_fit=0.3,
     fraction_evaluate=0.3,
@@ -250,9 +253,8 @@ strategy = fl.server.strategy.FedAvg(
     min_evaluate_clients=3,
     initial_parameters=fl.common.ndarrays_to_parameters(get_parameters(Net())),
     evaluate_fn=evaluate,
-    on_fit_config_fn=fit_config # Pass the fit_config function
+    on_fit_config_fn=fit_config  # Pass the fit_config function
 )
-
 
 fl.simulation.start_simulation(
     client_fn=client_fn,
@@ -262,10 +264,10 @@ fl.simulation.start_simulation(
     client_resources=client_resource,
 )
 
-
 NUM_CLIENTS = 1000
 
 trainloaders, valloaders, testloader = load_datasets(NUM_CLIENTS)
+
 
 def fit_config(server_round: int):
     config = {
