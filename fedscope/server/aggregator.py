@@ -41,22 +41,6 @@ class FedAvgAggregator(Aggregator):
         """
         self.model.load_state_dict(model_parameters, strict=False)
 
-    def save_model(self, path, cur_round=-1):
-        assert self.model is not None
-
-        ckpt = {'cur_round': cur_round, 'model': self.model.state_dict()}
-        torch.save(ckpt, path)
-
-    def load_model(self, path):
-        assert self.model is not None
-
-        if os.path.exists(path):
-            ckpt = torch.load(path, map_location=self.device)
-            self.model.load_state_dict(ckpt['model'])
-            return ckpt['cur_round']
-        else:
-            raise ValueError("The file {} does NOT exist".format(path))
-
     def _para_weighted_avg(self, models, recover_fun=None):
         """
         加权平均模型参数
@@ -79,10 +63,4 @@ class FedAvgAggregator(Aggregator):
                     avg_model[key] = local_model[key] * weight
                 else:
                     avg_model[key] += local_model[key] * weight
-            if self.cfg.federate.use_ss and recover_fun:
-                avg_model[key] = recover_fun(avg_model[key])
-                # When using secret sharing, what the server receives are
-                # sample_size * model_para
-                avg_model[key] /= training_set_size
-                avg_model[key] = torch.FloatTensor(avg_model[key])
         return avg_model

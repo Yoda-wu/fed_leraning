@@ -1,35 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-  <component name="PublishConfigData" autoUpload="Always" serverName="worker" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false">
+  <component name="PublishConfigData" serverName="worker" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false">
     <option name="confirmBeforeUploading" value="false" />
     <serverData>
       <paths name="worker">
         <serverdata>
           <mappings>
             <mapping deploy="/fl" local="$PROJECT_DIR$" web="/" />
-=======
-  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
-    <serverData>
-      <paths name="wyd@222.201.187.50:22 (2)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="wyd@222.201.187.50:22 password">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
->>>>>>> 20821ae2d20ad49845eb7027289178c0d5fbf051
           </mappings>
         </serverdata>
       </paths>
     </serverData>
-<<<<<<< HEAD
-    <option name="myAutoUpload" value="ALWAYS" />
-=======
->>>>>>> 20821ae2d20ad49845eb7027289178c0d5fbf051
   </component>
 </project>

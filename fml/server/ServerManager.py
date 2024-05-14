@@ -8,7 +8,6 @@ sys.path.append('../..')
 sys.path.append('..')
 from fedml.cross_silo.server.fedml_server_manager import FedMLServerManager
 from fml.message_define import MyMessage
-from fedml.utils.logging import logger
 from fedml.core import Context
 
 """
@@ -32,10 +31,33 @@ class FedAvgServerManager(FedMLServerManager):
     def __init__(self, args, aggregator, comm=None, client_rank=0, client_num=0, backend="MQTT_S3"):
         super().__init__(args, aggregator, comm=comm, client_rank=client_rank,
                          client_num=client_num, backend=backend)
+        self.begin_timer = None
         self.client_round_map = {}
         fedml.logging.info(f"client_num = {args.client_num_in_total}")
         for client_id in self.client_real_ids:
             self.client_round_map[client_id] = self.args.round_idx
+
+    def handle_message_connection_ready(self, msg_params):
+        """
+        处理来自Client的消息，主要是检查Client的状态。
+        这里重写的原因是，FedML的ServerManager中使用到了data_silo_index_list。感觉是冗余的。因此重写这个方法
+        """
+        if not self.is_initialized:
+            self.client_id_list_in_this_round = self.aggregator.client_selection(
+                self.args.round_idx, self.client_real_ids, self.args.client_num_per_round
+            )
+            # check client status in case that some clients start earlier than the server
+            client_idx_in_this_round = 0
+            for client_id in self.client_id_list_in_this_round:
+                try:
+                    self.send_message_check_client_status(
+                        client_id, client_id,
+                    )
+                    logging.info("Connection ready for client" + str(client_id))
+                except Exception as e:
+                    logging.info("Connection not ready for client" + str(client_id))
+                client_idx_in_this_round += 1
+        self.begin_timer = time.time()
 
     def send_init_msg(self):
         """
@@ -47,21 +69,14 @@ class FedAvgServerManager(FedMLServerManager):
         client_idx_in_this_round = 0
         logging.info(
             f"the type of global_model_param is {type(global_model_params)} and"
-            f" {type(global_model_params) is dict}")
+            f" {type(global_model_params) is dict} and client_id_list_in_this_round = {self.client_id_list_in_this_round}")
 
         for client_id in self.client_id_list_in_this_round:
-            if type(global_model_params) is dict:
-                client_index = self.data_silo_index_list[client_idx_in_this_round]
-                global_model_url, global_model_key = self.send_message_init_config(
-                    client_id, global_model_params[client_index], client_index,
-                    None, None, client_epoch=2
-                )
-            else:
-                global_model_url, global_model_key = self.send_message_init_config(
-                    client_id, global_model_params,
-                    self.data_silo_index_list[client_idx_in_this_round],
-                    global_model_url, global_model_key
-                )
+            global_model_url, global_model_key = self.send_message_init_config(
+                client_id, global_model_params,
+                client_id,
+                global_model_url, global_model_key
+            )
             client_idx_in_this_round += 1
 
     def send_message_init_config(self, receive_id, global_model_params, datasilo_index,
@@ -119,10 +134,6 @@ class FedAvgServerManager(FedMLServerManager):
                 self.args.round_idx, self.client_real_ids, self.args.client_num_per_round
             )
 
-            self.data_silo_index_list = self.aggregator.data_silo_selection(
-                self.args.round_idx, self.args.client_num_in_total,
-                len(self.client_id_list_in_this_round),
-            )
             Context().add(Context.KEY_CLIENT_ID_LIST_IN_THIS_ROUND,
                           self.client_id_list_in_this_round)
 
@@ -135,10 +146,8 @@ class FedAvgServerManager(FedMLServerManager):
                 client_epoch = 2
                 if self.client_round_map[receiver_id] >= 3:
                     client_epoch = 1
-                client_index = self.data_silo_index_list[client_idx_in_this_round]
-
                 global_model_url, global_model_key = self.send_message_sync_model_to_client(
-                    receiver_id, global_model_params, client_index, global_model_url,
+                    receiver_id, global_model_params, receiver_id, global_model_url,
                     global_model_key,
                     client_epoch=client_epoch
                 )

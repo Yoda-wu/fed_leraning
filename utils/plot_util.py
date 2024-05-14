@@ -28,10 +28,10 @@ def plot_fedscope():
     with open('../log/fedscope/fedscope_fedAvg_10_server_logging', 'r') as f:
         lines = f.readlines()
         for line in lines:
-            if 'global eval res' in line:
+            if 'server eval results' in line:
                 ss = line.split(' ')
                 print(ss)
-                index = ss.index("{'test_acc':")
+                index = ss.index("'test_acc':")
                 print(ss[index + 1])
                 s = ss[index + 1]
                 idx = s.index(',')
@@ -151,9 +151,9 @@ def plot_all():
 
 
 # plot_fedml()
-plot_flwr()
+# plot_flwr()
 # plot_fedscale()
-# plot_fedscope()
+plot_fedscope()
 # plot_all()
 # cnt = 0
 #

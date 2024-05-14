@@ -190,6 +190,7 @@ class Aggregator:
         self.flag_client_model_uploaded_dict = dict()
         for idx in range(self.client_num):
             self.flag_client_model_uploaded_dict[idx] = False
+        self.begin_time = None
 
     def get_global_model_params(self):
         """
@@ -244,26 +245,12 @@ class Aggregator:
         logging.info(f'aggregate time cost: {end - start}s')
         return averaged_param, model_list, model_list_index
 
-    def data_silo_selection(self, round_idx, client_num_in_total, client_num_per_round):
-        """
-        """
-        logging.info(
-            "client_num_in_total = %d, client_num_per_round = %d" % (
-                client_num_in_total, client_num_per_round)
-        )
-        assert client_num_in_total >= client_num_per_round
-
-        if client_num_in_total == client_num_per_round:
-            return [i for i in range(client_num_per_round)]
-        else:
-            np.random.seed(round_idx)
-            data_silo_index_list = np.random.choice(range(client_num_in_total),
-                                                    client_num_per_round, replace=False)
-            return data_silo_index_list
-
     def client_selection(self, round_idx, client_id_list_in_total, client_num_per_round):
         """
+        客户端选择
         """
+        if round_idx == 0:
+            self.begin_time = time.time()
         if client_num_per_round == len(client_id_list_in_total):
             return client_id_list_in_total
         np.random.seed(
@@ -285,3 +272,5 @@ class Aggregator:
         )
         metrics = self.aggregator.test(self.test_global, self.device, self.args)
         logging.info(f"test on server metrics is {metrics}")
+        if round_idx == self.args.comm_round - 1:
+            logging.info(f"total time cost: {time.time() - self.begin_time}s")

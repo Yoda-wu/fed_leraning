@@ -1,4 +1,5 @@
 import sys
+import time
 
 from fedscope.server.sampler import RandomSampler
 
@@ -8,6 +9,7 @@ from federatedscope.core.message import Message
 from federatedscope.core.auxiliaries.logging import logger
 from federatedscope.core.workers.server import Server
 from fedscope.server.aggregator import FedAvgAggregator
+from federatedscope.core.trainers.torch_trainer import GeneralTorchTrainer
 
 """
 FedScope的Server与FedML中的ServerManager类似，都是处理通信/事件的类。
@@ -41,18 +43,21 @@ class FedAvgServer(Server):
                                            strategy=strategy,
                                            unseen_clients_id=unseen_clients_id, **kwargs
                                            )
+        logger.info(f'FedAvgServer self data type is : {type(self.data[0])} is created')
+        self.trainer = GeneralTorchTrainer(
+            model=self.models[0],
+            data=self.data[0],
+            device=self.device,
+            config=self._cfg,
+            only_for_eval=True,
+            monitor=self._monitor
+        )  # the trainer is only used for global evaluation
+        self.trainers = [self.trainer]
+        self.begin_timer = None
         self.join_in_client_id = 0
-        self._register_default_handlers()
-        self.model = model
-        self.data = data
-        self.device = device
-        self.best_results = dict()
-        self.history_results = dict()
         self.aggregator = FedAvgAggregator(model=model, device=device, config=config)
         self.client_select_dict = dict()
         self.setting_round = 2
-        self.models = [self.model]
-        self.model_num = config.model.model_num_per_trainer or len(self.models)
         self.aggregators = [self.aggregator]
         self.sampler = RandomSampler(
             client_num=self.client_num
@@ -128,6 +133,45 @@ class FedAvgServer(Server):
                     'sample_client_num': self.sample_client_num
                 })
             logger.info(f'----------- Starting training (Round #{self.state}) -------------')
+            if self.state == 0:
+                self.begin_timer = time.time()
+
+    def eval(self):
+        if self._cfg.federate.make_global_eval:
+            # By default, the evaluation is conducted one-by-one for all
+            # internal models;
+            # for other cases such as ensemble, override the eval function
+            for i in range(self.model_num):
+                logger.info(f"model_num is {self.model_num}")
+                trainer = self.trainers[i]
+                # Preform evaluation in server
+                metrics = {}
+                for split in self._cfg.eval.split:
+                    eval_metrics = trainer.evaluate(
+                        target_data_split_name=split)
+                    metrics.update(**eval_metrics)
+                formatted_eval_res = self._monitor.format_eval_res(
+                    metrics,
+                    rnd=self.state,
+                    role='Server #',
+                    forms=self._cfg.eval.report,
+                    return_raw=self._cfg.federate.make_global_eval)
+                logger.info(
+                    f"------------------server eval metrics  {metrics}-------------------------")
+                logger.info(
+                    f"------------------server eval results  {formatted_eval_res['Results_raw']}-------------------------")
+                self._monitor.update_best_result(
+                    self.best_results,
+                    formatted_eval_res['Results_raw'],
+                    results_type="server_global_eval")
+                self.history_results = merge_dict_of_results(
+                    self.history_results, formatted_eval_res)
+                self._monitor.save_formatted_results(formatted_eval_res)
+                logger.info(formatted_eval_res)
+            self.check_and_save()
+        if self.state == self.total_round_num - 1:
+            logger.info(
+                f'----------- Training finished, total time: {time.time() - self.begin_timer} -------------')
 
     def callback_funcs_for_join_in(self, message):
         """
@@ -176,3 +220,29 @@ class FedAvgServer(Server):
             msg = self.comm_manager.receive()
             move_on_flag = self.msg_handlers[msg.msg_type](msg)
         self.terminate(msg_type='finish')
+
+
+def merge_dict_of_results(dict1, dict2):
+    """
+    Merge two ``dict`` according to their keys, and concatenate their value.
+
+    Args:
+        dict1: ``dict`` to be merged
+        dict2: ``dict`` to be merged
+
+    Returns:
+        dict1: Merged ``dict``.
+
+    """
+    for key, value in dict2.items():
+        if key not in dict1:
+            if isinstance(value, dict):
+                dict1[key] = merge_dict_of_results({}, value)
+            else:
+                dict1[key] = [value]
+        else:
+            if isinstance(value, dict):
+                merge_dict_of_results(dict1[key], value)
+            else:
+                dict1[key].append(value)
+    return dict1

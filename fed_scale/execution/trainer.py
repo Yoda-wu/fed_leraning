@@ -1,8 +1,12 @@
 import logging
 import math
+import time
+
 import numpy as np
+import torch
 from torch.autograd import Variable
 from fedscale.cloud.execution.torch_client import TorchClient
+from fedscale.utils.model_test_module import test_pytorch_model
 
 
 class FedAvgTrainer(TorchClient):
@@ -22,7 +26,7 @@ class FedAvgTrainer(TorchClient):
 
         cur_data_num = len(client_data) * client_data.batch_size
         client_id = conf.client_id
-        logging.info(f"Start to train (CLIENT: {client_id}) ...")
+        print(f"Start to train (CLIENT: {client_id}) ...")
 
         model = model.to(device=self.device)
         model.train()
@@ -43,7 +47,7 @@ class FedAvgTrainer(TorchClient):
         model_param = {p: state_dicts[p].data.cpu().numpy()
                        for p in state_dicts}
 
-        logging.info(f"{cur_data_num}, {total_data_num}, {cur_data_num / total_data_num}")
+        print(f"{cur_data_num}, {total_data_num}, {cur_data_num / total_data_num}")
         model_param = [cur_data_num / total_data_num * x.astype(np.float64) for x in
                        model_param.values()]
 
@@ -51,7 +55,7 @@ class FedAvgTrainer(TorchClient):
                    'trained_size': self.completed_steps * conf.batch_size,
                    'success': self.completed_steps == conf.local_steps}
 
-        logging.info(f"Training of (CLIENT: {client_id}) completes, {results}")
+        print(f"Training of (CLIENT: {client_id}) completes, {results}")
 
         results['utility'] = math.sqrt(
             self.loss_squared) * float(trained_unique_samples)

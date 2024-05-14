@@ -1,13 +1,14 @@
-import time
-import wandb
 import collections
 import logging
 import os
-from fedscale.cloud.channels.channel_context import ClientConnections
-from fedscale.cloud.execution.executor import Executor
-import fedscale.cloud.config_parser as parser
-import fedscale.cloud.logger.executor_logging as logger
+import time
 import sys
+import fedscale.cloud.config_parser as parser
+import wandb
+
+from fedscale.cloud.execution.executor import Executor
+from fedscale.cloud.channels.channel_context import ClientConnections
+import fedscale.cloud.logger.executor_logging as logger
 
 sys.path.append('..')
 sys.path.append('../..')
@@ -20,12 +21,11 @@ class FedAvgExecutor(Executor):
     """
 
     def __init__(self, args):
-        logger.initiate_client_setting()
-
+        print(f"Executor init data {parser.args.data_set}")
         self.model_adapter = self.get_client_trainer(args).get_model_adapter(
             LeNet5(10)
         )
-
+        # 由于FedScale的模型库不支持LeNet，并且也不支持用户自定义模型，所以这里将Executor的初始化copy过来了。
         self.args = args
         self.num_executors = args.num_executors
         # ======== env information ========
@@ -59,7 +59,7 @@ class FedAvgExecutor(Executor):
 
         else:
             self.wandb = None
-        super(Executor, self).__init__()
+        logging.info(f"num of class {self.args.num_class}")
 
     def Train(self, config):
         """Load train config and data to start training on that client
@@ -87,5 +87,6 @@ class FedAvgExecutor(Executor):
 
 
 if __name__ == '__main__':
+    print("hello!!!")
     executor = FedAvgExecutor(parser.args)
     executor.run()

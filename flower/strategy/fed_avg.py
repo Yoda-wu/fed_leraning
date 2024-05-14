@@ -1,3 +1,5 @@
+import time
+
 import numpy as np
 from functools import reduce
 from flwr.common.logger import log
@@ -61,6 +63,7 @@ class FedAvgStrategy(Strategy):
         self.client_dict = {}  # cid -> client
         self.model = model
         self.valdata = valdata
+        self.begin_time = None
 
     def __repr__(self):
         rep = f"FedAvg_Custom"
@@ -79,6 +82,8 @@ class FedAvgStrategy(Strategy):
         Tuple[ClientProxy, FitIns]]:
         log(INFO, "--------------in configure_fit------------------")
         # Sample clients
+        if server_round == 1:
+            self.begin_time = time.time()
         sample_size, min_num_clients = self.num_fit_clients(
             client_manager.num_available()
         )
@@ -122,7 +127,6 @@ class FedAvgStrategy(Strategy):
         Tuple[ClientProxy, EvaluateIns]]:
         pass
 
-
     def aggregate_evaluate(self, server_round: int, results: List[Tuple[ClientProxy, EvaluateRes]],
                            failures: List[Union[Tuple[ClientProxy, EvaluateRes], BaseException]]) -> \
             Tuple[
@@ -143,17 +147,15 @@ class FedAvgStrategy(Strategy):
             return None
         loss, metrics = eval_res
         log(INFO, f"server-side evaluation loss {loss} / accuracy {metrics['accuracy']}")
+        if server_round == 100:
+            end_time = time.time()
+            log(INFO, f"total time {end_time - self.begin_time}")
         return loss, metrics
 
     def num_fit_clients(self, num_available_clients: int) -> Tuple[int, int]:
         """Return the sample size and the required number of available clients."""
         num_clients = int(num_available_clients * self.fraction_fit)
         return max(num_clients, self.min_fit_clients), self.min_available_clients
-
-    def num_evaluation_clients(self, num_available_clients: int) -> Tuple[int, int]:
-        """Use a fraction of available clients for evaluation."""
-        num_clients = int(num_available_clients * self.fraction_evaluate)
-        return max(num_clients, self.min_evaluate_clients), self.min_available_clients
 
 
 def aggregate_helper(results):
@@ -170,12 +172,3 @@ def aggregate_helper(results):
         zip(*weighted_weights)
     ]
     return weights_prim
-
-
-def weighted_loss_avg(results: List[Tuple[int, float]]) -> float:
-    """
-    平均多个客户端的评估结果
-    """
-    num_total_evaluation_examples = sum([num_examples for num_examples, _ in results])
-    weighted_losses = [num_examples * loss for num_examples, loss in results]
-    return sum(weighted_losses) / num_total_evaluation_examples

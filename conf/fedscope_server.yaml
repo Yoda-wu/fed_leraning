@@ -1,4 +1,4 @@
-use_gpu: True
+use_gpu: False
 device: 0
 seed: 12345
 federate:
@@ -6,7 +6,8 @@ federate:
   mode: 'distributed'
   make_global_eval: True
   online_aggr: False
-  total_round_num: 200
+  total_round_num: 100
+  sample_client_num: 3
 distribute:
   use: True
   server_host: '127.0.0.1'
@@ -15,7 +16,7 @@ distribute:
   data_idx: 1
 data:
   root: data/
-  type: 'mnist'
+  type: mnist
   splits: [0.6,0.2,0.2]
   subsample: 0.05
   splitter: 'iid'

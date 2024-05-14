@@ -16,4 +16,4 @@ class FedAvgClientManager(ClientManager):
         clients_available = self.feasibleClients
         if len(clients_available) < num_of_clients:
             return clients_available
-        return np.random.choice(clients_available, num_of_clients).tolist()
+        return np.random.choice(clients_available, num_of_clients, replace=False).tolist()

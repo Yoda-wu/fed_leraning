@@ -24,7 +24,7 @@ class LeNet5(nn.Module):
             nn.MaxPool2d(kernel_size=2, stride=2)
         )
         # 全连接层
-        self.fc = nn.Linear(4 * 4 * 16, 120)
+        self.fc = nn.Linear(5 * 5 * 16, 120)
         self.relu = nn.ReLU()
         self.fc1 = nn.Linear(120, 84)
         self.relu1 = nn.ReLU()
