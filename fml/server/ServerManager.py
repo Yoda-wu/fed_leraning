@@ -57,12 +57,12 @@ class FedAvgServerManager(FedMLServerManager):
                 except Exception as e:
                     logging.info("Connection not ready for client" + str(client_id))
                 client_idx_in_this_round += 1
-        self.begin_timer = time.time()
 
     def send_init_msg(self):
         """
         向Client发送初始化消息，调用send_message_init_config方法
         """
+        self.begin_timer = time.time()
         global_model_params = self.aggregator.get_global_model_params()
         global_model_url = None
         global_model_key = None
@@ -129,7 +129,7 @@ class FedAvgServerManager(FedMLServerManager):
             logging.info(f"AggregationTime: {time.time() - tick}, round: {self.args.round_idx}")
 
             self.aggregator.test_on_server(self.args.round_idx)
-
+            logging.info(f"client_id list {self.client_real_ids}")
             self.client_id_list_in_this_round = self.aggregator.client_selection(
                 self.args.round_idx, self.client_real_ids, self.args.client_num_per_round
             )

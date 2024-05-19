@@ -5,7 +5,7 @@ import time
 import sys
 import fedscale.cloud.config_parser as parser
 import wandb
-
+import torch
 from fedscale.cloud.execution.executor import Executor
 from fedscale.cloud.channels.channel_context import ClientConnections
 import fedscale.cloud.logger.executor_logging as logger
@@ -13,6 +13,15 @@ import fedscale.cloud.logger.executor_logging as logger
 sys.path.append('..')
 sys.path.append('../..')
 from fed_scale.model.lenet5 import LeNet5
+import os
+
+cpu_num = 1
+os.environ['OMP_NUM_THREADS'] = str(cpu_num)
+os.environ['OPENBLAS_NUM_THREADS'] = str(cpu_num)
+os.environ['MKL_NUM_THREADS'] = str(cpu_num)
+os.environ['VECLIB_MAXIMUM_THREADS'] = str(cpu_num)
+os.environ['NUMEXPR_NUM_THREADS'] = str(cpu_num)
+torch.set_num_threads(cpu_num)
 
 
 class FedAvgExecutor(Executor):

@@ -1,4 +1,4 @@
-use_gpu: False
+use_gpu: True
 device: 0
 early_stop:
   patience: 5
@@ -19,7 +19,7 @@ distribute:
   data_idx: 2
 data:
   root: data/
-  type: mnist
+  type: cifar10
   splits: [0.6,0.2,0.2]
   subsample: 0.05
   splitter: 'iid'
@@ -28,7 +28,7 @@ dataloader:
   batch_size: 32
 model:
   type: lenet5
-  in_channels: 1
+  in_channels: 3
 train:
   local_update_steps: 1
   batch_or_epoch: epoch

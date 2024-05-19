@@ -166,6 +166,7 @@ def process_cmd(yaml_file):
         # 启动aggregator
         print(f"Starting aggregator on {ps_ip}...")
         ps_cmd = f"python aggregator.py {conf_script} --this_rank=0 --num_executors={total_gpu_processes} --executor_configs={executor_configs} "
+        print(ps_cmd)
         working_dir = os.path.abspath(os.path.join(current_path, 'fed_scale/aggregation'))
 
         with open(f"{log_path}/{job_name}_logging", 'w') as fout:

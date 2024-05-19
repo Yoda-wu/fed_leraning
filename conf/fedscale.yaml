@@ -27,9 +27,9 @@ auth:
 job_conf:
     - job_name: fedscale_mnist                   # Generate logs under this folder: log_path/job_name/time_stamp
     - log_path: ./log/fedscale # Path of log files
-    - num_participants: 4                 # Number of participants per round, we use K=100 in our paper, large K will be much slower
-    - data_set: Mnist                     # Dataset: openImg, google_speech, stackoverflow
-    - data_dir: ../data/mnist    # Path of the dataset
+    - num_participants:  10                # Number of participants per round, we use K=100 in our paper, large K will be much slower
+    - data_set: cifar10                     # Dataset: openImg, google_speech, stackoverflow
+    - data_dir: ../data/cifar    # Path of the dataset
 #    - data_map_file: ./fed_scale/data/mnist/client_data_mapping/train.csv              # Allocation of data to each client, turn to iid setting if not provided
 #    - device_conf_file: home/wyd/github/fed_learning/fed_scale/data/device_info/client_device_capacity     # Path of the client trace
 #    - device_avail_file: home/wyd/github/fed_learning/fed_scale/device_info/client_behave_trace
@@ -43,6 +43,6 @@ job_conf:
     - learning_rate: 0.03
     - batch_size: 32
     - test_bsz: 20
-    - use_cuda: False
+    - use_cuda: True
     - save_checkpoint: False
-    - overcommitment: 1
+    - overcommitment: 0.5

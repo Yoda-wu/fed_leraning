@@ -40,12 +40,13 @@ class FedAvgModelTrainer(ClientTrainer):
                 weight_decay=args.weight_decay,
                 amsgrad=True,
             )
-
+        print(f"train data len is {len(train_data)}")
         epoch_loss = []
         for epoch in range(args.epochs):
             batch_loss = []
             for batch_idx, (x, labels) in enumerate(train_data):
                 x, labels = x.to(device), labels.to(device)
+
                 model.zero_grad()
                 log_probs = model(x)
                 loss = criterion(log_probs, labels)
@@ -62,53 +63,6 @@ class FedAvgModelTrainer(ClientTrainer):
                     self.id, epoch, sum(epoch_loss) / len(epoch_loss)
                 )
             )
-
-    # def train_iterations(self, train_data, device, args):
-    #     model = self.model
-    #
-    #     model.to(device)
-    #     model.train()
-    #
-    #     # train and update
-    #     criterion = nn.CrossEntropyLoss().to(device)  # pylint: disable=E1102
-    #     if args.client_optimizer == "sgd":
-    #         optimizer = torch.optim.SGD(
-    #             filter(lambda p: p.requires_grad, self.model.parameters()),
-    #             lr=args.learning_rate,
-    #         )
-    #     else:
-    #         optimizer = torch.optim.Adam(
-    #             filter(lambda p: p.requires_grad, self.model.parameters()),
-    #             lr=args.learning_rate,
-    #             weight_decay=args.weight_decay,
-    #             amsgrad=True,
-    #         )
-    #
-    #     epoch_loss = []
-    #
-    #     current_steps = 0
-    #     current_epoch = 0
-    #     while current_steps < args.local_iterations:
-    #         batch_loss = []
-    #         for batch_idx, (x, labels) in enumerate(train_data):
-    #             x, labels = x.to(device), labels.to(device)
-    #             model.zero_grad()
-    #             log_probs = model(x)
-    #             labels = labels.long()
-    #             loss = criterion(log_probs, labels)  # pylint: disable=E1102
-    #             loss.backward()
-    #             optimizer.step()
-    #             batch_loss.append(loss.item())
-    #             current_steps += 1
-    #             if current_steps == args.local_iterations:
-    #                 break
-    #         current_epoch += 1
-    #         epoch_loss.append(sum(batch_loss) / len(batch_loss))
-    #         logging.info(
-    #             "Client Index = {}\tEpoch: {}\tLoss: {:.6f}".format(
-    #                 self.id, current_epoch, sum(epoch_loss) / len(epoch_loss)
-    #             )
-    #         )
 
     def test(self, test_data, device, args):
         model = self.model
@@ -167,6 +121,7 @@ class Trainer:
         self.args = args
         self.train_data_num = train_data_num
         self.train_data_local_num_dict = train_data_local_num_dict
+
         self.train_data_local_dict = train_data_local_dict
         self.test_data_local_dict = test_data_local_dict
 
@@ -205,19 +160,20 @@ class Trainer:
         """
         更新数据集
         """
+        logging.info(f"self.client_index: {client_index}")
         self.client_index = client_index
         if self.train_data_local_dict is not None:
-            self.train_local = self.train_data_local_dict[client_index]
+            self.train_local = self.train_data_local_dict[client_index - 1]
         else:
             self.train_local = None
 
         if self.train_data_local_num_dict is not None:
-            self.local_sample_number = self.train_data_local_num_dict[client_index]
+            self.local_sample_number = self.train_data_local_num_dict[client_index - 1]
         else:
             self.local_sample_number = 0
 
         if self.test_data_local_dict is not None:
-            self.test_local = self.test_data_local_dict[client_index]
+            self.test_local = self.test_data_local_dict[client_index - 1]
         else:
             self.test_local = None
         self.model_trainer.update_dataset(self.train_local, self.test_local,

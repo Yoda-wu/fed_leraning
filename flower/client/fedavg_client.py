@@ -14,6 +14,15 @@ from flower.model.lenet5 import lenet5, train, test
 from utils.config_parser import Parser
 from flower.dataset.cifar10 import load_cifar10
 from flower.dataset.mnist import load_mnist
+import os
+
+cpu_num = 1
+os.environ['OMP_NUM_THREADS'] = str(cpu_num)
+os.environ['OPENBLAS_NUM_THREADS'] = str(cpu_num)
+os.environ['MKL_NUM_THREADS'] = str(cpu_num)
+os.environ['VECLIB_MAXIMUM_THREADS'] = str(cpu_num)
+os.environ['NUMEXPR_NUM_THREADS'] = str(cpu_num)
+torch.set_num_threads(cpu_num)
 
 
 class FedAvgClient(fl.client.NumPyClient):
@@ -65,10 +74,7 @@ class FedAvgClient(fl.client.NumPyClient):
         """
         客户端本地评估过程
         """
-        self.set_parameters(parameters)
-        loss, acc = test(self.net, self.valloader, self.device)
-        log(INFO, f"client-side evaluation loss {loss} / accuracy {acc}")
-        return float(loss), len(self.valloader), {"acc": acc}
+        pass
 
 
 def gen_client_fn(trainloaders, valloaders, model, device):
@@ -110,7 +116,7 @@ if __name__ == '__main__':
     if args.model == 'lenet5':
         model = lenet5(in_channel=in_channels, num_classes=num_classes).to(Device)
     log(INFO, f"load_data {load_data}")
-    trainloader, valloader = load_data(node_id, client_number, batch_size, val_ratio=0.3)
+    trainloader, valloader = load_data(node_id, client_number, batch_size, val_ratio=0)
     log(INFO, f"start client {node_id} !!!!!! ")
     fl.client.start_numpy_client(
         server_address=args.server_address,

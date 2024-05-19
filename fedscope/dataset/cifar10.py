@@ -9,7 +9,7 @@ def load_cifar10(config, client_cfgs=None):
     获取CIFAR10数据集
     """
     tr = Compose([ToTensor(), Normalize((0.1307,), (0.3081,))])
-
+    print("load cifar10!!!")
     data_train = CIFAR10("../data", train=True, download=True, transform=tr)
     data_test = CIFAR10("../data", train=False, download=True, transform=tr)
     translator = BaseDataTranslator(config, client_cfgs)

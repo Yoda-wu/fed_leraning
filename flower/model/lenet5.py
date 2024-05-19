@@ -83,6 +83,7 @@ def train(
             # print statistics
             running_loss += loss.item()
             if i % 10 == 0:
+                print(f"data shape = {images.shape}")
                 print("[%d, %5d] total loss: %.3f" % (epoch + 1, i + 1, running_loss / 10))
                 running_loss = 0.0
 

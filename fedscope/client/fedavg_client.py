@@ -1,6 +1,7 @@
 import logging
 import pickle
 import sys
+import time
 
 from federatedscope.core.trainers import Context
 from federatedscope.core.workers.base_client import BaseClient
@@ -119,8 +120,10 @@ class FedAvgClient(BaseClient):
         # 更新参数
         self.trainer.update(model_para, strict=self._cfg.federate.share_local_model)
         self.state = round
+        begin_time = time.time()
         # 本地训练
         sample_size, model_para_all, results = self.trainer.train()
+        logger.info(f"client {self.ID} train time: {time.time() - begin_time}")
         train_log_res = self._monitor.format_eval_res(results, rnd=self.state,
                                                       role=f"client #{self.ID}",
                                                       return_raw=True)

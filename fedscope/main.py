@@ -1,4 +1,4 @@
-import logging
+import torch
 import os
 import sys
 
@@ -20,6 +20,15 @@ from client.fedavg_client import FedAvgClient
 from server.fedavg_server import FedAvgServer
 # 导入目的为了register可以注册到federatedScope框架里
 from model import lenet5
+
+print(torch.get_num_threads())
+cpu_num = 1
+os.environ['OMP_NUM_THREADS'] = str(cpu_num)
+os.environ['OPENBLAS_NUM_THREADS'] = str(cpu_num)
+os.environ['MKL_NUM_THREADS'] = str(cpu_num)
+os.environ['VECLIB_MAXIMUM_THREADS'] = str(cpu_num)
+os.environ['NUMEXPR_NUM_THREADS'] = str(cpu_num)
+torch.set_num_threads(cpu_num)
 
 if os.environ.get('https_proxy'):
     del os.environ['https_proxy']
@@ -48,10 +57,11 @@ if __name__ == '__main__':
     # federated dataset might change the number of clients
     # thus, we allow the creation procedure of dataset to modify the global
     # cfg object
-    from dataset.mnist import load_mnist
+    # from dataset.mnist import load_mnist
+    from dataset.cifar10 import load_cifar10
 
-    data, modified_cfg = load_mnist(config=init_cfg.clone(),
-                                    client_cfgs=client_cfgs)
+    data, modified_cfg = load_cifar10(config=init_cfg.clone(),
+                                      client_cfgs=client_cfgs)
     init_cfg.merge_from_other_cfg(modified_cfg)
     init_cfg.freeze()
     runner = get_runner(data=data,

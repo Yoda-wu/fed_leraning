@@ -1,5 +1,6 @@
 import fedml
 import sys
+import torch
 
 sys.path.append('../..')
 sys.path.append('..')
@@ -11,6 +12,15 @@ FedML client 实现
 参考FedML的fedavg示例，用户需要自己实现客户端的实体
 
 """
+import os
+
+cpu_num = 1
+os.environ['OMP_NUM_THREADS'] = str(cpu_num)
+os.environ['OPENBLAS_NUM_THREADS'] = str(cpu_num)
+os.environ['MKL_NUM_THREADS'] = str(cpu_num)
+os.environ['VECLIB_MAXIMUM_THREADS'] = str(cpu_num)
+os.environ['NUMEXPR_NUM_THREADS'] = str(cpu_num)
+torch.set_num_threads(cpu_num)
 
 
 class FedAvgClient:
@@ -123,6 +133,7 @@ def load_data_mnist(args):
     """
     download_mnist(args.data_cache_dir)
     fedml.logging.info("load_data. dataset_name = %s" % args.dataset)
+    fedml.logging.info("client_num  = %s" % args.client_num_in_total)
 
     """
     Please read through the data loader at to see how to customize the dataset for FedML framework.
@@ -143,7 +154,8 @@ def load_data_mnist(args):
         train_path=args.data_cache_dir + "/MNIST/train",
         test_path=args.data_cache_dir + "/MNIST/test",
     )
-
+    # print(train_data_local_dict.keys())
+    print(len(train_data_local_num_dict[1]))
     """
     For shallow NN or linear models, 
     we uniformly sample a fraction of clients each round (as the original FedAvg paper)
@@ -169,7 +181,7 @@ def load_data_cifar(args):
     fedml.logging.info("load_data. dataset_name = %s" % args.dataset)
     centralized = True if (
             args.client_num_in_total == 1 and args.training_type != "cross_silo") else False
-    print(f"centralized = {centralized}")
+    print(f"----------------------------centralized = {centralized}")
     """
     For shallow NN or linear models, 
     we uniformly sample a fraction of clients each round (as the original FedAvg paper)
@@ -177,7 +189,7 @@ def load_data_cifar(args):
     dataset, class_num = fedml.data.load(
         args
     )
-    print(f"dataset = {len(dataset)}")
+    print(f"-------------------dataset = {len(dataset)} client_num = {args.client_num_in_total}")
     (train_data_num,
      test_data_num,
      train_data_global,

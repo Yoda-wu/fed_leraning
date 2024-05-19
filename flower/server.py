@@ -16,6 +16,15 @@ from flwr.common.typing import Dict, Tuple, Optional
 sys.path.append('../')
 print(sys.path)
 from utils.config_parser import Parser
+import os
+
+cpu_num = 1
+os.environ['OMP_NUM_THREADS'] = str(cpu_num)
+os.environ['OPENBLAS_NUM_THREADS'] = str(cpu_num)
+os.environ['MKL_NUM_THREADS'] = str(cpu_num)
+os.environ['VECLIB_MAXIMUM_THREADS'] = str(cpu_num)
+os.environ['NUMEXPR_NUM_THREADS'] = str(cpu_num)
+torch.set_num_threads(cpu_num)
 
 fl.common.logger.configure(identifier="myFlowerExperiment", filename="log.txt")
 
@@ -63,11 +72,6 @@ def evaluate(
     loss, accuracy = test(net, valloader, Config.device)
     print(f"Server-side evaluation loss {loss} / accuracy {accuracy}")
     return loss, {"accuracy": accuracy}
-
-    # if args.gpu == None:
-    #     Config.device = 'cpu'
-    # else:
-    #     Config.device = 'cuda'
 
 
 if Config.frac_clients != 0:

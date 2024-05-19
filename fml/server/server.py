@@ -199,7 +199,7 @@ if __name__ == '__main__':
         output_dim = 10
         in_channels = 3
     model = LeNet5(in_channels=in_channels, num_classes=output_dim)
-
+    print(f"client id list :{args.client_id_list}")
     server_runner = FedAvgServer(args, Device, datasets, model)
 
     server_runner.run()

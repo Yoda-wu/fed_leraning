@@ -3,10 +3,10 @@ common_args:
   random_seed: 0
 
 data_args:
-  dataset: "mnist"
-#  dataset: "cifar10"
-#  data_cache_dir: "../data/cifar10"
-  data_cache_dir: "../data/mnist"
+#  dataset: "mnist"
+  dataset: "cifar10"
+  data_cache_dir: "../data/cifar10"
+#  data_cache_dir: "../data/mnist"
   partition_method: "homo"
   partition_alpha: 0.5
 
@@ -16,8 +16,8 @@ model_args:
 train_args:
   federated_optimizer: "FedAvg" # 本实现使用自定义的FedAvg，
   client_id_list: "[]"
-  client_num_in_total: 20
-  client_num_per_round: 10 # 与下面的worker_num一样
+  client_num_in_total: 10 # 与下面的worker_num一样
+  client_num_per_round: 5
   comm_round: 100
   epochs: 1
   batch_size: 32
@@ -30,7 +30,7 @@ validation_args:
 
 device_args:
   worker_num: 10
-  using_gpu: false
+  using_gpu: true
   gpu_id: 0
 
 comm_args:
