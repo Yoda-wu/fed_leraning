@@ -2,50 +2,45 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import torch.utils.data.dataloader as dataloader
-
+import os
 from typing import Tuple
 from federatedscope.register import register_model
+import torch.nn.functional as F
+
+cpu_num = 1
+os.environ['OMP_NUM_THREADS'] = str(cpu_num)
+os.environ['OPENBLAS_NUM_THREADS'] = str(cpu_num)
+os.environ['MKL_NUM_THREADS'] = str(cpu_num)
+os.environ['VECLIB_MAXIMUM_THREADS'] = str(cpu_num)
+os.environ['NUMEXPR_NUM_THREADS'] = str(cpu_num)
+torch.set_num_threads(cpu_num)
 
 
 class LeNet5(nn.Module):
 
-    def __init__(self, in_channels=1, num_classes=10):
+    def __init__(self, in_channels=3, num_classes=10):
         super().__init__()
-        # 卷积层
-        self.layer1 = nn.Sequential(
-            nn.Conv2d(in_channels, 6, kernel_size=5, stride=1, padding=0),
-            nn.BatchNorm2d(6),
-            nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2, stride=2)
-        )
-        self.layer2 = nn.Sequential(
-            nn.Conv2d(6, 16, kernel_size=5, stride=1, padding=0),
-            nn.BatchNorm2d(16),
-            nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2, stride=2)
-        )
-        in_features = 16 * 5 * 5
-        if in_channels == 3:
-            in_features = 16 * 5 * 5
-        else:
-            in_features = 16 * 4 * 4
-        # 全连接层
-        self.fc = nn.Linear(in_features, 120)
+        self.conv1 = nn.Conv2d(in_channels, 6, 5)  # in_channels, out_channels, kernel_size
         self.relu = nn.ReLU()
-        self.fc1 = nn.Linear(120, 84)
-        self.relu1 = nn.ReLU()
-        self.fc2 = nn.Linear(84, num_classes)
+        self.max_pool1 = nn.MaxPool2d(2, 2)
+        self.conv2 = nn.Conv2d(6, 16, 5)
+        self.max_pool2 = nn.MaxPool2d(2, 2)
+        self.fc1 = nn.Linear(16 * 5 * 5, 120)
+        self.fc2 = nn.Linear(120, 84)
+        self.fc3 = nn.Linear(84, num_classes)
 
     def forward(self, x):
-        out = self.layer1(x)
-        out = self.layer2(out)
-        out = out.reshape(out.size(0), -1)
-        out = self.fc(out)
-        out = self.relu(out)
-        out = self.fc1(out)
-        out = self.relu1(out)
-        out = self.fc2(out)
-        return out
+        x = self.conv1(x)
+        x = self.relu(x)
+        x = self.max_pool1(x)
+        x = self.conv2(x)
+        x = self.max_pool2(x)
+        x = x.contiguous().view(-1, 16 * 5 * 5)
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        x = self.fc3(x)
+        output = F.log_softmax(x, dim=1)
+        return output
 
 
 def lenet5(num_classes):

@@ -186,6 +186,7 @@ def load_data_cifar(args):
     For shallow NN or linear models, 
     we uniformly sample a fraction of clients each round (as the original FedAvg paper)
     """
+    args.client_num_in_total = 10
     dataset, class_num = fedml.data.load(
         args
     )
@@ -214,6 +215,7 @@ def load_data(args):
 if __name__ == '__main__':
     args = fedml.init()
 
+    client_total = args.client_num_in_total
     device = fedml.device.get_device(args)
 
     datasets, output_dim = load_data(args)
@@ -226,7 +228,7 @@ if __name__ == '__main__':
         output_dim = 10
         in_channels = 3
     model = LeNet5(in_channels=in_channels, num_classes=output_dim)
-
+    args.client_num_in_total = client_total
     client_runner = FedAvgClient(args, device, datasets, model)
 
     client_runner.run()

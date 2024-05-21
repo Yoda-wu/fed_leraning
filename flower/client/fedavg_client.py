@@ -116,7 +116,8 @@ if __name__ == '__main__':
     if args.model == 'lenet5':
         model = lenet5(in_channel=in_channels, num_classes=num_classes).to(Device)
     log(INFO, f"load_data {load_data}")
-    trainloader, valloader = load_data(node_id, client_number, batch_size, val_ratio=0)
+    trainloader, valloader = load_data(node_id, num_partitions=10, batch_size=batch_size,
+                                       val_ratio=0)
     log(INFO, f"start client {node_id} !!!!!! ")
     fl.client.start_numpy_client(
         server_address=args.server_address,

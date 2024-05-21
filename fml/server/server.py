@@ -118,6 +118,8 @@ def load_data_cifar(args):
     For shallow NN or linear models, 
     we uniformly sample a fraction of clients each round (as the original FedAvg paper)
     """
+    args.client_num_in_total = 10
+
     dataset, class_num = fedml.data.load(
         args
     )

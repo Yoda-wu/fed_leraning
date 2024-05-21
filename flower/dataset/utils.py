@@ -54,4 +54,4 @@ def load_data(get_data_fn, node_id, num_partitions, batch_size, val_ratio,
     log(INFO,
         f"finish loading dataset, node_id: {node_id} and len is {len(trainloaders[node_id])}"
         f" and  trainloaders num is {len(trainloaders)}")
-    return trainloaders[node_id], valloaders[node_id] if val_ratio != 0 else []
+    return trainloaders[node_id % 10], valloaders[node_id] if val_ratio != 0 else []

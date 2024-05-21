@@ -38,6 +38,7 @@ if os.environ.get('http_proxy'):
 if __name__ == '__main__':
     init_cfg = global_cfg.clone()
     args = parse_args()
+
     if args.cfg_file:
         init_cfg.merge_from_file(args.cfg_file)
     cfg_opt, client_cfg_opt = parse_client_cfg(args.opts)
@@ -53,7 +54,8 @@ if __name__ == '__main__':
         client_cfgs.merge_from_list(client_cfg_opt)
     else:
         client_cfgs = None
-
+    client_num = init_cfg.federate.client_num
+    init_cfg.federate.client_num = 10
     # federated dataset might change the number of clients
     # thus, we allow the creation procedure of dataset to modify the global
     # cfg object
@@ -62,6 +64,7 @@ if __name__ == '__main__':
 
     data, modified_cfg = load_cifar10(config=init_cfg.clone(),
                                       client_cfgs=client_cfgs)
+    init_cfg.federate.client_num = client_num
     init_cfg.merge_from_other_cfg(modified_cfg)
     init_cfg.freeze()
     runner = get_runner(data=data,

@@ -4,12 +4,12 @@ early_stop:
   patience: 5
 seed: 12345
 federate:
-  client_num: 3
+  client_num: 10
   mode: 'distributed'
   make_global_eval: True
   online_aggr: False
   total_round_num: 100
-  sample_client_num: 3
+  sample_client_num: 10
 distribute:
   use: True
   server_host: '127.0.0.1'

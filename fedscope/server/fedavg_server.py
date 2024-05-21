@@ -51,7 +51,7 @@ class FedAvgServer(Server):
                                            strategy=strategy,
                                            unseen_clients_id=unseen_clients_id, **kwargs
                                            )
-        logger.info(f'FedAvgServer self data type is : {type(self.data[0])} is created')
+        logger.info(f'FedAvgServer self data type is : {type(self.data[0])} is created client_num = {self.client_num} sample client num {self.sample_client_num}')
         self.trainer = GeneralTorchTrainer(
             model=self.models[0],
             data=self.data[0],
